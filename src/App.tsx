@@ -6,16 +6,19 @@ import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
 function App() {
   return (
-    <div className="app">
-      <Header />
-      <main className="main">
-        <Hero />
-        <Projects />
-        <Skills />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <div className="app">
+        <Header />
+        <main className="main">
+          <Hero />
+          <Projects />
+          <Skills />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+      {/* <Button to go top/>*/}
+    </>
   )
 }
 
