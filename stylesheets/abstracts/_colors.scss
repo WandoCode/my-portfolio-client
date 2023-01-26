@@ -28,4 +28,13 @@ $colors: (
       --clr-#{$color-type}-#{$shade}: #{$color};
     }
   }
+
+  /// Build css utility for colors
+  @each $color-type, $shades in $colors {
+    @each $shade, $color in $shades {
+      .fc-#{$color-type}-#{$shade} {
+        color: $color;
+      }
+    }
+  }
 }
