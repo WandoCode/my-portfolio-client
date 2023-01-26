@@ -8,3 +8,15 @@ body {
   font-family: $text-font-stack;
   font-size: var(--fs-400);
 }
+
+.nav-item {
+  color: var(--clr-neutral-550);
+
+  @include on-event {
+    color: var(--clr-neutral-750);
+  }
+
+  &--actif {
+    color: var(--clr-neutral-750);
+  }
+}

@@ -1,0 +1,7 @@
+@use '../../abstracts/' as *;
+
+.header {
+  min-height: rem(100);
+  display: grid;
+  align-items: center;
+}

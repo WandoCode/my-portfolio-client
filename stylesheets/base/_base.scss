@@ -26,11 +26,6 @@ html {
  * Basic styles for links
  */
 a {
-  color: var(--clr-primary-400);
+  color: inherit;
   text-decoration: none;
-
-  @include on-event {
-    color: var(--clr-primary-500);
-    text-decoration: underline;
-  }
 }

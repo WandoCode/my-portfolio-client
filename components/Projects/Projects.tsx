@@ -6,8 +6,10 @@ function Projects() {
 
   return (
     <section className="projects">
-      <h2 className="h2 fs-600">Projets</h2>
-      {projectsDOM}
+      <div className="container">
+        <h2 className="h2 fs-600">Projets</h2>
+        {projectsDOM}
+      </div>
     </section>
   )
 }

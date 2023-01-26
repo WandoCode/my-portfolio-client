@@ -1,0 +1,29 @@
+@use '../../abstracts/' as *;
+
+.nav {
+  $gap: rem(45);
+  display: flex;
+  justify-content: space-between;
+  min-height: rem(50);
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: $gap;
+  }
+
+  &__link {
+    padding-block: rem(8);
+  }
+
+  &__links {
+    display: flex;
+
+    gap: $gap;
+  }
+
+  &__burger {
+    height: 25px;
+    aspect-ratio: 1;
+  }
+}
