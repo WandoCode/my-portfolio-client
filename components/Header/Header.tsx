@@ -1,5 +1,6 @@
+import Image from 'next/image'
 import burger from '../../assets/burger.svg'
-import Image from 'next/Image'
+import Switch from '../Switch/Switch'
 
 function Header() {
   return (
@@ -41,7 +42,7 @@ function Header() {
               Switch langues en/fr/es
             </div>
             <div className="nav__dark-light-switch nav-item">
-              Switch dark/light mode
+              <Switch />
             </div>
           </div>
           <Image src={burger} alt="" className="show-on-mobile nav__burger" />
