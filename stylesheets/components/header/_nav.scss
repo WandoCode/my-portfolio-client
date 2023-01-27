@@ -23,7 +23,25 @@
   }
 
   &__burger {
-    height: 25px;
+    background: none;
+    border: none;
+    padding: 0;
+    --burger-stroke: var(--clr-neutral-700);
+    height: 30px;
     aspect-ratio: 1;
+
+    & .unactive {
+      transition: stroke-dashoffset 0.5s;
+      stroke-dasharray: 280 140 280 140 280 10000;
+      stroke-dashoffset: 0;
+      cursor: pointer;
+    }
+
+    .active {
+      transition: stroke-dashoffset 0.5s;
+
+      stroke-dasharray: 0 1530 335 225 370;
+      stroke-dashoffset: 420;
+    }
   }
 }

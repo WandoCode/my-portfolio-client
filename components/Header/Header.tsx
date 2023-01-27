@@ -2,8 +2,15 @@ import Image from 'next/image'
 import burger from '../../assets/burger.svg'
 import ThemeSwitch from './ThemeSwitch'
 import LangSelection from './LangSelection'
+import { useState } from 'react'
 
 function Header() {
+  const [openMenu, setOpenMenu] = useState(false)
+
+  const burgerClass = () => {
+    return openMenu ? 'active' : 'unactive'
+  }
+
   return (
     <header className="header">
       <div className="container">
@@ -46,7 +53,25 @@ function Header() {
               <ThemeSwitch />
             </div>
           </div>
-          <Image src={burger} alt="" className="show-on-mobile nav__burger" />
+          <button
+            className="nav__burger show-on-mobile"
+            onClick={() => setOpenMenu((old) => !old)}
+          >
+            <svg
+              className={burgerClass()}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 -100 450 400"
+            >
+              <path
+                d="M 75 30 H 355 C 415 30 415 120 355 120 H 75 C 15 120 15 210 75 210 H 355 L 123 -14 H 354 L 120 211"
+                stroke="var(--burger-stroke)"
+                stroke-width="20"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+              />
+            </svg>
+          </button>
         </nav>
       </div>
     </header>
