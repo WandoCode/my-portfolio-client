@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import burger from '../../assets/burger.svg'
-import Switch from '../Switch/Switch'
+import ThemeSwitch from './ThemeSwitch'
+import LangSelection from './LangSelection'
 
 function Header() {
   return (
@@ -39,10 +40,10 @@ function Header() {
               </li>
             </ul>
             <div className="nav__lang-choice nav-item">
-              Switch langues en/fr/es
+              <LangSelection />
             </div>
             <div className="nav__dark-light-switch nav-item">
-              <Switch />
+              <ThemeSwitch />
             </div>
           </div>
           <Image src={burger} alt="" className="show-on-mobile nav__burger" />

@@ -1,15 +1,16 @@
-import { ChangeEvent, useState, useEffect } from 'react'
+import { ChangeEvent, useState, useEffect, useContext } from 'react'
 import sun from '../../assets/sun.svg'
 import moon from '../../assets/moon.svg'
 import Image from 'next/image'
+import { GlobalContext } from '../../contexts/GlobalContextProvider'
 
-function Switch() {
-  const [theme, setTheme] = useState('dark')
+function ThemeSwitch() {
+  const { theme, changeTheme } = useContext(GlobalContext)
 
   const handleSwitch = (e: ChangeEvent<HTMLInputElement>) => {
     const isChecked = e.target.checked
 
-    isChecked ? setTheme('dark') : setTheme('light')
+    isChecked ? changeTheme('dark') : changeTheme('light')
   }
 
   return (
@@ -30,5 +31,6 @@ function Switch() {
     </form>
   )
 }
+// TODO: Need configuration (default theme value, theme value and img visible: match?)
 
-export default Switch
+export default ThemeSwitch
