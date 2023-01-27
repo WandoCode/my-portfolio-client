@@ -1,47 +1,114 @@
 @use '../../abstracts/' as *;
 
+// NB: Desktop first for this page
+
 .nav {
-  $gap: rem(45);
+  $gap-lg: rem(45);
+  $gap-md: rem(32);
+  $gap-sm: rem(24);
+
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
   min-height: rem(50);
 
+  @include breakpoint-down(large) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    padding: (0.5 * $margin-md) $margin-md;
+
+    background-color: var(--clr-neutral-100);
+    box-shadow: 0 0 10px -6px black;
+  }
+
+  @include breakpoint-down(medium) {
+    padding-inline: 2 * $margin-sm;
+    padding-block: rem(25);
+  }
+
   &__content {
+    position: relative;
+
     display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: $gap;
+    gap: $gap-lg;
+
+    @include breakpoint-down(large) {
+      position: fixed;
+      bottom: 100%;
+      right: 0;
+      left: 0;
+
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $gap-md;
+
+      padding: (2 * $margin-md);
+      padding-bottom: $margin-md;
+
+      background-color: var(--clr-neutral-100);
+      box-shadow: 0 0 10px -5px black;
+
+      translate: 0 0;
+      transition: translate 0.5s;
+
+      &--open {
+        translate: 0 100%;
+      }
+    }
+
+    @include breakpoint-down(medium) {
+      padding: 4 * $margin-sm;
+      padding-bottom: 2 * $margin-sm;
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: $gap-lg;
+
+    @include breakpoint-down(large) {
+      display: grid;
+      gap: $gap-md;
+    }
   }
 
   &__link {
     padding-block: rem(8);
   }
 
-  &__links {
-    display: flex;
-
-    gap: $gap;
-  }
-
   &__burger {
-    background: none;
-    border: none;
-    padding: 0;
     --burger-stroke: var(--clr-neutral-700);
-    height: 30px;
+
+    height: 35px;
     aspect-ratio: 1;
 
+    padding: 0;
+
+    border: none;
+    background: none;
+
+    z-index: 1;
+
     & .unactive {
-      transition: stroke-dashoffset 0.5s;
       stroke-dasharray: 280 140 280 140 280 10000;
       stroke-dashoffset: 0;
+
       cursor: pointer;
+
+      transition: stroke-dashoffset 0.5s;
     }
 
     .active {
-      transition: stroke-dashoffset 0.5s;
-
       stroke-dasharray: 0 1530 335 225 370;
       stroke-dashoffset: 420;
+
+      transition: stroke-dashoffset 0.5s;
     }
   }
 }

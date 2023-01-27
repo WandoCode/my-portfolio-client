@@ -11,6 +11,12 @@ function Header() {
     return openMenu ? 'active' : 'unactive'
   }
 
+  const navContentClass = () => {
+    let name = 'nav__content show-on-desktop'
+    if (openMenu) name += ' nav__content--open'
+    return name
+  }
+
   return (
     <header className="header">
       <div className="container">
@@ -23,10 +29,10 @@ function Header() {
             />
             {/* Logo.svg = 1 svg avec le ""logo"" et mon nom (tout en un) */}
           </div>
-          <div className="nav__content show-on-desktop">
+          <div className={navContentClass()}>
             <ul className="nav__links">
               <li className="nav__item">
-                <a href="#hero" className="nav__link nav-item nav-item--actif">
+                <a href="#hero" className="nav__link nav-item ">
                   Home
                 </a>
               </li>
@@ -46,11 +52,11 @@ function Header() {
                 </a>
               </li>
             </ul>
-            <div className="nav__lang-choice fc-neutral-550">
-              <LangSelection />
-            </div>
             <div className="nav__dark-light-switch">
               <ThemeSwitch />
+            </div>
+            <div className="nav__lang-choice fc-neutral-550">
+              <LangSelection />
             </div>
           </div>
           <button
@@ -65,7 +71,7 @@ function Header() {
               <path
                 d="M 75 30 H 355 C 415 30 415 120 355 120 H 75 C 15 120 15 210 75 210 H 355 L 123 -14 H 354 L 120 211"
                 stroke="var(--burger-stroke)"
-                stroke-width="20"
+                strokeWidth="20"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 fill="none"
@@ -79,3 +85,4 @@ function Header() {
 }
 
 export default Header
+// todo: ajouter un bouton 'go top' pour le DESKTOP uniquement (mobile/tablet, le menu suit l'utilisateur)

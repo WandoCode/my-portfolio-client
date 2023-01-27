@@ -15,8 +15,4 @@ body {
   @include on-hover {
     color: var(--clr-neutral-750);
   }
-
-  &--actif {
-    color: var(--clr-neutral-750);
-  }
 }

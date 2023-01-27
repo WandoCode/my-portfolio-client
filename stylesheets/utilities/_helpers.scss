@@ -45,10 +45,10 @@
 }
 
 .show-on-desktop {
-  position: absolute;
-  height: 1px;
-  overflow: hidden;
-  width: 1px;
+  // position: absolute;
+  // height: 1px;
+  // overflow: hidden;
+  // width: 1px;
 
   @include breakpoint(large) {
     position: relative;

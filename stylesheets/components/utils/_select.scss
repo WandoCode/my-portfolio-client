@@ -30,6 +30,7 @@
     height: 0;
     overflow: hidden;
     transition: 0.25s;
+    background-color: var(--clr-neutral-250);
     &--open {
       height: 300%;
     }
