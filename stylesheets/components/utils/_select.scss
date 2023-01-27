@@ -1,0 +1,46 @@
+.select {
+  position: relative;
+  user-select: none;
+  min-width: 3.5em;
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    & img {
+      width: 10px;
+      height: 10px;
+      transition: 0.5s;
+    }
+
+    &[aria-expanded='true'] img {
+      transform: rotateX(180deg);
+    }
+  }
+
+  &__options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 25%;
+    height: 0;
+    overflow: hidden;
+    transition: 0.25s;
+    &--open {
+      height: 300%;
+    }
+  }
+
+  &__option {
+    text-align: justify;
+    padding-left: 5px;
+
+    &:hover {
+      background-color: var(--clr-neutral-300);
+    }
+  }
+}

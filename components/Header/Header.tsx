@@ -39,10 +39,10 @@ function Header() {
                 </a>
               </li>
             </ul>
-            <div className="nav__lang-choice nav-item">
+            <div className="nav__lang-choice fc-neutral-550">
               <LangSelection />
             </div>
-            <div className="nav__dark-light-switch nav-item">
+            <div className="nav__dark-light-switch">
               <ThemeSwitch />
             </div>
           </div>

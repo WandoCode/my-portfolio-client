@@ -40,6 +40,11 @@
   }
 }
 
+@mixin on-hover {
+  &:hover {
+    @content;
+  }
+}
 /// Make a context based selector a little more friendly
 /// @author Kitty Giraudel
 /// @param {String} $context

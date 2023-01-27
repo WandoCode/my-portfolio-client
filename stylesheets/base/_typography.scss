@@ -12,7 +12,7 @@ body {
 .nav-item {
   color: var(--clr-neutral-550);
 
-  @include on-event {
+  @include on-hover {
     color: var(--clr-neutral-750);
   }
 
