@@ -6,6 +6,7 @@ import {
   useEffect,
   useRef,
   useCallback,
+  KeyboardEvent,
 } from 'react'
 import chevron from '../../assets/chevron.svg'
 
@@ -24,8 +25,12 @@ function Select({ choices, currValue, onChoice, id }: Props) {
     if (!selectRef.current?.contains(e.target as Node)) setMenuIsOpen(false)
   }
 
-  const handleKeyboard = () => {
-    console.log(321)
+  const handleKeyboard = (e: KeyboardEvent) => {
+    switch (e.key) {
+      case 'Escape':
+        setMenuIsOpen(false)
+        break
+    }
   }
 
   useEffect(() => {
@@ -37,13 +42,13 @@ function Select({ choices, currValue, onChoice, id }: Props) {
   }, [menuIsOpen])
 
   const startListenEvents = useCallback(() => {
-    document.body.addEventListener('keypress', handleKeyboard)
+    // document.body.addEventListener('keydown', handleKeyboard)
     document.body.addEventListener('click', handleClickOutside)
   }, [])
 
   const stopListenEvents = useCallback(() => {
     document.body.removeEventListener('click', handleClickOutside)
-    document.body.removeEventListener('keypress', handleKeyboard)
+    // document.body.removeEventListener('keydown', handleKeyboard)
   }, [])
 
   const handleChoice = (e: MouseEvent<HTMLLIElement>) => {
@@ -61,22 +66,27 @@ function Select({ choices, currValue, onChoice, id }: Props) {
       : 'select__options'
   }
 
+  const handleBlur = (i: number) => {
+    if (i === choices.length - 1) setMenuIsOpen(false)
+  }
+
   const choicesList = useMemo(() => {
-    return choices.map((choice) => (
+    return choices.map((choice, i) => (
       <li
         className="select__option nav-item"
         data-value={choice.value}
         key={choice.value}
         onClick={handleChoice}
-        tabIndex={0}
+        tabIndex={menuIsOpen ? 0 : -1}
+        onBlur={() => handleBlur(i)}
       >
         {choice.text}
       </li>
     ))
-  }, [])
+  }, [menuIsOpen])
 
   return (
-    <div ref={selectRef} className="select">
+    <div ref={selectRef} className="select" onKeyDown={handleKeyboard}>
       <button
         name="language"
         id="language"

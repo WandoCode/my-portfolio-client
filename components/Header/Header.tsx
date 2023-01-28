@@ -1,5 +1,3 @@
-import Image from 'next/image'
-import burger from '../../assets/burger.svg'
 import ThemeSwitch from './ThemeSwitch'
 import LangSelection from './LangSelection'
 import { useState } from 'react'
