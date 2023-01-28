@@ -6,17 +6,11 @@ import { GlobalContext } from '../../contexts/GlobalContextProvider'
 
 function ThemeSwitch() {
   const { theme, changeTheme } = useContext(GlobalContext)
-  const [showFocusOnLabel, setShowFocusOnLabel] = useState(false)
 
   const handleSwitch = (e: ChangeEvent<HTMLInputElement>) => {
     const isChecked = e.target.checked
 
     isChecked ? changeTheme('dark') : changeTheme('light')
-  }
-
-  const labelClass = () => {
-    let name = 'switch__slider-container'
-    return showFocusOnLabel ? `${name} ${name}--focused` : name
   }
 
   return (
@@ -30,10 +24,8 @@ function ThemeSwitch() {
         id="theme"
         onChange={handleSwitch}
         checked={theme === 'dark'}
-        onFocus={() => setShowFocusOnLabel(true)}
-        onBlur={() => setShowFocusOnLabel(false)}
       />
-      <label htmlFor="theme" className={labelClass()}>
+      <label htmlFor="theme" className="switch__slider-container">
         <div className="switch__slider"></div>
       </label>
     </form>

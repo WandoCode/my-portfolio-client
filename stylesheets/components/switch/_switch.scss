@@ -29,12 +29,6 @@
       flex-grow: 0;
       transition: 0.25s;
     }
-
-    &--focused {
-      outline: 2px black solid;
-      outline-offset: 5px;
-      border-radius: 8px;
-    }
   }
 
   &__slider {
