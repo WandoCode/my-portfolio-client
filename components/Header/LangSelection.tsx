@@ -1,4 +1,4 @@
-import Select from '../Utils/Select'
+import Select from '../Utils/Select/Select'
 import { useContext } from 'react'
 import { GlobalContext } from '../../contexts/GlobalContextProvider'
 import { allowedLanguage, LanguagesObject } from '../../constant/language'
@@ -15,6 +15,7 @@ function LangSelection() {
       choices={allowedLanguage}
       currValue={language ?? ''}
       onChoice={onChoice}
+      id="language"
     />
   )
 }

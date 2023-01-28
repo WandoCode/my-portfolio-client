@@ -1,14 +1,7 @@
 import Image from 'next/image'
-import {
-  MouseEvent,
-  useState,
-  useMemo,
-  useEffect,
-  useRef,
-  useCallback,
-  KeyboardEvent,
-} from 'react'
-import chevron from '../../assets/chevron.svg'
+import { useState, useMemo, useEffect, useRef, useCallback } from 'react'
+import chevron from '../../../assets/chevron.svg'
+import Option from './Option'
 
 interface Props {
   choices: { value: string; text: string }[]
@@ -18,20 +11,8 @@ interface Props {
 }
 
 function Select({ choices, currValue, onChoice, id }: Props) {
-  const [menuIsOpen, setMenuIsOpen] = useState(false)
   const selectRef = useRef<HTMLDivElement>(null)
-
-  const handleClickOutside = (e: Event) => {
-    if (!selectRef.current?.contains(e.target as Node)) setMenuIsOpen(false)
-  }
-
-  const handleKeyboard = (e: KeyboardEvent) => {
-    switch (e.key) {
-      case 'Escape':
-        setMenuIsOpen(false)
-        break
-    }
-  }
+  const [menuIsOpen, setMenuIsOpen] = useState(false)
 
   useEffect(() => {
     if (menuIsOpen) {
@@ -42,22 +23,15 @@ function Select({ choices, currValue, onChoice, id }: Props) {
   }, [menuIsOpen])
 
   const startListenEvents = useCallback(() => {
-    // document.body.addEventListener('keydown', handleKeyboard)
     document.body.addEventListener('click', handleClickOutside)
   }, [])
 
   const stopListenEvents = useCallback(() => {
     document.body.removeEventListener('click', handleClickOutside)
-    // document.body.removeEventListener('keydown', handleKeyboard)
   }, [])
 
-  const handleChoice = (e: MouseEvent<HTMLLIElement>) => {
-    const choiceValue = e.currentTarget.getAttribute('data-value')
-
-    if (!choiceValue) return
-
-    onChoice(choiceValue)
-    setMenuIsOpen(false)
+  const handleClickOutside = (e: Event) => {
+    if (!selectRef.current?.contains(e.target as Node)) setMenuIsOpen(false)
   }
 
   const optionsClass = () => {
@@ -66,27 +40,23 @@ function Select({ choices, currValue, onChoice, id }: Props) {
       : 'select__options'
   }
 
-  const handleBlur = (i: number) => {
-    if (i === choices.length - 1) setMenuIsOpen(false)
-  }
-
   const choicesList = useMemo(() => {
     return choices.map((choice, i) => (
-      <li
-        className="select__option nav-item"
-        data-value={choice.value}
-        key={choice.value}
-        onClick={handleChoice}
-        tabIndex={menuIsOpen ? 0 : -1}
-        onBlur={() => handleBlur(i)}
-      >
-        {choice.text}
-      </li>
+      <Option
+        key={i}
+        value={choice.value}
+        text={choice.text}
+        index={i}
+        choicesLength={choices.length}
+        menuIsOpen={menuIsOpen}
+        setMenuIsOpen={setMenuIsOpen}
+        onChoice={onChoice}
+      />
     ))
   }, [menuIsOpen])
 
   return (
-    <div ref={selectRef} className="select" onKeyDown={handleKeyboard}>
+    <div ref={selectRef} className="select">
       <button
         name="language"
         id="language"
