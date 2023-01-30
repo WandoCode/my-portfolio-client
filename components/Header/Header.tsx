@@ -1,6 +1,8 @@
 import ThemeSwitch from './ThemeSwitch'
 import LangSelection from './LangSelection'
 import { useState } from 'react'
+import Logo from '../../assets/Logo.svg'
+import Image from 'next/image'
 
 function Header() {
   const [openMenu, setOpenMenu] = useState(false)
@@ -20,12 +22,7 @@ function Header() {
       <div className="container">
         <nav className="nav">
           <div className="nav__logo-wrapper">
-            <img
-              className="nav__logo"
-              src="https://placeholder.pics/svg/45"
-              alt="Logo"
-            />
-            {/* Logo.svg = 1 svg avec le ""logo"" et mon nom (tout en un) */}
+            <Image className="nav__logo" src={Logo} alt="Logo" />
           </div>
           <div className={navContentClass()}>
             <ul className="nav__links">
@@ -53,7 +50,7 @@ function Header() {
             <div className="nav__dark-light-switch">
               <ThemeSwitch />
             </div>
-            <div className="nav__lang-choice fc-neutral-550">
+            <div className="nav__lang-choice">
               <LangSelection />
             </div>
           </div>

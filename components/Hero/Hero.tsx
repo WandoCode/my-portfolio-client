@@ -10,8 +10,8 @@ function Hero() {
           />
         </div>
         <div className="hero__content">
-          <p className="subtitle fc-neutral-500 fs-500">Développeur Frontend</p>
-          <h1 className="fs-800 fc-neutral-700">Maxime Chirez</h1>
+          <p className="subtitle fc-neutral-350 fs-350">Développeur Frontend</p>
+          <h1 className="h1">Maxime Chirez</h1>
           <p className="hero__description">
             Fusce tempor magna mi, non egestas velit ultricies nec. Aenean
             convallis, risus non condimentum gravida, odio mauris ullamcorper
