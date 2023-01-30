@@ -1,11 +1,35 @@
 import ThemeSwitch from './ThemeSwitch'
 import LangSelection from './LangSelection'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Logo from '../../assets/Logo.svg'
 import Image from 'next/image'
 
 function Header() {
+  let windowPos = 0
   const [openMenu, setOpenMenu] = useState(false)
+  const [windowDir, setWindowDir] = useState<'up' | 'down'>('up')
+  const [windowOnTop, setWindowOnTop] = useState(true)
+
+  useEffect(() => {
+    windowPos = window.scrollY // Get start position (usually 0)
+    setWindowOnTop(windowPos === 0)
+
+    window.addEventListener('scroll', getScrollDirection)
+
+    return () => {
+      window.removeEventListener('scroll', getScrollDirection)
+    }
+  }, [])
+
+  const getScrollDirection = (e: Event) => {
+    const currPos = window.scrollY
+    if (currPos - windowPos < 0) setWindowDir('up')
+    else setWindowDir('down')
+
+    setWindowOnTop(currPos === 0)
+
+    windowPos = currPos
+  }
 
   const burgerClass = () => {
     return openMenu ? 'active' : 'unactive'
@@ -17,10 +41,18 @@ function Header() {
     return name
   }
 
+  const navContainerClass = () => {
+    if (openMenu) return 'container-nav container-nav--scroll-up'
+    else
+      return windowDir === 'up'
+        ? 'container-nav container-nav--scroll-up'
+        : 'container-nav'
+  }
+
   return (
     <header className="header">
-      <div className="container">
-        <nav className="nav">
+      <div className={navContainerClass()}>
+        <nav className={windowOnTop ? 'nav nav--on-top' : 'nav'}>
           <div className="nav__logo-wrapper">
             <Image className="nav__logo" src={Logo} alt="Logo" />
           </div>

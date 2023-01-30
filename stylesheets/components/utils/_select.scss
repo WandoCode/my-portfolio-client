@@ -27,10 +27,17 @@
     top: 100%;
     left: 0;
     right: 25%;
+
+    display: grid;
+
     height: 0;
+
     overflow: hidden;
-    transition: 0.25s;
+
     background-color: var(--clr-neutral-250);
+    border-radius: 0 0 4px 4px;
+    transition: 0.25s;
+
     &--open {
       height: 300%;
     }
