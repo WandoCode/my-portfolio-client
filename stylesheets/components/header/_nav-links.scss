@@ -1,0 +1,32 @@
+@use '../../abstracts/' as *;
+
+.nav-links {
+  $gap-lg: rem(45);
+  $gap-md: rem(32);
+
+  position: relative;
+  display: flex;
+  gap: $gap-lg;
+
+  @include breakpoint-down(large) {
+    display: grid;
+    gap: $gap-md;
+  }
+
+  &__slider {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    margin: 0;
+    border-bottom: 2px solid var(--clr-neutral-700);
+    transition: 0.5s;
+  }
+
+  &__item--active {
+    color: var(--clr-neutral-700);
+  }
+
+  &__link {
+    padding-block: rem(8);
+  }
+}

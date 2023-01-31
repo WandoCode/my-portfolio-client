@@ -3,6 +3,7 @@ import LangSelection from './LangSelection'
 import { useState, useEffect } from 'react'
 import Logo from '../../assets/Logo.svg'
 import Image from 'next/image'
+import NavLinks from './NavLinks'
 
 function Header() {
   let windowPos = 0
@@ -57,28 +58,7 @@ function Header() {
             <Image className="nav__logo" src={Logo} alt="Logo" />
           </div>
           <div className={navContentClass()}>
-            <ul className="nav__links">
-              <li className="nav__item">
-                <a href="#hero" className="nav__link nav-item ">
-                  Home
-                </a>
-              </li>
-              <li className="nav__item">
-                <a href="#projects" className="nav__link nav-item">
-                  Projets
-                </a>
-              </li>
-              <li className="nav__item">
-                <a href="#skills" className="nav__link nav-item">
-                  Compétences
-                </a>
-              </li>
-              <li className="nav__item">
-                <a href="#contact" className="nav__link nav-item">
-                  Contact
-                </a>
-              </li>
-            </ul>
+            <NavLinks />
             <div className="nav__dark-light-switch">
               <ThemeSwitch />
             </div>
@@ -112,4 +92,3 @@ function Header() {
 }
 
 export default Header
-// todo: ajouter un bouton 'go top' pour le DESKTOP uniquement (mobile/tablet, le menu suit l'utilisateur)

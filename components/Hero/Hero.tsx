@@ -1,6 +1,6 @@
 function Hero() {
   return (
-    <section className="hero">
+    <section className="hero" id="hero">
       <div className="container">
         <div className="hero__img-container">
           <img
