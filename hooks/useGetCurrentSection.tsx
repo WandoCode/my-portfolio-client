@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-function useGetCurrentSection() {
+function useGetCurrentSection(initialSection: string) {
   const [currentSection, setCurrentSection] = useState<string>()
   const [sectionsYPos, setSectionsYPos] = useState<
     {
@@ -32,6 +32,7 @@ function useGetCurrentSection() {
       }
 
       setSectionsYPos((prevVal) => [...prevVal, newSectionYPos])
+      setCurrentSection(initialSection)
     })
   }, [])
 

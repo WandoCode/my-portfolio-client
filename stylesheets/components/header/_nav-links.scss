@@ -20,6 +20,9 @@
     margin: 0;
     border-bottom: 2px solid var(--clr-neutral-700);
     transition: 0.5s;
+    @include breakpoint-down(large) {
+      display: none;
+    }
   }
 
   &__item--active {

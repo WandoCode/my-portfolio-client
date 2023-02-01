@@ -2,7 +2,7 @@ import useGetCurrentSection from '../../hooks/useGetCurrentSection'
 import { useRef, useEffect, useState } from 'react'
 
 function NavLinks() {
-  const activeSection = useGetCurrentSection()
+  const activeSection = useGetCurrentSection('hero')
   const heroRef = useRef<HTMLAnchorElement>(null)
   const projectsRef = useRef<HTMLAnchorElement>(null)
   const skillsRef = useRef<HTMLAnchorElement>(null)
@@ -10,6 +10,7 @@ function NavLinks() {
   const listSliderRef = useRef<HTMLUListElement>(null)
 
   const [dimensions, setDimensions] = useState<any>()
+
   const listClass = () => {
     let name = 'nav-links'
     return activeSection ? `${name} ${name}--${activeSection}` : name
