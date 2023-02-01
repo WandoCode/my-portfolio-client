@@ -15,8 +15,8 @@ function ThemeSwitch() {
 
   return (
     <form className="switch">
-      <Image src={sun} alt="light theme icon" />
-      <Image src={moon} alt="dark theme icon" />
+      <Image src={sun} alt="light theme icon" width={20} height={12} />
+      <Image src={moon} alt="dark theme icon" width={20} height={12} />
       <input
         className="visually-hidden switch__input"
         type="checkbox"

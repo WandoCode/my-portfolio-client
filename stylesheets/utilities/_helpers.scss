@@ -37,8 +37,10 @@
       translate: 0;
     }
 
-    & .nav {
-      padding-block: rem(0);
+    @include breakpoint(large) {
+      & .nav {
+        padding-block: rem(25);
+      }
     }
   }
 }
@@ -86,4 +88,8 @@
   @include breakpoint(large) {
     display: none;
   }
+}
+
+.img-wrapper {
+  position: relative;
 }

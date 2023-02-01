@@ -54,8 +54,8 @@ function Header() {
     <header className="header">
       <div className={navContainerClass()}>
         <nav className={windowOnTop ? 'nav nav--on-top' : 'nav'}>
-          <div className="nav__logo-wrapper">
-            <Image className="nav__logo" src={Logo} alt="Logo" />
+          <div className="nav__logo-wrapper img-wrapper">
+            <Image className="nav__logo" src={Logo} alt="Logo" fill={true} />
           </div>
           <div className={navContentClass()}>
             <NavLinks />

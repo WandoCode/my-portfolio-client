@@ -13,8 +13,6 @@
 
   min-height: rem(50);
 
-  padding-block: rem(25);
-
   border-bottom: 1px var(--clr-neutral-250) solid;
 
   background-color: var(--clr-neutral-100);
@@ -82,6 +80,10 @@
     }
   }
 
+  &__logo-wrapper {
+    width: rem(40);
+    aspect-ratio: 1;
+  }
   &__link {
     padding-block: rem(8);
   }
