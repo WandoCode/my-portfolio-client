@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-function useGetCurrentSection(initialSection: string) {
+function useGetCurrentSection() {
   const [currentSection, setCurrentSection] = useState<string>()
   const [sectionsYPos, setSectionsYPos] = useState<
     {
@@ -10,12 +10,16 @@ function useGetCurrentSection(initialSection: string) {
     }[]
   >([])
 
-  const handleScroll = () => {
+  const findAndSetCurrentSection = () => {
     const windowYPos = window.scrollY
+
+    if (windowYPos === 0 && sectionsYPos.length > 0)
+      return setCurrentSection(sectionsYPos[0].id)
 
     const inSection = sectionsYPos.find(
       (section) =>
-        section.yPos < windowYPos && section.yPos + section.height >= windowYPos
+        section.yPos < windowYPos + 100 &&
+        section.yPos + section.height >= windowYPos + 100
     )
 
     if (inSection) setCurrentSection(inSection.id)
@@ -32,14 +36,15 @@ function useGetCurrentSection(initialSection: string) {
       }
 
       setSectionsYPos((prevVal) => [...prevVal, newSectionYPos])
-      setCurrentSection(initialSection)
     })
   }, [])
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
+    findAndSetCurrentSection()
+
+    window.addEventListener('scroll', findAndSetCurrentSection)
     return () => {
-      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('scroll', findAndSetCurrentSection)
     }
   }, [sectionsYPos])
 

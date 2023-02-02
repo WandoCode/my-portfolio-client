@@ -2,14 +2,14 @@ import useGetCurrentSection from '../../hooks/useGetCurrentSection'
 import { useRef, useEffect, useState } from 'react'
 
 function NavLinks() {
-  const activeSection = useGetCurrentSection('hero')
+  const activeSection = useGetCurrentSection()
   const heroRef = useRef<HTMLAnchorElement>(null)
   const projectsRef = useRef<HTMLAnchorElement>(null)
   const skillsRef = useRef<HTMLAnchorElement>(null)
   const contactRef = useRef<HTMLAnchorElement>(null)
   const listSliderRef = useRef<HTMLUListElement>(null)
 
-  const [dimensions, setDimensions] = useState<any>()
+  const [LinksDimensions, setLinksDimensions] = useState<any>()
 
   const listClass = () => {
     let name = 'nav-links'
@@ -17,7 +17,7 @@ function NavLinks() {
   }
 
   useEffect(() => {
-    setDimensions({
+    setLinksDimensions({
       hero: {
         start: heroRef.current?.offsetLeft,
         width: heroRef.current?.offsetWidth,
@@ -39,8 +39,8 @@ function NavLinks() {
 
   useEffect(() => {
     if (listSliderRef.current && activeSection) {
-      listSliderRef.current.style.width = `${dimensions[activeSection].width}px`
-      listSliderRef.current.style.marginLeft = `${dimensions[activeSection].start}px`
+      listSliderRef.current.style.width = `${LinksDimensions[activeSection].width}px`
+      listSliderRef.current.style.marginLeft = `${LinksDimensions[activeSection].start}px`
     }
   }, [activeSection])
 
