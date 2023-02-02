@@ -1,0 +1,69 @@
+@use '../../abstracts/' as *;
+
+.hero {
+  &__container {
+    display: grid;
+    gap: rem(90) 2rem;
+    justify-items: center;
+
+    max-width: rem(1100);
+    margin: auto;
+
+    @include breakpoint(large) {
+      grid-template-columns: 1fr 1.25fr;
+      justify-items: stretch;
+    }
+  }
+
+  &__img-container {
+    max-width: rem(390);
+    aspect-ratio: 1;
+
+    overflow: hidden;
+    border-radius: 1000px;
+    border: 15px white solid;
+    box-shadow: 0px 0px 30px 7px rgba(0, 0, 0, 0.1);
+
+    & img {
+      width: 500px;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    display: grid;
+    align-content: center;
+    gap: rem(13);
+
+    max-width: rem(570);
+
+    & > *:not(:first-child, :last-child) {
+      margin-bottom: rem(26);
+    }
+  }
+
+  &__btns-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: rem(36);
+
+    margin-inline: auto;
+
+    @include breakpoint(medium) {
+      margin-inline: unset;
+
+      flex-direction: row;
+    }
+  }
+
+  &__btn {
+    min-width: rem(200);
+    margin-inline: 32px;
+
+    @include breakpoint(medium) {
+      min-width: rem(140);
+      margin-inline: 0;
+    }
+  }
+}

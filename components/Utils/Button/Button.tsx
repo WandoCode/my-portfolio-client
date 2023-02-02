@@ -8,7 +8,7 @@ interface Props extends PropsWithChildren {
 }
 function Button({ onclick, type, level, href, children, className }: Props) {
   const mainClass = className
-    ? `btn btn--${level} ${className}`
+    ? `${className} btn btn--${level}`
     : `btn btn--${level}`
 
   if (type === 'link')
