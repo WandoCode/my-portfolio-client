@@ -4,10 +4,10 @@ import { LanguageContext } from './LanguageContextProvider'
 import { allowedLanguage, LanguagesObject } from '../../constant/language'
 
 function LangSelection() {
-  const { language, setLanguage } = useContext(LanguageContext)
+  const { language, changeLanguage } = useContext(LanguageContext)
 
   const onChoice = (value: string) => {
-    setLanguage(value as LanguagesObject['value'])
+    changeLanguage(value as LanguagesObject['value'])
   }
 
   return (

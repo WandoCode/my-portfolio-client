@@ -1,15 +1,15 @@
 import { createContext, PropsWithChildren, useState, useEffect } from 'react'
-import { LanguagesObject } from '../../constant/language'
+import { LanguageAvailable, LanguagesObject } from '../../constant/language'
 import languageStore from '../../stores/language'
 
 interface GlobalContextParams {
   language: LanguagesObject['value'] | null
-  setLanguage: (value: LanguagesObject['value']) => void
+  changeLanguage: (value: LanguagesObject['value']) => void
 }
 
 const defaultContext: GlobalContextParams = {
   language: null,
-  setLanguage: (value) => {},
+  changeLanguage: (value) => {},
 }
 
 export const LanguageContext = createContext(defaultContext)
@@ -18,11 +18,19 @@ function LanguageContextProvider({ children }: PropsWithChildren) {
   const [language, setLanguage] = useState(defaultContext.language)
 
   useEffect(() => {
-    setLanguage(languageStore.loadLanguage())
+    const savedLang = languageStore.loadLanguage()
+
+    if (savedLang) setLanguage(savedLang)
+    else setLanguage(languageStore.getBrowserLanguage())
   }, [])
 
+  const changeLanguage = (val: LanguageAvailable) => {
+    setLanguage(val)
+    languageStore.saveLanguage(val)
+  }
+
   return (
-    <LanguageContext.Provider value={{ language, setLanguage }}>
+    <LanguageContext.Provider value={{ language, changeLanguage }}>
       {children}
     </LanguageContext.Provider>
   )

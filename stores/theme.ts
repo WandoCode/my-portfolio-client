@@ -15,7 +15,12 @@ const themeStore = {
 
   loadTheme: () => {
     const theme = localStorage.getItem('theme')
-    if (themesValues.includes(theme as any)) return theme as ThemesValues
+
+    const themeIsAllowed = themesValues.find(
+      (allowedTheme) => allowedTheme == theme
+    )
+
+    if (themeIsAllowed) return theme as ThemesValues
     return null
   },
 }

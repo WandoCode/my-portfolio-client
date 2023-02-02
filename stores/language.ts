@@ -1,7 +1,11 @@
-import { allowedLanguage, LanguagesObject } from '../constant/language'
+import {
+  allowedLanguage,
+  LanguagesObject,
+  LanguageAvailable,
+} from '../constant/language'
 
 const languageStore = {
-  loadLanguage: () => {
+  getBrowserLanguage: () => {
     const navigatorLangValue = navigator.language.slice(0, 2)
 
     const compatibleDefaultLang = allowedLanguage.find(
@@ -11,6 +15,22 @@ const languageStore = {
     if (compatibleDefaultLang)
       return navigatorLangValue as LanguagesObject['value']
     else return 'en'
+  },
+
+  saveLanguage: (val: LanguageAvailable) => {
+    localStorage.setItem('lang', val)
+  },
+
+  loadLanguage: () => {
+    const lang = localStorage.getItem('lang')
+
+    const langIsAllowed = allowedLanguage.find(
+      (allowedLang) => allowedLang.value === lang
+    )
+
+    if (langIsAllowed) return lang as LanguageAvailable
+
+    return null
   },
 }
 

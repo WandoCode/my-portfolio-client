@@ -1,5 +1,7 @@
+export type LanguageAvailable = 'en' | 'fr' | 'es'
+
 export interface LanguagesObject {
-  value: 'en' | 'fr' | 'es'
+  value: LanguageAvailable
   text: string
 }
 
