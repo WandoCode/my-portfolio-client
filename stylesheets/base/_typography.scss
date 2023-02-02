@@ -16,6 +16,13 @@ h4 {
   color: var(--clr-neutral-700);
 }
 
+p {
+  line-height: rem(25);
+}
+
+.subtitle {
+  font-size: var(--fs-500);
+}
 .nav-item {
   color: var(--clr-neutral-550);
 
