@@ -1,13 +1,13 @@
 import Select from '../Utils/Select/Select'
 import { useContext } from 'react'
-import { GlobalContext } from '../../contexts/GlobalContextProvider'
+import { LanguageContext } from './LanguageContextProvider'
 import { allowedLanguage, LanguagesObject } from '../../constant/language'
 
 function LangSelection() {
-  const { language, changeLanguage } = useContext(GlobalContext)
+  const { language, setLanguage } = useContext(LanguageContext)
 
   const onChoice = (value: string) => {
-    changeLanguage(value as LanguagesObject['value'])
+    setLanguage(value as LanguagesObject['value'])
   }
 
   return (

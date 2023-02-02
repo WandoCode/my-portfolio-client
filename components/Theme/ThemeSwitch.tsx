@@ -2,10 +2,10 @@ import { ChangeEvent, useState, useContext } from 'react'
 import sun from '../../assets/sun.svg'
 import moon from '../../assets/moon.svg'
 import Image from 'next/image'
-import { GlobalContext } from '../../contexts/GlobalContextProvider'
+import { ThemeContext } from './ThemeContextProvidor'
 
 function ThemeSwitch() {
-  const { theme, changeTheme } = useContext(GlobalContext)
+  const { theme, changeTheme } = useContext(ThemeContext)
 
   const handleSwitch = (e: ChangeEvent<HTMLInputElement>) => {
     const isChecked = e.target.checked

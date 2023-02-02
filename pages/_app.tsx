@@ -1,12 +1,15 @@
 import { AppProps } from 'next/app'
 import '../stylesheets/main.scss'
-import GlobalContextProvider from '../contexts/GlobalContextProvider'
+import LanguageContextProvider from '../components/Language/LanguageContextProvider'
+import ThemeContextProvidor from '../components/Theme/ThemeContextProvidor'
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <GlobalContextProvider>
-      <Component {...pageProps} />
-    </GlobalContextProvider>
+    <LanguageContextProvider>
+      <ThemeContextProvidor>
+        <Component {...pageProps} />
+      </ThemeContextProvidor>
+    </LanguageContextProvider>
   )
 }
 
