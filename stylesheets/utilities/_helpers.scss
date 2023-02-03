@@ -21,6 +21,7 @@
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1;
 
   margin-inline: auto;
 
@@ -95,6 +96,11 @@
 }
 
 .flow {
-  margin-top: rem(120);
-  margin-bottom: rem(200);
+  margin-top: rem(80);
+  margin-bottom: rem(160);
+
+  @include breakpoint(medium) {
+    margin-top: rem(120);
+    margin-bottom: rem(200);
+  }
 }

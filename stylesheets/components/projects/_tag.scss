@@ -1,0 +1,10 @@
+@use '../../abstracts/' as *;
+
+.tag {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: 1.7em;
+  padding-inline: 0.8em;
+  border-radius: rem(5);
+}

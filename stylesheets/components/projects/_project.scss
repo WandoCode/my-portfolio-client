@@ -1,0 +1,50 @@
+@use '../../abstracts/' as *;
+
+.project {
+  --flow: 2.375rem;
+  position: relative;
+  display: grid;
+  justify-content: center;
+
+  &__img-container {
+    position: absolute;
+    inset: 0;
+    aspect-ratio: 1;
+    z-index: -1;
+    translate: 0 -75%;
+  }
+
+  &__content {
+    padding-block: var(--flow);
+    margin-inline: $margin-sm;
+    max-width: rem(350);
+    padding-inline: 2 * $margin-sm;
+
+    background-color: var(--clr-neutral-100);
+    box-shadow: 0px 0px 30px 7px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+
+    & > *:not(:first-child) {
+      margin-top: var(--flow);
+    }
+  }
+
+  &__features-wrapper {
+    display: grid;
+    gap: rem(16);
+    list-style: disc;
+    margin-left: 1.5 * $margin-sm;
+  }
+
+  &__skills-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(8);
+  }
+
+  &__links {
+    display: flex;
+    gap: rem(15);
+    justify-content: flex-end;
+  }
+}

@@ -1,3 +1,15 @@
+@use '../../abstracts/' as *;
+
 .projects {
-  min-height: 1800px;
+  &__container {
+    & > *:not(:nth-child(2)):not(:first-child) {
+      margin-top: rem(100);
+    }
+
+    @include breakpoint-down(medium) {
+      display: grid;
+      gap: 80vw;
+      width: 100%; // container utility class only desactivated for mobile
+    }
+  }
 }
