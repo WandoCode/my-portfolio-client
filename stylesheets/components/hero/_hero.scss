@@ -46,20 +46,19 @@
   &__btns-wrapper {
     display: flex;
     flex-direction: column;
-    gap: rem(36);
+    gap: rem(24);
 
     margin-inline: auto;
 
     @include breakpoint(medium) {
-      margin-inline: unset;
-
       flex-direction: row;
+      gap: rem(36);
+      margin-inline: 0;
     }
   }
 
   &__btn {
     min-width: rem(200);
-    margin-inline: 32px;
 
     @include breakpoint(medium) {
       min-width: rem(140);

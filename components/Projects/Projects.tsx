@@ -7,7 +7,7 @@ function Projects() {
   return (
     <section className="projects" id="projects">
       <div className="container">
-        <h2 className="h2 fs-600">Projets</h2>
+        <h2 className="h2 heading-section">Projets</h2>
         {projectsDOM}
       </div>
     </section>

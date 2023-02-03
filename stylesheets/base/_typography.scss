@@ -22,6 +22,11 @@ h4 {
   line-height: 120%;
 }
 
+.h2 {
+  font-size: var(--fs-700);
+  font-weight: bold;
+}
+
 p {
   line-height: rem(25);
 }

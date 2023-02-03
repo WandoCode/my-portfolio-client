@@ -1,0 +1,44 @@
+@use '../abstracts/' as *;
+
+.heading-section {
+  padding-block: rem(15);
+  position: relative;
+
+  width: fit-content;
+  margin-inline: auto;
+
+  @include breakpoint(medium) {
+    padding-inline: rem(30);
+  }
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    translate: -50% 0;
+    width: rem(50);
+    height: 2px;
+    background-color: var(--clr-primary-400);
+  }
+
+  &:before {
+    top: 0;
+
+    @include breakpoint(medium) {
+      right: 100%;
+      left: auto;
+      top: 50%;
+      translate: 0 -50%;
+    }
+  }
+
+  &:after {
+    bottom: 0;
+
+    @include breakpoint(medium) {
+      left: 100%;
+      bottom: 50%;
+      translate: 0 50%;
+    }
+  }
+}
