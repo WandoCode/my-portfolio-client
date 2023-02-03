@@ -8,7 +8,11 @@ function Projects() {
   const projectsDOM = useMemo(
     () =>
       projectsDatas.map((projectDatas: any, i) => (
-        <Project datas={projectDatas} key={i} />
+        <Project
+          datas={projectDatas}
+          side={i % 2 === 0 ? 'left' : 'right'}
+          key={i}
+        />
       )),
     []
   )

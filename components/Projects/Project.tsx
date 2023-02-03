@@ -7,9 +7,10 @@ import { ProjectDatas } from '../../constant/projects'
 
 interface Props {
   datas: ProjectDatas
+  side: 'left' | 'right'
 }
 
-function Project({ datas }: Props) {
+function Project({ datas, side }: Props) {
   const featuresDom = useMemo(() => {
     return (
       <>
@@ -34,7 +35,7 @@ function Project({ datas }: Props) {
 
   return (
     <article className="project">
-      <div className="project__img-container">
+      <div className={`project__img-container project__img-container--${side}`}>
         <Image
           src={datas.urlPreview}
           fill={true}
@@ -42,8 +43,10 @@ function Project({ datas }: Props) {
           className="project__img"
         />
       </div>
-      <div className="project__content">
-        <h3 className="h3 project__title fs-600">Audiophile</h3>
+      <div className={`project__content project__content--${side}`}>
+        <h3 className={`project__title project__title--${side} h3 fs-600`}>
+          Audiophile
+        </h3>
         <p className="project__description">{datas.description}</p>
 
         <ul className="project__features-wrapper">{featuresDom}</ul>
