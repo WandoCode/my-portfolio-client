@@ -1,0 +1,30 @@
+{
+  "projects": [
+    {
+      "title": "Audiophile",
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi.",
+      "features": ["Custom toast", "CMS Strapi", "Ect."],
+      "tags": [
+        { "text": "React", "color": "#FACF0F" },
+        { "text": "React Context", "color": "#57B8FF" },
+        { "text": "Sass/BEM", "color": "#FF7F57" }
+      ],
+      "urlLive": "#",
+      "urlGithub": "#",
+      "urlPreview": "https://via.placeholder.com/380"
+    },
+    {
+      "title": "Audiophile",
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi.",
+      "features": ["Custom toast", "CMS Strapi", "Ect."],
+      "tags": [
+        { "text": "React", "color": "#FACF0F" },
+        { "text": "React Context", "color": "#57B8FF" },
+        { "text": "Sass/BEM", "color": "#FF7F57" }
+      ],
+      "urlLive": "#",
+      "urlGithub": "#",
+      "urlPreview": "https://via.placeholder.com/380"
+    }
+  ]
+}
