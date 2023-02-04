@@ -3,9 +3,11 @@
 // NB: Desktop first for this page
 
 .nav {
-  $gap-lg: rem(45);
-  $gap-md: rem(32);
-  $gap-sm: rem(24);
+  --gap: 2rem;
+
+  @include breakpoint-down(large) {
+    --gap: 1.5rem;
+  }
 
   display: flex;
   justify-content: space-between;
@@ -13,7 +15,7 @@
 
   min-height: rem(50);
 
-  padding-inline: 8vw;
+  padding-inline: max(calc(20% - 200px), $margin-lg);
 
   border-bottom: 1px var(--clr-neutral-250) solid;
 
@@ -40,7 +42,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: $gap-lg;
+    gap: rem(32);
 
     @include breakpoint-down(large) {
       position: fixed;
@@ -50,7 +52,7 @@
 
       flex-direction: column;
       align-items: flex-start;
-      gap: $gap-md;
+      gap: var(--gap);
 
       padding: (2 * $margin-md);
       padding-bottom: $margin-md;
@@ -74,11 +76,11 @@
 
   &__links {
     display: flex;
-    gap: $gap-lg;
+    gap: var(--gap);
 
     @include breakpoint-down(large) {
       display: grid;
-      gap: $gap-md;
+      gap: var(--gap);
     }
   }
 

@@ -90,6 +90,17 @@ function NavLinks() {
             : 'nav-links__item'
         }
       >
+        <a ref={contactRef} href="#about" className="nav-links__link nav-item">
+          Qui suis-je?
+        </a>
+      </li>
+      <li
+        className={
+          activeSection === 'contact'
+            ? 'nav-links__item nav-links__item--active'
+            : 'nav-links__item'
+        }
+      >
         <a
           ref={contactRef}
           href="#contact"

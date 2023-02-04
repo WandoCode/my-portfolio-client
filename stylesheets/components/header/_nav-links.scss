@@ -4,7 +4,7 @@
 .nav-links {
   position: relative;
   display: flex;
-  gap: rem(45);
+  gap: var(--gap);
 
   @include breakpoint-down(large) {
     display: grid;
