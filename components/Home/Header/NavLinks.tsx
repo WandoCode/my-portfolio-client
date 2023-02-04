@@ -6,6 +6,7 @@ function NavLinks() {
   const heroRef = useRef<HTMLAnchorElement>(null)
   const projectsRef = useRef<HTMLAnchorElement>(null)
   const skillsRef = useRef<HTMLAnchorElement>(null)
+  const aboutRef = useRef<HTMLAnchorElement>(null)
   const contactRef = useRef<HTMLAnchorElement>(null)
   const listSliderRef = useRef<HTMLUListElement>(null)
 
@@ -29,6 +30,10 @@ function NavLinks() {
       skills: {
         start: skillsRef.current?.offsetLeft,
         width: skillsRef.current?.offsetWidth,
+      },
+      about: {
+        start: aboutRef.current?.offsetLeft,
+        width: aboutRef.current?.offsetWidth,
       },
       contact: {
         start: contactRef.current?.offsetLeft,
@@ -90,7 +95,7 @@ function NavLinks() {
             : 'nav-links__item'
         }
       >
-        <a ref={contactRef} href="#about" className="nav-links__link nav-item">
+        <a ref={aboutRef} href="#about" className="nav-links__link nav-item">
           Qui suis-je?
         </a>
       </li>

@@ -3,7 +3,7 @@ import aboutImg from '../../../assets/aboutImg.png'
 
 function About() {
   return (
-    <section className="about flow-bottom">
+    <section className="about flow-bottom" id="about">
       <div className="container">
         <h2 className="h2 heading-section about__title fc-neutral-300">
           Qui suis-je?
