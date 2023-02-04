@@ -3,15 +3,24 @@
 .projects {
   &__container {
     display: grid;
-    gap: $mb-title-lg;
-
-    & > *:not(:nth-child(2)):not(:first-child) {
-      margin-top: rem(100);
-    }
+    gap: rem(100);
 
     @include breakpoint-down(medium) {
       gap: 80vw;
-      width: 100%; // container utility class only desactivated for mobile
+      width: 100%; // desactivate container utility class for mobile
+    }
+
+    @include breakpoint(medium) {
+      gap: rem(150);
+    }
+  }
+
+  &__body {
+    display: grid;
+    gap: 100vw;
+
+    @include breakpoint(medium) {
+      gap: rem(300);
     }
   }
 }

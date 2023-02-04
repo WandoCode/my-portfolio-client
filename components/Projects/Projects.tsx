@@ -21,7 +21,7 @@ function Projects() {
     <section className="projects" id="projects">
       <div className="container projects__container flow">
         <h2 className="h2 heading-section">Projets</h2>
-        {projectsDOM}
+        <div className="projects__body">{projectsDOM}</div>
       </div>
     </section>
   )

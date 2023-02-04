@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import GithubIcon from '../../assets/GithubIcon.svg'
 import WebIcon from '../../assets/WebIcon.svg'
-import { useMemo, useCallback } from 'react'
+import { useMemo } from 'react'
 import Tag from './Tag'
 import { ProjectDatas } from '../../constant/projects'
 
@@ -12,25 +12,17 @@ interface Props {
 
 function Project({ datas, side }: Props) {
   const featuresDom = useMemo(() => {
-    return (
-      <>
-        {datas.features.map((feature, i) => (
-          <li className="project__feature" key={i}>
-            {feature}
-          </li>
-        ))}
-      </>
-    )
+    return datas.features.map((feature, i) => (
+      <li className="project__feature" key={i}>
+        {feature}
+      </li>
+    ))
   }, [datas])
 
   const skillsDom = useMemo(() => {
-    return (
-      <>
-        {datas.tags.map((tag, i) => (
-          <Tag text={tag.text} color={tag.color} key={i} />
-        ))}
-      </>
-    )
+    return datas.tags.map((tag, i) => (
+      <Tag text={tag.text} color={tag.color} key={i} />
+    ))
   }, [datas])
 
   return (
