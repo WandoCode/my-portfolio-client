@@ -1,3 +1,22 @@
+@use '../../abstracts/' as *;
 .skills {
-  min-height: 1800px;
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: rem(80);
+
+    margin-inline: rem(24);
+
+    @include breakpoint(medium) {
+      gap: rem(120);
+
+      margin-inline: rem(32);
+    }
+    @include breakpoint(large) {
+      justify-content: center;
+
+      gap: rem(100) rem(150);
+    }
+  }
 }

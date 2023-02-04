@@ -10,7 +10,7 @@ function Skills() {
     return skillsDatas.map((datas, i) => <SkillItem datas={datas} key={i} />)
   }, [])
   return (
-    <section className="skills" id="skills">
+    <section className="skills container flow" id="skills">
       <h2 className="h2 heading-section skills__title">Compétences</h2>
       <ul className="skills__list">{skillItemsDOM}</ul>
     </section>

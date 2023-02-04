@@ -1,0 +1,42 @@
+@use '../../abstracts/' as *;
+
+.skill {
+  position: relative;
+
+  display: grid;
+  justify-items: center;
+
+  &__img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: rem(90);
+    height: rem(90);
+
+    border-radius: 1000px;
+
+    box-shadow: 0px 0px 30px 7px rgba(0, 0, 0, 0.08);
+  }
+
+  &__rating {
+    position: absolute;
+    left: 70%;
+    width: fit-content;
+
+    display: flex;
+    gap: rem(2);
+  }
+
+  &__title {
+    position: relative;
+    margin-top: rem(24);
+  }
+
+  &__title-text {
+    position: absolute;
+    translate: -50% 0;
+
+    width: max-content;
+  }
+}

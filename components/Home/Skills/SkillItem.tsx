@@ -24,7 +24,9 @@ function SkillItem({ datas }: Props) {
 
     let rating = []
     for (let i = 0; i < ratingNumber; i++) {
-      rating.push(<Image src={crossIcon} width={20} height={20} alt="" />)
+      rating.push(
+        <Image src={crossIcon} width={15} height={15} alt="" key={i} />
+      )
     }
     return rating
   }
@@ -33,9 +35,11 @@ function SkillItem({ datas }: Props) {
     <li className="skill">
       {ratingNumber && <div className="skill__rating">{ratingDOM()}</div>}
       <div className="skill__img-container">
-        <Image src={datas.urlIcon} height={41} width={41} alt="" />
+        <Image src={datas.urlIcon} height={50} width={50} alt="" />
       </div>
-      <h3 className="h3 skill__title">{datas.title}</h3>
+      <h3 className="h3 skill__title">
+        <span className="skill__title-text">{datas.title}</span>
+      </h3>
     </li>
   )
 }
