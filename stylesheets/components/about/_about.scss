@@ -1,0 +1,57 @@
+@use '../../abstracts/' as *;
+
+.about {
+  position: relative;
+
+  margin-top: $flow-top-sm;
+
+  background-color: var(--clr-neutral-800);
+
+  @include breakpoint(medium) {
+    margins-top: $flow-top-lg;
+  }
+
+  &:before {
+    content: '';
+    z-index: -1;
+
+    position: absolute;
+    inset: 0;
+    translate: 0 -$flow-top-sm;
+
+    background-image: url(../../../assets/section-bg.svg);
+    background-repeat: repeat-x;
+    background-position-x: center;
+
+    @include breakpoint(medium) {
+      padding-top: $flow-top-lg;
+    }
+  }
+
+  &__body {
+    display: grid;
+    justify-items: center;
+    gap: rem(70);
+
+    @include breakpoint(large) {
+      gap: rem(110);
+      grid-template-columns: auto 1fr;
+      align-items: center;
+    }
+  }
+
+  &__img-container {
+    overflow: hidden;
+    border-radius: 8px;
+
+    @include breakpoint(large) {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+
+    & img {
+      height: auto;
+      aspect-ratio: 1;
+    }
+  }
+}

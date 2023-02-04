@@ -96,11 +96,26 @@
 }
 
 .flow {
-  margin-top: rem(80);
-  margin-bottom: rem(160);
+  padding-top: rem(80);
+  padding-bottom: rem(120);
 
   @include breakpoint(medium) {
-    margin-top: rem(120);
-    margin-bottom: rem(200);
+    padding-top: rem(120);
+    padding-bottom: rem(150);
+  }
+}
+
+.flow-bottom {
+  padding-bottom: $flow-bt-sm;
+
+  @include breakpoint(medium) {
+    padding-bottom: $flow-bt-lg;
+  }
+}
+.flow-top {
+  padding-top: $flow-top-sm;
+
+  @include breakpoint(medium) {
+    padding-top: $flow-top-lg;
   }
 }
