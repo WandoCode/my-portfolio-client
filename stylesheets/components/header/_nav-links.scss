@@ -1,25 +1,27 @@
 @use '../../abstracts/' as *;
 
+// !!Desktop first!!
 .nav-links {
-  $gap-lg: rem(45);
-  $gap-md: rem(32);
-
   position: relative;
   display: flex;
-  gap: $gap-lg;
+  gap: rem(45);
 
   @include breakpoint-down(large) {
     display: grid;
-    gap: $gap-md;
+    gap: rem(32);
   }
 
   &__slider {
     position: absolute;
-    bottom: 0;
+    bottom: -3px;
+
     width: 0;
     margin: 0;
-    border-bottom: 2px solid var(--clr-neutral-700);
+
+    border-bottom: 1px solid var(--clr-neutral-700);
+
     transition: 0.5s;
+
     @include breakpoint-down(large) {
       display: none;
     }
