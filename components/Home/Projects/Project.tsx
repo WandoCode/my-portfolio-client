@@ -1,9 +1,9 @@
 import Image from 'next/image'
-import GithubIcon from '../../assets/GithubIcon.svg'
-import WebIcon from '../../assets/WebIcon.svg'
+import GithubIcon from '../../../assets/GithubIcon.svg'
+import WebIcon from '../../../assets/WebIcon.svg'
 import { useMemo } from 'react'
 import Tag from './Tag'
-import { ProjectDatas } from '../../constant/projects'
+import { ProjectDatas } from '../../../constant/projects'
 
 interface Props {
   datas: ProjectDatas
@@ -30,7 +30,8 @@ function Project({ datas, side }: Props) {
       <div className={`project__img-container project__img-container--${side}`}>
         <Image
           src={datas.urlPreview}
-          fill={true}
+          height={500}
+          width={500}
           alt=""
           className="project__img"
         />

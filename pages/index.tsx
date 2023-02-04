@@ -1,9 +1,9 @@
-import Header from '../components/Header/Header'
-import Hero from '../components/Hero/Hero'
-import Projects from '../components/Projects/Projects'
-import Skills from '../components/Skills/Skills'
-import Contact from '../components/Contact/Contact'
-import Footer from '../components/Footer/Footer'
+import Header from '../components/Home/Header/Header'
+import Hero from '../components/Home/Hero/Hero'
+import Projects from '../components/Home/Projects/Projects'
+import Skills from '../components/Home/Skills/Skills'
+import Contact from '../components/Home/Contact/Contact'
+import Footer from '../components/Home/Footer/Footer'
 
 function App() {
   return (
@@ -24,3 +24,4 @@ function App() {
 }
 
 export default App
+// TODO: button to go top

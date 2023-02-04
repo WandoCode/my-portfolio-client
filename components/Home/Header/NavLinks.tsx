@@ -1,4 +1,4 @@
-import useGetCurrentSection from '../../hooks/useGetCurrentSection'
+import useGetCurrentSection from '../../../hooks/useGetCurrentSection'
 import { useRef, useEffect, useState } from 'react'
 
 function NavLinks() {
