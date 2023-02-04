@@ -1,6 +1,16 @@
 @use '../../abstracts/' as *;
 
 .projects {
+  background: linear-gradient(
+      rgba(255, 255, 255, 1) 5%,
+      rgba(255, 255, 255, 0.8) 10%,
+      rgba(255, 255, 255, 0.8) 90%,
+      rgba(255, 255, 255, 1) 100%
+    ),
+    url(../../../assets/common-bg.svg);
+
+  isolation: isolate;
+  padding-block: 1px; // Activate the margin for .flow
   &__container {
     display: grid;
     gap: rem(100);

@@ -112,11 +112,23 @@
     display: flex;
     gap: rem(8);
     flex-wrap: wrap;
+    align-items: center;
   }
 
   &__links {
     display: flex;
     gap: rem(15);
-    justify-content: flex-end;
+    flex-shrink: 0;
+  }
+
+  &__footer {
+    display: grid;
+    justify-content: space-between;
+    gap: var(--flow);
+
+    @include breakpoint(medium) {
+      grid-template-columns: auto auto;
+      gap: 1rem;
+    }
   }
 }

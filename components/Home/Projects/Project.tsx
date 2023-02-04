@@ -44,15 +44,17 @@ function Project({ datas, side }: Props) {
 
         <ul className="project__features-wrapper">{featuresDom}</ul>
 
-        <ul className="project__skills-wrapper">{skillsDom}</ul>
+        <div className="project__footer">
+          <ul className="project__skills-wrapper">{skillsDom}</ul>
 
-        <div className="project__links">
-          <a href="#" className="project__link">
-            <Image src={GithubIcon} width={32} height={32} alt="" />
-          </a>
-          <a href="#" className="project__link">
-            <Image src={WebIcon} width={32} height={32} alt="" />
-          </a>
+          <div className="project__links">
+            <a href="#" className="project__link">
+              <Image src={GithubIcon} width={32} height={32} alt="" />
+            </a>
+            <a href="#" className="project__link">
+              <Image src={WebIcon} width={32} height={32} alt="" />
+            </a>
+          </div>
         </div>
       </div>
     </article>
