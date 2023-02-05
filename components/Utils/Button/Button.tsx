@@ -1,8 +1,8 @@
-import { PropsWithChildren } from 'react'
+import { MouseEvent, PropsWithChildren } from 'react'
 interface Props extends PropsWithChildren {
   type: 'link' | 'button'
   level: 'primary' | 'secondary'
-  onclick?: () => void
+  onclick?: (e: MouseEvent<HTMLButtonElement>) => void
   href?: string
   className?: string
 }

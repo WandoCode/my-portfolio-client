@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from 'react'
+import { useState, ChangeEvent, MouseEvent, useEffect } from 'react'
 import Input from '../../../utils/form/Input'
 import Button from '../../Utils/Button/Button'
 function Contact() {
@@ -25,26 +25,37 @@ function Contact() {
     setFormDatas(newFormDatas)
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+
     let formIsValid = true
     for (const key in formDatas) {
       const fieldInput = formDatas[key]
       const errors = fieldInput.getValidationErrors()
 
-      if (errors.length === 0) {
+      if (errors.length !== 0) {
         formIsValid = false
         const newFormErros = { ...formErrors }
         newFormErros[key] = errors
-        setFormErrors(newFormErros)
+        setFormErrors((old) => {
+          const newFormErros = { ...old }
+          newFormErros[key] = errors
+          return newFormErros
+        })
       }
     }
 
     if (formIsValid) {
       // TODO: DO something (envoyer un email à mon adresse via le backend...)
+      // TODO:Vider le form
+      // TODO: afficher un message de validation
       return
     }
   }
 
+  useEffect(() => {
+    console.log(formErrors)
+  }, [formErrors])
   return (
     <section className="contact flow container" id="contact">
       <h2 className="h2 heading-section">Me contacter</h2>
@@ -52,6 +63,11 @@ function Contact() {
         <div className="contact__infos"></div>
         <form className="contat__form">
           <div className="form__label-control">
+            {formErrors.name.length > 0 && (
+              <div className="form__input-error">
+                {formErrors.name.join(' ')}
+              </div>
+            )}
             <label htmlFor="name">Nom complet*</label>
             <input
               type="text"
@@ -62,6 +78,11 @@ function Contact() {
             />
           </div>
           <div className="form__label-control">
+            {formErrors.email.length > 0 && (
+              <div className="form__input-error">
+                {formErrors.email.join(' ')}
+              </div>
+            )}
             <label htmlFor="email">Email*</label>
             <input
               type="email"
@@ -72,6 +93,11 @@ function Contact() {
             />
           </div>
           <div className="form__label-control">
+            {formErrors.object.length > 0 && (
+              <div className="form__input-error">
+                {formErrors.object.join(' ')}
+              </div>
+            )}
             <label htmlFor="object">Sujet</label>
             <input
               type="text"
@@ -82,6 +108,11 @@ function Contact() {
             />
           </div>
           <div className="form__label-control">
+            {formErrors.message.length > 0 && (
+              <div className="form__input-error">
+                {formErrors.message.join(' ')}
+              </div>
+            )}
             <label htmlFor="message">Message*</label>
             <textarea
               name="message"
