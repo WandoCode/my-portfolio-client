@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react'
-import chevron from '../../../assets/chevron.svg'
+import chevron from '../../../public/assets/chevron.svg'
 import Option from './Option'
 
 interface Props {

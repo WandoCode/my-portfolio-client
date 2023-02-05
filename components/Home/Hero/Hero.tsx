@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import heroImg from '../../../assets/hero__placeholder.png'
+import heroImg from '../../../public/assets/hero__placeholder.png'
 import Button from '../../Utils/Button/Button'
 
 function Hero() {

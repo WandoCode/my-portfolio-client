@@ -3,8 +3,8 @@ import Input from '../../../utils/form/Input'
 import Button from '../../Utils/Button/Button'
 import InputField from './InputField'
 import Info from './Info'
-import localisationIcon from '../../../assets/localisationIcon.svg'
-import emailIcon from '../../../assets/emailIcon.svg'
+import localisationIcon from '../../../public/assets/localisationIcon.svg'
+import emailIcon from '../../../public/assets/emailIcon.svg'
 
 function FormContact() {
   const [formIsValid, setFormIsValid] = useState<boolean>(true)

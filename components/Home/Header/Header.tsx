@@ -1,7 +1,7 @@
 import ThemeSwitch from '../../Theme/ThemeSwitch'
 import LangSelection from '../../Language/LangSelection'
 import { useState, useEffect } from 'react'
-import Logo from '../../../assets/Logo.svg'
+import Logo from '../../../public/assets/Logo.svg'
 import Image from 'next/image'
 import NavLinks from './NavLinks'
 

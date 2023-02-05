@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import GithubIcon from '../../../assets/GithubIcon.svg'
-import WebIcon from '../../../assets/WebIcon.svg'
+import GithubIcon from '../../../public/assets/GithubIcon.svg'
+import WebIcon from '../../../public/assets/WebIcon.svg'
 import { useMemo } from 'react'
 import Tag from './Tag'
 import { ProjectDatas } from '../../../constant/projects'
