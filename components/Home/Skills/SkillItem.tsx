@@ -12,7 +12,6 @@ function SkillItem({ datas }: Props) {
   const [ratingNumber, setRatingNumber] = useState<number>()
 
   useEffect(() => {
-    console.log(datas?.urlIcon)
     if (isInteger(datas.rating)) {
       setRatingNumber(parseInt(datas.rating, 10))
     } else {
@@ -32,16 +31,16 @@ function SkillItem({ datas }: Props) {
     return rating
   }
 
-  const myLoader = ({ src, width, quality }: ImageLoaderProps) => {
-    return `${src}`
-  }
+  // const myLoader = ({ src }: ImageLoaderProps) => {
+  //   return `${src}`
+  // }
 
   return (
     <li className="skill">
       {ratingNumber && <div className="skill__rating">{ratingDOM()}</div>}
       <div className="skill__img-container">
         <Image
-          loader={myLoader}
+          // loader={myLoader}
           src={datas.urlIcon}
           height={50}
           width={50}
