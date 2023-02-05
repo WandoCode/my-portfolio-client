@@ -15,7 +15,6 @@ function Document() {
           rel="stylesheet"
         />
         <script src="https://www.google.com/recaptcha/api.js"></script>
-        <script src="https://code.iconify.design/iconify-icon/1.0.3/iconify-icon.min.js"></script>
       </Head>
       <body>
         <Main />

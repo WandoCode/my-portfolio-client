@@ -12,6 +12,7 @@ function SkillItem({ datas }: Props) {
   const [ratingNumber, setRatingNumber] = useState<number>()
 
   useEffect(() => {
+    console.log(datas?.urlIcon)
     if (isInteger(datas.rating)) {
       setRatingNumber(parseInt(datas.rating, 10))
     } else {
