@@ -1,7 +1,9 @@
 import { useState, ChangeEvent, MouseEvent, useEffect } from 'react'
 import Input from '../../../utils/form/Input'
 import Button from '../../Utils/Button/Button'
+
 function Contact() {
+  const [formIsValid, setFormIsValid] = useState<boolean>(true)
   const [formDatas, setFormDatas] = useState<Record<string, Input>>({
     name: new Input('text', 'required'),
     email: new Input('email', 'required'),
@@ -28,22 +30,7 @@ function Contact() {
   const handleSubmit = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
 
-    let formIsValid = true
-    for (const key in formDatas) {
-      const fieldInput = formDatas[key]
-      const errors = fieldInput.getValidationErrors()
-
-      if (errors.length !== 0) {
-        formIsValid = false
-        const newFormErros = { ...formErrors }
-        newFormErros[key] = errors
-        setFormErrors((old) => {
-          const newFormErros = { ...old }
-          newFormErros[key] = errors
-          return newFormErros
-        })
-      }
-    }
+    validateFields()
 
     if (formIsValid) {
       // TODO: DO something (envoyer un email à mon adresse via le backend...)
@@ -53,9 +40,25 @@ function Contact() {
     }
   }
 
-  useEffect(() => {
-    console.log(formErrors)
-  }, [formErrors])
+  const validateFields = () => {
+    setFormIsValid(true)
+
+    for (const fieldName in formDatas) {
+      const fieldInput = formDatas[fieldName]
+      const errors = fieldInput.getValidationErrors()
+
+      if (errors.length !== 0) {
+        setFormIsValid(false)
+
+        setFormErrors((old) => {
+          const newFormErros = { ...old }
+          newFormErros[fieldName] = errors
+          return newFormErros
+        })
+      }
+    }
+  }
+
   return (
     <section className="contact flow container" id="contact">
       <h2 className="h2 heading-section">Me contacter</h2>
