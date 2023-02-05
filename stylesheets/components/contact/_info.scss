@@ -1,0 +1,14 @@
+.info {
+  position: relative;
+
+  display: flex;
+
+  & img {
+    position: absolute;
+    inset: 0;
+    top: 50%;
+    translate: calc(-100% - 0.875rem) -50%;
+    filter: brightness(0) saturate(100%) invert(17%) sepia(55%) saturate(0%)
+      hue-rotate(213deg) brightness(93%) contrast(92%);
+  }
+}
