@@ -31,16 +31,17 @@ function SkillItem({ datas }: Props) {
     return rating
   }
 
-  // const myLoader = ({ src }: ImageLoaderProps) => {
-  //   return `${src}`
-  // }
+  const myLoader = ({ src }: ImageLoaderProps) => {
+    return `${src}`
+  }
+  //TODO: Si je ne passe pas par l'api iconify => essayer sans le loader. Ne charge pas les icone sans ca sur Vercel uniquement (dev et prod local => okay)
 
   return (
     <li className="skill">
       {ratingNumber && <div className="skill__rating">{ratingDOM()}</div>}
       <div className="skill__img-container">
         <Image
-          // loader={myLoader}
+          loader={myLoader}
           src={datas.urlIcon}
           height={50}
           width={50}
