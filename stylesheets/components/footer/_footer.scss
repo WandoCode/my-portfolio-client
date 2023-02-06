@@ -1,0 +1,21 @@
+@use '../../abstracts/' as *;
+.footer {
+  padding-block: 4rem;
+  background-color: var(--clr-neutral-800);
+
+  &__container {
+    display: grid;
+    gap: rem(32);
+  }
+
+  &__text {
+    text-align: center;
+  }
+
+  &__links {
+    display: flex;
+    gap: rem(32);
+    margin-inline: auto;
+    width: fit-content;
+  }
+}
