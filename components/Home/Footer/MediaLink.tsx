@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image, { ImageLoaderProps } from 'next/image'
 
 interface Props {
   image: string
@@ -7,9 +7,18 @@ interface Props {
 }
 
 function MediaLink({ image, link, altText }: Props) {
+  const myLoader = ({ src, width, quality }: ImageLoaderProps) => {
+    return `${src}?w=${width}&q=${quality || 75}`
+  }
   return (
     <a href={link} className="media-link" target="_blank">
-      <Image src={image} width={32} height={32} alt={altText} />
+      <Image
+        loader={myLoader}
+        src={image}
+        width={32}
+        height={32}
+        alt={altText}
+      />
     </a>
   )
 }
