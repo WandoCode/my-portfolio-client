@@ -90,8 +90,13 @@
     width: rem(40);
     aspect-ratio: 1;
   }
+
   &__link {
     padding-block: rem(8);
+  }
+
+  &__lang-choice {
+    min-width: 3.5rem;
   }
 
   &__burger {

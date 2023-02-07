@@ -1,12 +1,14 @@
 .select {
   position: relative;
   user-select: none;
-  min-width: 3.5em;
 
   &__button {
     display: inline-flex;
     align-items: center;
+    justify-content: space-between;
     gap: 5px;
+
+    width: 100%;
     border: none;
     background-color: transparent;
     cursor: pointer;
