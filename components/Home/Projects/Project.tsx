@@ -4,6 +4,7 @@ import WebIcon from '/public/assets/webIcon.svg'
 import { useMemo } from 'react'
 import Tag from './Tag'
 import { ProjectDatas } from '../../../constant/projects'
+import MediaLink from '../../Utils/Link/MediaLink'
 
 interface Props {
   datas: ProjectDatas
@@ -48,12 +49,8 @@ function Project({ datas, side }: Props) {
           <ul className="project__skills-wrapper">{skillsDom}</ul>
 
           <div className="project__links">
-            <a href="#" className="project__link">
-              <Image src={GithubIcon} width={32} height={32} alt="" />
-            </a>
-            <a href="#" className="project__link">
-              <Image src={WebIcon} width={32} height={32} alt="" />
-            </a>
+            <MediaLink image={GithubIcon} link="#" altText=" " />
+            <MediaLink image={WebIcon} link="#" altText=" " />
           </div>
         </div>
       </div>

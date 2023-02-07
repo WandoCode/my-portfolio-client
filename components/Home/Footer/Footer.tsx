@@ -1,5 +1,5 @@
 import mediaMockedDatas from '../../../__mock__/data/media.json'
-import MediaLink from './MediaLink'
+import MediaLink from '../../Utils/Link/MediaLink'
 
 function Footer() {
   const mediaLinksDOM = () => {
