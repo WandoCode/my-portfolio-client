@@ -5,4 +5,12 @@
     filter: brightness(0) saturate(100%) invert(66%) sepia(0%) saturate(0%)
       hue-rotate(184deg) brightness(97%) contrast(87%);
   }
+
+  &--light-bg:hover img {
+    filter: var(--clr-svg-filter-500);
+  }
+
+  &--dark-bg:hover img {
+    filter: var(--clr-svg-filter-400);
+  }
 }

@@ -6,7 +6,12 @@ function Footer() {
     const mediasDatas = mediaMockedDatas.medias
     return mediasDatas.map((media, i) => (
       <li key={i}>
-        <MediaLink image={media.image} altText={media.alt} link={media.link} />
+        <MediaLink
+          image={media.image}
+          altText={media.alt}
+          link={media.link}
+          background="dark"
+        />
       </li>
     ))
   }

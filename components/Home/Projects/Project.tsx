@@ -49,8 +49,18 @@ function Project({ datas, side }: Props) {
           <ul className="project__skills-wrapper">{skillsDom}</ul>
 
           <div className="project__links">
-            <MediaLink image={GithubIcon} link="#" altText=" " />
-            <MediaLink image={WebIcon} link="#" altText=" " />
+            <MediaLink
+              image={GithubIcon}
+              link="#"
+              altText=" "
+              background="light"
+            />
+            <MediaLink
+              image={WebIcon}
+              link="#"
+              altText=" "
+              background="light"
+            />
           </div>
         </div>
       </div>
