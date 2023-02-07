@@ -1,7 +1,10 @@
 import useGetCurrentSection from '../../../hooks/useGetCurrentSection'
 import { useRef, useEffect, useState } from 'react'
 
-function NavLinks() {
+interface Props {
+  onCloseNav: () => void
+}
+function NavLinks({ onCloseNav }: Props) {
   const activeSection = useGetCurrentSection()
   const heroRef = useRef<HTMLAnchorElement>(null)
   const projectsRef = useRef<HTMLAnchorElement>(null)
@@ -58,7 +61,12 @@ function NavLinks() {
             : 'nav-links__item'
         }
       >
-        <a ref={heroRef} href="#hero" className="nav-links__link nav-item ">
+        <a
+          ref={heroRef}
+          href="#hero"
+          className="nav-links__link nav-item "
+          onClick={onCloseNav}
+        >
           Home
         </a>
       </li>
@@ -73,6 +81,7 @@ function NavLinks() {
           ref={projectsRef}
           href="#projects"
           className="nav-links__link nav-item"
+          onClick={onCloseNav}
         >
           Projets
         </a>
@@ -84,7 +93,12 @@ function NavLinks() {
             : 'nav-links__item'
         }
       >
-        <a ref={skillsRef} href="#skills" className="nav-links__link nav-item">
+        <a
+          ref={skillsRef}
+          href="#skills"
+          className="nav-links__link nav-item"
+          onClick={onCloseNav}
+        >
           Compétences
         </a>
       </li>
@@ -95,7 +109,12 @@ function NavLinks() {
             : 'nav-links__item'
         }
       >
-        <a ref={aboutRef} href="#about" className="nav-links__link nav-item">
+        <a
+          ref={aboutRef}
+          href="#about"
+          className="nav-links__link nav-item"
+          onClick={onCloseNav}
+        >
           Qui suis-je?
         </a>
       </li>
@@ -110,6 +129,7 @@ function NavLinks() {
           ref={contactRef}
           href="#contact"
           className="nav-links__link nav-item"
+          onClick={onCloseNav}
         >
           Contact
         </a>

@@ -50,6 +50,10 @@ function Header() {
         : 'container-nav'
   }
 
+  const handleCloseNav = () => {
+    setOpenMenu(false)
+  }
+
   return (
     <header className="header">
       <div className={navContainerClass()}>
@@ -58,7 +62,7 @@ function Header() {
             <Image className="nav__logo" src={Logo} alt="Logo" fill={true} />
           </div>
           <div className={navContentClass()}>
-            <NavLinks />
+            <NavLinks onCloseNav={handleCloseNav} />
             <div className="nav__dark-light-switch">
               <ThemeSwitch />
             </div>
