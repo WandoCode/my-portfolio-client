@@ -9,12 +9,7 @@ function Skills() {
   const skillItemsDOM = useMemo(() => {
     return skillsDatas.map((datas, i) => <SkillItem datas={datas} key={i} />)
   }, [])
-  return (
-    <section className="skills container flow" id="skills">
-      <h2 className="h2 heading-section skills__title">Compétences</h2>
-      <ul className="skills__list">{skillItemsDOM}</ul>
-    </section>
-  )
+  return <ul className="skills__list">{skillItemsDOM}</ul>
 }
 
 export default Skills

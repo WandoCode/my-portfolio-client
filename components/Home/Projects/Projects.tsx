@@ -17,14 +17,7 @@ function Projects() {
     []
   )
 
-  return (
-    <section className="projects" id="projects">
-      <div className="container projects__container flow">
-        <h2 className="h2 heading-section">Projets</h2>
-        <div className="projects__body">{projectsDOM}</div>
-      </div>
-    </section>
-  )
+  return <div className="projects__body">{projectsDOM}</div>
 }
 
 export default Projects
