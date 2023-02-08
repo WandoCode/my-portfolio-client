@@ -1,13 +1,18 @@
 import useGetCurrentSection from '../../../hooks/useGetCurrentSection'
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect, useState, useContext } from 'react'
+import mockedMainDatas from '../../../__mock__/data/mainDatas.json'
+import { LanguageContext } from '../../Language/LanguageContextProvider'
 
 interface Props {
   onCloseNav: () => void
+  navText: typeof mockedMainDatas.headings.fr
 }
 
 type Dimensions = Record<string, any>
 
-function NavLinks({ onCloseNav }: Props) {
+function NavLinks({ onCloseNav, navText }: Props) {
+  const { language } = useContext(LanguageContext)
+
   const activeSection = useGetCurrentSection()
   const heroRef = useRef<HTMLAnchorElement>(null)
   const projectsRef = useRef<HTMLAnchorElement>(null)
@@ -16,7 +21,7 @@ function NavLinks({ onCloseNav }: Props) {
   const contactRef = useRef<HTMLAnchorElement>(null)
   const listSliderRef = useRef<HTMLUListElement>(null)
 
-  const [LinksDimensions, setLinksDimensions] = useState<Dimensions>({})
+  const [linksDimensions, setLinksDimensions] = useState<Dimensions>({})
 
   const listClass = () => {
     let name = 'nav-links'
@@ -46,14 +51,14 @@ function NavLinks({ onCloseNav }: Props) {
         width: contactRef.current?.offsetWidth,
       },
     })
-  }, [])
+  }, [language])
 
   useEffect(() => {
     if (listSliderRef.current && activeSection) {
-      listSliderRef.current.style.width = `${LinksDimensions[activeSection].width}px`
-      listSliderRef.current.style.marginLeft = `${LinksDimensions[activeSection].start}px`
+      listSliderRef.current.style.width = `${linksDimensions[activeSection].width}px`
+      listSliderRef.current.style.marginLeft = `${linksDimensions[activeSection].start}px`
     }
-  }, [activeSection])
+  }, [activeSection, linksDimensions])
 
   return (
     <ul className={listClass()}>
@@ -70,7 +75,7 @@ function NavLinks({ onCloseNav }: Props) {
           className="nav-links__link nav-item "
           onClick={onCloseNav}
         >
-          Home
+          {navText.home}
         </a>
       </li>
       <li
@@ -86,7 +91,7 @@ function NavLinks({ onCloseNav }: Props) {
           className="nav-links__link nav-item"
           onClick={onCloseNav}
         >
-          Projets
+          {navText.projects}
         </a>
       </li>
       <li
@@ -102,7 +107,7 @@ function NavLinks({ onCloseNav }: Props) {
           className="nav-links__link nav-item"
           onClick={onCloseNav}
         >
-          Compétences
+          {navText.skills}
         </a>
       </li>
       <li
@@ -118,7 +123,7 @@ function NavLinks({ onCloseNav }: Props) {
           className="nav-links__link nav-item"
           onClick={onCloseNav}
         >
-          Qui suis-je?
+          {navText.about}
         </a>
       </li>
       <li
@@ -134,7 +139,7 @@ function NavLinks({ onCloseNav }: Props) {
           className="nav-links__link nav-item"
           onClick={onCloseNav}
         >
-          Contact
+          {navText.contact}
         </a>
       </li>
       <span ref={listSliderRef} className="nav-links__slider"></span>
