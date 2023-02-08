@@ -19,10 +19,10 @@ function ThemeContextProvidor({ children }: PropsWithChildren) {
 
   useEffect(() => {
     const savedTheme = themeStore.loadTheme()
-    setTheme('light') //TODO: retirer la ligne: developpement seulement (avant de s'attaquer au theme foncé)
+    // setTheme('light') //TODO: retirer la ligne: developpement seulement (avant de s'attaquer au theme foncé)
 
-    // if (savedTheme) setTheme(savedTheme)
-    // else setTheme(themeStore.getBrowserTheme())
+    if (savedTheme) setTheme(savedTheme)
+    else setTheme(themeStore.getBrowserTheme())
   }, [])
 
   useEffect(() => {
