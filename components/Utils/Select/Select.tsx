@@ -77,3 +77,5 @@ function Select({ choices, currValue, onChoice, id }: Props) {
 }
 
 export default Select
+
+// TODO mettre plus d'espcace pour appuyer sur la langue choisie sur mobile
