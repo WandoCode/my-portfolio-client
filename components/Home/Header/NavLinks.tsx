@@ -5,7 +5,7 @@ import { LanguageContext } from '../../Language/LanguageContextProvider'
 
 interface Props {
   onCloseNav: () => void
-  navText: typeof mockedMainDatas.headings.fr
+  navText: typeof mockedMainDatas.headings.fr | null
 }
 
 type Dimensions = Record<string, any>
@@ -75,7 +75,7 @@ function NavLinks({ onCloseNav, navText }: Props) {
           className="nav-links__link nav-item "
           onClick={onCloseNav}
         >
-          {navText.home}
+          {navText ? navText.home : ''}
         </a>
       </li>
       <li
@@ -91,7 +91,7 @@ function NavLinks({ onCloseNav, navText }: Props) {
           className="nav-links__link nav-item"
           onClick={onCloseNav}
         >
-          {navText.projects}
+          {navText ? navText.projects : ''}
         </a>
       </li>
       <li
@@ -107,7 +107,7 @@ function NavLinks({ onCloseNav, navText }: Props) {
           className="nav-links__link nav-item"
           onClick={onCloseNav}
         >
-          {navText.skills}
+          {navText ? navText.skills : ''}
         </a>
       </li>
       <li
@@ -123,7 +123,7 @@ function NavLinks({ onCloseNav, navText }: Props) {
           className="nav-links__link nav-item"
           onClick={onCloseNav}
         >
-          {navText.about}
+          {navText ? navText.about : ''}
         </a>
       </li>
       <li
@@ -139,7 +139,7 @@ function NavLinks({ onCloseNav, navText }: Props) {
           className="nav-links__link nav-item"
           onClick={onCloseNav}
         >
-          {navText.contact}
+          {navText ? navText.contact : ''}
         </a>
       </li>
       <span ref={listSliderRef} className="nav-links__slider"></span>

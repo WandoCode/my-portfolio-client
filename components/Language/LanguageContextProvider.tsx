@@ -3,12 +3,12 @@ import { LanguageAvailable, LanguagesObject } from '../../constant/language'
 import languageStore from '../../stores/language'
 
 interface GlobalContextParams {
-  language: LanguagesObject['value']
+  language: LanguagesObject['value'] | null
   changeLanguage: (value: LanguagesObject['value']) => void
 }
 
 const defaultContext: GlobalContextParams = {
-  language: 'fr',
+  language: null,
   changeLanguage: (value) => {},
 }
 

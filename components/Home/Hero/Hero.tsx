@@ -31,10 +31,14 @@ function Hero({ heroDatas }: Props) {
           </div>
           <div className="hero__content">
             <p className="hero__subtitle subtitle fc-neutral-350 fs-350">
-              {heroDatas.subtitle[language]}
+              {language ? heroDatas.subtitle[language] : ''}
             </p>
-            <h1 className="h1 fs-800">{heroDatas.title[language]}</h1>
-            <p className="hero__description">{heroDatas.text[language]}</p>
+            <h1 className="h1 fs-800">
+              {language ? heroDatas.title[language] : ''}
+            </h1>
+            <p className="hero__description">
+              {language ? heroDatas.text[language] : ''}
+            </p>
             <div className="hero__btns-wrapper">
               <Button
                 type="button"
@@ -42,7 +46,7 @@ function Hero({ heroDatas }: Props) {
                 onclick={handleDownloadCV}
                 className="hero__btn fs-400 fc-neutral-800"
               >
-                {btnText[language].CV}
+                {language ? btnText[language].CV : ''}
               </Button>
               <Button
                 type="link"
@@ -50,7 +54,7 @@ function Hero({ heroDatas }: Props) {
                 href="#contact"
                 className="hero__btn fs-400 fc-neutral-800 "
               >
-                {btnText[language].contact}
+                {language ? btnText[language].contact : ''}
               </Button>
             </div>
           </div>

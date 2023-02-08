@@ -16,6 +16,7 @@ function Project({ datas, side }: Props) {
   const { language } = useContext(LanguageContext)
 
   const featuresDom = useMemo(() => {
+    if (!language) return ''
     return datas.features[language].map((feature, i) => (
       <li className="project__feature" key={i}>
         {feature}
@@ -44,7 +45,9 @@ function Project({ datas, side }: Props) {
         <h3 className={`project__title project__title--${side} h3 fs-600`}>
           Audiophile
         </h3>
-        <p className="project__description">{datas.description[language]}</p>
+        <p className="project__description">
+          {language ? datas.description[language] : ''}
+        </p>
 
         <ul className="project__features-wrapper">{featuresDom}</ul>
 

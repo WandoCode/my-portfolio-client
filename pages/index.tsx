@@ -21,21 +21,21 @@ function App() {
           <section className="projects" id="projects">
             <div className="container projects__container flow">
               <h2 className="h2 heading-section">
-                {mockedMainDatas.headings[language].projects}
+                {language ? mockedMainDatas.headings[language].projects : ''}
               </h2>
               <Projects />
             </div>
           </section>
           <section className="skills container flow" id="skills">
             <h2 className="h2 heading-section skills__title">
-              {mockedMainDatas.headings[language].skills}
+              {language ? mockedMainDatas.headings[language].skills : ''}
             </h2>
             <Skills />
           </section>
           <section className="about flow-bottom" id="about">
             <div className="container">
               <h2 className="h2 heading-section about__title fc-neutral-300">
-                {mockedMainDatas.headings[language].about}
+                {language ? mockedMainDatas.headings[language].about : ''}
               </h2>
               <About aboutDatas={mockedMainDatas.about} />
             </div>
@@ -45,7 +45,7 @@ function App() {
             id="contact"
           >
             <h2 className="h2 heading-section">
-              {mockedMainDatas.headings[language].contact}
+              {language ? mockedMainDatas.headings[language].contact : ''}
             </h2>
             <Contact contactDatas={mockedMainDatas.contact} />
           </section>

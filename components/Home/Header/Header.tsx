@@ -72,7 +72,7 @@ function Header({ headerDatas }: Props) {
           <div className={navContentClass()}>
             <NavLinks
               onCloseNav={handleCloseNav}
-              navText={headerDatas[language]}
+              navText={language ? headerDatas[language] : null}
             />
             <div className="nav__dark-light-switch">
               <ThemeSwitch />

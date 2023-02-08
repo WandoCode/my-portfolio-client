@@ -78,12 +78,14 @@ function Contact({ contactDatas }: Props) {
   return (
     <form className="contact-form">
       <div className="contact-form__infos">
-        <Info imageRef={localisationIcon}>{contactDatas.place[language]}</Info>
+        <Info imageRef={localisationIcon}>
+          {language ? contactDatas.place[language] : ''}
+        </Info>
         <Info imageRef={emailIcon}>{contactDatas.email}</Info>
       </div>
       <InputField
         name="name"
-        label={formText[language].name}
+        label={language ? formText[language].name : ''}
         type="text"
         inputErrors={formErrors.name}
         inputDatas={formDatas.name}
@@ -92,7 +94,7 @@ function Contact({ contactDatas }: Props) {
       />
       <InputField
         name="email"
-        label={formText[language].email}
+        label={language ? formText[language].email : ''}
         type="email"
         inputErrors={formErrors.email}
         inputDatas={formDatas.email}
@@ -101,7 +103,7 @@ function Contact({ contactDatas }: Props) {
       />
       <InputField
         name="object"
-        label={formText[language].subject}
+        label={language ? formText[language].subject : ''}
         type="text"
         inputErrors={formErrors.object}
         inputDatas={formDatas.object}
@@ -110,7 +112,7 @@ function Contact({ contactDatas }: Props) {
       />
       <InputField
         name="message"
-        label={formText[language].message}
+        label={language ? formText[language].message : ''}
         type="textarea"
         inputErrors={formErrors.message}
         inputDatas={formDatas.message}
@@ -124,7 +126,7 @@ function Contact({ contactDatas }: Props) {
         onclick={handleSubmit}
         className="contact-form__submit"
       >
-        {formText[language].send}
+        {language ? formText[language].send : ''}
       </Button>
     </form>
   )
