@@ -39,7 +39,11 @@ Project data structure type:
 Project = {
   id : string
   title: string
-  features : string[]
+  features : {
+    fr: string[],
+    en: string[],
+    es: string[]
+  }
   tags: Tag[]
   urlLive: string
   urlGithub: string
