@@ -4,6 +4,9 @@ import { useRef, useEffect, useState } from 'react'
 interface Props {
   onCloseNav: () => void
 }
+
+type Dimensions = Record<string, any>
+
 function NavLinks({ onCloseNav }: Props) {
   const activeSection = useGetCurrentSection()
   const heroRef = useRef<HTMLAnchorElement>(null)
@@ -13,7 +16,7 @@ function NavLinks({ onCloseNav }: Props) {
   const contactRef = useRef<HTMLAnchorElement>(null)
   const listSliderRef = useRef<HTMLUListElement>(null)
 
-  const [LinksDimensions, setLinksDimensions] = useState<any>()
+  const [LinksDimensions, setLinksDimensions] = useState<Dimensions>({})
 
   const listClass = () => {
     let name = 'nav-links'
