@@ -1,0 +1,11 @@
+body#dark {
+  .nav-links {
+    &__item--active {
+      color: var(--clr-neutral-250);
+    }
+
+    &__slider {
+      border-color: var(--clr-neutral-100);
+    }
+  }
+}

@@ -52,7 +52,7 @@ function Hero({ heroDatas }: Props) {
                 type="link"
                 level="secondary"
                 href="#contact"
-                className="hero__btn fs-400 fc-neutral-800 "
+                className="hero__btn fs-400 fc-neutral-800"
               >
                 {language ? btnText[language].contact : ''}
               </Button>

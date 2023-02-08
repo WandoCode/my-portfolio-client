@@ -35,28 +35,6 @@ button {
   cursor: pointer;
 }
 
-body#dark {
-  background: #333;
-}
-
-body#light {
-  background: #fff;
-}
-
 p + p {
   margin-top: 2rem;
-}
-
-@media (prefers-color-scheme: light) {
-  body {
-    background: #fff;
-    color: #333;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #333;
-    color: #fff;
-  }
 }

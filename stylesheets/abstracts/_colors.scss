@@ -7,6 +7,29 @@ $colors: (
     700: hsl(0, 96%, 52%),
   ),
   neutral: (
+    100: hsl(0, 0%, 99%),
+    250: hsl(0, 0%, 90%),
+    300: hsl(0, 0%, 81%),
+    350: hsl(0, 0%, 67%),
+    400: hsl(0, 0%, 62%),
+    500: hsl(0, 0%, 40%),
+    700: hsl(0, 0%, 20%),
+    800: hsl(0, 0%, 7%),
+  ),
+  svg-filter: (
+    400: brightness(0) saturate(100%) invert(78%) sepia(76%) saturate(1482%)
+      hue-rotate(352deg) brightness(108%) contrast(96%),
+    500: brightness(0) saturate(100%) invert(84%) sepia(16%) saturate(6374%)
+      hue-rotate(358deg) brightness(101%) contrast(96%),
+  ),
+);
+
+$colors-dark: (
+  primary: (
+    400: hsl(49, 96%, 52%),
+    700: hsl(0, 96%, 52%),
+  ),
+  neutral: (
     100: hsl(0, 0%, 100%),
     250: hsl(0, 0%, 90%),
     300: hsl(0, 0%, 81%),
@@ -32,12 +55,19 @@ $colors: (
     }
   }
 
-  /// Build css utility for colors
-  @each $color-type, $shades in $colors {
+  /// Build css custom variables for colors
+  @each $color-type, $shades in $colors-dark {
     @each $shade, $color in $shades {
-      .fc-#{$color-type}-#{$shade} {
-        color: $color;
-      }
+      --clr-dark-#{$color-type}-#{$shade}: #{$color};
+    }
+  }
+}
+
+/// Build css utility for colors
+@each $color-type, $shades in $colors {
+  @each $shade, $color in $shades {
+    .fc-#{$color-type}-#{$shade} {
+      color: $color;
     }
   }
 }

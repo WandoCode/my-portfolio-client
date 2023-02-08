@@ -124,7 +124,7 @@ function Contact({ contactDatas }: Props) {
         type="button"
         level="secondary"
         onclick={handleSubmit}
-        className="contact-form__submit"
+        className="contact-form__submit fs-400 fc-neutral-800"
       >
         {language ? formText[language].send : ''}
       </Button>

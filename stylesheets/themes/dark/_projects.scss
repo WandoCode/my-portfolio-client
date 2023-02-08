@@ -1,0 +1,11 @@
+body#dark {
+  .projects {
+    background: linear-gradient(
+        var(--clr-dark-neutral-700) 5%,
+        hsla(0, 0%, 20%, 0.97) 10%,
+        hsla(0, 0%, 20%, 0.97),
+        var(--clr-dark-neutral-700) 100%
+      ),
+      url(../../../public/assets/common-bg.svg);
+  }
+}

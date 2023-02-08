@@ -1,4 +1,18 @@
-// -----------------------------------------------------------------------------
-// When having several themes, this file contains everything related to the
-// default one.
-// -----------------------------------------------------------------------------
+body#dark {
+  background: #333;
+  color: var(--clr-neutral-300);
+
+  h2,
+  h3 {
+    color: var(--clr-neutral-100);
+  }
+}
+
+body#light {
+  background: var(--clr-neutral-100);
+
+  & input,
+  & textarea {
+    background-color: transparent;
+  }
+}

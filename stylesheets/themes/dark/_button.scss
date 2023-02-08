@@ -1,0 +1,9 @@
+body#dark {
+  .btn {
+    &--secondary {
+      background-color: var(--clr-dark-neutral-500);
+      border-color: var(--clr-dark-neutral-700);
+      color: var(--clr-dark-neutral-800);
+    }
+  }
+}

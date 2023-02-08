@@ -1,0 +1,8 @@
+body#dark {
+  .project {
+    &__content {
+      background-color: var(--clr-dark-neutral-500);
+      color: var(--clr-dark-neutral-100);
+    }
+  }
+}
