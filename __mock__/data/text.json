@@ -1,0 +1,16 @@
+{
+  "fr": {
+    "hero": {
+      "img": "",
+      "text": "Fusce tempor magna mi, non egestas velit ultricies nec. Aenean convallis, risus non condimentum gravida, odio mauris ullamcorper felis, ut venenatis purus ex eu mi. Quisque imperdiet lacinia urna, aplacerat sapien pretium eu.",
+      "CVLink": "."
+    },
+    "about": {
+      "text": "Lorem ipsum dolor sit amet consectetur. Tincidunt non euismod tristique ut vitae fermentum enim. Massa nibh nec volutpat etiam consequat sit enim et tincidunt. Et mauris eu cras amet ullamcorper gravida ultrices amet. Purus vehicula lorem justo aliquam tellus praesent magna. Pulvinar viverra imperdiet nulla sit cras ultricies. Ut nunc nulla quis aliquam blandit cras urna nibh vitae. Urna eu mus ac dignissim nunc ornare elit nisl nibh. Leo ac posuere viverra fermentum iaculis congue vitae. Nisl vitae at donec pellentesque urna ridiculus diam sit nisl. Fermentum vitae netus purus congue neque facilisi sit. Facilisis donec vel in curabitur posuere et."
+    },
+    "contact": {
+      "place": "Bruxelles",
+      "email": "azerty@azer.be"
+    }
+  }
+}
