@@ -8,7 +8,7 @@ interface GlobalContextParams {
 }
 
 const defaultContext: GlobalContextParams = {
-  language: 'en',
+  language: 'fr',
   changeLanguage: (value) => {},
 }
 

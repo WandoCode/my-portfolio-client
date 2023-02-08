@@ -1,8 +1,18 @@
 import Image from 'next/image'
 import heroImg from '../../../public/assets/hero__placeholder.png'
 import Button from '../../Utils/Button/Button'
+import mockedMainDatas from '../../../__mock__/data/mainDatas.json'
+import { LanguageContext } from '../../Language/LanguageContextProvider'
+import { useContext } from 'react'
+import btnText from '../../../constant/text/heroBtns.json'
 
-function Hero() {
+interface Props {
+  heroDatas: typeof mockedMainDatas.hero
+}
+
+function Hero({ heroDatas }: Props) {
+  const { language } = useContext(LanguageContext)
+
   const handleDownloadCV = () => {}
 
   return (
@@ -13,23 +23,18 @@ function Hero() {
             <Image
               width={500}
               height={500}
-              src={heroImg}
-              alt=""
+              src={heroDatas.img.link}
+              alt={heroDatas.img.alt}
               className="hero__img"
               priority={true}
             />
           </div>
           <div className="hero__content">
             <p className="hero__subtitle subtitle fc-neutral-350 fs-350">
-              Développeur Frontend
+              {heroDatas.subtitle[language]}
             </p>
-            <h1 className="h1 fs-800">Maxime Chirez</h1>
-            <p className="hero__description">
-              Fusce tempor magna mi, non egestas velit ultricies nec. Aenean
-              convallis, risus non condimentum gravida, odio mauris ullamcorper
-              felis, ut venenatis purus ex eu mi. Quisque imperdiet lacinia
-              urna, aplacerat sapien pretium eu.
-            </p>
+            <h1 className="h1 fs-800">{heroDatas.title[language]}</h1>
+            <p className="hero__description">{heroDatas.text[language]}</p>
             <div className="hero__btns-wrapper">
               <Button
                 type="button"
@@ -37,7 +42,7 @@ function Hero() {
                 onclick={handleDownloadCV}
                 className="hero__btn fs-400 fc-neutral-800"
               >
-                Télécharger CV
+                {btnText[language].CV}
               </Button>
               <Button
                 type="link"
@@ -45,7 +50,7 @@ function Hero() {
                 href="#contact"
                 className="hero__btn fs-400 fc-neutral-800 "
               >
-                Contact
+                {btnText[language].contact}
               </Button>
             </div>
           </div>

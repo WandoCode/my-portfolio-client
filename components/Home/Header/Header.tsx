@@ -1,12 +1,21 @@
 import ThemeSwitch from '../../Theme/ThemeSwitch'
 import LangSelection from '../../Language/LangSelection'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import Logo from '../../../public/assets/Logo.svg'
 import Image from 'next/image'
 import NavLinks from './NavLinks'
+import mockedMainDatas from '../../../__mock__/data/mainDatas.json'
+import { LanguageContext } from '../../Language/LanguageContextProvider'
 
-function Header() {
+interface Props {
+  headerDatas: typeof mockedMainDatas.headings
+}
+
+function Header({ headerDatas }: Props) {
   let windowPos = 0
+
+  const { language } = useContext(LanguageContext)
+
   const [openMenu, setOpenMenu] = useState(false)
   const [windowDir, setWindowDir] = useState<'up' | 'down'>('up')
   const [windowOnTop, setWindowOnTop] = useState(true)
@@ -16,7 +25,6 @@ function Header() {
     setWindowOnTop(windowPos === 0)
 
     window.addEventListener('scroll', getScrollDirection)
-
     return () => {
       window.removeEventListener('scroll', getScrollDirection)
     }
@@ -62,7 +70,10 @@ function Header() {
             <Image className="nav__logo" src={Logo} alt="Logo" fill={true} />
           </div>
           <div className={navContentClass()}>
-            <NavLinks onCloseNav={handleCloseNav} />
+            <NavLinks
+              onCloseNav={handleCloseNav}
+              navText={headerDatas[language]}
+            />
             <div className="nav__dark-light-switch">
               <ThemeSwitch />
             </div>

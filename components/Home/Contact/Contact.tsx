@@ -1,6 +1,11 @@
 import FormContact from './FormContact'
+import mockedMainDatas from '../../../__mock__/data/mainDatas.json'
 
-function Contact() {
+interface Props {
+  contactDatas: typeof mockedMainDatas.contact
+}
+
+function Contact({ contactDatas }: Props) {
   return (
     <section
       className="contact flow container fc-neutral-700 fw-semibold"
@@ -8,7 +13,7 @@ function Contact() {
     >
       <h2 className="h2 heading-section">Me contacter</h2>
 
-      <FormContact />
+      <FormContact contactDatas={contactDatas} />
     </section>
   )
 }

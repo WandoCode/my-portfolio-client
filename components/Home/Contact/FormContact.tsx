@@ -1,12 +1,21 @@
-import { useState, MouseEvent } from 'react'
+import { useState, MouseEvent, useContext } from 'react'
 import Input from '../../../utils/form/Input'
 import Button from '../../Utils/Button/Button'
 import InputField from './InputField'
 import Info from './Info'
 import localisationIcon from '../../../public/assets/localisationIcon.svg'
 import emailIcon from '../../../public/assets/emailIcon.svg'
+import mockedMainDatas from '../../../__mock__/data/mainDatas.json'
+import { LanguageContext } from '../../Language/LanguageContextProvider'
+import formText from '../../../constant/text/formText.json'
 
-function FormContact() {
+interface Props {
+  contactDatas: typeof mockedMainDatas.contact
+}
+
+function FormContact({ contactDatas }: Props) {
+  const { language } = useContext(LanguageContext)
+
   const [formIsValid, setFormIsValid] = useState<boolean>(true)
   const [formDatas, setFormDatas] = useState<Record<string, Input>>({
     name: new Input('text', 'required'),
@@ -69,12 +78,12 @@ function FormContact() {
   return (
     <form className="contact-form">
       <div className="contact-form__infos">
-        <Info imageRef={localisationIcon}>Bruxelles</Info>
-        <Info imageRef={emailIcon}>azerty@zaerty.be</Info>
+        <Info imageRef={localisationIcon}>{contactDatas.place[language]}</Info>
+        <Info imageRef={emailIcon}>{contactDatas.email}</Info>
       </div>
       <InputField
         name="name"
-        label="Nom complet*"
+        label={formText[language].name}
         type="text"
         inputErrors={formErrors.name}
         inputDatas={formDatas.name}
@@ -83,7 +92,7 @@ function FormContact() {
       />
       <InputField
         name="email"
-        label="Email*"
+        label={formText[language].email}
         type="email"
         inputErrors={formErrors.email}
         inputDatas={formDatas.email}
@@ -92,7 +101,7 @@ function FormContact() {
       />
       <InputField
         name="object"
-        label="Sujet"
+        label={formText[language].subject}
         type="text"
         inputErrors={formErrors.object}
         inputDatas={formDatas.object}
@@ -101,7 +110,7 @@ function FormContact() {
       />
       <InputField
         name="message"
-        label="Message*"
+        label={formText[language].message}
         type="textarea"
         inputErrors={formErrors.message}
         inputDatas={formDatas.message}
@@ -115,7 +124,7 @@ function FormContact() {
         onclick={handleSubmit}
         className="contact-form__submit"
       >
-        Envoyer
+        {formText[language].send}
       </Button>
     </form>
   )

@@ -1,7 +1,15 @@
 import Image from 'next/image'
-import aboutImg from '../../../public/assets/aboutImg.png'
+import mockedMainDatas from '../../../__mock__/data/mainDatas.json'
+import { useContext } from 'react'
+import { LanguageContext } from '../../Language/LanguageContextProvider'
 
-function About() {
+interface Props {
+  aboutDatas: typeof mockedMainDatas.about
+}
+
+function About({ aboutDatas }: Props) {
+  const { language } = useContext(LanguageContext)
+
   return (
     <section className="about flow-bottom" id="about">
       <div className="container">
@@ -10,24 +18,16 @@ function About() {
         </h2>
         <div className="about__body">
           <div className="about__text fc-neutral-300">
-            <p>
-              Lorem ipsum dolor sit amet consectetur. Tincidunt non euismod
-              tristique ut vitae fermentum enim. Massa nibh nec volutpat etiam
-              consequat sit enim et tincidunt. Et mauris eu cras amet
-              ullamcorper gravida ultrices amet. Purus vehicula lorem justo
-              aliquam tellus praesent magna.
-            </p>
-            <p>
-              Pulvinar viverra imperdiet nulla sit cras ultricies. Ut nunc nulla
-              quis aliquam blandit cras urna nibh vitae. Urna eu mus ac
-              dignissim nunc ornare elit nisl nibh. Leo ac posuere viverra
-              fermentum iaculis congue vitae. Nisl vitae at donec pellentesque
-              urna ridiculus diam sit nisl. Fermentum vitae netus purus congue
-              neque facilisi sit. Facilisis donec vel in curabitur posuere et.
-            </p>
+            {/* TODO: utiliser un lecteur markdown pour générer les paragraphes */}
+            {aboutDatas.text[language]}
           </div>
           <div className="about__img-container">
-            <Image src={aboutImg} height={380} width={380} alt="" />
+            <Image
+              src={aboutDatas.img.link}
+              height={380}
+              width={380}
+              alt={aboutDatas.img.alt}
+            />
           </div>
         </div>
       </div>
