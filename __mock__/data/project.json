@@ -2,8 +2,16 @@
   "projects": [
     {
       "title": "Audiophile",
-      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi.",
-      "features": ["Custom toast", "CMS Strapi", "Ect."],
+      "description": {
+        "fr": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi.",
+        "en": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi.",
+        "es": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi."
+      },
+      "features": {
+        "fr": ["Custom toast", "CMS Strapi", "Ect."],
+        "en": ["Custom toast", "CMS Strapi", "Ect."],
+        "es": ["Custom toast", "CMS Strapi", "Ect."]
+      },
       "tags": [
         { "text": "React", "color": "#FACF0F" },
         { "text": "React Context", "color": "#57B8FF" },
@@ -15,8 +23,16 @@
     },
     {
       "title": "Audiophile",
-      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi.",
-      "features": ["Custom toast", "CMS Strapi", "Ect."],
+      "description": {
+        "fr": "FRLorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi.",
+        "en": "ENLorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi.",
+        "es": "ESLorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi."
+      },
+      "features": {
+        "fr": ["Custom toast", "CMS Strapi", "Ect."],
+        "en": ["Custom toast", "CMS Strapi", "Ect."],
+        "es": ["Custom toast", "CMS Strapi", "Ect."]
+      },
       "tags": [
         { "text": "React", "color": "#FACF0F" },
         { "text": "React Context", "color": "#57B8FF" },

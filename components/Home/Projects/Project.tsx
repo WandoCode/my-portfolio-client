@@ -1,10 +1,11 @@
 import Image from 'next/image'
 import GithubIcon from '/public/assets/githubIcon.svg'
 import WebIcon from '/public/assets/webIcon.svg'
-import { useMemo } from 'react'
+import { useMemo, useContext } from 'react'
 import Tag from './Tag'
 import { ProjectDatas } from '../../../constant/projects'
 import MediaLink from '../../Utils/Link/MediaLink'
+import { LanguageContext } from '../../Language/LanguageContextProvider'
 
 interface Props {
   datas: ProjectDatas
@@ -12,13 +13,15 @@ interface Props {
 }
 
 function Project({ datas, side }: Props) {
+  const { language } = useContext(LanguageContext)
+
   const featuresDom = useMemo(() => {
-    return datas.features.map((feature, i) => (
+    return datas.features[language].map((feature, i) => (
       <li className="project__feature" key={i}>
         {feature}
       </li>
     ))
-  }, [datas])
+  }, [datas, language])
 
   const skillsDom = useMemo(() => {
     return datas.tags.map((tag, i) => (
@@ -41,7 +44,7 @@ function Project({ datas, side }: Props) {
         <h3 className={`project__title project__title--${side} h3 fs-600`}>
           Audiophile
         </h3>
-        <p className="project__description">{datas.description}</p>
+        <p className="project__description">{datas.description[language]}</p>
 
         <ul className="project__features-wrapper">{featuresDom}</ul>
 
@@ -69,4 +72,3 @@ function Project({ datas, side }: Props) {
 }
 
 export default Project
-// TODO: en mobile: header: faire se fermer quand un lien est cliqué

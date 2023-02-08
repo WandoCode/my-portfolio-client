@@ -4,8 +4,8 @@ export interface ProjectsDatas {
 
 export interface ProjectDatas {
   title: string
-  description: string
-  features: string[]
+  description: Record<string, string>
+  features: Record<string, string[]>
   tags: { text: string; color: string }[]
   urlLive: string
   urlGithub: string
