@@ -13,6 +13,8 @@
 
   &__slider {
     position: absolute;
+    left: 0;
+    right: 0;
     bottom: -3px;
 
     width: 0;
@@ -20,7 +22,7 @@
 
     border-bottom: 1px solid var(--clr-neutral-700);
 
-    transition: 0.5s;
+    transition: margin 0.3s;
 
     @include breakpoint-down(large) {
       display: none;

@@ -28,8 +28,8 @@ function NavLinks({ onCloseNav, navText }: Props) {
     return activeSection ? `${name} ${name}--${activeSection}` : name
   }
 
-  useEffect(() => {
-    setLinksDimensions({
+  const getLinksDimensions = () => {
+    return {
       hero: {
         start: heroRef.current?.offsetLeft,
         width: heroRef.current?.offsetWidth,
@@ -50,11 +50,17 @@ function NavLinks({ onCloseNav, navText }: Props) {
         start: contactRef.current?.offsetLeft,
         width: contactRef.current?.offsetWidth,
       },
-    })
+    }
+  }
+
+  useEffect(() => {
+    setLinksDimensions(getLinksDimensions())
   }, [language])
 
   useEffect(() => {
     if (listSliderRef.current && activeSection) {
+      console.log(activeSection)
+
       listSliderRef.current.style.width = `${linksDimensions[activeSection].width}px`
       listSliderRef.current.style.marginLeft = `${linksDimensions[activeSection].start}px`
     }
