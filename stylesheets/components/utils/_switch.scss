@@ -13,6 +13,11 @@
   background-color: var(--clr-neutral-300);
   outline: 3px var(--clr-neutral-300) solid;
 
+  @include breakpoint(medium) {
+    height: 14px;
+    width: 36px;
+  }
+
   & img {
     height: 12px;
   }
@@ -37,6 +42,11 @@
 
     background-color: var(--clr-neutral-100);
     border-radius: 10px;
+
+    @include breakpoint(medium) {
+      height: 14px;
+      width: 17px;
+    }
   }
 
   &__input:checked ~ &__slider-container:before {
