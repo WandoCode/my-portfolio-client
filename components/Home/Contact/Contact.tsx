@@ -8,6 +8,7 @@ import emailIcon from '../../../public/assets/emailIcon.svg'
 import mockedMainDatas from '../../../__mock__/data/mainDatas.json'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
 import formText from '../../../constant/text/formText.json'
+import { InputError } from '../../../utils/form/Input'
 
 interface Props {
   contactDatas: typeof mockedMainDatas.contact
@@ -24,7 +25,7 @@ function Contact({ contactDatas }: Props) {
     message: new Input('text', 'required'),
   })
 
-  const [formErrors, setFormErrors] = useState<Record<string, string[]>>({
+  const [formErrors, setFormErrors] = useState<Record<string, InputError[]>>({
     name: [],
     email: [],
     object: [],
@@ -67,7 +68,7 @@ function Contact({ contactDatas }: Props) {
     })
   }
 
-  const changeFormErrors = (fieldName: string, newErrors: string[]) => {
+  const changeFormErrors = (fieldName: string, newErrors: InputError[]) => {
     setFormErrors((old) => {
       const newFormErrors = { ...old }
       newFormErrors[fieldName] = newErrors

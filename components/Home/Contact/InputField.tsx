@@ -1,14 +1,16 @@
-import { ChangeEvent } from 'react'
-import Input from '../../../utils/form/Input'
+import { ChangeEvent, useContext } from 'react'
+import Input, { InputError } from '../../../utils/form/Input'
+import errorMessage from '../../../constant/text/formError.json'
+import { LanguageContext } from '../../Language/LanguageContextProvider'
 
 interface Props {
   name: string
   label: string
   type: 'email' | 'text' | 'textarea'
-  inputErrors: string[]
+  inputErrors: InputError[]
   inputDatas: Input
   onChangeFormDatas: (fieldName: string, newValue: string) => void
-  onChangeErrors: (fieldName: string, newErrors: string[]) => void
+  onChangeErrors: (fieldName: string, newErrors: InputError[]) => void
 }
 
 function InputField({
@@ -20,6 +22,8 @@ function InputField({
   onChangeFormDatas,
   onChangeErrors,
 }: Props) {
+  const { language } = useContext(LanguageContext)
+
   const handleInput = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -41,11 +45,19 @@ function InputField({
     return name
   }
 
+  const getValidationErrorText = () => {
+    if (!language) return ''
+    const errorMeeageArray = inputErrors.map(
+      (error) => errorMessage[language][error]
+    )
+    return errorMeeageArray.join(' ')
+  }
+
   return (
     <div className="input-field">
       {inputErrors.length > 0 && (
         <div className="input-field__error fc-primary-700 fc-dark-primary-700">
-          {inputErrors.join(' ')}
+          {getValidationErrorText()}
         </div>
       )}
       <label htmlFor={name} className="input-field__label">

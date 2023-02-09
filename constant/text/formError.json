@@ -1,0 +1,14 @@
+{
+  "fr": {
+    "required": "Champ requis",
+    "invalid": "Format invalide"
+  },
+  "en": {
+    "required": "Required.",
+    "invalid": "Invalid format."
+  },
+  "es": {
+    "required": "Requerido.",
+    "invalid": "Formato inválido."
+  }
+}

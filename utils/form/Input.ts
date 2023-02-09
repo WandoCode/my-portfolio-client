@@ -1,4 +1,7 @@
 type InputType = 'text' | 'email'
+
+export type InputError = 'required' | 'invalid'
+
 class Input {
   type: InputType
   value: string
@@ -10,11 +13,10 @@ class Input {
     this.required = required === 'required'
   }
 
-  getValidationErrors(): string[] {
-    let errors = []
-    if (this.required && !this.inputIsFilled()) errors.push('Champ requis.')
-    if (this.type === 'email' && !this.inputIsEmail())
-      errors.push('Format invalide.')
+  getValidationErrors() {
+    let errors: InputError[] = []
+    if (this.required && !this.inputIsFilled()) errors.push('required')
+    if (this.type === 'email' && !this.inputIsEmail()) errors.push('invalid')
 
     return errors
   }
