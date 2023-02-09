@@ -3,6 +3,13 @@ body#dark {
     &__options {
       background-color: var(--clr-dark-neutral-600);
     }
+
+    &__option {
+      &:hover {
+        background-color: var(--clr-dark-neutral-500);
+      }
+    }
+
     &__button img {
       filter: var(--clr-dark-svg-filter-300);
     }
