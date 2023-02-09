@@ -1,0 +1,13 @@
+@use '../../abstracts/' as *;
+
+body#dark {
+  .skill {
+    &__img-container {
+      box-shadow: 0px 0px 20px 5px rgba(97, 97, 97, 0.1);
+      background-color: var(--clr-dark-neutral-600);
+    }
+    &__rating {
+      filter: var(--clr-dark-svg-filter-300);
+    }
+  }
+}
