@@ -43,12 +43,15 @@ p {
   color: var(--clr-neutral-550);
 
   @include on-hover {
-    color: var(--clr-neutral-750);
+    color: var(--clr-neutral-800);
   }
 }
 
 .nav-links {
   text-align: start;
+  &__item--active {
+    font-weight: 500;
+  }
 }
 
 .projects {

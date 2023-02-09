@@ -1,3 +1,4 @@
+@use '../../abstracts/' as *;
 body#dark {
   .nav-links {
     &__item--active {
@@ -6,6 +7,12 @@ body#dark {
 
     &__slider {
       border-color: var(--clr-neutral-100);
+    }
+  }
+
+  .nav-item {
+    @include on-hover {
+      color: var(--clr-dark-neutral-250);
     }
   }
 }

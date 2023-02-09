@@ -5,6 +5,9 @@ body#dark {
     background-color: var(--clr-dark-neutral-700);
     border-color: var(--clr-dark-neutral-600);
 
+    &--on-top {
+      border-bottom: 1px transparent solid;
+    }
     &__content {
       @include breakpoint-down(large) {
         background-color: var(--clr-dark-neutral-700);
