@@ -134,4 +134,3 @@ function Contact({ contactDatas }: Props) {
 
 export default Contact
 //TODO: Add Recaptcha when backend is working (projet déjà crééer sur google cloud 'my-portfolio', changer le domaine associé à la clé API)
-// TODO: regarder au probleme des nav-link--active (parfois 2 en même temps: voir en haut et bas de page)

@@ -1,14 +1,19 @@
+@use '../../abstracts/' as *;
+
 .select {
+  --pad-left: 6px;
+
   position: relative;
   user-select: none;
+
+  text-align: left;
 
   &__button {
     display: inline-flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 5px;
+    gap: 20px;
 
-    width: 100%;
+    padding-left: 0;
     border: none;
     background-color: transparent;
     cursor: pointer;
@@ -27,9 +32,8 @@
   &__options {
     position: absolute;
     top: 100%;
-    left: 0;
-    right: 25%;
-
+    left: calc(-1 * var(--pad-left));
+    width: 100%;
     display: grid;
 
     height: 0;
@@ -47,7 +51,7 @@
 
   &__option {
     text-align: justify;
-    padding-left: 6px;
+    padding-left: var(--pad-left);
 
     &:hover {
       background-color: var(--clr-neutral-300);

@@ -31,6 +31,5 @@ function ThemeSwitch() {
     </form>
   )
 }
-// TODO: Need configuration (default theme value, theme value and img visible: match?)
 
 export default ThemeSwitch
