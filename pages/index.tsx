@@ -41,7 +41,7 @@ function App() {
             </div>
           </section>
           <section
-            className="contact flow container fc-neutral-700 fw-semibold fc-dark-neutral-400"
+            className="contact flow container fc-neutral-700 fc-dark-neutral-400"
             id="contact"
           >
             <h2 className="h2 heading-section">

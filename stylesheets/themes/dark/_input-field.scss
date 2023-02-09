@@ -2,8 +2,11 @@ body#dark {
   .input-field {
     &__input {
       border-color: var(--clr-dark-neutral-500);
+      background-color: var(--clr-dark-neutral-600);
+
       &--error {
         border-color: var(--clr-dark-primary-700);
+        font-weight: lighter;
       }
     }
   }
