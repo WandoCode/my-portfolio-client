@@ -38,3 +38,9 @@ button {
 p + p {
   margin-top: 2rem;
 }
+
+input:focus,
+textarea:focus {
+  border: 1px solid var(--clr-primary-400);
+  outline: 1px solid var(--clr-primary-400);
+}
