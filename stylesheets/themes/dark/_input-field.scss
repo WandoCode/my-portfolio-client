@@ -10,4 +10,8 @@ body#dark {
       }
     }
   }
+  .input-field .input-field__input--error:focus {
+    border-color: transparent;
+    outline-color: var(--clr-dark-primary-400);
+  }
 }
