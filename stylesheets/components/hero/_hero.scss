@@ -21,8 +21,8 @@
 
     overflow: hidden;
     border-radius: 1000px;
-    border: 15px white solid;
-    box-shadow: 0px 0px 30px 7px rgba(0, 0, 0, 0.1);
+    border: 15px var(--clr-dark-neutral-100) solid;
+    box-shadow: $glow;
 
     & img {
       width: 500px;

@@ -1,9 +1,12 @@
+@use '../../abstracts/' as *;
+
 body#dark {
   .btn {
+    box-shadow: $glow-dark--small;
+
     &--secondary {
       background-color: var(--clr-dark-neutral-500);
-      border-color: var(--clr-dark-neutral-700);
-      color: var(--clr-dark-neutral-800);
+      border-color: var(--clr-dark-neutral-500);
     }
   }
 }

@@ -1,10 +1,13 @@
 body#dark {
-  background: #333;
-  color: var(--clr-neutral-300);
+  background: var(--clr-dark-neutral-700);
+  color: var(--clr-dark-neutral-400);
 
-  h2,
+  h2 {
+    color: var(--clr-dark-neutral-250);
+  }
+
   h3 {
-    color: var(--clr-neutral-100);
+    color: var(--clr-dark-neutral-300);
   }
 }
 

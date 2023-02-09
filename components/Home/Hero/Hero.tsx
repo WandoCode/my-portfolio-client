@@ -30,7 +30,7 @@ function Hero({ heroDatas }: Props) {
             />
           </div>
           <div className="hero__content">
-            <p className="hero__subtitle subtitle fc-neutral-350 fs-350">
+            <p className="hero__subtitle subtitle fc-neutral-350 fc-dark-neutral-500 fs-350">
               {language ? heroDatas.subtitle[language] : ''}
             </p>
             <h1 className="h1 fs-800">
@@ -52,7 +52,7 @@ function Hero({ heroDatas }: Props) {
                 type="link"
                 level="secondary"
                 href="#contact"
-                className="hero__btn fs-400 fc-neutral-800"
+                className="hero__btn fs-400 fc-neutral-800 fc-dark-neutral-250"
               >
                 {language ? btnText[language].contact : ''}
               </Button>

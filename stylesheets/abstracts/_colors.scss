@@ -30,16 +30,18 @@ $colors-dark: (
     700: hsl(0, 96%, 52%),
   ),
   neutral: (
-    100: hsl(0, 0%, 100%),
-    250: hsl(0, 0%, 90%),
+    100: hsl(0, 0%, 99%),
+    250: rgb(230, 230, 230),
     300: hsl(0, 0%, 81%),
     350: hsl(0, 0%, 67%),
     400: hsl(0, 0%, 62%),
     500: hsl(0, 0%, 40%),
-    700: hsl(0, 0%, 20%),
-    800: hsl(0, 0%, 7%),
+    600: hsl(0, 0%, 20%),
+    700: hsl(0, 0%, 10%),
   ),
   svg-filter: (
+    300: brightness(0) saturate(100%) invert(90%) sepia(0%) saturate(0%)
+      hue-rotate(115deg) brightness(92%) contrast(93%),
     400: brightness(0) saturate(100%) invert(78%) sepia(76%) saturate(1482%)
       hue-rotate(352deg) brightness(108%) contrast(96%),
     500: brightness(0) saturate(100%) invert(84%) sepia(16%) saturate(6374%)
@@ -68,6 +70,16 @@ $colors-dark: (
   @each $shade, $color in $shades {
     .fc-#{$color-type}-#{$shade} {
       color: $color;
+    }
+  }
+}
+
+@each $color-type, $shades in $colors-dark {
+  @each $shade, $color in $shades {
+    #dark {
+      .fc-dark-#{$color-type}-#{$shade} {
+        color: $color;
+      }
     }
   }
 }

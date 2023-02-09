@@ -2,8 +2,8 @@ body#dark {
   .projects {
     background: linear-gradient(
         var(--clr-dark-neutral-700) 5%,
-        hsla(0, 0%, 20%, 0.97) 10%,
-        hsla(0, 0%, 20%, 0.97),
+        hsla(0, 0%, 7%, 0.97) 10%,
+        hsla(0, 0%, 7%, 0.97) 90%,
         var(--clr-dark-neutral-700) 100%
       ),
       url(../../../public/assets/common-bg.svg);

@@ -22,7 +22,7 @@
 
     border-bottom: 1px solid var(--clr-neutral-700);
 
-    transition: margin 0.3s;
+    transition: margin 0.3s, width 0.3s;
 
     @include breakpoint-down(large) {
       display: none;

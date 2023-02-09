@@ -1,7 +1,13 @@
+@use '../../abstracts/' as *;
+
 body#dark {
   .hero {
     & h1 {
       color: var(--clr-dark-neutral-100);
+    }
+    &__img-container {
+      box-shadow: $glow-dark;
+      border-color: var(--clr-dark-neutral-250);
     }
   }
 }
