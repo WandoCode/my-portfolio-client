@@ -44,7 +44,7 @@ function InputField({
   return (
     <div className="input-field">
       {inputErrors.length > 0 && (
-        <div className="input-field__error fc-primary-700">
+        <div className="input-field__error fc-primary-700 fc-dark-primary-700">
           {inputErrors.join(' ')}
         </div>
       )}

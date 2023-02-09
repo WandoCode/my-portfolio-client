@@ -1,1 +1,60 @@
 @use '../../abstracts/' as *;
+
+.contact-form {
+  --flow: 3.4375rem;
+
+  display: grid;
+  gap: var(--flow);
+
+  gap: rem(16);
+
+  @include breakpoint(large) {
+    gap: rem(16) rem(30);
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+
+    & > *:first-child {
+      grid-column: 1 / 2;
+      grid-row: 1 / 4;
+    }
+
+    & > *:nth-last-child(2) {
+      grid-column: 3 / -1;
+      grid-row: 1 / 4;
+    }
+
+    & > *:last-child {
+      grid-column: 2 / -1;
+      grid-row: 4 / 5;
+    }
+  }
+
+  &__submit {
+    width: min-content;
+    margin-inline: auto;
+    margin-top: var(--flow);
+    @include breakpoint(large) {
+      margin-inline: 0;
+    }
+  }
+
+  &__infos {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    gap: rem(28);
+
+    margin-bottom: var(--flow);
+
+    @include breakpoint(medium) {
+      gap: rem(45);
+    }
+
+    @include breakpoint(large) {
+      align-content: center;
+      justify-items: start;
+      margin-bottom: 0;
+    }
+  }
+}
