@@ -70,7 +70,7 @@ function NavLinks({ onCloseNav, navText }: Props) {
     <ul className={listClass()}>
       <li
         className={
-          activeSection === 'hero'
+          activeSection === 'hero' || !activeSection
             ? 'nav-links__item nav-links__item--active'
             : 'nav-links__item'
         }
@@ -118,7 +118,7 @@ function NavLinks({ onCloseNav, navText }: Props) {
       </li>
       <li
         className={
-          activeSection === 'contact'
+          activeSection === 'about'
             ? 'nav-links__item nav-links__item--active'
             : 'nav-links__item'
         }
