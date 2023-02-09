@@ -1,6 +1,18 @@
+@use '../../abstracts/' as *;
+
 body#dark {
   .nav {
     background-color: var(--clr-dark-neutral-700);
     border-color: var(--clr-dark-neutral-600);
+
+    &__content {
+      @include breakpoint-down(large) {
+        background-color: var(--clr-dark-neutral-700);
+        box-shadow: 0 0 10px -5px rgb(59, 59, 59);
+      }
+    }
+    &__burger {
+      filter: var(--clr-dark-svg-filter-300);
+    }
   }
 }
