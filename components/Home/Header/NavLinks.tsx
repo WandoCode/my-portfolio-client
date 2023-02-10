@@ -59,8 +59,6 @@ function NavLinks({ onCloseNav, navText }: Props) {
 
   useEffect(() => {
     if (listSliderRef.current && activeSection) {
-      console.log(activeSection)
-
       listSliderRef.current.style.width = `${linksDimensions[activeSection].width}px`
       listSliderRef.current.style.marginLeft = `${linksDimensions[activeSection].start}px`
     }

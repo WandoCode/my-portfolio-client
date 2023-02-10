@@ -13,13 +13,12 @@ function useGetCurrentSection() {
   const findAndSetCurrentSection = () => {
     const windowYPos = window.scrollY
 
-    if (windowYPos === 0 && sectionsYPos.length > 0)
+    if (windowYPos === 0 || sectionsYPos.length === 0)
       return setCurrentSection(undefined)
 
     const inSection = sectionsYPos.find(
       (section) =>
-        section.yPos < windowYPos + 100 &&
-        section.yPos + section.height >= windowYPos + 100
+        section.yPos <= windowYPos && section.yPos + section.height > windowYPos
     )
 
     if (inSection) setCurrentSection(inSection.id)

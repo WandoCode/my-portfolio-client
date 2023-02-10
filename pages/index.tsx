@@ -33,7 +33,7 @@ function App() {
             </h2>
             <Skills />
           </section>
-          <section className="about flow-bottom" id="about">
+          <section className="about flow" id="about">
             <div className="container">
               <h2 className="h2 heading-section about__title fc-neutral-300">
                 {language ? mainDatas?.headings[language].about : ''}

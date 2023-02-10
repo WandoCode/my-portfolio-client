@@ -8,7 +8,7 @@
   background-color: var(--clr-neutral-800);
 
   @include breakpoint(medium) {
-    margins-top: $flow-top-lg;
+    margin-top: $flow-top-lg;
   }
 
   &:before {
