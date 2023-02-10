@@ -2,7 +2,7 @@ import {
   allowedLanguage,
   LanguagesObject,
   LanguageAvailable,
-} from '../constant/language'
+} from '../constant/language/language'
 
 const languageStore = {
   getBrowserLanguage: () => {

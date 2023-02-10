@@ -5,7 +5,7 @@ import Skills from '../components/Home/Skills/Skills'
 import Contact from '../components/Home/Contact/Contact'
 import Footer from '../components/Home/Footer/Footer'
 import About from '../components/Home/About/About'
-import mockedMainDatas from '../__mock__/data/mainDatas.json'
+import mockedMainDatas from '../data/mainDatas.json'
 import { useContext } from 'react'
 import { LanguageContext } from '../components/Language/LanguageContextProvider'
 

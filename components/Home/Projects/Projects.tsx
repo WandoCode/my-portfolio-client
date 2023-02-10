@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import Project from './Project'
-import projectsMockDatas from '../../../__mock__/data/project.json'
-import { ProjectDatas } from '../../../constant/projects'
+import projectsMockDatas from '../../../data/project.json'
+import { ProjectDatas } from '../../../constant/types/projects'
 
 function Projects() {
   const projectsDatas: ProjectDatas[] = projectsMockDatas.projects

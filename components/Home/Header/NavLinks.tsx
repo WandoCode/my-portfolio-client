@@ -1,6 +1,6 @@
 import useGetCurrentSection from '../../../hooks/useGetCurrentSection'
 import { useRef, useEffect, useState, useContext } from 'react'
-import mockedMainDatas from '../../../__mock__/data/mainDatas.json'
+import mockedMainDatas from '../../../data/mainDatas.json'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
 
 interface Props {

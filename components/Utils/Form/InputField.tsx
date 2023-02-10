@@ -1,12 +1,13 @@
 import { ChangeEvent, useContext } from 'react'
 import Input, { InputError } from '../../../utils/form/Input'
-import errorMessage from '../../../constant/text/formError.json'
+import errorMessage from '../../../constant/content/formError.json'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
+import { InputTypes } from '../../../constant/types/InputFields'
 
 interface Props {
   name: string
   label: string
-  type: 'email' | 'text' | 'textarea'
+  type: InputTypes
   inputErrors: InputError[]
   inputDatas: Input
   onChangeFormDatas: (fieldName: string, newValue: string) => void

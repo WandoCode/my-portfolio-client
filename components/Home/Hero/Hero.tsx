@@ -1,10 +1,9 @@
 import Image from 'next/image'
-import heroImg from '../../../public/assets/hero__placeholder.png'
 import Button from '../../Utils/Button/Button'
-import mockedMainDatas from '../../../__mock__/data/mainDatas.json'
+import mockedMainDatas from '../../../data/mainDatas.json'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
 import { useContext } from 'react'
-import btnText from '../../../constant/text/heroBtns.json'
+import btnText from '../../../constant/content/heroBtns.json'
 
 interface Props {
   heroDatas: typeof mockedMainDatas.hero

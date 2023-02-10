@@ -1,7 +1,10 @@
 import Select from '../Utils/Select/Select'
 import { useContext } from 'react'
 import { LanguageContext } from './LanguageContextProvider'
-import { allowedLanguage, LanguagesObject } from '../../constant/language'
+import {
+  allowedLanguage,
+  LanguagesObject,
+} from '../../constant/language/language'
 
 function LangSelection() {
   const { language, changeLanguage } = useContext(LanguageContext)

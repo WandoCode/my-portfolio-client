@@ -1,4 +1,4 @@
-import mediaMockedDatas from '../../../__mock__/data/media.json'
+import mediaMockedDatas from '../../../data/media.json'
 import MediaLink from '../../Utils/Link/MediaLink'
 
 function Footer() {

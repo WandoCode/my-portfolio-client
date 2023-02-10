@@ -1,4 +1,4 @@
-import Image, { ImageLoader, ImageLoaderProps } from 'next/image'
+import Image, { ImageLoaderProps } from 'next/image'
 import { isInteger } from '../../../utils/helpers/number'
 import { SkillDatas } from './Skills'
 import { useEffect, useState } from 'react'

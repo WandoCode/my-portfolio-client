@@ -3,6 +3,7 @@ interface Props {
   text: string
   classname?: string
 }
+
 function Tag({ color, text, classname }: Props) {
   const tagClassname = () => {
     let base = 'tag fc-neutral-800'

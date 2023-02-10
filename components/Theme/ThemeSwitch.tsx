@@ -1,4 +1,4 @@
-import { ChangeEvent, useState, useContext } from 'react'
+import { ChangeEvent, useContext } from 'react'
 import sun from '../../public/assets/sun.svg'
 import moon from '../../public/assets/moon.svg'
 import Image from 'next/image'

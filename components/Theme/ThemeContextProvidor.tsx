@@ -1,5 +1,5 @@
 import { PropsWithChildren, createContext, useState, useEffect } from 'react'
-import { ThemesValues } from '../../constant/theme'
+import { ThemesValues } from '../../constant/theme/theme'
 import themeStore from '../../stores/theme'
 
 interface ThemeContextTypes {

@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import SkillItem from './SkillItem'
-import mockedDatas from '../../../__mock__/data/skills.json'
+import mockedDatas from '../../../data/skills.json'
 
 export type SkillDatas = typeof mockedDatas.skills[0]
 

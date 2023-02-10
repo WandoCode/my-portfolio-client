@@ -1,17 +1,17 @@
 import { useState, MouseEvent, useContext } from 'react'
 import Input from '../../../utils/form/Input'
 import Button from '../../Utils/Button/Button'
-import InputField from './InputField'
+import InputField from '../../Utils/Form/InputField'
 import Info from './Info'
 import localisationIcon from '../../../public/assets/localisationIcon.svg'
 import emailIcon from '../../../public/assets/emailIcon.svg'
-import mockedMainDatas from '../../../__mock__/data/mainDatas.json'
+import mainDatas from '../../../data/mainDatas.json'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
-import formText from '../../../constant/text/formText.json'
+import formText from '../../../constant/content/formText.json'
 import { InputError } from '../../../utils/form/Input'
 
 interface Props {
-  contactDatas: typeof mockedMainDatas.contact
+  contactDatas: typeof mainDatas.contact
 }
 
 function Contact({ contactDatas }: Props) {

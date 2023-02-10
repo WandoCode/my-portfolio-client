@@ -1,10 +1,10 @@
 import Image from 'next/image'
-import mockedMainDatas from '../../../__mock__/data/mainDatas.json'
+import mainDatas from '../../../data/mainDatas.json'
 import { useContext } from 'react'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
 
 interface Props {
-  aboutDatas: typeof mockedMainDatas.about
+  aboutDatas: typeof mainDatas.about
 }
 
 function About({ aboutDatas }: Props) {

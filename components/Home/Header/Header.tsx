@@ -4,7 +4,7 @@ import { useState, useEffect, useContext } from 'react'
 import Logo from '../../../public/assets/Logo.svg'
 import Image from 'next/image'
 import NavLinks from './NavLinks'
-import mockedMainDatas from '../../../__mock__/data/mainDatas.json'
+import mockedMainDatas from '../../../data/mainDatas.json'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
 
 interface Props {

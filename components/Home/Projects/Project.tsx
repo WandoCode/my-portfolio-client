@@ -3,7 +3,7 @@ import GithubIcon from '/public/assets/githubIcon.svg'
 import WebIcon from '/public/assets/webIcon.svg'
 import { useMemo, useContext } from 'react'
 import Tag from './Tag'
-import { ProjectDatas } from '../../../constant/projects'
+import { ProjectDatas } from '../../../constant/types/projects'
 import MediaLink from '../../Utils/Link/MediaLink'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
 
