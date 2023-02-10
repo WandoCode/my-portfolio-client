@@ -154,3 +154,4 @@ function NavLinks({ onCloseNav, navText }: Props) {
 }
 
 export default NavLinks
+// TODO: contact and about navlink not correctely detected
