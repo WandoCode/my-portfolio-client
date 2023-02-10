@@ -4,7 +4,7 @@ import { AboutDatas } from '../../../constant/types/datas'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
 
 interface Props {
-  aboutDatas: AboutDatas
+  aboutDatas: AboutDatas | undefined
 }
 
 function About({ aboutDatas }: Props) {
@@ -14,15 +14,17 @@ function About({ aboutDatas }: Props) {
     <div className="about__body">
       <div className="about__text fc-neutral-300">
         {/* TODO: utiliser un lecteur markdown pour générer les paragraphes */}
-        {language ? aboutDatas.text[language] : ''}
+        {language ? aboutDatas?.text[language] : ''}
       </div>
       <div className="about__img-container">
-        <Image
-          src={aboutDatas.img.link}
-          height={380}
-          width={380}
-          alt={aboutDatas.img.alt}
-        />
+        {aboutDatas && (
+          <Image
+            src={aboutDatas.img.link}
+            height={380}
+            width={380}
+            alt={aboutDatas.img.alt}
+          />
+        )}
       </div>
     </div>
   )

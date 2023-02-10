@@ -5,7 +5,7 @@ import { HeadingsDatas } from '../../../constant/types/datas'
 
 interface Props {
   onCloseNav: () => void
-  navText: HeadingsDatas['fr'] | null
+  navText: HeadingsDatas['fr'] | undefined
 }
 
 type Dimensions = Record<string, any>

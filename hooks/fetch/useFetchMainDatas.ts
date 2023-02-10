@@ -7,10 +7,11 @@ function useFetchMainDatas() {
 
   useEffect(() => {
     const rep = mainDatasStore.getAll()
+
     setMainDatas(rep)
   }, [])
 
-  return { mainDatas }
+  return mainDatas
 }
 
 export default useFetchMainDatas

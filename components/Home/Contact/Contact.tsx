@@ -9,7 +9,7 @@ import { InputError } from '../../../utils/form/Input'
 import { ContactDatas } from '../../../constant/types/datas'
 
 interface Props {
-  contactDatas: ContactDatas
+  contactDatas: ContactDatas | undefined
 }
 
 function Contact({ contactDatas }: Props) {
@@ -75,13 +75,14 @@ function Contact({ contactDatas }: Props) {
   }
 
   // TODO: probablement loader à utliser pour chargement des icones
+
   return (
     <form className="contact-form">
       <div className="contact-form__infos">
-        <Info imageRef={contactDatas.placeIcon}>
-          {language ? contactDatas.place[language] : ''}
+        <Info imageRef={contactDatas?.placeIcon}>
+          {language ? contactDatas?.place[language] : ''}
         </Info>
-        <Info imageRef={contactDatas.emailIcon}>{contactDatas.email}</Info>
+        <Info imageRef={contactDatas?.emailIcon}>{contactDatas?.email}</Info>
       </div>
       <InputField
         name="name"

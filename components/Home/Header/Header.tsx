@@ -8,7 +8,7 @@ import { LanguageContext } from '../../Language/LanguageContextProvider'
 import { HeadingsDatas } from '../../../constant/types/datas'
 
 interface Props {
-  headerDatas: HeadingsDatas
+  headerDatas: HeadingsDatas | undefined
 }
 
 function Header({ headerDatas }: Props) {
@@ -72,7 +72,7 @@ function Header({ headerDatas }: Props) {
           <div className={navContentClass()}>
             <NavLinks
               onCloseNav={handleCloseNav}
-              navText={language ? headerDatas[language] : null}
+              navText={language ? headerDatas?.[language] : undefined}
             />
             <div className="nav__dark-light-switch">
               <ThemeSwitch />
