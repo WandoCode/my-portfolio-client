@@ -1,10 +1,10 @@
-import mediaMockedDatas from '../../../data/media.json'
+import mediasDatas from '../../../constant/content/media.json'
 import MediaLink from '../../Utils/Link/MediaLink'
 
 function Footer() {
   const mediaLinksDOM = () => {
-    const mediasDatas = mediaMockedDatas.medias
-    return mediasDatas.map((media, i) => (
+    const mediasArray = mediasDatas.medias
+    return mediasArray.map((media, i) => (
       <li key={i}>
         <MediaLink
           image={media.image}

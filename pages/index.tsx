@@ -5,7 +5,7 @@ import Skills from '../components/Home/Skills/Skills'
 import Contact from '../components/Home/Contact/Contact'
 import Footer from '../components/Home/Footer/Footer'
 import About from '../components/Home/About/About'
-import mockedMainDatas from '../data/mainDatas.json'
+import mainDatas from '../constant/content/mainDatas.json'
 import { useContext } from 'react'
 import { LanguageContext } from '../components/Language/LanguageContextProvider'
 
@@ -15,29 +15,29 @@ function App() {
   return (
     <>
       <div className="app">
-        <Header headerDatas={mockedMainDatas.headings} />
+        <Header headerDatas={mainDatas.headings} />
         <main className="main">
-          <Hero heroDatas={mockedMainDatas.hero} />
+          <Hero heroDatas={mainDatas.hero} />
           <section className="projects" id="projects">
             <div className="container projects__container flow">
               <h2 className="h2 heading-section">
-                {language ? mockedMainDatas.headings[language].projects : ''}
+                {language ? mainDatas.headings[language].projects : ''}
               </h2>
               <Projects />
             </div>
           </section>
           <section className="skills container flow" id="skills">
             <h2 className="h2 heading-section skills__title">
-              {language ? mockedMainDatas.headings[language].skills : ''}
+              {language ? mainDatas.headings[language].skills : ''}
             </h2>
             <Skills />
           </section>
           <section className="about flow-bottom" id="about">
             <div className="container">
               <h2 className="h2 heading-section about__title fc-neutral-300">
-                {language ? mockedMainDatas.headings[language].about : ''}
+                {language ? mainDatas.headings[language].about : ''}
               </h2>
-              <About aboutDatas={mockedMainDatas.about} />
+              <About aboutDatas={mainDatas.about} />
             </div>
           </section>
           <section
@@ -45,9 +45,9 @@ function App() {
             id="contact"
           >
             <h2 className="h2 heading-section">
-              {language ? mockedMainDatas.headings[language].contact : ''}
+              {language ? mainDatas.headings[language].contact : ''}
             </h2>
-            <Contact contactDatas={mockedMainDatas.contact} />
+            <Contact contactDatas={mainDatas.contact} />
           </section>
         </main>
         <Footer />

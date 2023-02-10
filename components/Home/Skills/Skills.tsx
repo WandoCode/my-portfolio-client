@@ -1,13 +1,13 @@
 import { useMemo } from 'react'
 import SkillItem from './SkillItem'
-import mockedDatas from '../../../data/skills.json'
+import skillsDatas from '../../../constant/content/skills.json'
 
-export type SkillDatas = typeof mockedDatas.skills[0]
+export type SkillDatas = typeof skillsDatas.skills[0]
 
 function Skills() {
-  const skillsDatas = mockedDatas.skills
+  const skillsArray = skillsDatas.skills
   const skillItemsDOM = useMemo(() => {
-    return skillsDatas.map((datas, i) => <SkillItem datas={datas} key={i} />)
+    return skillsArray.map((datas, i) => <SkillItem datas={datas} key={i} />)
   }, [])
   return <ul className="skills__list">{skillItemsDOM}</ul>
 }

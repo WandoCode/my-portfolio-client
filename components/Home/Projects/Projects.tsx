@@ -1,13 +1,13 @@
 import { useMemo } from 'react'
 import Project from './Project'
-import projectsMockDatas from '../../../data/project.json'
+import projectsDatas from '../../../constant/content/project.json'
 import { ProjectDatas } from '../../../constant/types/projects'
 
 function Projects() {
-  const projectsDatas: ProjectDatas[] = projectsMockDatas.projects
+  const projectsArray: ProjectDatas[] = projectsDatas.projects
   const projectsDOM = useMemo(
     () =>
-      projectsDatas.map((projectDatas: any, i) => (
+      projectsArray.map((projectDatas: any, i) => (
         <Project
           datas={projectDatas}
           side={i % 2 === 0 ? 'left' : 'right'}
