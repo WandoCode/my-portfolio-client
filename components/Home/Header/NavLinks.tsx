@@ -1,11 +1,11 @@
-import useGetCurrentSection from '../../../hooks/useGetCurrentSection'
+import useGetCurrentSection from '../../../hooks/utils/useGetCurrentSection'
 import { useRef, useEffect, useState, useContext } from 'react'
-import mockedMainDatas from '../../../data/mainDatas.json'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
+import { HeadingsDatas } from '../../../constant/types/datas'
 
 interface Props {
   onCloseNav: () => void
-  navText: typeof mockedMainDatas.headings.fr | null
+  navText: HeadingsDatas['fr'] | null
 }
 
 type Dimensions = Record<string, any>

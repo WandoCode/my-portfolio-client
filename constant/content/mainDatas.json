@@ -50,6 +50,8 @@
     }
   },
   "contact": {
+    "emailIcon": "https://api.iconify.design/ic:sharp-alternate-email.svg?color=%23888888",
+    "placeIcon": "https://api.iconify.design/mdi:map-marker.svg?color=%23888888",
     "place": { "fr": "Bruxelles", "en": "Brussels", "es": "Bruselas" },
     "email": "azerty@azer.be"
   }

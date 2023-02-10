@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import Button from '../../Utils/Button/Button'
-import mockedMainDatas from '../../../data/mainDatas.json'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
 import { useContext } from 'react'
 import btnText from '../../../constant/content/heroBtns.json'
+import { HeroDatas } from '../../../constant/types/datas'
 
 interface Props {
-  heroDatas: typeof mockedMainDatas.hero
+  heroDatas: HeroDatas
 }
 
 function Hero({ heroDatas }: Props) {

@@ -1,31 +1,9 @@
-import axios from 'axios'
-
-const BASE_API = process.env.BASE_API
+import skillsDatas from '../constant/content/skills.json'
 
 const skillsStore = {
   getAll: async () => {
-    try {
-      const rep = await axios.get(BASE_API + `/skills`)
-
-      return rep.data
-    } catch (error) {
-      if (axios.isAxiosError(error)) throw error
-      else {
-        throw new Error(`Unknown error loading skills (not handled by Axios)`)
-      }
-    }
+    return skillsDatas.skills
   },
 }
 
 export default skillsStore
-
-/* 
-Skills data structure type:
-
-Skills = {
-  id: string
-  image: string
-  link: string
-  alt: string
-}
-*/

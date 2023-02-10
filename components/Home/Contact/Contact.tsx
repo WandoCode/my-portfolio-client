@@ -3,15 +3,13 @@ import Input from '../../../utils/form/Input'
 import Button from '../../Utils/Button/Button'
 import InputField from '../../Utils/Form/InputField'
 import Info from './Info'
-import localisationIcon from '../../../public/assets/localisationIcon.svg'
-import emailIcon from '../../../public/assets/emailIcon.svg'
-import mainDatas from '../../../data/mainDatas.json'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
 import formText from '../../../constant/content/formText.json'
 import { InputError } from '../../../utils/form/Input'
+import { ContactDatas } from '../../../constant/types/datas'
 
 interface Props {
-  contactDatas: typeof mainDatas.contact
+  contactDatas: ContactDatas
 }
 
 function Contact({ contactDatas }: Props) {
@@ -76,13 +74,14 @@ function Contact({ contactDatas }: Props) {
     })
   }
 
+  // TODO: probablement loader à utliser pour chargement des icones
   return (
     <form className="contact-form">
       <div className="contact-form__infos">
-        <Info imageRef={localisationIcon}>
+        <Info imageRef={contactDatas.placeIcon}>
           {language ? contactDatas.place[language] : ''}
         </Info>
-        <Info imageRef={emailIcon}>{contactDatas.email}</Info>
+        <Info imageRef={contactDatas.emailIcon}>{contactDatas.email}</Info>
       </div>
       <InputField
         name="name"

@@ -4,11 +4,11 @@ import { useState, useEffect, useContext } from 'react'
 import Logo from '../../../public/assets/Logo.svg'
 import Image from 'next/image'
 import NavLinks from './NavLinks'
-import mockedMainDatas from '../../../data/mainDatas.json'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
+import { HeadingsDatas } from '../../../constant/types/datas'
 
 interface Props {
-  headerDatas: typeof mockedMainDatas.headings
+  headerDatas: HeadingsDatas
 }
 
 function Header({ headerDatas }: Props) {

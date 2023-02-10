@@ -1,10 +1,10 @@
 import Image from 'next/image'
-import mainDatas from '../../../data/mainDatas.json'
 import { useContext } from 'react'
+import { AboutDatas } from '../../../constant/types/datas'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
 
 interface Props {
-  aboutDatas: typeof mainDatas.about
+  aboutDatas: AboutDatas
 }
 
 function About({ aboutDatas }: Props) {
