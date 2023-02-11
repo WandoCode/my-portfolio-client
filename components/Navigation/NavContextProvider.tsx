@@ -2,19 +2,20 @@ import { createContext, PropsWithChildren, useState } from 'react'
 
 interface NavContext {
   currentSection: string | undefined
-  changeCurrentSection: (value: string) => void
+  changeCurrentSection: (value: string | undefined) => void
 }
 
 const defaultContext = {
   currentSection: undefined,
-  changeCurrentSection: (value: string) => {},
+  changeCurrentSection: (value: string | undefined) => {},
 }
 
 export const NavContext = createContext<NavContext>(defaultContext)
 
 function NavContextProvider({ children }: PropsWithChildren) {
   const [currentSection, setCurrentSection] = useState<string>()
-  const changeCurrentSection = (value: string) => {
+
+  const changeCurrentSection = (value: string | undefined) => {
     setCurrentSection(value)
   }
 

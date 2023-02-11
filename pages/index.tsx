@@ -5,21 +5,43 @@ import Skills from '../components/Home/Skills/Skills'
 import Contact from '../components/Home/Contact/Contact'
 import Footer from '../components/Home/Footer/Footer'
 import About from '../components/Home/About/About'
-import { useContext } from 'react'
+import { useContext, useRef, useEffect, RefObject } from 'react'
 import { LanguageContext } from '../components/Language/LanguageContextProvider'
 import useFetchMainDatas from '../hooks/fetch/useFetchMainDatas'
+import useGetCurrentSection from '../hooks/utils/useGetCurrentsection'
+import { NavContext } from '../components/Navigation/NavContextProvider'
 
 function App() {
   const { language } = useContext(LanguageContext)
+  const { changeCurrentSection } = useContext(NavContext)
   const mainDatas = useFetchMainDatas()
+  const refs: Record<string, RefObject<HTMLElement>> = {
+    hero: useRef<HTMLElement>(null),
+    projects: useRef<HTMLElement>(null),
+    skills: useRef<HTMLElement>(null),
+    about: useRef<HTMLElement>(null),
+    contact: useRef<HTMLElement>(null),
+  }
+
+  const currentSection = useGetCurrentSection({
+    parentRefObject: refs,
+    margin: '-5% 0px -90% 0px',
+  })
+
+  useEffect(() => {
+    changeCurrentSection(currentSection)
+  }, [currentSection])
 
   return (
     <>
       <div className="app">
         <Header headerDatas={mainDatas?.headings} />
         <main className="main">
-          <Hero heroDatas={mainDatas?.hero} />
-          <section className="projects" id="projects">
+          <section ref={refs.hero} className="hero flow" id="hero">
+            <Hero heroDatas={mainDatas?.hero} />
+          </section>
+
+          <section ref={refs.projects} className="projects" id="projects">
             <div className="container projects__container flow">
               <h2 className="h2 heading-section">
                 {language ? mainDatas?.headings[language].projects : ''}
@@ -27,13 +49,17 @@ function App() {
               <Projects />
             </div>
           </section>
-          <section className="skills container flow" id="skills">
+          <section
+            ref={refs.skills}
+            className="skills container flow"
+            id="skills"
+          >
             <h2 className="h2 heading-section skills__title">
               {language ? mainDatas?.headings[language].skills : ''}
             </h2>
             <Skills />
           </section>
-          <section className="about flow" id="about">
+          <section ref={refs.about} className="about flow" id="about">
             <div className="container">
               <h2 className="h2 heading-section about__title fc-neutral-300">
                 {language ? mainDatas?.headings[language].about : ''}
@@ -42,6 +68,7 @@ function App() {
             </div>
           </section>
           <section
+            ref={refs.contact}
             className="contact flow container fc-neutral-700 fc-dark-neutral-400"
             id="contact"
           >

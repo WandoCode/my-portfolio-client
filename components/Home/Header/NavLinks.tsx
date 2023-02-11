@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState, useContext } from 'react'
+import { useRef, useEffect, useContext, RefObject } from 'react'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
 import { HeadingsDatas } from '../../../constant/types/datas'
 import { NavContext } from '../../Navigation/NavContextProvider'
@@ -8,65 +8,28 @@ interface Props {
   navText: HeadingsDatas['fr'] | undefined
 }
 
-type Dimensions = Record<string, any>
-
 function NavLinks({ onCloseNav, navText }: Props) {
   const { language } = useContext(LanguageContext)
-  const { currentSection } = useContext(NavContext)
+  const { currentSection = 'hero' } = useContext(NavContext)
+  const refs: Record<string, RefObject<HTMLAnchorElement>> = {
+    hero: useRef<HTMLAnchorElement>(null),
+    projects: useRef<HTMLAnchorElement>(null),
+    skills: useRef<HTMLAnchorElement>(null),
+    about: useRef<HTMLAnchorElement>(null),
+    contact: useRef<HTMLAnchorElement>(null),
+  }
 
-  const heroRef = useRef<HTMLAnchorElement>(null)
-  const projectsRef = useRef<HTMLAnchorElement>(null)
-  const skillsRef = useRef<HTMLAnchorElement>(null)
-  const aboutRef = useRef<HTMLAnchorElement>(null)
-  const contactRef = useRef<HTMLAnchorElement>(null)
   const listSliderRef = useRef<HTMLUListElement>(null)
 
-  const [linksDimensions, setLinksDimensions] = useState<Dimensions>({})
-
-  const listClass = () => {
-    let name = 'nav-links'
-    return currentSection ? `${name} ${name}--${currentSection}` : name
-  }
-  // TODO: util cette listCalss?
-
-  const getLinksDimensions = () => {
-    return {
-      hero: {
-        start: heroRef.current?.offsetLeft,
-        width: heroRef.current?.offsetWidth,
-      },
-      projects: {
-        start: projectsRef.current?.offsetLeft,
-        width: projectsRef.current?.offsetWidth,
-      },
-      skills: {
-        start: skillsRef.current?.offsetLeft,
-        width: skillsRef.current?.offsetWidth,
-      },
-      about: {
-        start: aboutRef.current?.offsetLeft,
-        width: aboutRef.current?.offsetWidth,
-      },
-      contact: {
-        start: contactRef.current?.offsetLeft,
-        width: contactRef.current?.offsetWidth,
-      },
-    }
-  }
-
   useEffect(() => {
-    setLinksDimensions(getLinksDimensions())
-  }, [language])
-
-  useEffect(() => {
-    if (listSliderRef.current && currentSection) {
-      listSliderRef.current.style.width = `${linksDimensions[currentSection].width}px`
-      listSliderRef.current.style.marginLeft = `${linksDimensions[currentSection].start}px`
+    if (listSliderRef.current) {
+      listSliderRef.current.style.width = `${refs[currentSection].current?.offsetWidth}px`
+      listSliderRef.current.style.marginLeft = `${refs[currentSection].current?.offsetLeft}px`
     }
-  }, [currentSection, linksDimensions])
+  }, [currentSection, language])
 
   return (
-    <ul className={listClass()}>
+    <ul className="nav-links">
       <li
         className={
           currentSection === 'hero' || !currentSection
@@ -75,7 +38,7 @@ function NavLinks({ onCloseNav, navText }: Props) {
         }
       >
         <a
-          ref={heroRef}
+          ref={refs.hero}
           href="#hero"
           className="nav-links__link nav-item "
           onClick={onCloseNav}
@@ -91,7 +54,7 @@ function NavLinks({ onCloseNav, navText }: Props) {
         }
       >
         <a
-          ref={projectsRef}
+          ref={refs.projects}
           href="#projects"
           className="nav-links__link nav-item"
           onClick={onCloseNav}
@@ -107,7 +70,7 @@ function NavLinks({ onCloseNav, navText }: Props) {
         }
       >
         <a
-          ref={skillsRef}
+          ref={refs.skills}
           href="#skills"
           className="nav-links__link nav-item"
           onClick={onCloseNav}
@@ -123,7 +86,7 @@ function NavLinks({ onCloseNav, navText }: Props) {
         }
       >
         <a
-          ref={aboutRef}
+          ref={refs.about}
           href="#about"
           className="nav-links__link nav-item"
           onClick={onCloseNav}
@@ -139,7 +102,7 @@ function NavLinks({ onCloseNav, navText }: Props) {
         }
       >
         <a
-          ref={contactRef}
+          ref={refs.contact}
           href="#contact"
           className="nav-links__link nav-item"
           onClick={onCloseNav}
