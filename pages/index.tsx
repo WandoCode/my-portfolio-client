@@ -14,7 +14,9 @@ import { NavContext } from '../components/Navigation/NavContextProvider'
 function App() {
   const { language } = useContext(LanguageContext)
   const { changeCurrentSection } = useContext(NavContext)
+
   const mainDatas = useFetchMainDatas()
+
   const refs: Record<string, RefObject<HTMLElement>> = {
     hero: useRef<HTMLElement>(null),
     projects: useRef<HTMLElement>(null),
@@ -78,7 +80,7 @@ function App() {
             <Contact contactDatas={mainDatas?.contact} />
           </section>
         </main>
-        <Footer />
+        <Footer footerDatas={mainDatas?.footer} />
       </div>
     </>
   )

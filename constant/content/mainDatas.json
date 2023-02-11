@@ -54,5 +54,24 @@
     "placeIcon": "https://api.iconify.design/mdi:map-marker.svg?color=%23888888",
     "place": { "fr": "Bruxelles", "en": "Brussels", "es": "Bruselas" },
     "email": "azerty@azer.be"
+  },
+  "footer": {
+    "medias": [
+      {
+        "image": "https://api.iconify.design/bxl:github.svg?color=%23888888",
+        "link": "#",
+        "alt": "Github Icon"
+      },
+      {
+        "image": "https://api.iconify.design/ph:linkedin-logo-light.svg?color=%23888888",
+        "link": "#",
+        "alt": "LinkedIn Icon"
+      },
+      {
+        "image": "https://api.iconify.design/carbon:email.svg?color=%23888888",
+        "link": "mailto:test@azerty.bs",
+        "alt": "Email Icon"
+      }
+    ]
   }
 }

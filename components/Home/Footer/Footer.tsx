@@ -1,10 +1,13 @@
-import mediasDatas from '../../../constant/content/media.json'
 import MediaLink from '../../Utils/Link/MediaLink'
+import { FooterDatas } from '../../../constant/types/datas'
 
-function Footer() {
+interface Props {
+  footerDatas: FooterDatas | undefined
+}
+
+function Footer({ footerDatas }: Props) {
   const mediaLinksDOM = () => {
-    const mediasArray = mediasDatas.medias
-    return mediasArray.map((media, i) => (
+    return footerDatas?.medias.map((media, i) => (
       <li key={i}>
         <MediaLink
           image={media.image}

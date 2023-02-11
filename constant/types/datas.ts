@@ -6,5 +6,6 @@ export type ContactDatas = MainDatas['contact']
 export type AboutDatas = MainDatas['about']
 export type HeroDatas = MainDatas['hero']
 export type HeadingsDatas = MainDatas['headings']
+export type FooterDatas = MainDatas['footer']
 
 export type FormDatas = typeof formDatas
