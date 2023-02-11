@@ -1,12 +1,12 @@
 import { ChangeEvent, useContext } from 'react'
 import Input, { InputError } from '../../../utils/form/Input'
-import errorMessage from '../../../constant/content/formError.json'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
 import { InputTypes } from '../../../constant/types/InputFields'
+import useFetchFormDatas from '../../../hooks/fetch/useFetchFormDatas'
 
 interface Props {
   name: string
-  label: string
+  label: string | undefined
   type: InputTypes
   inputErrors: InputError[]
   inputDatas: Input
@@ -24,6 +24,7 @@ function InputField({
   onChangeErrors,
 }: Props) {
   const { language } = useContext(LanguageContext)
+  const errorMessage = useFetchFormDatas()?.errorText
 
   const handleInput = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -48,10 +49,10 @@ function InputField({
 
   const getValidationErrorText = () => {
     if (!language) return ''
-    const errorMeeageArray = inputErrors.map(
-      (error) => errorMessage[language][error]
+    const errorMessageArray = inputErrors.map(
+      (error) => errorMessage?.[language][error]
     )
-    return errorMeeageArray.join(' ')
+    return errorMessageArray.join(' ')
   }
 
   return (

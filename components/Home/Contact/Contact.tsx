@@ -4,9 +4,9 @@ import Button from '../../Utils/Button/Button'
 import InputField from '../../Utils/Form/InputField'
 import Info from './Info'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
-import formText from '../../../constant/content/formText.json'
 import { InputError } from '../../../utils/form/Input'
 import { ContactDatas } from '../../../constant/types/datas'
+import useFetchFormDatas from '../../../hooks/fetch/useFetchFormDatas'
 
 interface Props {
   contactDatas: ContactDatas | undefined
@@ -14,6 +14,7 @@ interface Props {
 
 function Contact({ contactDatas }: Props) {
   const { language } = useContext(LanguageContext)
+  const formText = useFetchFormDatas()
 
   const [formIsValid, setFormIsValid] = useState<boolean>(true)
   const [formDatas, setFormDatas] = useState<Record<string, Input>>({
@@ -86,7 +87,7 @@ function Contact({ contactDatas }: Props) {
       </div>
       <InputField
         name="name"
-        label={language ? formText[language].name : ''}
+        label={language ? formText?.text[language].name : undefined}
         type="text"
         inputErrors={formErrors.name}
         inputDatas={formDatas.name}
@@ -95,7 +96,7 @@ function Contact({ contactDatas }: Props) {
       />
       <InputField
         name="email"
-        label={language ? formText[language].email : ''}
+        label={language ? formText?.text[language].email : undefined}
         type="email"
         inputErrors={formErrors.email}
         inputDatas={formDatas.email}
@@ -104,7 +105,7 @@ function Contact({ contactDatas }: Props) {
       />
       <InputField
         name="object"
-        label={language ? formText[language].subject : ''}
+        label={language ? formText?.text[language].subject : undefined}
         type="text"
         inputErrors={formErrors.object}
         inputDatas={formDatas.object}
@@ -113,7 +114,7 @@ function Contact({ contactDatas }: Props) {
       />
       <InputField
         name="message"
-        label={language ? formText[language].message : ''}
+        label={language ? formText?.text[language].message : undefined}
         type="textarea"
         inputErrors={formErrors.message}
         inputDatas={formDatas.message}
@@ -127,7 +128,7 @@ function Contact({ contactDatas }: Props) {
         onclick={handleSubmit}
         className="contact-form__submit fs-400 fc-neutral-800 fc-dark-neutral-250"
       >
-        {language ? formText[language].send : ''}
+        {language ? formText?.text[language].send : undefined}
       </Button>
     </form>
   )

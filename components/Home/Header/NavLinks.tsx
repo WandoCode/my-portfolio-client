@@ -11,6 +11,9 @@ interface Props {
 function NavLinks({ onCloseNav, navText }: Props) {
   const { language } = useContext(LanguageContext)
   const { currentSection = 'hero' } = useContext(NavContext)
+
+  const listSliderRef = useRef<HTMLUListElement>(null)
+
   const refs: Record<string, RefObject<HTMLAnchorElement>> = {
     hero: useRef<HTMLAnchorElement>(null),
     projects: useRef<HTMLAnchorElement>(null),
@@ -18,8 +21,6 @@ function NavLinks({ onCloseNav, navText }: Props) {
     about: useRef<HTMLAnchorElement>(null),
     contact: useRef<HTMLAnchorElement>(null),
   }
-
-  const listSliderRef = useRef<HTMLUListElement>(null)
 
   useEffect(() => {
     if (listSliderRef.current) {

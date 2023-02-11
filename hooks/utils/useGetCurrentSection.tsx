@@ -54,4 +54,3 @@ function useGetCurrentSection({
 }
 
 export default useGetCurrentSection
-// TODO: utile? utilisé?
