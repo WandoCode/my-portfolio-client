@@ -1,8 +1,8 @@
 import Image, { ImageLoaderProps } from 'next/image'
 import { isInteger } from '../../../utils/helpers/number'
-import { SkillDatas } from './Skills'
 import { useEffect, useState } from 'react'
 import crossIcon from '../../../public/assets/crossIcon.svg'
+import { SkillDatas } from '../../../constant/types/datas'
 
 interface Props {
   datas: SkillDatas

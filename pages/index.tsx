@@ -8,8 +8,8 @@ import About from '../components/Home/About/About'
 import { useContext, useRef, useEffect, RefObject } from 'react'
 import { LanguageContext } from '../components/Language/LanguageContextProvider'
 import useFetchMainDatas from '../hooks/fetch/useFetchMainDatas'
-import useGetCurrentSection from '../hooks/utils/useGetCurrentsection'
 import { NavContext } from '../components/Navigation/NavContextProvider'
+import useGetCurrentSection from '../hooks/utils/useGetCurrentSection'
 
 function App() {
   const { language } = useContext(LanguageContext)
