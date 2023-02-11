@@ -1,14 +1,13 @@
 import { useMemo } from 'react'
 import SkillItem from './SkillItem'
-import skillsDatas from '../../../constant/content/skills.json'
-
-export type SkillDatas = typeof skillsDatas.skills[0]
+import useFetchSkillsDatas from '../../../hooks/fetch/useFetchSkillsDatas'
 
 function Skills() {
-  const skillsArray = skillsDatas.skills
+  const skillsDatas = useFetchSkillsDatas()
+
   const skillItemsDOM = useMemo(() => {
-    return skillsArray.map((datas, i) => <SkillItem datas={datas} key={i} />)
-  }, [])
+    return skillsDatas?.map((datas, i) => <SkillItem datas={datas} key={i} />)
+  }, [skillsDatas])
   return <ul className="skills__list">{skillItemsDOM}</ul>
 }
 

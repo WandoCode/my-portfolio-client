@@ -13,7 +13,7 @@ function Projects() {
           key={i}
         />
       )),
-    []
+    [projectsArray]
   )
 
   return <div className="projects__body">{projectsDOM}</div>

@@ -1,7 +1,7 @@
 import skillsDatas from '../constant/content/skills.json'
 
 const skillsStore = {
-  getAll: async () => {
+  getAll: () => {
     return skillsDatas.skills
   },
 }
