@@ -13,8 +13,8 @@ function About({ aboutDatas }: Props) {
   return (
     <div className="about__body">
       <div className="about__text fc-neutral-300">
-        {/* TODO: utiliser un lecteur markdown pour générer les paragraphes */}
-        {language ? aboutDatas?.text[language] : ''}
+        <p>{language ? aboutDatas?.text1[language] : ''}</p>
+        <p>{language ? aboutDatas?.text2[language] : ''}</p>
       </div>
       <div className="about__img-container">
         {aboutDatas && (
