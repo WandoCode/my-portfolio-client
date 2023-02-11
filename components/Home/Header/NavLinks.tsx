@@ -1,7 +1,7 @@
-import useGetCurrentSection from '../../../hooks/utils/useGetCurrentSection'
 import { useRef, useEffect, useState, useContext } from 'react'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
 import { HeadingsDatas } from '../../../constant/types/datas'
+import { NavContext } from '../../Navigation/NavContextProvider'
 
 interface Props {
   onCloseNav: () => void
@@ -12,8 +12,8 @@ type Dimensions = Record<string, any>
 
 function NavLinks({ onCloseNav, navText }: Props) {
   const { language } = useContext(LanguageContext)
+  const { currentSection } = useContext(NavContext)
 
-  const activeSection = useGetCurrentSection()
   const heroRef = useRef<HTMLAnchorElement>(null)
   const projectsRef = useRef<HTMLAnchorElement>(null)
   const skillsRef = useRef<HTMLAnchorElement>(null)
@@ -25,8 +25,9 @@ function NavLinks({ onCloseNav, navText }: Props) {
 
   const listClass = () => {
     let name = 'nav-links'
-    return activeSection ? `${name} ${name}--${activeSection}` : name
+    return currentSection ? `${name} ${name}--${currentSection}` : name
   }
+  // TODO: util cette listCalss?
 
   const getLinksDimensions = () => {
     return {
@@ -58,17 +59,17 @@ function NavLinks({ onCloseNav, navText }: Props) {
   }, [language])
 
   useEffect(() => {
-    if (listSliderRef.current && activeSection) {
-      listSliderRef.current.style.width = `${linksDimensions[activeSection].width}px`
-      listSliderRef.current.style.marginLeft = `${linksDimensions[activeSection].start}px`
+    if (listSliderRef.current && currentSection) {
+      listSliderRef.current.style.width = `${linksDimensions[currentSection].width}px`
+      listSliderRef.current.style.marginLeft = `${linksDimensions[currentSection].start}px`
     }
-  }, [activeSection, linksDimensions])
+  }, [currentSection, linksDimensions])
 
   return (
     <ul className={listClass()}>
       <li
         className={
-          activeSection === 'hero' || !activeSection
+          currentSection === 'hero' || !currentSection
             ? 'nav-links__item nav-links__item--active'
             : 'nav-links__item'
         }
@@ -84,7 +85,7 @@ function NavLinks({ onCloseNav, navText }: Props) {
       </li>
       <li
         className={
-          activeSection === 'projects'
+          currentSection === 'projects'
             ? 'nav-links__item nav-links__item--active'
             : 'nav-links__item'
         }
@@ -100,7 +101,7 @@ function NavLinks({ onCloseNav, navText }: Props) {
       </li>
       <li
         className={
-          activeSection === 'skills'
+          currentSection === 'skills'
             ? 'nav-links__item nav-links__item--active'
             : 'nav-links__item'
         }
@@ -116,7 +117,7 @@ function NavLinks({ onCloseNav, navText }: Props) {
       </li>
       <li
         className={
-          activeSection === 'about'
+          currentSection === 'about'
             ? 'nav-links__item nav-links__item--active'
             : 'nav-links__item'
         }
@@ -132,7 +133,7 @@ function NavLinks({ onCloseNav, navText }: Props) {
       </li>
       <li
         className={
-          activeSection === 'contact'
+          currentSection === 'contact'
             ? 'nav-links__item nav-links__item--active'
             : 'nav-links__item'
         }
@@ -152,4 +153,4 @@ function NavLinks({ onCloseNav, navText }: Props) {
 }
 
 export default NavLinks
-// TODO: contact and about navlink not correctely detected
+// TODO: solution: Créer un context qui contiendra la section actuellmeent consulté. Dans chaque section (dans le component): utilise useObeserver pour savoir si la section est active ou non et modifier le contexte en conséquence. NavLink utilisera ce context pour  actualiser les lien et le slider
