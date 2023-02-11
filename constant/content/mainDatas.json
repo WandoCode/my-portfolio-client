@@ -39,7 +39,21 @@
       "en": "Fusce tempor magna mi, non egestas velit ultricies nec. Aenean convallis, risus non condimentum gravida, odio mauris ullamcorper felis, ut venenatis purus ex eu mi. Quisque imperdiet lacinia urna, aplacerat sapien pretium eu.",
       "es": "Fusce tempor magna mi, non egestas velit ultricies nec. Aenean convallis, risus non condimentum gravida, odio mauris ullamcorper felis, ut venenatis purus ex eu mi. Quisque imperdiet lacinia urna, aplacerat sapien pretium eu."
     },
-    "CVLink": "."
+    "CVLink": ".",
+    "btn": {
+      "fr": {
+        "CV": "Télécharger CV",
+        "contact": "Contact"
+      },
+      "en": {
+        "CV": "Download CV",
+        "contact": "Contact"
+      },
+      "es": {
+        "CV": "Descargar CV",
+        "contact": "Contacto"
+      }
+    }
   },
   "about": {
     "img": { "link": "https://via.placeholder.com/380", "alt": " " },

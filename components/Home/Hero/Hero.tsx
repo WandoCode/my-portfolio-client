@@ -2,7 +2,6 @@ import Image from 'next/image'
 import Button from '../../Utils/Button/Button'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
 import { useContext } from 'react'
-import btnText from '../../../constant/content/heroBtns.json'
 import { HeroDatas } from '../../../constant/types/datas'
 
 interface Props {
@@ -46,7 +45,7 @@ function Hero({ heroDatas }: Props) {
               onclick={handleDownloadCV}
               className="hero__btn fs-400 fc-neutral-800"
             >
-              {language ? btnText[language].CV : ''}
+              {language ? heroDatas?.btn[language].CV : ''}
             </Button>
             <Button
               type="link"
@@ -54,7 +53,7 @@ function Hero({ heroDatas }: Props) {
               href="#contact"
               className="hero__btn fs-400 fc-neutral-800 fc-dark-neutral-250"
             >
-              {language ? btnText[language].contact : ''}
+              {language ? heroDatas?.btn[language].contact : ''}
             </Button>
           </div>
         </div>
