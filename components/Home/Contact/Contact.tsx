@@ -75,8 +75,6 @@ function Contact({ contactDatas }: Props) {
     })
   }
 
-  // TODO: probablement loader à utliser pour chargement des icones
-
   return (
     <form className="contact-form">
       <div className="contact-form__infos">
