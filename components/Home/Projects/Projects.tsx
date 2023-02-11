@@ -6,7 +6,7 @@ function Projects() {
   const projectsArray = useFetchProjects()
   const projectsDOM = useMemo(
     () =>
-      projectsArray?.map((projectDatas: any, i) => (
+      projectsArray?.map((projectDatas, i) => (
         <Project
           datas={projectDatas}
           side={i % 2 === 0 ? 'left' : 'right'}

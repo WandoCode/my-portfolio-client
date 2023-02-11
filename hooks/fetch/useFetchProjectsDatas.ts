@@ -3,15 +3,15 @@ import { ProjectsDatas } from '../../constant/types/datas'
 import projectsStore from '../../stores/projects'
 
 function useFetchProjects() {
-  const [mainDatas, setMainDatas] = useState<ProjectsDatas>()
+  const [projectsDatas, setProjectsDatas] = useState<ProjectsDatas>()
 
   useEffect(() => {
     const rep = projectsStore.getAll()
 
-    setMainDatas(rep)
+    setProjectsDatas(rep)
   }, [])
 
-  return mainDatas
+  return projectsDatas
 }
 
 export default useFetchProjects

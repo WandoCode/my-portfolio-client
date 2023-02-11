@@ -13,8 +13,9 @@ interface Props {
 }
 
 function Contact({ contactDatas }: Props) {
-  const { language } = useContext(LanguageContext)
   const formText = useFetchFormDatas()
+
+  const { language } = useContext(LanguageContext)
 
   const [formIsValid, setFormIsValid] = useState<boolean>(true)
   const [formDatas, setFormDatas] = useState<Record<string, Input>>({

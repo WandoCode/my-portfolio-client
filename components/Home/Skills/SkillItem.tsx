@@ -34,7 +34,6 @@ function SkillItem({ datas }: Props) {
   const myLoader = ({ src, width, quality }: ImageLoaderProps) => {
     return `${src}?w=${width}&q=${quality || 75}`
   }
-  //TODO: Si je ne passe pas par l'api iconify => essayer sans le loader. Ne charge pas les icone sans ca sur Vercel uniquement (dev et prod local => okay)
 
   return (
     <li className="skill">

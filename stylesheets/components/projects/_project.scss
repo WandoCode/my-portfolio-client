@@ -58,7 +58,7 @@
     box-shadow: $glow;
 
     @include breakpoint(medium) {
-      --shift: 4rem; //TODO: décallage ou pas décallage?
+      --shift: 4rem;
 
       max-width: unset;
 

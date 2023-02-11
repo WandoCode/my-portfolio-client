@@ -6,39 +6,15 @@ import Image from 'next/image'
 import NavLinks from './NavLinks'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
 import { HeadingsDatas } from '../../../constant/types/datas'
-
+import useGetScrollingInfos from '../../../hooks/utils/useGetScrollingInfos'
 interface Props {
   headerDatas: HeadingsDatas | undefined
 }
 
 function Header({ headerDatas }: Props) {
-  let windowPos = 0
-
   const { language } = useContext(LanguageContext)
-
+  const { windowDir, windowOnTop } = useGetScrollingInfos()
   const [openMenu, setOpenMenu] = useState(false)
-  const [windowDir, setWindowDir] = useState<'up' | 'down'>('up')
-  const [windowOnTop, setWindowOnTop] = useState(true)
-
-  useEffect(() => {
-    windowPos = window.scrollY // Get start position (usually 0)
-    setWindowOnTop(windowPos === 0)
-
-    window.addEventListener('scroll', getScrollDirection)
-    return () => {
-      window.removeEventListener('scroll', getScrollDirection)
-    }
-  }, [])
-
-  const getScrollDirection = (e: Event) => {
-    const currPos = window.scrollY
-    if (currPos - windowPos < 0) setWindowDir('up')
-    else setWindowDir('down')
-
-    setWindowOnTop(currPos === 0)
-
-    windowPos = currPos
-  }
 
   const burgerClass = () => {
     return openMenu ? 'active' : 'unactive'

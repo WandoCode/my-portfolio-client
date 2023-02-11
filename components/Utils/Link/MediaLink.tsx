@@ -29,5 +29,3 @@ function MediaLink({ image, link, altText, background = 'light' }: Props) {
 }
 
 export default MediaLink
-
-// TODO: update any type

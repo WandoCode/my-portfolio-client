@@ -117,4 +117,3 @@ function NavLinks({ onCloseNav, navText }: Props) {
 }
 
 export default NavLinks
-// TODO: solution: Créer un context qui contiendra la section actuellmeent consulté. Dans chaque section (dans le component): utilise useObeserver pour savoir si la section est active ou non et modifier le contexte en conséquence. NavLink utilisera ce context pour  actualiser les lien et le slider
