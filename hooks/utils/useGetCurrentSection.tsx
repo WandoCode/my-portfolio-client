@@ -45,8 +45,7 @@ function useGetCurrentSection({
     return () => {
       for (const sectionName in parentRefObject) {
         const ref = parentRefObject[sectionName]
-
-        if (observers && ref.current)
+        if (ref.current && observers)
           observers[sectionName].unobserve(ref.current)
       }
     }
