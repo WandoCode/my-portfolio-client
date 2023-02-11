@@ -1,7 +1,7 @@
-import projectsDatas from '../constant/content/project.json'
+import projectsDatas from '../constant/content/projects.json'
 
 const projectsStore = {
-  getAll: async () => {
+  getAll: () => {
     return projectsDatas.projects
   },
 }

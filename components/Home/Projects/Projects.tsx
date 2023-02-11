@@ -1,13 +1,12 @@
 import { useMemo } from 'react'
 import Project from './Project'
-import projectsDatas from '../../../constant/content/project.json'
-import { ProjectDatas } from '../../../constant/types/projects'
+import useFetchProjects from '../../../hooks/fetch/useFetchProjectsDatas'
 
 function Projects() {
-  const projectsArray: ProjectDatas[] = projectsDatas.projects
+  const projectsArray = useFetchProjects()
   const projectsDOM = useMemo(
     () =>
-      projectsArray.map((projectDatas: any, i) => (
+      projectsArray?.map((projectDatas: any, i) => (
         <Project
           datas={projectDatas}
           side={i % 2 === 0 ? 'left' : 'right'}
