@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from 'react'
 
 function useGetScrollingInfos() {
+  const windowPosRef = useRef(0)
+
   const [windowDir, setWindowDir] = useState<'up' | 'down'>('up')
   const [windowOnTop, setWindowOnTop] = useState(true)
-  const windowPosRef = useRef(0)
 
   useEffect(() => {
     windowPosRef.current = window.scrollY

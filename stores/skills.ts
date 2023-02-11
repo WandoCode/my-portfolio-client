@@ -1,7 +1,8 @@
 import skillsDatas from '../constant/content/skills.json'
+import { SkillDatas } from '../constant/types/datas'
 
 const skillsStore = {
-  getAll: () => {
+  getAll: (): SkillDatas[] => {
     return skillsDatas.skills
   },
 }

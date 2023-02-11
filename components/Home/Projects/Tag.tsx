@@ -18,9 +18,4 @@ function Tag({ color, text, classname }: Props) {
   )
 }
 
-interface Props {
-  color: string
-  text: string
-  classname?: string
-}
 export default Tag

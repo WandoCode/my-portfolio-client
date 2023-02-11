@@ -8,6 +8,7 @@ function Skills() {
   const skillItemsDOM = useMemo(() => {
     return skillsDatas?.map((datas, i) => <SkillItem datas={datas} key={i} />)
   }, [skillsDatas])
+
   return <ul className="skills__list">{skillItemsDOM}</ul>
 }
 

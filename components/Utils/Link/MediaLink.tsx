@@ -11,6 +11,7 @@ function MediaLink({ image, link, altText, background = 'light' }: Props) {
   const myLoader = ({ src, width, quality }: ImageLoaderProps) => {
     return `${src}?w=${width}&q=${quality || 75}`
   }
+
   return (
     <a
       href={link}

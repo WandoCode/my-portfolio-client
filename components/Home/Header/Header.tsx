@@ -1,19 +1,22 @@
 import ThemeSwitch from '../../Theme/ThemeSwitch'
 import LangSelection from '../../Language/LangSelection'
-import { useState, useEffect, useContext } from 'react'
+import { useState, useContext } from 'react'
 import Logo from '../../../public/assets/Logo.svg'
 import Image from 'next/image'
 import NavLinks from './NavLinks'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
 import { HeadingsDatas } from '../../../constant/types/datas'
 import useGetScrollingInfos from '../../../hooks/utils/useGetScrollingInfos'
+
 interface Props {
   headerDatas: HeadingsDatas | undefined
 }
 
 function Header({ headerDatas }: Props) {
   const { language } = useContext(LanguageContext)
+
   const { windowDir, windowOnTop } = useGetScrollingInfos()
+
   const [openMenu, setOpenMenu] = useState(false)
 
   const burgerClass = () => {

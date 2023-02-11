@@ -1,7 +1,8 @@
 import projectsDatas from '../constant/content/projects.json'
+import { ProjectsDatas } from '../constant/types/datas'
 
 const projectsStore = {
-  getAll: () => {
+  getAll: (): ProjectsDatas => {
     return projectsDatas.projects
   },
 }

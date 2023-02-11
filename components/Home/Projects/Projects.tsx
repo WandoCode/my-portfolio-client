@@ -4,6 +4,7 @@ import useFetchProjects from '../../../hooks/fetch/useFetchProjectsDatas'
 
 function Projects() {
   const projectsArray = useFetchProjects()
+
   const projectsDOM = useMemo(
     () =>
       projectsArray?.map((projectDatas, i) => (

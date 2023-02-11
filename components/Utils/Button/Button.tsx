@@ -1,4 +1,5 @@
 import { MouseEvent, PropsWithChildren } from 'react'
+
 interface Props extends PropsWithChildren {
   type: 'link' | 'button'
   level: 'primary' | 'secondary'
@@ -6,6 +7,7 @@ interface Props extends PropsWithChildren {
   href?: string
   className?: string
 }
+
 function Button({ onclick, type, level, href, children, className }: Props) {
   const mainClass = className
     ? `${className} btn btn--${level}`
