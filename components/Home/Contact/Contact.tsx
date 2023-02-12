@@ -7,11 +7,20 @@ import { LanguageContext } from '../../Language/LanguageContextProvider'
 import { InputError } from '../../../utils/form/Input'
 import { ContactDatas } from '../../../constant/types/datas'
 import useFetchFormDatas from '../../../hooks/fetch/useFetchFormDatas'
-import axios from 'axios'
+import contactStore from '../../../stores/contact'
 
 interface Props {
   contactDatas: ContactDatas | undefined
 }
+
+const emptyFormObject = {
+  name: new Input('text', 'required'),
+  email: new Input('email', 'required'),
+  object: new Input('text'),
+  message: new Input('text', 'required'),
+}
+
+export type FormFieldsName = keyof typeof emptyFormObject
 
 function Contact({ contactDatas }: Props) {
   const formText = useFetchFormDatas()
@@ -19,7 +28,7 @@ function Contact({ contactDatas }: Props) {
   const { language } = useContext(LanguageContext)
 
   const [formIsValid, setFormIsValid] = useState<boolean>(true)
-  const [formDatas, setFormDatas] = useState<Record<string, Input>>({
+  const [formDatas, setFormDatas] = useState<Record<FormFieldsName, Input>>({
     name: new Input('text', 'required'),
     email: new Input('email', 'required'),
     object: new Input('text'),
@@ -39,12 +48,11 @@ function Contact({ contactDatas }: Props) {
     validateFields()
 
     if (formIsValid) {
-      let contactDetails = getStringFormDatas()
-      console.log(contactDetails)
+      let messageDetails = getStringFormDatas()
 
-      const rep = await axios.post('http://localhost:3000/api/contact', {
-        ...contactDetails,
-      })
+      let rep = await contactStore.postMessage(messageDetails)
+
+      if (rep.isSuccessfull) emptyForm()
 
       // TODO:Vider le form
       // TODO: afficher un message de validation
@@ -56,7 +64,7 @@ function Contact({ contactDatas }: Props) {
     setFormIsValid(true)
 
     for (const fieldName in formDatas) {
-      const fieldInput = formDatas[fieldName]
+      const fieldInput = formDatas[fieldName as FormFieldsName]
       const errors = fieldInput.getValidationErrors()
 
       changeFormErrors(fieldName, errors)
@@ -67,7 +75,7 @@ function Contact({ contactDatas }: Props) {
     }
   }
 
-  const changeFormDatas = (fieldName: string, newValue: string) => {
+  const changeFormDatas = (fieldName: FormFieldsName, newValue: string) => {
     setFormDatas((old) => {
       const newFormDatas = { ...old }
       newFormDatas[fieldName].value = newValue
@@ -83,13 +91,19 @@ function Contact({ contactDatas }: Props) {
     })
   }
 
+  const emptyForm = () => {
+    // for (const fieldName in formDatas) {
+    //   const inputValue = formDatas[fieldName]
+    // }
+  }
+
   const getStringFormDatas = () => {
     let stringFormDatas: Record<string, string> = {}
     for (const fieldName in formDatas) {
-      const inputValue = formDatas[fieldName]
+      const inputValue = formDatas[fieldName as FormFieldsName]
       stringFormDatas[fieldName] = inputValue.toString()
     }
-    return stringFormDatas
+    return stringFormDatas as Record<FormFieldsName, string>
   }
 
   return (

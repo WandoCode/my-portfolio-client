@@ -3,14 +3,15 @@ import Input, { InputError } from '../../../utils/form/Input'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
 import { InputTypes } from '../../../constant/types/InputFields'
 import useFetchFormDatas from '../../../hooks/fetch/useFetchFormDatas'
+import { FormFieldsName } from '../../Home/Contact/Contact'
 
 interface Props {
-  name: string
+  name: FormFieldsName
   label: string | undefined
   type: InputTypes
   inputErrors: InputError[]
   inputDatas: Input
-  onChangeFormDatas: (fieldName: string, newValue: string) => void
+  onChangeFormDatas: (fieldName: FormFieldsName, newValue: string) => void
   onChangeErrors: (fieldName: string, newErrors: InputError[]) => void
 }
 
