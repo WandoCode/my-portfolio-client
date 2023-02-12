@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
-import mainDatasStore from '../../stores/mainDatas'
 import { MainDatas } from '../../constant/types/datas'
+import contentStore from '../../stores/content'
 
 function useFetchMainDatas() {
   const [mainDatas, setMainDatas] = useState<MainDatas>()
 
   useEffect(() => {
-    const rep = mainDatasStore.getAll()
+    const rep = contentStore.getmainDatas()
 
     setMainDatas(rep)
   }, [])

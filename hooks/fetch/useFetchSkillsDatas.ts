@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { SkillDatas } from '../../constant/types/datas'
-import skillsStore from '../../stores/skills'
+import contentStore from '../../stores/content'
 
 function useFetchSkillsDatas() {
   const [skillsDatas, setSkillsDatas] = useState<SkillDatas[]>()
 
   useEffect(() => {
-    const rep = skillsStore.getAll()
+    const rep = contentStore.getSkillsDatas()
 
     setSkillsDatas(rep)
   }, [])

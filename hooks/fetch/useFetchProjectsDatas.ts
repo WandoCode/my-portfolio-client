@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { ProjectsDatas } from '../../constant/types/datas'
-import projectsStore from '../../stores/projects'
+import contentStore from '../../stores/content'
 
 function useFetchProjects() {
   const [projectsDatas, setProjectsDatas] = useState<ProjectsDatas>()
 
   useEffect(() => {
-    const rep = projectsStore.getAll()
+    const rep = contentStore.getProjectsDatas()
 
     setProjectsDatas(rep)
   }, [])

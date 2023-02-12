@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { FormDatas } from '../../constant/types/datas'
-import FormDatasStore from '../../stores/formDatas'
+import contentStore from '../../stores/content'
 
 function useFetchFormDatas() {
   const [formDatas, setFormDatas] = useState<FormDatas>()
 
   useEffect(() => {
-    const rep = FormDatasStore.getAll()
+    const rep = contentStore.getFormDatas()
 
     setFormDatas(rep)
   }, [])
