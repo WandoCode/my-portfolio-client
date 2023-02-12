@@ -46,15 +46,21 @@ function Contact({ contactDatas }: Props) {
     const formIsValid = validateFields()
 
     if (formIsValid) {
-      let messageDetails = getStringFormDatas()
+      let messageDatas = getStringFormDatas()
 
-      let rep = await contactStore.postMessage(messageDetails)
+      let rep = await contactStore.postMessage({ messageDatas })
 
       if (rep.isSuccessfull) {
         emptyForm()
+        // TODO: afficher un message de validation
       }
 
-      // TODO: afficher un message de validation/Erreur
+      if (!rep.isSuccessfull) {
+        console.error(rep.message)
+
+        // TODO: afficher un message de Erreur
+      }
+
       return
     }
   }
@@ -101,13 +107,13 @@ function Contact({ contactDatas }: Props) {
     }
   }
 
-  const getStringFormDatas = () => {
+  const getStringFormDatas = (): Record<FormFieldsName, string> => {
     let stringFormDatas: Record<string, string> = {}
     for (const fieldName in formDatas) {
       const inputValue = formDatas[fieldName as FormFieldsName]
       stringFormDatas[fieldName] = inputValue.toString()
     }
-    return stringFormDatas as Record<FormFieldsName, string>
+    return stringFormDatas
   }
 
   return (
