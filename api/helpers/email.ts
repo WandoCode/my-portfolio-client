@@ -5,6 +5,8 @@ const buildEmail = (
   lang: LanguageAvailable | null,
   messageDatas: Record<FormFieldsName, string>
 ) => {
+  const messageHTML = messageDatas.message.split('\n').join('\n<br>\n')
+
   switch (lang) {
     case 'fr':
       return `<h1>Confirmation de réception</h1>
@@ -15,7 +17,11 @@ const buildEmail = (
                 <li><em>De</em>: ${messageDatas.name}</li>
                 <li><em>Objet</em>: ${messageDatas.object}</li>
                 <li><em>Email</em>: ${messageDatas.email}</li>
-                <li><em>Message</em>: ${messageDatas.message}</li>
+                <li><em>Mensaje</em>: 
+                <br>
+                <div style="background-color: hsl(0, 0%, 90%); padding: 3rem;">${messageHTML}</div>
+                 <br> 
+                 </li>
               </ul>
               <p>Maxime Chirez, développeur frontend </p>`
     case 'es':
@@ -27,7 +33,11 @@ const buildEmail = (
                 <li><em>De</em>: ${messageDatas.name}</li>
                 <li><em>Objeto</em>: ${messageDatas.object}</li>
                 <li><em>Correo</em>: ${messageDatas.email}</li>
-                <li><em>Mensaje</em>: ${messageDatas.message}</li>
+                <li><em>Mensaje</em>: 
+                <br>
+                <div style="background-color: hsl(0, 0%, 90%); padding: 3rem;">${messageHTML}</div>
+                 <br> 
+                 </li>
               </ul>
               <p>Maxime Chirez, frontend programdor (????) </p>`
     case 'en':
@@ -39,7 +49,11 @@ const buildEmail = (
                 <li><em>From</em>: ${messageDatas.name}</li>
                 <li><em>Object</em>: ${messageDatas.object}</li>
                 <li><em>Email</em>: ${messageDatas.email}</li>
-                <li><em>Message</em>: ${messageDatas.message}</li>
+                <li><em>Mensaje</em>: 
+                <br>
+                <div style="background-color: hsl(0, 0%, 90%); padding: 3rem;">${messageHTML}</div>
+                 <br> 
+                 </li>
               </ul>
               <p>Maxime Chirez, frontend developer</p>`
     // TODO: Vérifier la version EN, et surtout la version ES!!!!!
@@ -52,7 +66,11 @@ const buildEmail = (
                 <li>From: ${messageDatas.name}</li>
                 <li>Object: ${messageDatas.object}</li>
                 <li>Email: ${messageDatas.email}</li>
-                <li>Message: ${messageDatas.message}</li>
+                <li><em>Mensaje</em>: 
+                <br>
+                <div style="background-color: hsl(0, 0%, 90%); padding: 3rem;">${messageHTML}</div>
+                 <br> 
+                 </li>
               </ul>
               <p>Maxime Chirez, frontend developer</p>`
   }
