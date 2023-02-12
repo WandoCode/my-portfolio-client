@@ -1,9 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { FormFieldsName } from '../../components/Home/Contact/Contact'
-const nodemailer = require('nodemailer')
+import { sendMailController } from '../../api/controllers/sendMail/sendMailController'
+import { LanguageAvailable } from '../../constant/language/language'
 
-interface MessageDatas {
+interface BodyParams {
   messageDatas: Record<FormFieldsName, string>
+  lang: LanguageAvailable | null
 }
 
 export default async function handler(
@@ -11,35 +13,11 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const { body, method } = req
-  const { messageDatas }: MessageDatas = body
-
-  const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    auth: {
-      user: process.env.mailUser,
-      pass: process.env.mailPassword,
-    },
-    tls: { rejectUnauthorized: false },
-  })
-
-  const message = {
-    from: messageDatas.email,
-    to: process.env.mailUser,
-    subject: messageDatas.object,
-    text: messageDatas.message,
-  }
+  const { messageDatas, lang }: BodyParams = body
 
   switch (method) {
     case 'POST':
-      transporter.sendMail(message, (err: any) => {
-        if (err) {
-          res.status(500).json({
-            message: `Error while sending contact email: ${err.message}`,
-          })
-        } else {
-          res.status(200).send({ message: 'Post successfull' })
-        }
-      })
+      sendMailController(res, messageDatas, lang)
       break
 
     default:

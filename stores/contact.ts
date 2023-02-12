@@ -1,14 +1,18 @@
 import axios from 'axios'
 import { FormFieldsName } from '../components/Home/Contact/Contact'
+import { LanguageAvailable } from '../constant/language/language'
 
-interface MessageDatas {
+interface Params {
   messageDatas: Record<FormFieldsName, string>
+  lang: LanguageAvailable | null
 }
+
 const contactStore = {
-  postMessage: async ({ messageDatas }: MessageDatas) => {
+  postMessage: async ({ messageDatas, lang }: Params) => {
     try {
       const rep = await axios.post('http://localhost:3000/api/sendEmail', {
         messageDatas,
+        lang,
       })
 
       return { isSuccessfull: true, message: rep.data.message }

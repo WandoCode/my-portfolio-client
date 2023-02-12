@@ -48,7 +48,7 @@ function Contact({ contactDatas }: Props) {
     if (formIsValid) {
       let messageDatas = getStringFormDatas()
 
-      let rep = await contactStore.postMessage({ messageDatas })
+      let rep = await contactStore.postMessage({ messageDatas, lang: language })
 
       if (rep.isSuccessfull) {
         emptyForm()
