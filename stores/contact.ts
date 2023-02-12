@@ -7,18 +7,16 @@ interface Params {
   lang: LanguageAvailable | null
 }
 
-const API_URL =
-  process.env.NODE_ENV === 'production'
-    ? process.env.apiURL
-    : 'http://localhost:3000/api/'
-
 const contactStore = {
   postMessage: async ({ messageDatas, lang }: Params) => {
     try {
-      const rep = await axios.post(API_URL + 'sendEmail', {
-        messageDatas,
-        lang,
-      })
+      const rep = await axios.post(
+        process.env.NEXT_PUBLIC_apiURL + 'sendEmail',
+        {
+          messageDatas,
+          lang,
+        }
+      )
 
       return { isSuccessfull: true, message: rep.data.message }
     } catch (error) {
