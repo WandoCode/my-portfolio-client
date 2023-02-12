@@ -20,6 +20,13 @@ const emptyFormObject = {
   message: new Input('text', 'required'),
 }
 
+const emptyErrorObject = {
+  name: [],
+  email: [],
+  object: [],
+  message: [],
+}
+
 export type FormFieldsName = keyof typeof emptyFormObject
 
 function Contact({ contactDatas }: Props) {
@@ -28,19 +35,11 @@ function Contact({ contactDatas }: Props) {
   const { language } = useContext(LanguageContext)
 
   const [formIsValid, setFormIsValid] = useState<boolean>(true)
-  const [formDatas, setFormDatas] = useState<Record<FormFieldsName, Input>>({
-    name: new Input('text', 'required'),
-    email: new Input('email', 'required'),
-    object: new Input('text'),
-    message: new Input('text', 'required'),
-  })
+  const [formDatas, setFormDatas] =
+    useState<Record<FormFieldsName, Input>>(emptyFormObject)
 
-  const [formErrors, setFormErrors] = useState<Record<string, InputError[]>>({
-    name: [],
-    email: [],
-    object: [],
-    message: [],
-  })
+  const [formErrors, setFormErrors] =
+    useState<Record<FormFieldsName, InputError[]>>(emptyErrorObject)
 
   const handleSubmit = async (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
@@ -67,7 +66,7 @@ function Contact({ contactDatas }: Props) {
       const fieldInput = formDatas[fieldName as FormFieldsName]
       const errors = fieldInput.getValidationErrors()
 
-      changeFormErrors(fieldName, errors)
+      changeFormErrors(fieldName as FormFieldsName, errors)
 
       if (errors.length !== 0) {
         setFormIsValid(false)
@@ -83,7 +82,10 @@ function Contact({ contactDatas }: Props) {
     })
   }
 
-  const changeFormErrors = (fieldName: string, newErrors: InputError[]) => {
+  const changeFormErrors = (
+    fieldName: FormFieldsName,
+    newErrors: InputError[]
+  ) => {
     setFormErrors((old) => {
       const newFormErrors = { ...old }
       newFormErrors[fieldName] = newErrors
@@ -92,9 +94,10 @@ function Contact({ contactDatas }: Props) {
   }
 
   const emptyForm = () => {
-    // for (const fieldName in formDatas) {
-    //   const inputValue = formDatas[fieldName]
-    // }
+    for (const fieldName in formDatas) {
+      changeFormDatas(fieldName as FormFieldsName, '')
+      changeFormErrors(fieldName as FormFieldsName, [])
+    }
   }
 
   const getStringFormDatas = () => {

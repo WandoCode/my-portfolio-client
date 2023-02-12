@@ -1,4 +1,5 @@
 import { isValidEmail } from '../helpers/string'
+
 type InputType = 'text' | 'email'
 
 export type InputError = 'required' | 'invalid'
@@ -30,7 +31,7 @@ class Input {
     return isValidEmail(this.value)
   }
 
-  toString(): string {
+  toString() {
     return `${this.value}`
   }
 }

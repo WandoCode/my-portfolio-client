@@ -12,7 +12,7 @@ interface Props {
   inputErrors: InputError[]
   inputDatas: Input
   onChangeFormDatas: (fieldName: FormFieldsName, newValue: string) => void
-  onChangeErrors: (fieldName: string, newErrors: InputError[]) => void
+  onChangeErrors: (fieldName: FormFieldsName, newErrors: InputError[]) => void
 }
 
 function InputField({
