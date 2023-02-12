@@ -7,6 +7,7 @@ import { LanguageContext } from '../../Language/LanguageContextProvider'
 import { InputError } from '../../../utils/form/Input'
 import { ContactDatas } from '../../../constant/types/datas'
 import useFetchFormDatas from '../../../hooks/fetch/useFetchFormDatas'
+import axios from 'axios'
 
 interface Props {
   contactDatas: ContactDatas | undefined
@@ -32,13 +33,19 @@ function Contact({ contactDatas }: Props) {
     message: [],
   })
 
-  const handleSubmit = (e: MouseEvent<HTMLButtonElement>) => {
+  const handleSubmit = async (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
 
     validateFields()
 
     if (formIsValid) {
-      // TODO: DO something (envoyer un email à mon adresse via le backend...)
+      let contactDetails = getStringFormDatas()
+      console.log(contactDetails)
+
+      const rep = await axios.post('http://localhost:3000/api/contact', {
+        ...contactDetails,
+      })
+
       // TODO:Vider le form
       // TODO: afficher un message de validation
       return
@@ -74,6 +81,15 @@ function Contact({ contactDatas }: Props) {
       newFormErrors[fieldName] = newErrors
       return newFormErrors
     })
+  }
+
+  const getStringFormDatas = () => {
+    let stringFormDatas: Record<string, string> = {}
+    for (const fieldName in formDatas) {
+      const inputValue = formDatas[fieldName]
+      stringFormDatas[fieldName] = inputValue.toString()
+    }
+    return stringFormDatas
   }
 
   return (

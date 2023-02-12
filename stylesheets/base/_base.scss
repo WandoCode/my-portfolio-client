@@ -44,3 +44,8 @@ textarea:focus {
   border: 1px solid var(--clr-primary-400);
   outline: 1px solid var(--clr-primary-400);
 }
+
+input,
+textarea {
+  color: inherit;
+}

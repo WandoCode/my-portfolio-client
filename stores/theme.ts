@@ -1,4 +1,5 @@
 import { ThemesValues, themesValues } from '../constant/theme/theme'
+
 const themeStore = {
   getBrowserTheme: () => {
     const darkThemeEnabled = window.matchMedia(

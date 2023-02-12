@@ -1,3 +1,4 @@
+import { isValidEmail } from '../helpers/string'
 type InputType = 'text' | 'email'
 
 export type InputError = 'required' | 'invalid'
@@ -26,8 +27,11 @@ class Input {
   }
 
   private inputIsEmail(): boolean {
-    const emailRegEx = /\b[+\w\.-]+@[\w-]+\.\w+\b/gi
-    return emailRegEx.test(this.value)
+    return isValidEmail(this.value)
+  }
+
+  toString(): string {
+    return `${this.value}`
   }
 }
 
