@@ -34,7 +34,6 @@ function Contact({ contactDatas }: Props) {
 
   const { language } = useContext(LanguageContext)
 
-  const [formIsValid, setFormIsValid] = useState<boolean>(true)
   const [formDatas, setFormDatas] =
     useState<Record<FormFieldsName, Input>>(emptyFormObject)
 
@@ -44,23 +43,24 @@ function Contact({ contactDatas }: Props) {
   const handleSubmit = async (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
 
-    validateFields()
+    const formIsValid = validateFields()
 
     if (formIsValid) {
       let messageDetails = getStringFormDatas()
 
       let rep = await contactStore.postMessage(messageDetails)
 
-      if (rep.isSuccessfull) emptyForm()
+      if (rep.isSuccessfull) {
+        emptyForm()
+      }
 
-      // TODO:Vider le form
-      // TODO: afficher un message de validation
+      // TODO: afficher un message de validation/Erreur
       return
     }
   }
 
   const validateFields = () => {
-    setFormIsValid(true)
+    let formIsValid = true
 
     for (const fieldName in formDatas) {
       const fieldInput = formDatas[fieldName as FormFieldsName]
@@ -69,9 +69,10 @@ function Contact({ contactDatas }: Props) {
       changeFormErrors(fieldName as FormFieldsName, errors)
 
       if (errors.length !== 0) {
-        setFormIsValid(false)
+        formIsValid = false
       }
     }
+    return formIsValid
   }
 
   const changeFormDatas = (fieldName: FormFieldsName, newValue: string) => {
