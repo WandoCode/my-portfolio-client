@@ -1,11 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { FormFieldsName } from '../../components/Home/Contact/Contact'
+import { messageSchema } from '../../api/schemas/message'
 import { sendMailController } from '../../api/controllers/sendMail/sendMailController'
 import {
   LanguageAvailable,
   allowedLanguage,
 } from '../../constant/language/language'
-import { messageSchema } from '../../api/schemas/message'
 
 interface BodyParams {
   messageDatas: Record<FormFieldsName, string>

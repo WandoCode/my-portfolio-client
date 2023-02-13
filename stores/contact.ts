@@ -9,6 +9,8 @@ interface Params {
 
 const contactStore = {
   postMessage: async ({ messageDatas, lang }: Params) => {
+    if (messageDatas.object === '') messageDatas.object = 'No object'
+
     try {
       const rep = await axios.post(
         process.env.NEXT_PUBLIC_apiURL + 'sendEmail',
