@@ -17,7 +17,7 @@ const buildEmail = (
                 <li><em>De</em>: ${messageDatas.name}</li>
                 <li><em>Objet</em>: ${messageDatas.object}</li>
                 <li><em>Email</em>: ${messageDatas.email}</li>
-                <li><em>Mensaje</em>: 
+                <li><em>Message</em>: 
                 <br>
                 <div style="background-color: hsl(0, 0%, 90%); padding: 3rem;">${messageHTML}</div>
                  <br> 
@@ -49,7 +49,7 @@ const buildEmail = (
                 <li><em>From</em>: ${messageDatas.name}</li>
                 <li><em>Object</em>: ${messageDatas.object}</li>
                 <li><em>Email</em>: ${messageDatas.email}</li>
-                <li><em>Mensaje</em>: 
+                <li><em>Message</em>: 
                 <br>
                 <div style="background-color: hsl(0, 0%, 90%); padding: 3rem;">${messageHTML}</div>
                  <br> 
@@ -66,7 +66,7 @@ const buildEmail = (
                 <li>From: ${messageDatas.name}</li>
                 <li>Object: ${messageDatas.object}</li>
                 <li>Email: ${messageDatas.email}</li>
-                <li><em>Mensaje</em>: 
+                <li><em>Message</em>: 
                 <br>
                 <div style="background-color: hsl(0, 0%, 90%); padding: 3rem;">${messageHTML}</div>
                  <br> 
@@ -91,3 +91,4 @@ const buildObject = (lang: LanguageAvailable | null) => {
   }
 }
 export { buildEmail, buildObject }
+//TODO: ameliorer le mail envoyé
