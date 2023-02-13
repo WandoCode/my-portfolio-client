@@ -30,6 +30,13 @@
     &--error {
       border-color: var(--clr-primary-700);
     }
+
+    &--pot {
+      position: fixed;
+      height: 0;
+      width: 0;
+      z-index: -1;
+    }
   }
 
   &__error {

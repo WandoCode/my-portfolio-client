@@ -43,6 +43,7 @@ function InputField({
   const fieldClass = () => {
     const base = 'input-field__input'
     let name = base
+    if (type === 'honeypot') return (name += ` ${base}--pot`)
     if (type == 'textarea') name += ` ${base}--textarea`
     if (inputErrors.length > 0) name += ` ${base}--error`
     return name
@@ -57,7 +58,11 @@ function InputField({
   }
 
   return (
-    <div className="input-field">
+    <div
+      className={
+        type === 'honeypot' ? 'input-field input-field--pot' : 'input-field'
+      }
+    >
       {inputErrors.length > 0 && (
         <div className="input-field__error fc-primary-700 fc-dark-primary-700">
           {getValidationErrorText()}
@@ -76,12 +81,15 @@ function InputField({
         />
       ) : (
         <input
-          type={type}
+          type={type === 'honeypot' ? 'text' : type}
           name={name}
           id={name}
           className={fieldClass()}
           value={inputDatas.value}
           onChange={handleInput}
+          {...(type === 'honeypot'
+            ? { autoComplete: 'off', tabIndex: -1 }
+            : '')}
         />
       )}
     </div>

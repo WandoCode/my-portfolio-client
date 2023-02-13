@@ -1,1 +1,1 @@
-export type InputTypes = 'email' | 'text' | 'textarea'
+export type InputTypes = 'email' | 'text' | 'textarea' | 'honeypot'

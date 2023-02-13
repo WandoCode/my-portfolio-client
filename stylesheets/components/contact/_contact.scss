@@ -28,6 +28,11 @@
       grid-column: 2 / -1;
       grid-row: 4 / 5;
     }
+
+    & > .input-field--pot {
+      grid-column: 1 / 2;
+      grid-row: 1 / 4;
+    }
   }
 
   &__submit {

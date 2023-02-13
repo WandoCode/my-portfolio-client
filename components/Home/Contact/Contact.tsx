@@ -18,6 +18,7 @@ const emptyFormObject = {
   email: new Input('email', 'required'),
   object: new Input('text'),
   message: new Input('text', 'required'),
+  phone: new Input('text'), // Honeypot
 }
 
 const emptyErrorObject = {
@@ -25,6 +26,7 @@ const emptyErrorObject = {
   email: [],
   object: [],
   message: [],
+  phone: [],
 }
 
 export type FormFieldsName = keyof typeof emptyFormObject
@@ -139,6 +141,15 @@ function Contact({ contactDatas }: Props) {
         type="email"
         inputErrors={formErrors.email}
         inputDatas={formDatas.email}
+        onChangeFormDatas={changeFormDatas}
+        onChangeErrors={changeFormErrors}
+      />
+      <InputField
+        name="phone"
+        label={undefined}
+        type="honeypot"
+        inputErrors={formErrors.phone}
+        inputDatas={formDatas.phone}
         onChangeFormDatas={changeFormDatas}
         onChangeErrors={changeFormErrors}
       />
