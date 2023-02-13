@@ -6,7 +6,7 @@ interface Props extends PropsWithChildren {
   onclick?: (e: MouseEvent<HTMLButtonElement>) => void
   href?: string
   className?: string
-  loading: boolean
+  loading?: boolean
 }
 
 function Button({
@@ -16,7 +16,7 @@ function Button({
   href,
   children,
   className,
-  loading,
+  loading = false,
 }: Props) {
   const mainClass = () => {
     let name = className
