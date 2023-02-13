@@ -1,4 +1,4 @@
-import { useState, MouseEvent, useContext } from 'react'
+import { useState, MouseEvent, useContext, useRef, useEffect } from 'react'
 import Input from '../../../utils/form/Input'
 import Button from '../../Utils/Button/Button'
 import InputField from '../../Utils/Form/InputField'
@@ -36,6 +36,10 @@ function Contact({ contactDatas }: Props) {
 
   const { language } = useContext(LanguageContext)
 
+  const pageLoadTimeRef = useRef(Date.now())
+
+  const [loading, setLoading] = useState(false)
+
   const [formDatas, setFormDatas] =
     useState<Record<FormFieldsName, Input>>(emptyFormObject)
 
@@ -45,9 +49,12 @@ function Contact({ contactDatas }: Props) {
   const handleSubmit = async (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
 
+    setLoading(true)
+    const formIsSubmitByRobot = submitByRobot()
+
     const formIsValid = validateFields()
 
-    if (formIsValid) {
+    if (formIsValid && !formIsSubmitByRobot) {
       let messageDatas = getStringFormDatas()
 
       let rep = await contactStore.postMessage({ messageDatas, lang: language })
@@ -62,9 +69,8 @@ function Contact({ contactDatas }: Props) {
 
         // TODO: afficher un message de Erreur
       }
-
-      return
     }
+    setLoading(false)
   }
 
   const validateFields = () => {
@@ -116,6 +122,16 @@ function Contact({ contactDatas }: Props) {
       stringFormDatas[fieldName] = inputValue.toString()
     }
     return stringFormDatas
+  }
+
+  const submitByRobot = () => {
+    const submitTime = Date.now()
+    const timeIntervalSincePageLoading = submitTime - pageLoadTimeRef.current
+
+    if (timeIntervalSincePageLoading < 4000) return true // Less than 4s between page loading and form submit => spam robot
+    if (formDatas.phone.value !== '') return true // Spam caught in honeypot
+
+    return false
   }
 
   return (
@@ -177,6 +193,7 @@ function Contact({ contactDatas }: Props) {
         level="secondary"
         onclick={handleSubmit}
         className="contact-form__submit fs-400 fc-neutral-800 fc-dark-neutral-250"
+        loading={loading}
       >
         {language ? formText?.text[language].send : undefined}
       </Button>
@@ -185,4 +202,3 @@ function Contact({ contactDatas }: Props) {
 }
 
 export default Contact
-//TODO: Add Recaptcha when backend is working (projet déjà crééer sur google cloud 'my-portfolio', changer le domaine associé à la clé API)
