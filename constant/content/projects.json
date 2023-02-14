@@ -19,7 +19,8 @@
       ],
       "urlLive": "#",
       "urlGithub": "#",
-      "urlPreview": "https://via.placeholder.com/380"
+      "urlPreview": "https://via.placeholder.com/380",
+      "altText": "Audiophile website picture."
     },
     {
       "title": "Audiophile",
@@ -40,7 +41,8 @@
       ],
       "urlLive": "#",
       "urlGithub": "#",
-      "urlPreview": "https://via.placeholder.com/380"
+      "urlPreview": "https://via.placeholder.com/380",
+      "altText": "Audiophile website picture."
     }
   ]
 }

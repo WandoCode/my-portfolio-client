@@ -10,4 +10,5 @@ export interface ProjectDatas {
   urlLive: string
   urlGithub: string
   urlPreview: string
+  altText: string
 }

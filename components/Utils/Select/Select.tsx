@@ -66,7 +66,7 @@ function Select({ choices, currValue, onChoice, id }: Props) {
         aria-expanded={menuIsOpen}
       >
         {choices.find((choice) => choice.value === currValue)?.text}
-        <Image src={chevron} alt=" " width={20} height={12} />
+        <Image src={chevron} alt="chevron" width={20} height={12} />
       </button>
 
       <ul id={id} className={optionsClass()}>

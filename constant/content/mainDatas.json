@@ -23,7 +23,10 @@
     }
   },
   "hero": {
-    "img": { "link": "/assets/hero__placeholder.png", "alt": " " },
+    "img": {
+      "link": "/assets/hero__placeholder.png",
+      "alt": "Maxime Chirez picture"
+    },
     "subtitle": {
       "fr": "Développeur Frontend",
       "en": "Frontend Developer",
@@ -56,7 +59,7 @@
     }
   },
   "about": {
-    "img": { "link": "/assets/aboutImg.png", "alt": " " },
+    "img": { "link": "/assets/aboutImg.png", "alt": "Maxime Chirez picture" },
     "text1": {
       "fr": "Lorem ipsum dolor sit amet consectetur. Tincidunt non euismod tristique ut vitae fermentum enim. Massa nibh nec volutpat etiam consequat sit enim et tincidunt. Et mauris eu cras amet ullamcorper gravida ultrices amet. Purus vehicula lorem justo aliquam tellus praesent magna. Pulvinar viverra imperdiet nulla sit cras ultricies.",
       "en": "Lorem ipsum dolor sit amet consectetur. Tincidunt non euismod tristique ut vitae fermentum enim. Massa nibh nec volutpat etiam consequat sit enim et tincidunt. Et mauris eu cras amet ullamcorper gravida ultrices amet. Purus vehicula lorem justo aliquam tellus praesent magna. Pulvinar viverra imperdiet nulla sit cras ultricies.",

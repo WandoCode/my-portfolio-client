@@ -37,7 +37,7 @@ function Project({ datas, side }: Props) {
           src={datas.urlPreview}
           height={500}
           width={500}
-          alt=""
+          alt={datas.altText}
           className="project__img"
         />
       </div>
@@ -58,13 +58,13 @@ function Project({ datas, side }: Props) {
             <MediaLink
               image={GithubIcon}
               link="#"
-              altText=" "
+              altText="Github icon"
               background="light"
             />
             <MediaLink
               image={WebIcon}
               link="#"
-              altText=" "
+              altText="Web icone"
               background="light"
             />
           </div>

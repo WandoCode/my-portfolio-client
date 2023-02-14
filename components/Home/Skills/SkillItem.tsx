@@ -44,7 +44,7 @@ function SkillItem({ datas }: Props) {
           src={datas.urlIcon}
           height={50}
           width={50}
-          alt=""
+          alt={datas.title}
         />
       </div>
       <h3 className="h3 skill__title">
