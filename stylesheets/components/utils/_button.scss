@@ -24,9 +24,10 @@
     background-color: var(--clr-primary-400);
   }
 
-  // &--loading {
-  //   border-color: var(--clr-neutral-400);
-  //   background-color: var(--clr-neutral-300);
-  //   color: var(--clr-neutral-400);
-  // }
+  &--loading {
+    cursor: default;
+    border-color: var(--clr-neutral-400);
+    background-color: var(--clr-neutral-300);
+    color: var(--clr-neutral-400);
+  }
 }

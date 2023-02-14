@@ -202,3 +202,6 @@ function Contact({ contactDatas }: Props) {
 }
 
 export default Contact
+
+// TODO: ajouter favicon
+// TODO: Ajouter logo

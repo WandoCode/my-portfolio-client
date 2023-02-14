@@ -27,9 +27,17 @@ function LanguageContextProvider({ children }: PropsWithChildren) {
     else setLanguage(languageStore.getBrowserLanguage())
   }, [])
 
+  useEffect(() => {
+    changeLangHTMLTag()
+  }, [language])
+
   const changeLanguage = (val: LanguageAvailable) => {
     setLanguage(val)
     languageStore.saveLanguage(val)
+  }
+
+  const changeLangHTMLTag = () => {
+    if (language) document.documentElement.lang = language
   }
 
   return (
