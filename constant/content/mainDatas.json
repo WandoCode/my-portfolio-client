@@ -42,15 +42,15 @@
     "CVLink": ".",
     "btn": {
       "fr": {
-        "CV": "Télécharger CV",
+        "CV": "Afficher CV",
         "contact": "Contact"
       },
       "en": {
-        "CV": "Download CV",
+        "CV": "Open CV",
         "contact": "Contact"
       },
       "es": {
-        "CV": "Descargar CV",
+        "CV": "Abrir CV",
         "contact": "Contacto"
       }
     }
