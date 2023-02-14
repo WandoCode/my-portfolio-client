@@ -10,6 +10,7 @@ import { LanguageContext } from '../components/Language/LanguageContextProvider'
 import useFetchMainDatas from '../hooks/fetch/useFetchMainDatas'
 import { NavContext } from '../components/Navigation/NavContextProvider'
 import useGetCurrentSection from '../hooks/utils/useGetCurrentSection'
+import Head from 'next/head'
 
 function App() {
   const { language } = useContext(LanguageContext)
@@ -36,6 +37,9 @@ function App() {
 
   return (
     <>
+      <Head>
+        <title>Maxime Chirez</title>
+      </Head>
       <div className="app">
         <Header headerDatas={mainDatas?.headings} />
         <main className="main">
