@@ -1,4 +1,4 @@
-import { string, object, ObjectSchema } from 'yup'
+import { string, object } from 'yup'
 
 const messageSchema = object({
   name: string().required(),

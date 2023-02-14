@@ -1,12 +1,14 @@
+import Link from 'next/link'
 import { MouseEvent, PropsWithChildren } from 'react'
 
 interface Props extends PropsWithChildren {
-  type: 'link' | 'button'
+  type: 'link' | 'button' | 'innerLink'
   level: 'primary' | 'secondary'
   onclick?: (e: MouseEvent<HTMLButtonElement>) => void
   href?: string
   className?: string
   loading?: boolean
+  [x: string]: any
 }
 
 function Button({
@@ -17,6 +19,7 @@ function Button({
   children,
   className,
   loading = false,
+  ...args
 }: Props) {
   const mainClass = () => {
     let name = className
@@ -30,13 +33,24 @@ function Button({
 
   if (type === 'link')
     return (
-      <a href={href} className={mainClass()}>
+      <a href={href} className={mainClass()} {...args}>
         {children}
       </a>
     )
-  else
+  else if (type === 'innerLink' && href) {
     return (
-      <button className={mainClass()} onClick={onclick} disabled={loading}>
+      <Link href={href} className={mainClass()} {...args}>
+        {children}
+      </Link>
+    )
+  } else
+    return (
+      <button
+        className={mainClass()}
+        onClick={onclick}
+        disabled={loading}
+        {...args}
+      >
         {children}
       </button>
     )

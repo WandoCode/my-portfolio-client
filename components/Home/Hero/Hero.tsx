@@ -40,9 +40,11 @@ function Hero({ heroDatas }: Props) {
           </p>
           <div className="hero__btns-wrapper">
             <Button
-              type="button"
+              type="innerLink"
               level="primary"
               onclick={handleDownloadCV}
+              href="/CV.pdf"
+              target="_blank"
               className="hero__btn fs-400 fc-neutral-800"
             >
               {language ? heroDatas?.btn[language].CV : ''}
