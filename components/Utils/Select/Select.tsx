@@ -1,5 +1,12 @@
 import Image from 'next/image'
-import { useState, useMemo, useEffect, useRef, useCallback } from 'react'
+import {
+  useState,
+  useMemo,
+  useEffect,
+  useRef,
+  useCallback,
+  FocusEvent,
+} from 'react'
 import chevron from '../../../public/assets/chevron.svg'
 import Option from './Option'
 
@@ -55,6 +62,11 @@ function Select({ choices, currValue, onChoice, id }: Props) {
     ))
   }, [menuIsOpen])
 
+  const handleBlur = (e: FocusEvent<HTMLUListElement>) => {
+    const nextElementTag = e.relatedTarget?.tagName
+    if (nextElementTag !== 'LI') setMenuIsOpen(false)
+  }
+
   return (
     <div ref={selectRef} className="select">
       <button
@@ -69,7 +81,7 @@ function Select({ choices, currValue, onChoice, id }: Props) {
         <Image src={chevron} alt="chevron" width={20} height={12} />
       </button>
 
-      <ul id={id} className={optionsClass()}>
+      <ul id={id} className={optionsClass()} onBlur={handleBlur}>
         {choicesList}
       </ul>
     </div>

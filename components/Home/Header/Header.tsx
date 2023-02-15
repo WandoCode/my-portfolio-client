@@ -48,7 +48,7 @@ function Header({ headerDatas }: Props) {
           <div className="nav__logo-wrapper img-wrapper">
             <Image className="nav__logo" src={Logo} alt="Logo" fill={true} />
           </div>
-          <div className={navContentClass()}>
+          <div id="nav-links-container" className={navContentClass()}>
             <NavLinks
               onCloseNav={handleCloseNav}
               navText={language ? headerDatas?.[language] : undefined}
@@ -61,9 +61,14 @@ function Header({ headerDatas }: Props) {
             </div>
           </div>
           <button
+            aria-controls="nav-links-container"
+            aria-expanded={openMenu}
             className="nav__burger show-on-mobile"
             onClick={() => setOpenMenu((old) => !old)}
           >
+            <div className="visually-hidden">
+              {openMenu ? 'Close menu' : 'Open Menu'}
+            </div>
             <svg
               className={burgerClass()}
               xmlns="http://www.w3.org/2000/svg"

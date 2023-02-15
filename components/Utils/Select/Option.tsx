@@ -29,10 +29,6 @@ function Option({
     }
   }
 
-  const handleBlur = (i: number) => {
-    if (i === choicesLength - 1) setMenuIsOpen(false)
-  }
-
   const handleKeyboard = (e: KeyboardEvent) => {
     if (e.key === 'Escape') setMenuIsOpen(false)
     if (e.key === 'Enter') handleChoice(e)
@@ -45,7 +41,6 @@ function Option({
       key={value}
       onClick={handleChoice}
       tabIndex={menuIsOpen ? 0 : -1}
-      onBlur={() => handleBlur(index)}
       onKeyDown={handleKeyboard}
     >
       {text}
