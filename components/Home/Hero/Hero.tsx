@@ -21,11 +21,13 @@ function Hero({ heroDatas }: Props) {
             <Image
               width={500}
               height={500}
-              src="/assets/hero__placeholder.png"
-              // src={heroDatas.img.link}
+              // src="/assets/hero__placeholder.png"
+              src={heroDatas.img.link}
               alt={heroDatas.img.alt}
               className="hero__img"
               priority={true}
+              placeholder="blur"
+              blurDataURL="/assets/placeholderBlur.png"
             />
           )}
         </div>

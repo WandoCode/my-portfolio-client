@@ -16,7 +16,8 @@
   }
 
   &__img-container {
-    width: rem(390);
+    width: 100%;
+    max-width: rem(390);
     aspect-ratio: 1;
 
     overflow: hidden;
