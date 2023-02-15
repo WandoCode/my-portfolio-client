@@ -28,7 +28,8 @@ function App() {
 
   const currentSection = useGetCurrentSection({
     parentRefObject: refs,
-    margin: '-5% 0px -90% 0px',
+    margin: '-20% 0px -40% 0px',
+    threshold: 0.1,
   })
 
   useEffect(() => {

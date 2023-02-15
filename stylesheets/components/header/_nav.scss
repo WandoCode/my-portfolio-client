@@ -4,7 +4,7 @@
 
 .nav {
   --gap: 2rem;
-
+  --nav-animation-time: 0.4s;
   @include breakpoint-down(large) {
     --gap: 1.5rem;
   }
@@ -34,6 +34,10 @@
 
   &--on-top {
     border-bottom: 1px transparent solid;
+
+    //   .nav__logo-wrapper {
+    //     width: rem(50);
+    //   }
   }
 
   &__content {
@@ -63,7 +67,7 @@
       box-shadow: 0 0 10px -5px black;
 
       translate: 0 -10%;
-      transition: translate 0.5s;
+      transition: translate var(--nav-animation-time);
 
       &--open {
         translate: 0 100%;
@@ -89,6 +93,11 @@
   &__logo-wrapper {
     width: rem(40);
     aspect-ratio: 1;
+    transition: width var(--nav-animation-time);
+
+    &--large {
+      width: rem(50);
+    }
   }
 
   &__link {

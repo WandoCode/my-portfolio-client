@@ -1,12 +1,14 @@
 import ThemeSwitch from '../../Theme/ThemeSwitch'
 import LangSelection from '../../Language/LangSelection'
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import Logo from '../../../public/assets/Logo.svg'
+import Logo_black from '../../../public/assets/Logo_black.svg'
 import Image from 'next/image'
 import NavLinks from './NavLinks'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
 import { HeadingsDatas } from '../../../constant/types/datas'
 import useGetScrollingInfos from '../../../hooks/utils/useGetScrollingInfos'
+import { ThemeContext } from '../../Theme/ThemeContextProvidor'
 
 interface Props {
   headerDatas: HeadingsDatas | undefined
@@ -14,6 +16,7 @@ interface Props {
 
 function Header({ headerDatas }: Props) {
   const { language } = useContext(LanguageContext)
+  const { theme } = useContext(ThemeContext)
 
   const { windowDir, windowOnTop } = useGetScrollingInfos()
 
@@ -29,6 +32,9 @@ function Header({ headerDatas }: Props) {
     return name
   }
 
+  useEffect(() => {
+    console.log(theme)
+  }, [theme])
   const navContainerClass = () => {
     if (openMenu) return 'container-nav container-nav--scroll-up'
     else
@@ -45,8 +51,21 @@ function Header({ headerDatas }: Props) {
     <header className="header">
       <div className={navContainerClass()}>
         <nav className={windowOnTop ? 'nav nav--on-top' : 'nav'}>
-          <div className="nav__logo-wrapper img-wrapper">
-            <Image className="nav__logo" src={Logo} alt="Logo" fill={true} />
+          <div
+            className={
+              windowDir === 'up'
+                ? 'nav__logo-wrapper nav__logo-wrapper--large img-wrapper'
+                : 'nav__logo-wrapper img-wrapper'
+            }
+          >
+            <Image
+              className="nav__logo"
+              src={theme === 'dark' ? Logo_black : Logo}
+              alt="Logo"
+              fill={true}
+              quality={100}
+              priority={true}
+            />
           </div>
           <div id="nav-links-container" className={navContentClass()}>
             <NavLinks
