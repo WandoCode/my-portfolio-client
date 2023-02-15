@@ -21,7 +21,6 @@ function Hero({ heroDatas }: Props) {
             <Image
               width={500}
               height={500}
-              // src="/assets/hero__placeholder.png"
               src={heroDatas.img.link}
               alt={heroDatas.img.alt}
               className="hero__img"
@@ -49,6 +48,7 @@ function Hero({ heroDatas }: Props) {
               href="/CV.pdf"
               target="_blank"
               className="hero__btn fs-400 fc-neutral-800"
+              aria-label="Open my CV in PDF format in an other browser tab"
             >
               {language ? heroDatas?.btn[language].CV : ''}
             </Button>

@@ -24,6 +24,7 @@ function ThemeSwitch() {
         id="theme"
         onChange={handleSwitch}
         checked={theme === 'dark'}
+        tabIndex={-1}
       />
       <label htmlFor="theme" className="switch__slider-container">
         <div className="switch__slider"></div>

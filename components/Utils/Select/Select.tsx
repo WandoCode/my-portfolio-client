@@ -71,7 +71,6 @@ function Select({ choices, currValue, onChoice, id }: Props) {
     <div ref={selectRef} className="select">
       <button
         name="language"
-        id="language"
         className="select__button nav-item"
         onClick={() => setMenuIsOpen((old) => !old)}
         aria-controls={id}
