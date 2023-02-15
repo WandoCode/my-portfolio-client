@@ -42,7 +42,7 @@ function Hero({ heroDatas }: Props) {
           </p>
           <div className="hero__btns-wrapper">
             <Button
-              type="innerLink"
+              type="link"
               level="primary"
               onclick={handleDownloadCV}
               href="/CV.pdf"
