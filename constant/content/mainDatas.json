@@ -75,18 +75,18 @@
     "emailIcon": "https://api.iconify.design/ic:sharp-alternate-email.svg?color=%23888888",
     "placeIcon": "https://api.iconify.design/mdi:map-marker.svg?color=%23888888",
     "place": { "fr": "Bruxelles", "en": "Brussels", "es": "Bruselas" },
-    "email": "azerty@azer.be"
+    "email": "maxime.chirez@gmail.com"
   },
   "footer": {
     "medias": [
       {
         "image": "https://api.iconify.design/bxl:github.svg?color=%23888888",
-        "link": "#",
+        "link": "https://github.com/WandoCode",
         "alt": "Github Icon"
       },
       {
         "image": "https://api.iconify.design/ph:linkedin-logo-light.svg?color=%23888888",
-        "link": "#",
+        "link": "https://www.linkedin.com/in/maxime-chirez-6a319925a/",
         "alt": "LinkedIn Icon"
       },
       {

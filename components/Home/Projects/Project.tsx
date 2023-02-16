@@ -43,7 +43,7 @@ function Project({ datas, side }: Props) {
       </div>
       <div className={`project__content project__content--${side}`}>
         <h3 className={`project__title project__title--${side} h3 fs-600`}>
-          Audiophile
+          {language ? datas.title : ''}
         </h3>
         <p className="project__description">
           {language ? datas.description[language] : ''}
@@ -57,13 +57,13 @@ function Project({ datas, side }: Props) {
           <div className="project__links">
             <MediaLink
               image={GithubIcon}
-              link="#"
+              link={datas.urlGithub}
               altText="Github icon"
               background="light"
             />
             <MediaLink
               image={WebIcon}
-              link="#"
+              link={datas.urlLive}
               altText="Web icone"
               background="light"
             />

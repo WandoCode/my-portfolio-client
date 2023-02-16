@@ -17,31 +17,49 @@
         { "text": "React Context", "color": "#57B8FF" },
         { "text": "Sass/BEM", "color": "#FF7F57" }
       ],
-      "urlLive": "#",
-      "urlGithub": "#",
-      "urlPreview": "https://via.placeholder.com/380",
+      "urlLive": "https://github.com/WandoCode/audiophile-frontend",
+      "urlGithub": "https://audiophile-frontend-eta.vercel.app/",
+      "urlPreview": "/assets/audiophile-preview.png",
       "altText": "Audiophile website picture."
     },
     {
-      "title": "Audiophile",
+      "title": "Todo List",
       "description": {
-        "fr": "FRLorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi.",
-        "en": "ENLorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi.",
-        "es": "ESLorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi."
+        "fr": "FRLorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum volut quibusdam iste, esseptas non condimentum gravida, odio mauris a excepturi. FRLorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum volut quibusdam iste, esseptas non condimentum gravida, odio mauris a excepturi.",
+        "en": "ENLorem ipsum dolor sit, amet non condimentum gravida, odio mauris consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi. FRLorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum volut quibusdam iste, esseptas non condimentum gravida, odio mauris a excepturi.",
+        "es": "ESLorem ipsum dolor sit, amet non condimentum gravida, odio mauris consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi. FRLorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum volut quibusdam iste, esseptas non condimentum gravida, odio mauris a excepturi."
       },
       "features": {
-        "fr": ["Custom toast", "CMS Strapi", "Ect."],
-        "en": ["Custom toast", "CMS Strapi", "Ect."],
-        "es": ["Custom toast", "CMS Strapi", "Ect."]
+        "fr": [
+          "Notes drag&drop",
+          "Synchronisé dans le cloud (Firebase)",
+          "Routes protégées",
+          "etc."
+        ],
+        "en": [
+          "drag&drop notes",
+          "Synchronised on the cloud (Firebase)",
+          "Protected routes",
+          "etc."
+        ],
+        "es": [
+          "Notas drag&drop",
+          "Syncronisacion en la nube (Firebase)",
+          "Rutas protegidas"
+        ]
       },
       "tags": [
         { "text": "React", "color": "#FACF0F" },
         { "text": "React Context", "color": "#57B8FF" },
-        { "text": "Sass/BEM", "color": "#FF7F57" }
+        { "text": "Sass/BEM", "color": "#FF7F57" },
+        { "text": "Redux", "color": "#43CFE8" },
+        { "text": "Async with Redux", "color": "#FFC696" },
+        { "text": "Firebase", "color": "#CC6131" },
+        { "text": "React-router-dom", "color": "#FFB13D" }
       ],
-      "urlLive": "#",
-      "urlGithub": "#",
-      "urlPreview": "https://via.placeholder.com/380",
+      "urlLive": "https://todolist-4ee38.web.app/",
+      "urlGithub": "https://github.com/WandoCode/todolist",
+      "urlPreview": "/assets/todo-preview.png",
       "altText": "Audiophile website picture."
     }
   ]
