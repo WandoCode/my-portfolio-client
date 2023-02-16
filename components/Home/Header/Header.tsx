@@ -18,7 +18,7 @@ function Header({ headerDatas }: Props) {
   const { language } = useContext(LanguageContext)
   const { theme } = useContext(ThemeContext)
 
-  const { windowDir, windowOnTop } = useGetScrollingInfos()
+  const { windowDir, windowOnTop } = useGetScrollingInfos(75)
 
   const [openMenu, setOpenMenu] = useState(false)
 

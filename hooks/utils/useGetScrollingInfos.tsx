@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 
-function useGetScrollingInfos() {
+function useGetScrollingInfos(topOffset: number) {
   const windowPosRef = useRef(0)
 
   const [windowDir, setWindowDir] = useState<'up' | 'down'>('up')
@@ -20,10 +20,11 @@ function useGetScrollingInfos() {
   const getScrollDirection = (e: Event) => {
     const currPos = window.scrollY
 
-    if (currPos - windowPosRef.current < 0) setWindowDir('up')
+    if (currPos <= topOffset) setWindowDir('up')
+    else if (currPos - windowPosRef.current < 0) setWindowDir('up')
     else setWindowDir('down')
 
-    setWindowOnTop(currPos === 0)
+    setWindowOnTop(currPos <= topOffset)
 
     windowPosRef.current = currPos
   }
