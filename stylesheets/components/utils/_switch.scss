@@ -1,7 +1,6 @@
 @use '../../abstracts/' as *;
 
 .switch {
-  --border-radius: 10px;
   position: relative;
   display: flex;
   align-items: center;
@@ -10,14 +9,9 @@
   height: 18px;
   width: 40px;
   margin-inline: 3px;
-  border-radius: var(--border-radius);
+  border-radius: 10px;
   background-color: var(--clr-neutral-300);
-  outline: 3px var(--clr-neutral-300) solid;
-
-  -webkit-outline: 3px var(--clr-neutral-300) solid;
-  -webkit-border-radius: var(
-    --border-radius
-  ); // Should fix outline on Safari (don't follow border-radius)
+  box-shadow: 0 0 0px 3px var(--clr-neutral-300);
 
   @include breakpoint(medium) {
     height: 14px;

@@ -1,7 +1,8 @@
 body#dark {
   .switch {
     background-color: var(--clr-dark-neutral-600);
-    outline-color: var(--clr-dark-neutral-600);
+    box-shadow: 0 0 0px 3px var(--clr-dark-neutral-600);
+
     & img {
       filter: var(--clr-dark-svg-filter-300);
     }
