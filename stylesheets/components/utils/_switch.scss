@@ -12,6 +12,9 @@
   border-radius: 10px;
   background-color: var(--clr-neutral-300);
   outline: 3px var(--clr-neutral-300) solid;
+  transform: translateZ(
+    0
+  ); // Should fix outline on Safari (don't follow border-radius)
 
   @include breakpoint(medium) {
     height: 14px;
