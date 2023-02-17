@@ -49,6 +49,7 @@ function Contact() {
     const formIsSubmitByRobot = submitByRobot()
 
     const formIsValid = validateFields()
+    console.log(formIsValid)
 
     if (formIsValid && !formIsSubmitByRobot) {
       setStatus('loading')
@@ -122,6 +123,7 @@ function Contact() {
 
   const submitByRobot = () => {
     const submitTime = Date.now()
+
     const timeIntervalSincePageLoading = submitTime - pageLoadTimeRef.current
 
     if (timeIntervalSincePageLoading < EXCLUDE_ROBOT_SPAM_TIME) return true // Less than 4s between page loading and form submit => spam robot
