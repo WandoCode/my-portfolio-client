@@ -10,7 +10,7 @@ interface GlobalContextParams {
   changeLanguage: (value: LanguagesObject['value']) => void
 }
 
-const defaultContext: GlobalContextParams = {
+export const defaultContext: GlobalContextParams = {
   language: null,
   changeLanguage: (value) => {},
 }

@@ -1,19 +1,12 @@
 import { PropsWithChildren, useState, useEffect } from 'react'
-import { LanguageContext } from '../../../components/Language/LanguageContextProvider'
+import {
+  defaultContext,
+  LanguageContext,
+} from '../../../components/Language/LanguageContextProvider'
 import {
   LanguagesObject,
   LanguageAvailable,
 } from '../../../constant/language/language'
-
-interface GlobalContextParams {
-  language: LanguagesObject['value'] | null
-  changeLanguage: (value: LanguagesObject['value']) => void
-}
-
-const defaultContext: GlobalContextParams = {
-  language: null,
-  changeLanguage: (value) => {},
-}
 
 interface Props extends PropsWithChildren {
   lang: LanguagesObject['value'] | null
