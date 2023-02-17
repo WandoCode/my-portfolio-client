@@ -24,6 +24,11 @@
       grid-row: 1 / 4;
     }
 
+    & > button {
+      grid-column: 2 / -1;
+      grid-row: 4 / 5;
+    }
+
     & > *:last-child {
       grid-column: 2 / -1;
       grid-row: 4 / 5;
@@ -36,6 +41,8 @@
   }
 
   &__submit {
+    position: relative;
+
     margin-inline: auto;
     margin-top: var(--flow);
     @include breakpoint(large) {
@@ -59,6 +66,20 @@
       align-content: center;
       justify-items: start;
       margin-bottom: 0;
+    }
+  }
+
+  &__status-infos {
+    position: absolute;
+    right: 50%;
+    translate: 50% 250%;
+    width: max-content;
+
+    @include breakpoint('large') {
+      right: 0;
+
+      translate: 100% 0;
+      padding-left: 3rem;
     }
   }
 }

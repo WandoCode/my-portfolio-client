@@ -40,7 +40,7 @@ function Contact({ contactDatas }: Props) {
 
   const pageLoadTimeRef = useRef(Date.now())
 
-  const [status, setStatus] = useState<Status>('error')
+  const [status, setStatus] = useState<Status>('idle')
 
   const [formDatas, setFormDatas] =
     useState<Record<FormFieldsName, Input>>(emptyFormObject)
@@ -195,6 +195,12 @@ function Contact({ contactDatas }: Props) {
         onclick={handleSubmit}
         className="contact-form__submit fs-400 fc-neutral-800 fc-dark-neutral-250"
         status={status}
+        messageSuccess={
+          language ? formText?.text[language].successLarge : undefined
+        }
+        messageError={
+          language ? formText?.text[language].errorLarge : undefined
+        }
       >
         {status === 'idle' && language
           ? formText?.text[language].send
@@ -208,6 +214,15 @@ function Contact({ contactDatas }: Props) {
         {status === 'success' && language
           ? formText?.text[language].success
           : undefined}
+
+        <div className="contact-form__status-infos">
+          {status === 'error' && language
+            ? formText?.text[language].errorLarge
+            : undefined}
+          {status === 'success' && language
+            ? formText?.text[language].successLarge
+            : undefined}
+        </div>
       </Button>
     </form>
   )

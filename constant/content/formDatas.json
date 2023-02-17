@@ -8,7 +8,9 @@
       "send": "Envoyer",
       "sending": "Envoi en cours",
       "success": "Envoyé",
-      "error": "Réessayer"
+      "successLarge": "Message envoyé avec succés!",
+      "error": "Réessayer",
+      "errorLarge": "Erreur d'envoi, réessayer!"
     },
     "en": {
       "name": "Full name*",
@@ -18,7 +20,9 @@
       "send": "Send",
       "sending": "Sending ...",
       "success": "Sent",
-      "error": "Try again"
+      "successLarge": "Message sent successfully!",
+      "error": "Try again",
+      "errorLarge": "Erreur, please try again!"
     },
     "es": {
       "name": "Nombre completo*",
@@ -28,7 +32,9 @@
       "send": "Enviar",
       "sending": "Enviando",
       "success": "Enviado",
-      "error": "Volver a intentar"
+      "successLarge": "Mensaje enviado con exito!",
+      "error": "Volver a intentar",
+      "errorLarge": "Error, vuelve a intentar!"
     }
   },
   "errorText": {
