@@ -1,5 +1,5 @@
-import { FormFieldsName } from '../../components/Home/Contact/Contact'
 import { LanguageAvailable } from '../../constant/language/language'
+import { FormFieldsName } from '../../constant/types/contactForm'
 
 const buildEmail = (
   lang: LanguageAvailable | null,

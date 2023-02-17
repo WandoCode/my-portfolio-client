@@ -3,7 +3,7 @@ import Input, { InputError } from '../../../utils/form/Input'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
 import { InputTypes } from '../../../constant/types/InputFields'
 import useFetchFormDatas from '../../../hooks/fetch/useFetchFormDatas'
-import { FormFieldsName } from '../../Home/Contact/Contact'
+import { FormFieldsName } from '../../../constant/types/contactForm'
 
 interface Props {
   name: FormFieldsName

@@ -1,8 +1,8 @@
 const nodemailer = require('nodemailer')
 import { NextApiResponse } from 'next'
-import { FormFieldsName } from '../../../components/Home/Contact/Contact'
 import { buildEmail, buildObject } from '../../helpers/emailContentBuilder'
 import { LanguageAvailable } from '../../../constant/language/language'
+import { FormFieldsName } from '../../../constant/types/contactForm'
 
 type MessageDatas = Record<FormFieldsName, string>
 

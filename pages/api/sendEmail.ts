@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { FormFieldsName } from '../../components/Home/Contact/Contact'
 import { messageSchema } from '../../api/schemas/message'
 import { sendMailController } from '../../api/controllers/sendMail/sendMailController'
+import { FormFieldsName } from '../../constant/types/contactForm'
 import {
   LanguageAvailable,
   allowedLanguage,
