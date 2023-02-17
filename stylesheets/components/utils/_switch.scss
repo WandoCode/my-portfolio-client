@@ -13,6 +13,8 @@
   border-radius: var(--border-radius);
   background-color: var(--clr-neutral-300);
   outline: 3px var(--clr-neutral-300) solid;
+
+  -webkit-outline: 3px var(--clr-neutral-300) solid;
   -webkit-border-radius: var(
     --border-radius
   ); // Should fix outline on Safari (don't follow border-radius)
