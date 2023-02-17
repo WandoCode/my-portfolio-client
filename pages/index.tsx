@@ -82,7 +82,7 @@ function App() {
             <h2 className="h2 heading-section">
               {language ? mainDatas?.headings[language].contact : ''}
             </h2>
-            <Contact contactDatas={mainDatas?.contact} />
+            <Contact />
           </section>
         </main>
         <Footer footerDatas={mainDatas?.footer} />

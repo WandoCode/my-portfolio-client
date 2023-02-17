@@ -71,12 +71,6 @@
       "es": "Ut nunc nulla quis aliquam blandit cras urna nibh vitae. Urna eu mus ac dignissim nunc ornare elit nisl nibh. Leo ac posuere viverra fermentum iaculis congue vitae. Nisl vitae at donec pellentesque urna ridiculus diam sit nisl. Fermentum vitae netus purus congue neque facilisi sit. Facilisis donec vel in curabitur posuere et."
     }
   },
-  "contact": {
-    "emailIcon": "https://api.iconify.design/ic:sharp-alternate-email.svg?color=%23888888",
-    "placeIcon": "https://api.iconify.design/mdi:map-marker.svg?color=%23888888",
-    "place": { "fr": "Bruxelles", "en": "Brussels", "es": "Bruselas" },
-    "email": "maxime.chirez@gmail.com"
-  },
   "footer": {
     "medias": [
       {

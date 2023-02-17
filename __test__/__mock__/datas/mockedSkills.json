@@ -1,0 +1,39 @@
+{
+  "skills": [
+    {
+      "urlIcon": "https://api.iconify.design/vscode-icons:file-type-js-official.svg?color=%23888888",
+      "title": "Javascript",
+      "rating": "4"
+    },
+    {
+      "urlIcon": "https://api.iconify.design/logos:css-3.svg?color=%23888888",
+      "title": "CSS",
+      "rating": "3"
+    },
+    {
+      "urlIcon": "https://api.iconify.design/vscode-icons:file-type-reactjs.svg?color=%23888888",
+      "title": "React",
+      "rating": "3"
+    },
+    {
+      "urlIcon": "https://api.iconify.design/vscode-icons:file-type-sass.svg?color=%23888888",
+      "title": "Sass/SCSS",
+      "rating": "3"
+    },
+    {
+      "urlIcon": "https://api.iconify.design/vscode-icons:file-type-typescript-official.svg?color=%23888888",
+      "title": "Typescript",
+      "rating": "2"
+    },
+    {
+      "urlIcon": "https://api.iconify.design/logos:strapi-icon.svg?color=%23888888",
+      "title": "CMS Strapi",
+      "rating": "1"
+    },
+    {
+      "urlIcon": "https://api.iconify.design/vscode-icons:file-type-node.svg?color=%23888888",
+      "title": "NodeJS",
+      "rating": "1"
+    }
+  ]
+}
