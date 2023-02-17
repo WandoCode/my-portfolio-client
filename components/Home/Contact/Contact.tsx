@@ -1,4 +1,4 @@
-import { useState, MouseEvent, useContext, useRef, useEffect } from 'react'
+import { useState, MouseEvent, useContext, useRef } from 'react'
 import Input from '../../../utils/form/Input'
 import Button from '../../Utils/Button/Button'
 import InputField from '../../Utils/Form/InputField'
@@ -8,14 +8,16 @@ import { InputError } from '../../../utils/form/Input'
 import { ContactDatas } from '../../../constant/types/datas'
 import useFetchFormDatas from '../../../hooks/fetch/useFetchFormDatas'
 import contactStore from '../../../stores/contact'
+import { FormFieldsName, Status } from '../../../constant/types/contactForm'
 
 interface Props {
   contactDatas: ContactDatas | undefined
 }
 
-export type Status = 'error' | 'success' | 'loading' | 'idle'
+const EXCLUDE_ROBOT_SPAM_TIME = 4000
+const INFO_MESSAGE_DISPLAY_TIME = 3000
 
-const emptyFormObject = {
+export const emptyFormObject = {
   name: new Input('text', 'required'),
   email: new Input('email', 'required'),
   object: new Input('text'),
@@ -30,8 +32,6 @@ const emptyErrorObject = {
   message: [],
   phone: [],
 }
-
-export type FormFieldsName = keyof typeof emptyFormObject
 
 function Contact({ contactDatas }: Props) {
   const formText = useFetchFormDatas()
@@ -70,7 +70,7 @@ function Contact({ contactDatas }: Props) {
         setStatus('error')
       }
 
-      setTimeout(() => setStatus('idle'), 3000)
+      setTimeout(() => setStatus('idle'), INFO_MESSAGE_DISPLAY_TIME)
     }
   }
 
@@ -129,7 +129,7 @@ function Contact({ contactDatas }: Props) {
     const submitTime = Date.now()
     const timeIntervalSincePageLoading = submitTime - pageLoadTimeRef.current
 
-    if (timeIntervalSincePageLoading < 4000) return true // Less than 4s between page loading and form submit => spam robot
+    if (timeIntervalSincePageLoading < EXCLUDE_ROBOT_SPAM_TIME) return true // Less than 4s between page loading and form submit => spam robot
     if (formDatas.phone.value !== '') return true // Spam caught in honeypot
 
     return false
@@ -195,12 +195,6 @@ function Contact({ contactDatas }: Props) {
         onclick={handleSubmit}
         className="contact-form__submit fs-400 fc-neutral-800 fc-dark-neutral-250"
         status={status}
-        messageSuccess={
-          language ? formText?.text[language].successLarge : undefined
-        }
-        messageError={
-          language ? formText?.text[language].errorLarge : undefined
-        }
       >
         {status === 'idle' && language
           ? formText?.text[language].send

@@ -32,9 +32,6 @@ function Header({ headerDatas }: Props) {
     return name
   }
 
-  useEffect(() => {
-    console.log(theme)
-  }, [theme])
   const navContainerClass = () => {
     if (openMenu) return 'container-nav container-nav--scroll-up'
     else

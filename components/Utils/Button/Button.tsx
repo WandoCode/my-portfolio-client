@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { MouseEvent, PropsWithChildren } from 'react'
-import { Status } from '../../Home/Contact/Contact'
+import { Status } from '../../../constant/types/contactForm'
 
 interface Props extends PropsWithChildren {
   type: 'link' | 'button'
