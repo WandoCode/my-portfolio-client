@@ -5,14 +5,9 @@ import InputField from '../../Utils/Form/InputField'
 import Info from './Info'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
 import { InputError } from '../../../utils/form/Input'
-import { ContactDatas } from '../../../constant/types/datas'
 import useFetchFormDatas from '../../../hooks/fetch/useFetchFormDatas'
 import contactStore from '../../../stores/contact'
 import { FormFieldsName, Status } from '../../../constant/types/contactForm'
-
-interface Props {
-  contactDatas: ContactDatas | undefined
-}
 
 const EXCLUDE_ROBOT_SPAM_TIME = 4000
 const INFO_MESSAGE_DISPLAY_TIME = 3000
@@ -33,7 +28,7 @@ const emptyErrorObject = {
   phone: [],
 }
 
-function Contact({ contactDatas }: Props) {
+function Contact() {
   const formText = useFetchFormDatas()
 
   const { language } = useContext(LanguageContext)
@@ -138,10 +133,12 @@ function Contact({ contactDatas }: Props) {
   return (
     <form className="contact-form">
       <div className="contact-form__infos">
-        <Info imageRef={contactDatas?.placeIcon}>
-          {language ? contactDatas?.place[language] : ''}
+        <Info imageRef={formText?.infos.placeIcon}>
+          {language ? formText?.infos.place[language] : ''}
         </Info>
-        <Info imageRef={contactDatas?.emailIcon}>{contactDatas?.email}</Info>
+        <Info imageRef={formText?.infos.emailIcon}>
+          {formText?.infos.email}
+        </Info>
       </div>
       <InputField
         name="name"
@@ -163,7 +160,7 @@ function Contact({ contactDatas }: Props) {
       />
       <InputField
         name="phone"
-        label={undefined}
+        label="phone"
         type="honeypot"
         inputErrors={formErrors.phone}
         inputDatas={formDatas.phone}

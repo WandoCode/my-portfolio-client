@@ -43,7 +43,6 @@ function InputField({
   const fieldClass = () => {
     const base = 'input-field__input'
     let name = base
-    if (type === 'honeypot') return (name += ` ${base}--pot`)
     if (type == 'textarea') name += ` ${base}--textarea`
     if (inputErrors.length > 0) name += ` ${base}--error`
     return name
