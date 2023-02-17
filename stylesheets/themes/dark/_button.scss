@@ -13,5 +13,13 @@ body#dark {
       border-color: var(--clr-neutral-500);
       background-color: var(--clr-neutral-400);
     }
+
+    &--success {
+      background-color: var(--clr-dark-primary-200);
+    }
+
+    &--error {
+      background-color: var(--clr-dark-primary-700);
+    }
   }
 }

@@ -13,6 +13,8 @@ interface Props {
   contactDatas: ContactDatas | undefined
 }
 
+export type Status = 'error' | 'success' | 'loading' | 'idle'
+
 const emptyFormObject = {
   name: new Input('text', 'required'),
   email: new Input('email', 'required'),
@@ -38,7 +40,7 @@ function Contact({ contactDatas }: Props) {
 
   const pageLoadTimeRef = useRef(Date.now())
 
-  const [loading, setLoading] = useState(false)
+  const [status, setStatus] = useState<Status>('error')
 
   const [formDatas, setFormDatas] =
     useState<Record<FormFieldsName, Input>>(emptyFormObject)
@@ -49,28 +51,27 @@ function Contact({ contactDatas }: Props) {
   const handleSubmit = async (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
 
-    setLoading(true)
     const formIsSubmitByRobot = submitByRobot()
 
     const formIsValid = validateFields()
 
     if (formIsValid && !formIsSubmitByRobot) {
-      let messageDatas = getStringFormDatas()
+      setStatus('loading')
 
+      let messageDatas = getStringFormDatas()
       let rep = await contactStore.postMessage({ messageDatas, lang: language })
 
       if (rep.isSuccessfull) {
         emptyForm()
-        // TODO: afficher un message de validation
+        setStatus('success')
       }
 
       if (!rep.isSuccessfull) {
-        console.error(rep.message)
-
-        // TODO: afficher un message de Erreur
+        setStatus('error')
       }
+
+      setTimeout(() => setStatus('idle'), 3000)
     }
-    setLoading(false)
   }
 
   const validateFields = () => {
@@ -193,9 +194,20 @@ function Contact({ contactDatas }: Props) {
         level="secondary"
         onclick={handleSubmit}
         className="contact-form__submit fs-400 fc-neutral-800 fc-dark-neutral-250"
-        loading={loading}
+        status={status}
       >
-        {language ? formText?.text[language].send : undefined}
+        {status === 'idle' && language
+          ? formText?.text[language].send
+          : undefined}
+        {status === 'loading' && language
+          ? formText?.text[language].sending
+          : undefined}
+        {status === 'error' && language
+          ? formText?.text[language].error
+          : undefined}
+        {status === 'success' && language
+          ? formText?.text[language].success
+          : undefined}
       </Button>
     </form>
   )
@@ -204,4 +216,3 @@ function Contact({ contactDatas }: Props) {
 export default Contact
 
 // TODO: ajouter favicon
-// TODO: Ajouter logo

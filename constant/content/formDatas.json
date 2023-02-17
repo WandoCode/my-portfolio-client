@@ -5,21 +5,30 @@
       "email": "Email*",
       "subject": "Sujet",
       "message": "Message*",
-      "send": "Envoyer"
+      "send": "Envoyer",
+      "sending": "Envoi en cours",
+      "success": "Envoyé",
+      "error": "Réessayer"
     },
     "en": {
       "name": "Full name*",
       "email": "Email*",
       "subject": "Suject",
       "message": "Message*",
-      "send": "Send"
+      "send": "Send",
+      "sending": "Sending ...",
+      "success": "Sent",
+      "error": "Try again"
     },
     "es": {
       "name": "Nombre completo*",
       "email": "Correo*",
       "subject": "Subjeto",
       "message": "Mensaje*",
-      "send": "Enviar"
+      "send": "Enviar",
+      "sending": "Enviando",
+      "success": "Enviado",
+      "error": "Volver a intentar"
     }
   },
   "errorText": {

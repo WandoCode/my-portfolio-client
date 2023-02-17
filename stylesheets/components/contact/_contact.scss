@@ -36,7 +36,6 @@
   }
 
   &__submit {
-    width: min-content;
     margin-inline: auto;
     margin-top: var(--flow);
     @include breakpoint(large) {
