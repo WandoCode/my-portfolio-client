@@ -21,7 +21,7 @@ function ThemeContextProvidor({ children }: PropsWithChildren) {
     const savedTheme = themeStore.loadTheme()
 
     if (savedTheme) setTheme(savedTheme)
-    else setTheme(themeStore.getBrowserTheme())
+    else setTheme('light')
   }, [])
 
   useEffect(() => {
