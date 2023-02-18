@@ -112,7 +112,7 @@ export default () => {
         if (inputError) dispatch(changeFormErrors(fieldName, undefined))
       } catch (err) {
         if (err instanceof ValidationError) {
-          const fieldError = err.inner[0].path
+          const fieldError = err.inner[0].message
 
           if (fieldError !== inputError)
             dispatch(changeFormErrors(fieldName, fieldError as InputError))

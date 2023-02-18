@@ -36,11 +36,11 @@ function InputField({
 
   const fieldClass = () => {
     const base = 'input-field__input'
-    let name = base
+    let nameClass = base
 
-    if (type == 'textarea') name += ` ${base}--textarea`
-    if (inputError) name += ` ${base}--error`
-    return name
+    if (type == 'textarea') nameClass += ` ${base}--textarea`
+    if (inputError) nameClass += ` ${base}--error`
+    return nameClass
   }
 
   const getValidationErrorText = () => {
