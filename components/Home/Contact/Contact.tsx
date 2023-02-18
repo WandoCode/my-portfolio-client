@@ -12,11 +12,6 @@ interface Props {
   formText: FormDatas
   formErrors: Record<FormFieldsName, InputError[]>
   formDatas: Record<FormFieldsName, Input>
-  onChangeFormDatas: (fieldName: FormFieldsName, newValue: string) => void
-  onChangeFormErrors: (
-    fieldName: FormFieldsName,
-    newErrors: InputError[]
-  ) => void
   onHandleSubmit: (e: MouseEvent<HTMLButtonElement>) => void
   status: Status
   language: LanguageAvailable
@@ -26,8 +21,6 @@ function Contact({
   formText,
   formErrors,
   formDatas,
-  onChangeFormDatas,
-  onChangeFormErrors,
   onHandleSubmit,
   status,
   language,
@@ -45,45 +38,30 @@ function Contact({
         label={formText.text[language].name}
         type="text"
         inputErrors={formErrors.name}
-        inputDatas={formDatas.name}
-        onChangeFormDatas={onChangeFormDatas}
-        onChangeErrors={onChangeFormErrors}
       />
       <InputField
         name="email"
         label={formText.text[language].email}
         type="email"
         inputErrors={formErrors.email}
-        inputDatas={formDatas.email}
-        onChangeFormDatas={onChangeFormDatas}
-        onChangeErrors={onChangeFormErrors}
       />
       <InputField
         name="phone"
         label="phone"
         type="honeypot"
         inputErrors={formErrors.phone}
-        inputDatas={formDatas.phone}
-        onChangeFormDatas={onChangeFormDatas}
-        onChangeErrors={onChangeFormErrors}
       />
       <InputField
         name="object"
         label={formText.text[language].subject}
         type="text"
         inputErrors={formErrors.object}
-        inputDatas={formDatas.object}
-        onChangeFormDatas={onChangeFormDatas}
-        onChangeErrors={onChangeFormErrors}
       />
       <InputField
         name="message"
         label={formText.text[language].message}
         type="textarea"
         inputErrors={formErrors.message}
-        inputDatas={formDatas.message}
-        onChangeFormDatas={onChangeFormDatas}
-        onChangeErrors={onChangeFormErrors}
       />
 
       <Button

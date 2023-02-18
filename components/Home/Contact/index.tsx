@@ -1,53 +1,39 @@
 import Contact from './Contact'
 import useFetchFormDatas from '../../../hooks/fetch/useFetchFormDatas'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
-import { MouseEvent, useContext, useRef, useState } from 'react'
+import { MouseEvent, useContext, useRef, useState, useEffect } from 'react'
 import { Status, FormFieldsName } from '../../../constant/types/contactForm'
-import Input from '../../../utils/form/Input'
 import { InputError } from '../../../utils/form/Input'
 import contactStore from '../../../stores/contact'
+import { useDispatch, useSelector } from 'react-redux'
+import { changeFormDatas, changeFormErrors } from '../../Form/form.actions'
+import { RootState } from '../../../stores/redux'
+import { formSchema } from '../../Form/form.schema'
+import { ValidationError } from 'yup'
 
 const EXCLUDE_ROBOT_SPAM_TIME = 4000
 const INFO_MESSAGE_DISPLAY_TIME = 3000
 
-export const emptyFormObject = {
-  name: new Input('text', 'required'),
-  email: new Input('email', 'required'),
-  object: new Input('text'),
-  message: new Input('text', 'required'),
-  phone: new Input('text'), // Honeypot
-}
-
-export const emptyErrorObject = {
-  name: [],
-  email: [],
-  object: [],
-  message: [],
-  phone: [],
-}
-
 export default () => {
+  const dispatch = useDispatch()
+
   const formText = useFetchFormDatas()
 
   const { language } = useContext(LanguageContext)
 
+  const formDatas = useSelector((state: RootState) => state.form.formDatas)
+  const formErrors = useSelector((state: RootState) => state.form.formErrors)
+
   const pageLoadTimeRef = useRef(Date.now())
 
   const [status, setStatus] = useState<Status>('idle')
-
-  const [formDatas, setFormDatas] =
-    useState<Record<FormFieldsName, Input>>(emptyFormObject)
-
-  const [formErrors, setFormErrors] =
-    useState<Record<FormFieldsName, InputError[]>>(emptyErrorObject)
 
   const handleSubmit = async (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
 
     const formIsSubmitByRobot = submitByRobot()
 
-    const formIsValid = validateFields()
-    console.log(formIsValid)
+    const formIsValid = await validateForm()
 
     if (formIsValid && !formIsSubmitByRobot) {
       setStatus('loading')
@@ -68,45 +54,29 @@ export default () => {
     }
   }
 
-  const validateFields = () => {
-    let formIsValid = true
+  const validateForm = async () => {
+    try {
+      let formIsValid = await formSchema.validate(formDatas, {
+        abortEarly: false,
+      })
+      return formIsValid // True
+    } catch (err) {
+      if (err instanceof ValidationError) {
+        err.inner.forEach((error) => {
+          const fieldName = error.path as FormFieldsName
+          const fieldErrors = [error.message] as InputError[]
 
-    for (const fieldName in formDatas) {
-      const fieldInput = formDatas[fieldName as FormFieldsName]
-      const errors = fieldInput.getValidationErrors()
-
-      changeFormErrors(fieldName as FormFieldsName, errors)
-
-      if (errors.length !== 0) {
-        formIsValid = false
+          dispatch(changeFormErrors(fieldName, fieldErrors))
+        })
       }
+      return false
     }
-    return formIsValid
-  }
-
-  const changeFormDatas = (fieldName: FormFieldsName, newValue: string) => {
-    setFormDatas((old) => {
-      const newFormDatas = { ...old }
-      newFormDatas[fieldName].value = newValue
-      return newFormDatas
-    })
-  }
-
-  const changeFormErrors = (
-    fieldName: FormFieldsName,
-    newErrors: InputError[]
-  ) => {
-    setFormErrors((old) => {
-      const newFormErrors = { ...old }
-      newFormErrors[fieldName] = newErrors
-      return newFormErrors
-    })
   }
 
   const emptyForm = () => {
     for (const fieldName in formDatas) {
-      changeFormDatas(fieldName as FormFieldsName, '')
-      changeFormErrors(fieldName as FormFieldsName, [])
+      dispatch(changeFormDatas(fieldName as FormFieldsName, ''))
+      dispatch(changeFormErrors(fieldName as FormFieldsName, []))
     }
   }
 
@@ -125,7 +95,7 @@ export default () => {
     const timeIntervalSincePageLoading = submitTime - pageLoadTimeRef.current
 
     if (timeIntervalSincePageLoading < EXCLUDE_ROBOT_SPAM_TIME) return true // Less than 4s between page loading and form submit => spam robot
-    if (formDatas.phone.value !== '') return true // Spam caught in honeypot
+    if (formDatas.phone.value) return true // Spam caught in honeypot
 
     return false
   }
@@ -139,8 +109,6 @@ export default () => {
           formDatas={formDatas}
           status={status}
           language={language}
-          onChangeFormDatas={changeFormDatas}
-          onChangeFormErrors={changeFormErrors}
           onHandleSubmit={handleSubmit}
         />
       ) : (

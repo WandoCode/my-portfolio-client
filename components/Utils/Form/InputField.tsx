@@ -1,43 +1,61 @@
-import { ChangeEvent, useContext } from 'react'
+import { ChangeEvent, useContext, useEffect } from 'react'
 import Input, { InputError } from '../../../utils/form/Input'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
 import { InputTypes } from '../../../constant/types/InputFields'
 import useFetchFormDatas from '../../../hooks/fetch/useFetchFormDatas'
 import { FormFieldsName } from '../../../constant/types/contactForm'
+import { useDispatch, useSelector } from 'react-redux'
+import { changeFormErrors, changeFormDatas } from '../../Form/form.actions'
+import yup from 'yup'
+import { formSchema } from '../../Form/form.schema'
+import { ValidationError } from 'yup'
+import { RootState } from '../../../stores/redux'
 
 interface Props {
   name: FormFieldsName
   label: string | undefined
   type: InputTypes
   inputErrors: InputError[]
-  inputDatas: Input
-  onChangeFormDatas: (fieldName: FormFieldsName, newValue: string) => void
-  onChangeErrors: (fieldName: FormFieldsName, newErrors: InputError[]) => void
 }
 
-function InputField({
-  name,
-  type,
-  label,
-  inputErrors,
-  inputDatas,
-  onChangeFormDatas,
-  onChangeErrors,
-}: Props) {
+function InputField({ name, type, label, inputErrors }: Props) {
+  const dispatch = useDispatch()
+  const formDatas = useSelector((state: RootState) => state.form.formDatas)
+  const inputDatas = useSelector(
+    (state: RootState) => state.form.formDatas[name]
+  )
   const { language } = useContext(LanguageContext)
   const errorMessage = useFetchFormDatas()?.errorText
 
-  const handleInput = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    onChangeFormDatas(name, e.target.value)
+  useEffect(() => {
+    checkInputValidity()
+  }, [inputDatas])
 
+  const checkInputValidity = async () => {
     if (inputErrors.length > 0) {
-      const newErrors = inputDatas.getValidationErrors()
-      if (newErrors.length !== inputErrors.length) {
-        onChangeErrors(name, newErrors)
+      try {
+        await formSchema.validateAt(name, formDatas, {
+          abortEarly: false,
+        })
+        console.log(2)
+
+        if (inputErrors.length != 0) dispatch(changeFormErrors(name, []))
+      } catch (err) {
+        if (err instanceof ValidationError) {
+          const fieldError = [err.inner[0].path]
+          console.table(err.inner[0])
+
+          if (fieldError.length !== inputErrors.length)
+            dispatch(changeFormErrors(name, fieldError as InputError[]))
+        }
       }
     }
+  }
+
+  const handleInput = async (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    dispatch(changeFormDatas(name, e.target.value))
   }
 
   const fieldClass = () => {
@@ -75,7 +93,7 @@ function InputField({
           name={name}
           id={name}
           className={fieldClass()}
-          value={inputDatas.value}
+          value={formDatas[name].value}
           onChange={handleInput}
         />
       ) : (
@@ -84,7 +102,7 @@ function InputField({
           name={name}
           id={name}
           className={fieldClass()}
-          value={inputDatas.value}
+          value={formDatas[name].value}
           onChange={handleInput}
           {...(type === 'honeypot'
             ? { autoComplete: 'off', tabIndex: -1 }
