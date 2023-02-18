@@ -4,20 +4,19 @@ import Projects from '../components/Home/Projects/Projects'
 import Skills from '../components/Home/Skills/Skills'
 import Footer from '../components/Home/Footer/Footer'
 import About from '../components/Home/About/About'
-import { useContext, useRef, useEffect, RefObject } from 'react'
-
+import { useRef, useEffect, RefObject } from 'react'
 import useFetchMainDatas from '../hooks/fetch/useFetchMainDatas'
-import { NavContext } from '../components/Features/Navigation/NavContextProvider'
+
 import useGetCurrentSection from '../hooks/utils/useGetCurrentSection'
 import Head from 'next/head'
 import Contact from '../components/Home/Contact'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '../components/Features/app.store'
+import { changeCurrentSection } from '../components/Features/Navigation/nav.actions'
 
 function App() {
+  const dispatch = useDispatch()
   const language = useSelector((state: RootState) => state.language.language)
-
-  const { changeCurrentSection } = useContext(NavContext)
 
   const mainDatas = useFetchMainDatas()
 
@@ -36,7 +35,7 @@ function App() {
   })
 
   useEffect(() => {
-    changeCurrentSection(currentSection)
+    dispatch(changeCurrentSection(currentSection))
   }, [currentSection])
 
   return (

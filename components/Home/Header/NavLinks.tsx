@@ -1,6 +1,5 @@
-import { useRef, useEffect, useContext, RefObject } from 'react'
+import { useRef, useEffect, RefObject } from 'react'
 import { HeadingsDatas } from '../../../constant/types/datas'
-import { NavContext } from '../../Features/Navigation/NavContextProvider'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../Features/app.store'
 
@@ -11,8 +10,9 @@ interface Props {
 
 function NavLinks({ onCloseNav, navText }: Props) {
   const language = useSelector((state: RootState) => state.language.language)
-
-  const { currentSection = 'hero' } = useContext(NavContext)
+  const currentSection = useSelector(
+    (state: RootState) => state.nav.currentSection
+  )
 
   const listSliderRef = useRef<HTMLUListElement>(null)
 
@@ -25,7 +25,7 @@ function NavLinks({ onCloseNav, navText }: Props) {
   }
 
   useEffect(() => {
-    if (listSliderRef.current) {
+    if (listSliderRef.current && currentSection) {
       listSliderRef.current.style.width = `${refs[currentSection].current?.offsetWidth}px`
       listSliderRef.current.style.marginLeft = `${refs[currentSection].current?.offsetLeft}px`
     }
