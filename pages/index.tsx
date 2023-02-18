@@ -1,8 +1,7 @@
+import Head from 'next/head'
 import { useRef, useEffect, RefObject } from 'react'
 import useFetchMainDatas from '../hooks/fetch/useFetchMainDatas'
-
 import useGetCurrentSection from '../hooks/utils/useGetCurrentSection'
-import Head from 'next/head'
 import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '../Features/app.store'
 import { changeCurrentSection } from '../Features/Navigation/nav.actions'

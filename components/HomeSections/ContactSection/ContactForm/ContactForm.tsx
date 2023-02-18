@@ -79,4 +79,3 @@ function ContactForm({ formText, onHandleSubmit, status, language }: Props) {
 export default ContactForm
 
 // TODO: ajouter favicon
-// TODO: utiliser  redux pour les input du formulaire et la gestion des erruers/ status
