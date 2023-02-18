@@ -1,15 +1,13 @@
 import Image from 'next/image'
 import { AboutDatas } from '../../../constant/types/datas'
-import { useSelector } from 'react-redux'
-import { RootState } from '../../Features/app.store'
+import { LanguageAvailable } from '../../../constant/language/language'
 
 interface Props {
   aboutDatas: AboutDatas | undefined
+  language: LanguageAvailable | null
 }
 
-function About({ aboutDatas }: Props) {
-  const language = useSelector((state: RootState) => state.language.language)
-
+function About({ aboutDatas, language }: Props) {
   return (
     <div className="about__body">
       <div className="about__text fc-neutral-300">

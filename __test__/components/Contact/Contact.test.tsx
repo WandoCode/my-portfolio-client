@@ -1,7 +1,7 @@
 import { describe, test, expect, beforeEach, vi, afterEach } from 'vitest'
 import { act, render, screen } from '@testing-library/react'
 import MockLanguageProvider from '../../__mock__/Language/MockLanguageProvider'
-import Contact from '../../../components/Home/Contact/Contact'
+import Contact from '../../../components/Home/Contact/ContactForm/ContactForm'
 import contactStore from '../../../stores/contact'
 import userEvent from '@testing-library/user-event'
 

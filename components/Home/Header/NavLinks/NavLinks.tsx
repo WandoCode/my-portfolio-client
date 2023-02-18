@@ -1,19 +1,15 @@
 import { useRef, useEffect, RefObject } from 'react'
-import { HeadingsDatas } from '../../../constant/types/datas'
-import { useSelector } from 'react-redux'
-import { RootState } from '../../Features/app.store'
+import { HeadingsDatas } from '../../../../constant/types/datas'
+import { LanguageAvailable } from '../../../../constant/language/language'
 
 interface Props {
   onCloseNav: () => void
   navText: HeadingsDatas['fr'] | undefined
+  language: LanguageAvailable | null
+  currentSection: string | undefined
 }
 
-function NavLinks({ onCloseNav, navText }: Props) {
-  const language = useSelector((state: RootState) => state.language.language)
-  const currentSection = useSelector(
-    (state: RootState) => state.nav.currentSection
-  )
-
+function NavLinks({ onCloseNav, navText, language, currentSection }: Props) {
   const listSliderRef = useRef<HTMLUListElement>(null)
 
   const refs: Record<string, RefObject<HTMLAnchorElement>> = {

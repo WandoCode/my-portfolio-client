@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import Header from '../../../components/Home/Header/Header'
+import Header from '../../../components/Home/Header/Header/Header'
 
 // describe('Given I use the Header component', () => {
 //   render(<Header  />)

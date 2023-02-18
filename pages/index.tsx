@@ -1,18 +1,18 @@
-import Header from '../components/Home/Header/Header'
+import Header from '../components/Home/Header/Header/'
 import Hero from '../components/Home/Hero/Hero'
 import Projects from '../components/Home/Projects/Projects'
 import Skills from '../components/Home/Skills/Skills'
 import Footer from '../components/Home/Footer/Footer'
-import About from '../components/Home/About/About'
 import { useRef, useEffect, RefObject } from 'react'
 import useFetchMainDatas from '../hooks/fetch/useFetchMainDatas'
 
 import useGetCurrentSection from '../hooks/utils/useGetCurrentSection'
 import Head from 'next/head'
-import Contact from '../components/Home/Contact'
+import Contact from '../components/Home/Contact/ContactForm'
 import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '../components/Features/app.store'
 import { changeCurrentSection } from '../components/Features/Navigation/nav.actions'
+import About from '../components/Home/About'
 
 function App() {
   const dispatch = useDispatch()

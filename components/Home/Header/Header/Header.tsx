@@ -1,25 +1,26 @@
-import ThemeSwitch from '../../Features/Theme/ThemeSwitch'
-import LangSelection from '../../Features/Language/LangSelection'
+import ThemeSwitch from '../../../Features/Theme/ThemeSwitch'
+import LangSelection from '../../../Features/Language/LangSelection'
 import { useState } from 'react'
-import Logo from '../../../public/assets/Logo.svg'
-import Logo_black from '../../../public/assets/Logo_black.svg'
+import Logo from '../../../../public/assets/Logo.svg'
+import Logo_black from '../../../../public/assets/Logo_black.svg'
 import Image from 'next/image'
-import NavLinks from './NavLinks'
-import { HeadingsDatas } from '../../../constant/types/datas'
-import useGetScrollingInfos from '../../../hooks/utils/useGetScrollingInfos'
-import { useSelector } from 'react-redux'
-import { RootState } from '../../Features/app.store'
+import NavLinks from '../NavLinks'
+import { HeadingsDatas } from '../../../../constant/types/datas'
+import { LanguageAvailable } from '../../../../constant/language/language'
+import { ThemesValues } from '../../../../constant/theme/theme'
 
 interface Props {
   headerDatas: HeadingsDatas | undefined
+  language: LanguageAvailable | null
+  theme: ThemesValues | null
+  scrollingInfos: {
+    windowDir: 'up' | 'down'
+    windowOnTop: boolean
+  }
 }
 
-function Header({ headerDatas }: Props) {
-  const language = useSelector((state: RootState) => state.language.language)
-
-  const theme = useSelector((state: RootState) => state.theme.theme)
-
-  const { windowDir, windowOnTop } = useGetScrollingInfos(75)
+function Header({ headerDatas, language, theme, scrollingInfos }: Props) {
+  const { windowDir, windowOnTop } = scrollingInfos
 
   const [openMenu, setOpenMenu] = useState(false)
 

@@ -1,10 +1,10 @@
 import { ChangeEvent } from 'react'
 import { InputError } from '../../../utils/form/Input'
 import { InputTypes } from '../../../constant/types/InputFields'
-import useFetchFormDatas from '../../../hooks/fetch/useFetchFormDatas'
 import { FormFieldsName } from '../../../constant/types/contactForm'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../Features/app.store'
+import { FormDatas } from '../../../constant/types/datas'
 
 interface Props {
   name: FormFieldsName
@@ -13,6 +13,7 @@ interface Props {
   inputError: InputError
   inputValue: string
   onChangeInput: (val: string, fieldName: FormFieldsName) => void
+  errorMessages: FormDatas['errorText'] | undefined
 }
 
 function InputField({
@@ -22,10 +23,8 @@ function InputField({
   inputError,
   inputValue,
   onChangeInput,
+  errorMessages,
 }: Props) {
-  const errorMessages = useFetchFormDatas()?.errorText
-  // TODO: get ErrorMessage from props instead fetch
-
   const language = useSelector((state: RootState) => state.language.language)
 
   const handleInput = async (
