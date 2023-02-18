@@ -1,18 +1,14 @@
 import Image from 'next/image'
 import Button from '../../Utils/Button/Button'
 import { HeroDatas } from '../../../constant/types/datas'
-import { RootState } from '../../Features/app.store'
-import { useSelector } from 'react-redux'
+import { LanguageAvailable } from '../../../constant/language/language'
 
 interface Props {
   heroDatas: HeroDatas | undefined
+  language: LanguageAvailable | null
 }
 
-function Hero({ heroDatas }: Props) {
-  const language = useSelector((state: RootState) => state.language.language)
-
-  const handleDownloadCV = () => {}
-
+function Hero({ heroDatas, language }: Props) {
   return (
     <div className="container">
       <div className="hero__container">
@@ -44,7 +40,6 @@ function Hero({ heroDatas }: Props) {
             <Button
               type="link"
               level="primary"
-              onclick={handleDownloadCV}
               href="/CV.pdf"
               target="_blank"
               className="hero__btn fs-400 fc-neutral-800"

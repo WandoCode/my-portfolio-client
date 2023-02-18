@@ -1,10 +1,12 @@
 import { useMemo } from 'react'
-import Project from './Project'
-import useFetchProjects from '../../../hooks/fetch/useFetchProjectsDatas'
+import Project from '../Project'
+import { ProjectsDatas } from '../../../../constant/types/datas'
 
-function Projects() {
-  const projectsArray = useFetchProjects()
+interface Props {
+  projectsArray: ProjectsDatas | undefined
+}
 
+function Projects({ projectsArray }: Props) {
   const projectsDOM = useMemo(
     () =>
       projectsArray?.map((projectDatas, i) => (

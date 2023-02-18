@@ -1,6 +1,6 @@
 import Button from '../../../Utils/Button/Button'
 import InputField from '../../../Utils/InputField'
-import Info from '../Info'
+import Info from '../Info/Info'
 import { Status } from '../../../../constant/types/contactForm'
 import { FormDatas } from '../../../../constant/types/datas'
 import { LanguageAvailable } from '../../../../constant/language/language'

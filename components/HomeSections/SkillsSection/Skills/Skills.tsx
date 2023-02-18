@@ -1,10 +1,13 @@
 import { useMemo } from 'react'
-import SkillItem from './SkillItem'
-import useFetchSkillsDatas from '../../../hooks/fetch/useFetchSkillsDatas'
+import SkillItem from '../SkillItem/SkillItem'
 
-function Skills() {
-  const skillsDatas = useFetchSkillsDatas()
+import { SkillDatas } from '../../../../constant/types/datas'
 
+interface Props {
+  skillsDatas: SkillDatas[] | undefined
+}
+
+function Skills({ skillsDatas }: Props) {
   const skillItemsDOM = useMemo(() => {
     return skillsDatas?.map((datas, i) => <SkillItem datas={datas} key={i} />)
   }, [skillsDatas])

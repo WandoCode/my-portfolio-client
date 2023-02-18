@@ -2,20 +2,18 @@ import Image from 'next/image'
 import GithubIcon from '/public/assets/githubIcon.svg'
 import WebIcon from '/public/assets/webIcon.svg'
 import { useMemo } from 'react'
-import Tag from './Tag'
-import { ProjectDatas } from '../../../constant/types/projects'
-import MediaLink from '../../Utils/Link/MediaLink'
-import { RootState } from '../../Features/app.store'
-import { useSelector } from 'react-redux'
+import Tag from '../Tag/Tag'
+import { ProjectDatas } from '../../../../constant/types/projects'
+import MediaLink from '../../../Utils/Link/MediaLink'
+import { LanguageAvailable } from '../../../../constant/language/language'
 
 interface Props {
   datas: ProjectDatas
   side: 'left' | 'right'
+  language: LanguageAvailable | null
 }
 
-function Project({ datas, side }: Props) {
-  const language = useSelector((state: RootState) => state.language.language)
-
+function Project({ datas, side, language }: Props) {
   const featuresDom = useMemo(() => {
     if (!language) return ''
     return datas.features[language].map((feature, i) => (
