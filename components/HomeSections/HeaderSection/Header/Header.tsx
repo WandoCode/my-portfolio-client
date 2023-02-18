@@ -17,25 +17,32 @@ interface Props {
     windowDir: 'up' | 'down'
     windowOnTop: boolean
   }
+  menuIsOpen: boolean
+  onOpenMenu: (value: boolean) => void
 }
 
-function Header({ headerDatas, language, theme, scrollingInfos }: Props) {
+function Header({
+  headerDatas,
+  language,
+  theme,
+  scrollingInfos,
+  menuIsOpen,
+  onOpenMenu,
+}: Props) {
   const { windowDir, windowOnTop } = scrollingInfos
 
-  const [openMenu, setOpenMenu] = useState(false)
-
   const burgerClass = () => {
-    return openMenu ? 'active' : 'unactive'
+    return menuIsOpen ? 'active' : 'unactive'
   }
 
   const navContentClass = () => {
     let name = 'nav__content show-on-desktop'
-    if (openMenu) name += ' nav__content--open'
+    if (menuIsOpen) name += ' nav__content--open'
     return name
   }
 
   const navContainerClass = () => {
-    if (openMenu) return 'container-nav container-nav--scroll-up'
+    if (menuIsOpen) return 'container-nav container-nav--scroll-up'
     else
       return windowDir === 'up'
         ? 'container-nav container-nav--scroll-up'
@@ -43,7 +50,12 @@ function Header({ headerDatas, language, theme, scrollingInfos }: Props) {
   }
 
   const handleCloseNav = () => {
-    setOpenMenu(false)
+    onOpenMenu(false)
+  }
+
+  const toogleOpenMenu = () => {
+    const newMenuIsOpen = !menuIsOpen
+    onOpenMenu(newMenuIsOpen)
   }
 
   return (
@@ -80,12 +92,12 @@ function Header({ headerDatas, language, theme, scrollingInfos }: Props) {
           </div>
           <button
             aria-controls="nav-links-container"
-            aria-expanded={openMenu}
+            aria-expanded={menuIsOpen}
             className="nav__burger show-on-mobile"
-            onClick={() => setOpenMenu((old) => !old)}
+            onClick={toogleOpenMenu}
           >
             <div className="visually-hidden">
-              {openMenu ? 'Close menu' : 'Open Menu'}
+              {menuIsOpen ? 'Close menu' : 'Open Menu'}
             </div>
             <svg
               className={burgerClass()}
