@@ -100,6 +100,37 @@ export default () => {
     return false
   }
 
+  const handleInput = async (newValue: string, fieldName: FormFieldsName) => {
+    dispatch(changeFormDatas(fieldName, newValue))
+    checkInputValidity(newValue, fieldName)
+  }
+
+  const checkInputValidity = async (
+    newValue: string,
+    fieldName: FormFieldsName
+  ) => {
+    const inputErrors = formErrors[fieldName]
+    const newFormDatas = { ...formDatas }
+    newFormDatas[fieldName] = newValue
+
+    if (formErrors[fieldName].length > 0) {
+      try {
+        await formSchema.validateAt(fieldName, newFormDatas, {
+          abortEarly: false,
+        })
+
+        if (inputErrors.length != 0) dispatch(changeFormErrors(fieldName, []))
+      } catch (err) {
+        if (err instanceof ValidationError) {
+          const fieldError = [err.inner[0].path]
+          console.table(err.inner[0])
+
+          if (fieldError.length !== inputErrors.length)
+            dispatch(changeFormErrors(fieldName, fieldError as InputError[]))
+        }
+      }
+    }
+  }
   return (
     <>
       {language !== null && formText ? (
@@ -110,6 +141,7 @@ export default () => {
           status={status}
           language={language}
           onHandleSubmit={handleSubmit}
+          onChangeInput={handleInput}
         />
       ) : (
         <>Loader if needed</>

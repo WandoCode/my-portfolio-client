@@ -1,14 +1,10 @@
-import { ChangeEvent, useContext, useEffect } from 'react'
-import Input, { InputError } from '../../../utils/form/Input'
+import { ChangeEvent, useContext } from 'react'
+import { InputError } from '../../../utils/form/Input'
 import { LanguageContext } from '../../Language/LanguageContextProvider'
 import { InputTypes } from '../../../constant/types/InputFields'
 import useFetchFormDatas from '../../../hooks/fetch/useFetchFormDatas'
 import { FormFieldsName } from '../../../constant/types/contactForm'
-import { useDispatch, useSelector } from 'react-redux'
-import { changeFormErrors, changeFormDatas } from '../../Form/form.actions'
-import yup from 'yup'
-import { formSchema } from '../../Form/form.schema'
-import { ValidationError } from 'yup'
+import { useSelector } from 'react-redux'
 import { RootState } from '../../../stores/redux'
 
 interface Props {
@@ -16,46 +12,19 @@ interface Props {
   label: string | undefined
   type: InputTypes
   inputErrors: InputError[]
+  onChangeInput: (val: string, fieldName: FormFieldsName) => void
 }
 
-function InputField({ name, type, label, inputErrors }: Props) {
-  const dispatch = useDispatch()
+function InputField({ name, type, label, inputErrors, onChangeInput }: Props) {
   const formDatas = useSelector((state: RootState) => state.form.formDatas)
-  const inputDatas = useSelector(
-    (state: RootState) => state.form.formDatas[name]
-  )
+
   const { language } = useContext(LanguageContext)
   const errorMessage = useFetchFormDatas()?.errorText
-
-  useEffect(() => {
-    checkInputValidity()
-  }, [inputDatas])
-
-  const checkInputValidity = async () => {
-    if (inputErrors.length > 0) {
-      try {
-        await formSchema.validateAt(name, formDatas, {
-          abortEarly: false,
-        })
-        console.log(2)
-
-        if (inputErrors.length != 0) dispatch(changeFormErrors(name, []))
-      } catch (err) {
-        if (err instanceof ValidationError) {
-          const fieldError = [err.inner[0].path]
-          console.table(err.inner[0])
-
-          if (fieldError.length !== inputErrors.length)
-            dispatch(changeFormErrors(name, fieldError as InputError[]))
-        }
-      }
-    }
-  }
 
   const handleInput = async (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    dispatch(changeFormDatas(name, e.target.value))
+    onChangeInput(e.target.value, name)
   }
 
   const fieldClass = () => {

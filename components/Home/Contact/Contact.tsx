@@ -15,15 +15,16 @@ interface Props {
   onHandleSubmit: (e: MouseEvent<HTMLButtonElement>) => void
   status: Status
   language: LanguageAvailable
+  onChangeInput: (val: string, fieldName: FormFieldsName) => void
 }
 
 function Contact({
   formText,
   formErrors,
-  formDatas,
   onHandleSubmit,
   status,
   language,
+  onChangeInput,
 }: Props) {
   return (
     <form className="contact-form">
@@ -34,30 +35,35 @@ function Contact({
         <Info imageRef={formText.infos.emailIcon}>{formText.infos.email}</Info>
       </div>
       <InputField
+        onChangeInput={onChangeInput}
         name="name"
         label={formText.text[language].name}
         type="text"
         inputErrors={formErrors.name}
       />
       <InputField
+        onChangeInput={onChangeInput}
         name="email"
         label={formText.text[language].email}
         type="email"
         inputErrors={formErrors.email}
       />
       <InputField
+        onChangeInput={onChangeInput}
         name="phone"
         label="phone"
         type="honeypot"
         inputErrors={formErrors.phone}
       />
       <InputField
+        onChangeInput={onChangeInput}
         name="object"
         label={formText.text[language].subject}
         type="text"
         inputErrors={formErrors.object}
       />
       <InputField
+        onChangeInput={onChangeInput}
         name="message"
         label={formText.text[language].message}
         type="textarea"
