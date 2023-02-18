@@ -1,5 +1,5 @@
 import { createAction } from '@reduxjs/toolkit'
-import { FormFieldsName } from '../../constant/types/contactForm'
+import { FormFieldsName, Status } from '../../constant/types/contactForm'
 import { InputError } from '../../utils/form/Input'
 
 export const changeFormDatas = createAction(
@@ -8,10 +8,17 @@ export const changeFormDatas = createAction(
     payload: { fieldName, newValue },
   })
 )
+
 export const changeFormErrors = createAction(
   'form/changeFormErrors',
   (fieldName: FormFieldsName, newError: InputError | undefined) => ({
     payload: { fieldName, newError },
   })
 )
-export const submitForm = createAction('form/submitForm')
+
+export const resetForm = createAction('form/resetForm')
+
+export const changeStatus = createAction(
+  'form/changeStatus',
+  (newStatus: Status) => ({ payload: { newStatus } })
+)
