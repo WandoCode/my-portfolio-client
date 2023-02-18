@@ -1,6 +1,6 @@
 import { ChangeEvent, useContext } from 'react'
-import sun from '../../public/assets/sun.svg'
-import moon from '../../public/assets/moon.svg'
+import sun from '../../../public/assets/sun.svg'
+import moon from '../../../public/assets/moon.svg'
 import Image from 'next/image'
 import { ThemeContext } from './ThemeContextProvidor'
 

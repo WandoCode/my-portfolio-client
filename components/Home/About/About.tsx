@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { useContext } from 'react'
 import { AboutDatas } from '../../../constant/types/datas'
-import { LanguageContext } from '../../Language/LanguageContextProvider'
+import { LanguageContext } from '../../Features/Language/LanguageContextProvider'
 
 interface Props {
   aboutDatas: AboutDatas | undefined

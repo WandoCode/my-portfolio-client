@@ -1,6 +1,6 @@
 import { createReducer } from '@reduxjs/toolkit'
-import { FormFieldsName, Status } from '../../constant/types/contactForm'
-import { InputError } from '../../utils/form/Input'
+import { FormFieldsName, Status } from '../../../constant/types/contactForm'
+import { InputError } from '../../../utils/form/Input'
 import {
   changeFormDatas,
   changeFormErrors,

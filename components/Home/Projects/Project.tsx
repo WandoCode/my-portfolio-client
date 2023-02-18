@@ -5,7 +5,7 @@ import { useMemo, useContext } from 'react'
 import Tag from './Tag'
 import { ProjectDatas } from '../../../constant/types/projects'
 import MediaLink from '../../Utils/Link/MediaLink'
-import { LanguageContext } from '../../Language/LanguageContextProvider'
+import { LanguageContext } from '../../Features/Language/LanguageContextProvider'
 
 interface Props {
   datas: ProjectDatas

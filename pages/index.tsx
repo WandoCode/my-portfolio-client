@@ -5,14 +5,14 @@ import Skills from '../components/Home/Skills/Skills'
 import Footer from '../components/Home/Footer/Footer'
 import About from '../components/Home/About/About'
 import { useContext, useRef, useEffect, RefObject } from 'react'
-import { LanguageContext } from '../components/Language/LanguageContextProvider'
+import { LanguageContext } from '../components/Features/Language/LanguageContextProvider'
 import useFetchMainDatas from '../hooks/fetch/useFetchMainDatas'
-import { NavContext } from '../components/Navigation/NavContextProvider'
+import { NavContext } from '../components/Features/Navigation/NavContextProvider'
 import useGetCurrentSection from '../hooks/utils/useGetCurrentSection'
 import Head from 'next/head'
 import Contact from '../components/Home/Contact'
 import { Provider } from 'react-redux'
-import formStore from '../stores/formStore.redux'
+import formStore from '../components/Features/Form/form.store'
 
 function App() {
   const { language } = useContext(LanguageContext)

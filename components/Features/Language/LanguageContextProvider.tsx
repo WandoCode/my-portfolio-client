@@ -2,8 +2,8 @@ import { createContext, PropsWithChildren, useState, useEffect } from 'react'
 import {
   LanguageAvailable,
   LanguagesObject,
-} from '../../constant/language/language'
-import languageStore from '../../stores/language'
+} from '../../../constant/language/language'
+import languageStore from '../../../stores/language'
 
 interface GlobalContextParams {
   language: LanguagesObject['value'] | null

@@ -1,6 +1,6 @@
 import { ChangeEvent, useContext } from 'react'
 import { InputError } from '../../../utils/form/Input'
-import { LanguageContext } from '../../Language/LanguageContextProvider'
+import { LanguageContext } from '../../Features/Language/LanguageContextProvider'
 import { InputTypes } from '../../../constant/types/InputFields'
 import useFetchFormDatas from '../../../hooks/fetch/useFetchFormDatas'
 import { FormFieldsName } from '../../../constant/types/contactForm'

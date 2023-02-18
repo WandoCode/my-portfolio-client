@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Button from '../../Utils/Button/Button'
-import { LanguageContext } from '../../Language/LanguageContextProvider'
+import { LanguageContext } from '../../Features/Language/LanguageContextProvider'
 import { useContext } from 'react'
 import { HeroDatas } from '../../../constant/types/datas'
 

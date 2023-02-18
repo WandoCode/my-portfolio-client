@@ -2,7 +2,7 @@ import { PropsWithChildren, useState, useEffect } from 'react'
 import {
   defaultContext,
   LanguageContext,
-} from '../../../components/Language/LanguageContextProvider'
+} from '../../../components/Features/Language/LanguageContextProvider'
 import {
   LanguagesObject,
   LanguageAvailable,

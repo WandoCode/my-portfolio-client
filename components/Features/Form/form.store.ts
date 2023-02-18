@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import formReducer from '../components/Form/form.reducers'
+import formReducer from './form.reducers'
 
 const formStore = configureStore({
   reducer: {

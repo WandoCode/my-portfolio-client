@@ -1,7 +1,7 @@
 import { useRef, useEffect, useContext, RefObject } from 'react'
-import { LanguageContext } from '../../Language/LanguageContextProvider'
+import { LanguageContext } from '../../Features/Language/LanguageContextProvider'
 import { HeadingsDatas } from '../../../constant/types/datas'
-import { NavContext } from '../../Navigation/NavContextProvider'
+import { NavContext } from '../../Features/Navigation/NavContextProvider'
 
 interface Props {
   onCloseNav: () => void

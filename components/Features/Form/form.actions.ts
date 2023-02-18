@@ -1,6 +1,6 @@
 import { createAction } from '@reduxjs/toolkit'
-import { FormFieldsName, Status } from '../../constant/types/contactForm'
-import { InputError } from '../../utils/form/Input'
+import { FormFieldsName, Status } from '../../../constant/types/contactForm'
+import { InputError } from '../../../utils/form/Input'
 
 export const changeFormDatas = createAction(
   'form/changeFormDatas',

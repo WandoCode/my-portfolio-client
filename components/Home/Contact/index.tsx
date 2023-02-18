@@ -1,7 +1,7 @@
 import Contact from './Contact'
 import useFetchFormDatas from '../../../hooks/fetch/useFetchFormDatas'
-import { LanguageContext } from '../../Language/LanguageContextProvider'
-import { MouseEvent, useContext, useRef, useState } from 'react'
+import { LanguageContext } from '../../Features/Language/LanguageContextProvider'
+import { MouseEvent, useContext, useRef } from 'react'
 import { Status, FormFieldsName } from '../../../constant/types/contactForm'
 import { InputError } from '../../../utils/form/Input'
 import contactStore from '../../../stores/contact'
@@ -10,11 +10,11 @@ import {
   changeFormDatas,
   changeFormErrors,
   resetForm,
-} from '../../Form/form.actions'
-import { FormRootState } from '../../../stores/formStore.redux'
-import { formSchema } from '../../Form/form.schema'
+} from '../../Features/Form/form.actions'
+import { FormRootState } from '../../Features/Form/form.store'
+import { formSchema } from '../../Features/Form/form.schema'
 import { ValidationError } from 'yup'
-import { changeStatus } from '../../Form/form.actions'
+import { changeStatus } from '../../Features/Form/form.actions'
 
 const EXCLUDE_ROBOT_SPAM_TIME = 4000
 const INFO_MESSAGE_DISPLAY_TIME = 3000
@@ -26,11 +26,10 @@ export default () => {
 
   const { language } = useContext(LanguageContext)
   const formDatas = useSelector((state: FormRootState) => state.form.formDatas)
-
+  const status = useSelector((state: FormRootState) => state.form.status)
   const formErrors = useSelector(
     (state: FormRootState) => state.form.formErrors
   )
-  const status = useSelector((state: FormRootState) => state.form.status)
 
   const handleSubmit = async (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
@@ -126,7 +125,7 @@ export default () => {
 
   return (
     <>
-      {language !== null && formText ? (
+      {language !== null && formText && (
         <Contact
           formText={formText}
           formErrors={formErrors}
@@ -136,11 +135,7 @@ export default () => {
           onHandleSubmit={handleSubmit}
           onChangeInput={handleInput}
         />
-      ) : (
-        <>Loader if needed</>
       )}
     </>
   )
 }
-
-// TODO: Loader necessaire?
