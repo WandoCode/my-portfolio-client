@@ -10,7 +10,7 @@ import { MouseEvent } from 'react'
 
 interface Props {
   formText: FormDatas
-  formErrors: Record<FormFieldsName, InputError[]>
+  formErrors: Record<FormFieldsName, InputError>
   formDatas: Record<FormFieldsName, Input>
   onHandleSubmit: (e: MouseEvent<HTMLButtonElement>) => void
   status: Status
@@ -39,35 +39,35 @@ function Contact({
         name="name"
         label={formText.text[language].name}
         type="text"
-        inputErrors={formErrors.name}
+        inputError={formErrors.name}
       />
       <InputField
         onChangeInput={onChangeInput}
         name="email"
         label={formText.text[language].email}
         type="email"
-        inputErrors={formErrors.email}
+        inputError={formErrors.email}
       />
       <InputField
         onChangeInput={onChangeInput}
         name="phone"
         label="phone"
         type="honeypot"
-        inputErrors={formErrors.phone}
+        inputError={formErrors.phone}
       />
       <InputField
         onChangeInput={onChangeInput}
         name="object"
         label={formText.text[language].subject}
         type="text"
-        inputErrors={formErrors.object}
+        inputError={formErrors.object}
       />
       <InputField
         onChangeInput={onChangeInput}
         name="message"
         label={formText.text[language].message}
         type="textarea"
-        inputErrors={formErrors.message}
+        inputError={formErrors.message}
       />
 
       <Button

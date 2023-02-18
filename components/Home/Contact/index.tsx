@@ -64,7 +64,7 @@ export default () => {
       if (err instanceof ValidationError) {
         err.inner.forEach((error) => {
           const fieldName = error.path as FormFieldsName
-          const fieldErrors = [error.message] as InputError[]
+          const fieldErrors = error.message as InputError
 
           dispatch(changeFormErrors(fieldName, fieldErrors))
         })
@@ -76,7 +76,7 @@ export default () => {
   const emptyForm = () => {
     for (const fieldName in formDatas) {
       dispatch(changeFormDatas(fieldName as FormFieldsName, ''))
-      dispatch(changeFormErrors(fieldName as FormFieldsName, []))
+      dispatch(changeFormErrors(fieldName as FormFieldsName, undefined))
     }
   }
 
@@ -109,24 +109,24 @@ export default () => {
     newValue: string,
     fieldName: FormFieldsName
   ) => {
-    const inputErrors = formErrors[fieldName]
+    const inputError = formErrors[fieldName]
     const newFormDatas = { ...formDatas }
     newFormDatas[fieldName] = newValue
 
-    if (formErrors[fieldName].length > 0) {
+    if (formErrors[fieldName]) {
       try {
         await formSchema.validateAt(fieldName, newFormDatas, {
           abortEarly: false,
         })
 
-        if (inputErrors.length != 0) dispatch(changeFormErrors(fieldName, []))
+        if (inputError) dispatch(changeFormErrors(fieldName, undefined))
       } catch (err) {
         if (err instanceof ValidationError) {
-          const fieldError = [err.inner[0].path]
+          const fieldError = err.inner[0].path
           console.table(err.inner[0])
 
-          if (fieldError.length !== inputErrors.length)
-            dispatch(changeFormErrors(fieldName, fieldError as InputError[]))
+          if (fieldError !== inputError)
+            dispatch(changeFormErrors(fieldName, fieldError as InputError))
         }
       }
     }

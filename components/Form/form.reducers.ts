@@ -5,10 +5,10 @@ import { changeFormDatas, changeFormErrors } from './form.actions'
 
 interface Form {
   formDatas: any
-  formErrors: Record<FormFieldsName, InputError[]>
+  formErrors: Record<FormFieldsName, InputError | undefined>
   status: Status
 }
-
+// TODO: remove any
 export const emptyFormObject = {
   name: '',
   email: '',
@@ -18,11 +18,11 @@ export const emptyFormObject = {
 }
 
 export const emptyErrorObject = {
-  name: [],
-  email: [],
-  object: [],
-  message: [],
-  phone: [],
+  name: undefined,
+  email: undefined,
+  object: undefined,
+  message: undefined,
+  phone: undefined,
 }
 
 const form: Form = {

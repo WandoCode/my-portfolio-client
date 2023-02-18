@@ -10,7 +10,7 @@ export const changeFormDatas = createAction(
 )
 export const changeFormErrors = createAction(
   'form/changeFormErrors',
-  (fieldName: FormFieldsName, newError: InputError[]) => ({
+  (fieldName: FormFieldsName, newError: InputError | undefined) => ({
     payload: { fieldName, newError },
   })
 )

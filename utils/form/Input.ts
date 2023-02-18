@@ -2,7 +2,7 @@ import { isValidEmail } from '../helpers/string'
 
 type InputType = 'text' | 'email'
 
-export type InputError = 'required' | 'invalid'
+export type InputError = 'required' | 'invalid' | undefined
 
 class Input {
   type: InputType

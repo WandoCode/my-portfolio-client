@@ -11,15 +11,15 @@ interface Props {
   name: FormFieldsName
   label: string | undefined
   type: InputTypes
-  inputErrors: InputError[]
+  inputError: InputError
   onChangeInput: (val: string, fieldName: FormFieldsName) => void
 }
 
-function InputField({ name, type, label, inputErrors, onChangeInput }: Props) {
+function InputField({ name, type, label, inputError, onChangeInput }: Props) {
   const formDatas = useSelector((state: RootState) => state.form.formDatas)
 
   const { language } = useContext(LanguageContext)
-  const errorMessage = useFetchFormDatas()?.errorText
+  const errorMessages = useFetchFormDatas()?.errorText
 
   const handleInput = async (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -31,16 +31,16 @@ function InputField({ name, type, label, inputErrors, onChangeInput }: Props) {
     const base = 'input-field__input'
     let name = base
     if (type == 'textarea') name += ` ${base}--textarea`
-    if (inputErrors.length > 0) name += ` ${base}--error`
+    if (inputError) name += ` ${base}--error`
     return name
   }
 
   const getValidationErrorText = () => {
     if (!language) return ''
-    const errorMessageArray = inputErrors.map(
-      (error) => errorMessage?.[language][error]
-    )
-    return errorMessageArray.join(' ')
+    if (!inputError) return ''
+    const errorMessage = errorMessages?.[language][inputError] || ''
+
+    return errorMessage
   }
 
   return (
@@ -49,7 +49,7 @@ function InputField({ name, type, label, inputErrors, onChangeInput }: Props) {
         type === 'honeypot' ? 'input-field input-field--pot' : 'input-field'
       }
     >
-      {inputErrors.length > 0 && (
+      {inputError && (
         <div className="input-field__error fc-primary-700 fc-dark-primary-700">
           {getValidationErrorText()}
         </div>
