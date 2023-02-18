@@ -1,7 +1,8 @@
 import { useRef, useEffect, useContext, RefObject } from 'react'
-import { LanguageContext } from '../../Features/Language/LanguageContextProvider'
 import { HeadingsDatas } from '../../../constant/types/datas'
 import { NavContext } from '../../Features/Navigation/NavContextProvider'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../Features/app.store'
 
 interface Props {
   onCloseNav: () => void
@@ -9,7 +10,8 @@ interface Props {
 }
 
 function NavLinks({ onCloseNav, navText }: Props) {
-  const { language } = useContext(LanguageContext)
+  const language = useSelector((state: RootState) => state.language.language)
+
   const { currentSection = 'hero' } = useContext(NavContext)
 
   const listSliderRef = useRef<HTMLUListElement>(null)

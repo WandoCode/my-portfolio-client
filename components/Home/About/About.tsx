@@ -1,14 +1,14 @@
 import Image from 'next/image'
-import { useContext } from 'react'
 import { AboutDatas } from '../../../constant/types/datas'
-import { LanguageContext } from '../../Features/Language/LanguageContextProvider'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../Features/app.store'
 
 interface Props {
   aboutDatas: AboutDatas | undefined
 }
 
 function About({ aboutDatas }: Props) {
-  const { language } = useContext(LanguageContext)
+  const language = useSelector((state: RootState) => state.language.language)
 
   return (
     <div className="about__body">

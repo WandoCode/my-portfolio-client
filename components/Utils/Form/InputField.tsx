@@ -1,9 +1,10 @@
-import { ChangeEvent, useContext } from 'react'
+import { ChangeEvent } from 'react'
 import { InputError } from '../../../utils/form/Input'
-import { LanguageContext } from '../../Features/Language/LanguageContextProvider'
 import { InputTypes } from '../../../constant/types/InputFields'
 import useFetchFormDatas from '../../../hooks/fetch/useFetchFormDatas'
 import { FormFieldsName } from '../../../constant/types/contactForm'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../Features/app.store'
 
 interface Props {
   name: FormFieldsName
@@ -25,7 +26,7 @@ function InputField({
   const errorMessages = useFetchFormDatas()?.errorText
   // TODO: get ErrorMessage from props instead fetch
 
-  const { language } = useContext(LanguageContext)
+  const language = useSelector((state: RootState) => state.language.language)
 
   const handleInput = async (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>

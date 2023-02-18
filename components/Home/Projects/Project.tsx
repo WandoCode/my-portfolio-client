@@ -1,11 +1,12 @@
 import Image from 'next/image'
 import GithubIcon from '/public/assets/githubIcon.svg'
 import WebIcon from '/public/assets/webIcon.svg'
-import { useMemo, useContext } from 'react'
+import { useMemo } from 'react'
 import Tag from './Tag'
 import { ProjectDatas } from '../../../constant/types/projects'
 import MediaLink from '../../Utils/Link/MediaLink'
-import { LanguageContext } from '../../Features/Language/LanguageContextProvider'
+import { RootState } from '../../Features/app.store'
+import { useSelector } from 'react-redux'
 
 interface Props {
   datas: ProjectDatas
@@ -13,7 +14,7 @@ interface Props {
 }
 
 function Project({ datas, side }: Props) {
-  const { language } = useContext(LanguageContext)
+  const language = useSelector((state: RootState) => state.language.language)
 
   const featuresDom = useMemo(() => {
     if (!language) return ''

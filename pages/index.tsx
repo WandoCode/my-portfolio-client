@@ -5,17 +5,18 @@ import Skills from '../components/Home/Skills/Skills'
 import Footer from '../components/Home/Footer/Footer'
 import About from '../components/Home/About/About'
 import { useContext, useRef, useEffect, RefObject } from 'react'
-import { LanguageContext } from '../components/Features/Language/LanguageContextProvider'
+
 import useFetchMainDatas from '../hooks/fetch/useFetchMainDatas'
 import { NavContext } from '../components/Features/Navigation/NavContextProvider'
 import useGetCurrentSection from '../hooks/utils/useGetCurrentSection'
 import Head from 'next/head'
 import Contact from '../components/Home/Contact'
-import { Provider } from 'react-redux'
-import formStore from '../components/Features/Form/form.store'
+import { useSelector } from 'react-redux'
+import { RootState } from '../components/Features/app.store'
 
 function App() {
-  const { language } = useContext(LanguageContext)
+  const language = useSelector((state: RootState) => state.language.language)
+
   const { changeCurrentSection } = useContext(NavContext)
 
   const mainDatas = useFetchMainDatas()

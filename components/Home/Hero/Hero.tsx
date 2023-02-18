@@ -1,15 +1,15 @@
 import Image from 'next/image'
 import Button from '../../Utils/Button/Button'
-import { LanguageContext } from '../../Features/Language/LanguageContextProvider'
-import { useContext } from 'react'
 import { HeroDatas } from '../../../constant/types/datas'
+import { RootState } from '../../Features/app.store'
+import { useSelector } from 'react-redux'
 
 interface Props {
   heroDatas: HeroDatas | undefined
 }
 
 function Hero({ heroDatas }: Props) {
-  const { language } = useContext(LanguageContext)
+  const language = useSelector((state: RootState) => state.language.language)
 
   const handleDownloadCV = () => {}
 
