@@ -1,13 +1,12 @@
 import ThemeSwitch from '../../Features/Theme/ThemeSwitch'
 import LangSelection from '../../Features/Language/LangSelection'
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import Logo from '../../../public/assets/Logo.svg'
 import Logo_black from '../../../public/assets/Logo_black.svg'
 import Image from 'next/image'
 import NavLinks from './NavLinks'
 import { HeadingsDatas } from '../../../constant/types/datas'
 import useGetScrollingInfos from '../../../hooks/utils/useGetScrollingInfos'
-import { ThemeContext } from '../../Features/Theme/ThemeContextProvidor'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../Features/app.store'
 
@@ -18,7 +17,7 @@ interface Props {
 function Header({ headerDatas }: Props) {
   const language = useSelector((state: RootState) => state.language.language)
 
-  const { theme } = useContext(ThemeContext)
+  const theme = useSelector((state: RootState) => state.theme.theme)
 
   const { windowDir, windowOnTop } = useGetScrollingInfos(75)
 

@@ -1,16 +1,29 @@
-import { ChangeEvent, useContext } from 'react'
+import { ChangeEvent, useEffect } from 'react'
 import sun from '../../../public/assets/sun.svg'
 import moon from '../../../public/assets/moon.svg'
 import Image from 'next/image'
-import { ThemeContext } from './ThemeContextProvidor'
+import { useDispatch, useSelector } from 'react-redux'
+import { changeTheme, initializeTheme } from './theme.actions'
+import { RootState } from '../app.store'
 
 function ThemeSwitch() {
-  const { theme, changeTheme } = useContext(ThemeContext)
+  const dispatch = useDispatch()
+  const theme = useSelector((state: RootState) => state.theme.theme)
+
+  useEffect(() => {
+    dispatch(initializeTheme())
+  }, [])
+
+  useEffect(() => {
+    if (theme === 'dark') document.body.id = 'dark'
+    else if (theme === 'light') document.body.id = 'light'
+  }, [theme])
 
   const handleSwitch = (e: ChangeEvent<HTMLInputElement>) => {
     const isChecked = e.target.checked
+    const newTheme = isChecked ? 'dark' : 'light'
 
-    isChecked ? changeTheme('dark') : changeTheme('light')
+    dispatch(changeTheme(newTheme))
   }
 
   return (
