@@ -2,7 +2,6 @@ import Header from '../components/Home/Header/Header'
 import Hero from '../components/Home/Hero/Hero'
 import Projects from '../components/Home/Projects/Projects'
 import Skills from '../components/Home/Skills/Skills'
-import Contact from '../components/Home/Contact/Contact'
 import Footer from '../components/Home/Footer/Footer'
 import About from '../components/Home/About/About'
 import { useContext, useRef, useEffect, RefObject } from 'react'
@@ -11,6 +10,7 @@ import useFetchMainDatas from '../hooks/fetch/useFetchMainDatas'
 import { NavContext } from '../components/Navigation/NavContextProvider'
 import useGetCurrentSection from '../hooks/utils/useGetCurrentSection'
 import Head from 'next/head'
+import Contact from '../components/Home/Contact'
 
 function App() {
   const { language } = useContext(LanguageContext)
