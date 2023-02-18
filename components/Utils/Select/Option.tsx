@@ -3,22 +3,12 @@ import { KeyboardEvent, MouseEvent } from 'react'
 interface Props {
   value: string
   text: string
-  choicesLength: number
   setMenuIsOpen: (x: boolean) => void
   onChoice: (s: string) => void
   menuIsOpen: boolean
-  index: number
 }
 
-function Option({
-  value,
-  text,
-  choicesLength,
-  setMenuIsOpen,
-  menuIsOpen,
-  onChoice,
-  index,
-}: Props) {
+function Option({ value, text, setMenuIsOpen, menuIsOpen, onChoice }: Props) {
   const handleChoice = (e: MouseEvent | KeyboardEvent) => {
     const choiceValue = e.currentTarget.getAttribute('data-value')
 
