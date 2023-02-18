@@ -1,16 +1,15 @@
 import { ChangeEvent } from 'react'
-import { InputError } from '../../../utils/form/Input'
 import { InputTypes } from '../../../constant/types/InputFields'
-import { FormFieldsName } from '../../../constant/types/contactForm'
+import { FormFieldsName, InputError } from '../../../constant/types/contactForm'
 import { useSelector } from 'react-redux'
-import { RootState } from '../../Features/app.store'
+import { RootState } from '../../../Features/app.store'
 import { FormDatas } from '../../../constant/types/datas'
 
 interface Props {
   name: FormFieldsName
   label: string | undefined
   type: InputTypes
-  inputError: InputError
+  inputError: InputError | undefined
   inputValue: string
   onChangeInput: (val: string, fieldName: FormFieldsName) => void
   errorMessages: FormDatas['errorText'] | undefined

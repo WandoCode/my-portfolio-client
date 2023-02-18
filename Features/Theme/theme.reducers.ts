@@ -1,7 +1,7 @@
 import { createReducer } from '@reduxjs/toolkit'
 import { changeTheme, initializeTheme } from './theme.actions'
-import { ThemesValues } from '../../../constant/theme/theme'
-import themeStore from '../../../stores/theme'
+import { ThemesValues } from '../../constant/theme/theme'
+import themeStore from '../../stores/theme'
 
 const initTheme: Record<string, ThemesValues | null> = {
   theme: null,

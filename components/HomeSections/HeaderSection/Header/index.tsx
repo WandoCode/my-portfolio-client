@@ -1,7 +1,7 @@
 import Header from './Header'
 import { HeadingsDatas } from '../../../../constant/types/datas'
 import { useSelector } from 'react-redux'
-import { RootState } from '../../../Features/app.store'
+import { RootState } from '../../../../Features/app.store'
 import useGetScrollingInfos from '../../../../hooks/utils/useGetScrollingInfos'
 import { useState } from 'react'
 

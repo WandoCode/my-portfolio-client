@@ -4,15 +4,17 @@ import useFetchMainDatas from '../hooks/fetch/useFetchMainDatas'
 import useGetCurrentSection from '../hooks/utils/useGetCurrentSection'
 import Head from 'next/head'
 import { useSelector, useDispatch } from 'react-redux'
-import { RootState } from '../components/Features/app.store'
-import { changeCurrentSection } from '../components/Features/Navigation/nav.actions'
-import Header from '../components/HomeSections/HeaderSection/Header'
-import Hero from '../components/HomeSections/HeroSection/'
-import Projects from '../components/HomeSections/ProjectsSection/Projects'
-import About from '../components/HomeSections/AboutSection/'
-import Skills from '../components/HomeSections/SkillsSection/Skills'
-import Contact from '../components/HomeSections/ContactSection/ContactForm'
-import Footer from '../components/HomeSections/FooterSection/Footer'
+import { RootState } from '../Features/app.store'
+import { changeCurrentSection } from '../Features/Navigation/nav.actions'
+import {
+  About,
+  ContactForm,
+  Footer,
+  Header,
+  Hero,
+  Projects,
+  Skills,
+} from '../components'
 
 function App() {
   const dispatch = useDispatch()
@@ -84,7 +86,7 @@ function App() {
             <h2 className="h2 heading-section">
               {language ? mainDatas?.headings[language].contact : ''}
             </h2>
-            <Contact />
+            <ContactForm />
           </section>
         </main>
         <Footer footerDatas={mainDatas?.footer} />

@@ -1,11 +1,21 @@
 import { createReducer } from '@reduxjs/toolkit'
+import { LanguageAvailable } from '../../constant/language/language'
 
-import { LanguageAvailable } from '../../../constant/language/language'
-import { changeLanguage, initLanguage } from './language.actions'
-import languageStore from '../../../stores/language'
+import languageStore from '../../stores/language'
+import {
+  changeLanguage,
+  initLanguage,
+  changeOpenMenu,
+} from './language.actions'
 
-const initialLanguage: { language: LanguageAvailable | null } = {
+interface InitializeLanguage {
+  language: LanguageAvailable | null
+  menuIsOpen: boolean
+}
+
+const initialLanguage: InitializeLanguage = {
   language: null,
+  menuIsOpen: false,
 }
 
 const languageReducer = createReducer(initialLanguage, (builder) => {
@@ -25,6 +35,9 @@ const languageReducer = createReducer(initialLanguage, (builder) => {
 
       changeLangHTMLTag(finalLanguage)
       state.language = finalLanguage
+    })
+    .addCase(changeOpenMenu, (state, action) => {
+      state.menuIsOpen = action.payload.newStatus
     })
 })
 

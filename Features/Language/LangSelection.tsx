@@ -1,12 +1,12 @@
-import Select from '../../Utils/Select/Select'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../app.store'
+import { changeLanguage, initLanguage } from './language.actions'
 import {
   allowedLanguage,
   LanguagesObject,
-} from '../../../constant/language/language'
-import { changeLanguage, initLanguage } from './language.actions'
+} from '../../constant/language/language'
+import { Select } from '../../components'
 
 function LangSelection() {
   const dispatch = useDispatch()

@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app'
 import '../stylesheets/main.scss'
 import { Provider } from 'react-redux'
-import store from '../components/Features/app.store'
+import store from '../Features/app.store'
 
 function App({ Component, pageProps }: AppProps) {
   return (

@@ -1,15 +1,14 @@
 import InputField from './InputField'
-import { FormFieldsName } from '../../../constant/types/contactForm'
+import { FormFieldsName, InputError } from '../../../constant/types/contactForm'
 import { InputTypes } from '../../../constant/types/InputFields'
 import { useDispatch, useSelector } from 'react-redux'
 import {
   changeFormDatas,
   changeFormErrors,
-} from '../../Features/Form/form.actions'
-import { RootState } from '../../Features/app.store'
-import { formSchema } from '../../Features/Form/form.schema'
+} from '../../../Features/Form/form.actions'
+import { RootState } from '../../../Features/app.store'
+import { formSchema } from '../../../Features/Form/form.schema'
 import { ValidationError } from 'yup'
-import { InputError } from '../../../utils/form/Input'
 import useFetchFormDatas from '../../../hooks/fetch/useFetchFormDatas'
 
 interface Props {

@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { MouseEvent, PropsWithChildren } from 'react'
-import { Status } from '../../../constant/types/contactForm'
 
 interface Props extends PropsWithChildren {
   type: 'link' | 'button'
@@ -8,7 +7,7 @@ interface Props extends PropsWithChildren {
   onclick?: (e: MouseEvent<HTMLButtonElement>) => void
   href?: string
   className?: string
-  status?: Status
+  disabled?: boolean
   [x: string]: any
 }
 
@@ -19,20 +18,11 @@ function Button({
   href,
   children,
   className,
-  status = 'idle',
+  disabled = false,
   ...args
 }: Props) {
-  const mainClass = () => {
-    let name = className
-      ? `${className} btn btn--${level}`
-      : `btn btn--${level}`
-
-    if (status === 'loading') name += ' btn--loading'
-    else if (status === 'success') name += ' btn--success'
-    else if (status === 'error') name += ' btn--error'
-
-    return name
-  }
+  const mainClass = () =>
+    className ? `${className} btn btn--${level}` : `btn btn--${level}`
 
   if (type === 'link' && href)
     return (
@@ -45,7 +35,7 @@ function Button({
       <button
         className={mainClass()}
         onClick={onclick}
-        disabled={status === 'loading'}
+        disabled={disabled}
         {...args}
       >
         {children}

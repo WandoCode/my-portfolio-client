@@ -1,6 +1,5 @@
-import ThemeSwitch from '../../../Features/Theme/ThemeSwitch'
-import LangSelection from '../../../Features/Language/LangSelection'
-import { useState } from 'react'
+import ThemeSwitch from '../../../../Features/Theme/ThemeSwitch'
+import LangSelection from '../../../../Features/Language/LangSelection'
 import Logo from '../../../../public/assets/Logo.svg'
 import Logo_black from '../../../../public/assets/Logo_black.svg'
 import Image from 'next/image'

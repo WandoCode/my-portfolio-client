@@ -1,18 +1,20 @@
 import useFetchFormDatas from '../../../../hooks/fetch/useFetchFormDatas'
 import ContactForm from './ContactForm'
 import { MouseEvent, useRef } from 'react'
-import { FormFieldsName } from '../../../../constant/types/contactForm'
-import { InputError } from '../../../../utils/form/Input'
+import {
+  FormFieldsName,
+  InputError,
+} from '../../../../constant/types/contactForm'
 import contactStore from '../../../../stores/contact'
 import { useDispatch, useSelector } from 'react-redux'
 import {
   changeFormErrors,
   resetForm,
-} from '../../../Features/Form/form.actions'
-import { formSchema } from '../../../Features/Form/form.schema'
+} from '../../../../Features/Form/form.actions'
+import { formSchema } from '../../../../Features/Form/form.schema'
 import { ValidationError } from 'yup'
-import { changeStatus } from '../../../Features/Form/form.actions'
-import { RootState } from '../../../Features/app.store'
+import { changeStatus } from '../../../../Features/Form/form.actions'
+import { RootState } from '../../../../Features/app.store'
 
 const EXCLUDE_ROBOT_SPAM_TIME = 4000
 const INFO_MESSAGE_DISPLAY_TIME = 3000

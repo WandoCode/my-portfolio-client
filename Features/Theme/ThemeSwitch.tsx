@@ -2,7 +2,9 @@ import { ChangeEvent, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { changeTheme, initializeTheme } from './theme.actions'
 import { RootState } from '../app.store'
-import Switch from '../../Utils/Select/Switch'
+import { Switch } from '../../components'
+import sun from '../../public/assets/sun.svg'
+import moon from '../../public/assets/moon.svg'
 
 function ThemeSwitch() {
   const dispatch = useDispatch()
@@ -19,12 +21,19 @@ function ThemeSwitch() {
 
   const handleSwitch = (e: ChangeEvent<HTMLInputElement>) => {
     const isChecked = e.target.checked
-    const newTheme = isChecked ? 'dark' : 'light'
+    const newTheme = isChecked ? 'light' : 'dark'
 
     dispatch(changeTheme(newTheme))
   }
 
-  return <Switch onChangeValue={handleSwitch} theme={theme} />
+  return (
+    <Switch
+      onChangeValue={handleSwitch}
+      isChecked={theme === 'light'}
+      imageRefOff={sun}
+      imageRefOn={moon}
+    />
+  )
 }
 
 export default ThemeSwitch

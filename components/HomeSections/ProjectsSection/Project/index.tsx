@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import { RootState } from '../../../Features/app.store'
+import { RootState } from '../../../../Features/app.store'
 import { ProjectDatas } from '../../../../constant/types/projects'
 import Project from './Project'
 

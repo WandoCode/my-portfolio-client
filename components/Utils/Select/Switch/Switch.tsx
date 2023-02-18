@@ -1,26 +1,25 @@
 import Image from 'next/image'
-import sun from '../../../public/assets/sun.svg'
-import moon from '../../../public/assets/moon.svg'
 import { ChangeEvent } from 'react'
-import { ThemesValues } from '../../../constant/theme/theme'
 
 interface Props {
+  isChecked: boolean
+  imageRefOff: string
+  imageRefOn: string
   onChangeValue: (e: ChangeEvent<HTMLInputElement>) => void
-  theme: ThemesValues | null
 }
 
-function Switch({ onChangeValue, theme }: Props) {
+function Switch({ isChecked, imageRefOn, imageRefOff, onChangeValue }: Props) {
   return (
     <form className="switch" aria-hidden={true}>
-      <Image src={sun} alt="Sun" width={20} height={12} />
-      <Image src={moon} alt="Moon" width={20} height={12} />
+      <Image src={imageRefOn} alt="Sun" width={20} height={12} />
+      <Image src={imageRefOff} alt="Moon" width={20} height={12} />
       <input
         className="visually-hidden switch__input"
         type="checkbox"
         name="theme"
         id="theme"
         onChange={onChangeValue}
-        checked={theme === 'dark'}
+        checked={isChecked}
         tabIndex={-1}
       />
       <label htmlFor="theme" className="switch__slider-container">

@@ -1,7 +1,7 @@
 import About from './About'
 import { AboutDatas } from '../../../constant/types/datas'
 import { useSelector } from 'react-redux'
-import { RootState } from '../../Features/app.store'
+import { RootState } from '../../../Features/app.store'
 
 interface Props {
   aboutDatas: AboutDatas | undefined

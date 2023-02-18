@@ -1,10 +1,10 @@
-import Button from '../../../Utils/Button/Button'
-import InputField from '../../../Utils/InputField'
 import Info from '../Info/Info'
 import { Status } from '../../../../constant/types/contactForm'
 import { FormDatas } from '../../../../constant/types/datas'
 import { LanguageAvailable } from '../../../../constant/language/language'
 import { MouseEvent } from 'react'
+import InputField from '../../../Utils/InputField'
+import Button from '../../../Utils/Button/Button'
 
 interface Props {
   formText: FormDatas
@@ -13,7 +13,18 @@ interface Props {
   language: LanguageAvailable
 }
 
-function Contact({ formText, onHandleSubmit, status, language }: Props) {
+function ContactForm({ formText, onHandleSubmit, status, language }: Props) {
+  const btnClassName = () => {
+    let className =
+      'contact-form__submit fs-400 fc-neutral-800 fc-dark-neutral-250'
+
+    if (status === 'loading') className += ' btn--loading'
+    else if (status === 'success') className += ' btn--success'
+    else if (status === 'error') className += ' btn--error'
+
+    return className
+  }
+
   return (
     <form className="contact-form">
       <div className="contact-form__infos">
@@ -48,8 +59,8 @@ function Contact({ formText, onHandleSubmit, status, language }: Props) {
         type="button"
         level="secondary"
         onclick={onHandleSubmit}
-        className="contact-form__submit fs-400 fc-neutral-800 fc-dark-neutral-250"
-        status={status}
+        className={btnClassName()}
+        disabled={status === 'loading'}
       >
         {status === 'idle' && formText.text[language].send}
         {status === 'loading' && formText.text[language].sending}
@@ -65,7 +76,7 @@ function Contact({ formText, onHandleSubmit, status, language }: Props) {
   )
 }
 
-export default Contact
+export default ContactForm
 
 // TODO: ajouter favicon
 // TODO: utiliser  redux pour les input du formulaire et la gestion des erruers/ status
