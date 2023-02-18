@@ -1,4 +1,3 @@
-import Input from '../../../utils/form/Input'
 import Button from '../../Utils/Button/Button'
 import InputField from '../../Utils/Form/InputField'
 import Info from './Info'
@@ -11,7 +10,7 @@ import { MouseEvent } from 'react'
 interface Props {
   formText: FormDatas
   formErrors: Record<FormFieldsName, InputError>
-  formDatas: Record<FormFieldsName, Input>
+  formDatas: Record<FormFieldsName, string>
   onHandleSubmit: (e: MouseEvent<HTMLButtonElement>) => void
   status: Status
   language: LanguageAvailable
@@ -21,6 +20,7 @@ interface Props {
 function Contact({
   formText,
   formErrors,
+  formDatas,
   onHandleSubmit,
   status,
   language,
@@ -35,6 +35,7 @@ function Contact({
         <Info imageRef={formText.infos.emailIcon}>{formText.infos.email}</Info>
       </div>
       <InputField
+        inputValue={formDatas.name}
         onChangeInput={onChangeInput}
         name="name"
         label={formText.text[language].name}
@@ -42,6 +43,7 @@ function Contact({
         inputError={formErrors.name}
       />
       <InputField
+        inputValue={formDatas.email}
         onChangeInput={onChangeInput}
         name="email"
         label={formText.text[language].email}
@@ -49,6 +51,7 @@ function Contact({
         inputError={formErrors.email}
       />
       <InputField
+        inputValue={formDatas.phone}
         onChangeInput={onChangeInput}
         name="phone"
         label="phone"
@@ -56,6 +59,7 @@ function Contact({
         inputError={formErrors.phone}
       />
       <InputField
+        inputValue={formDatas.object}
         onChangeInput={onChangeInput}
         name="object"
         label={formText.text[language].subject}
@@ -63,6 +67,7 @@ function Contact({
         inputError={formErrors.object}
       />
       <InputField
+        inputValue={formDatas.message}
         onChangeInput={onChangeInput}
         name="message"
         label={formText.text[language].message}

@@ -4,22 +4,28 @@ import { LanguageContext } from '../../Language/LanguageContextProvider'
 import { InputTypes } from '../../../constant/types/InputFields'
 import useFetchFormDatas from '../../../hooks/fetch/useFetchFormDatas'
 import { FormFieldsName } from '../../../constant/types/contactForm'
-import { useSelector } from 'react-redux'
-import { RootState } from '../../../stores/redux'
 
 interface Props {
   name: FormFieldsName
   label: string | undefined
   type: InputTypes
   inputError: InputError
+  inputValue: string
   onChangeInput: (val: string, fieldName: FormFieldsName) => void
 }
 
-function InputField({ name, type, label, inputError, onChangeInput }: Props) {
-  const formDatas = useSelector((state: RootState) => state.form.formDatas)
+function InputField({
+  name,
+  type,
+  label,
+  inputError,
+  inputValue,
+  onChangeInput,
+}: Props) {
+  const errorMessages = useFetchFormDatas()?.errorText
+  // TODO: get ErrorMessage from props instead fetch
 
   const { language } = useContext(LanguageContext)
-  const errorMessages = useFetchFormDatas()?.errorText
 
   const handleInput = async (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -30,6 +36,7 @@ function InputField({ name, type, label, inputError, onChangeInput }: Props) {
   const fieldClass = () => {
     const base = 'input-field__input'
     let name = base
+
     if (type == 'textarea') name += ` ${base}--textarea`
     if (inputError) name += ` ${base}--error`
     return name
@@ -62,7 +69,7 @@ function InputField({ name, type, label, inputError, onChangeInput }: Props) {
           name={name}
           id={name}
           className={fieldClass()}
-          value={formDatas[name].value}
+          value={inputValue}
           onChange={handleInput}
         />
       ) : (
@@ -71,7 +78,7 @@ function InputField({ name, type, label, inputError, onChangeInput }: Props) {
           name={name}
           id={name}
           className={fieldClass()}
-          value={formDatas[name].value}
+          value={inputValue}
           onChange={handleInput}
           {...(type === 'honeypot'
             ? { autoComplete: 'off', tabIndex: -1 }

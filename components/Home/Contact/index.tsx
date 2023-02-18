@@ -7,7 +7,7 @@ import { InputError } from '../../../utils/form/Input'
 import contactStore from '../../../stores/contact'
 import { useDispatch, useSelector } from 'react-redux'
 import { changeFormDatas, changeFormErrors } from '../../Form/form.actions'
-import { RootState } from '../../../stores/redux'
+import { FormRootState } from '../../../stores/formStore.redux'
 import { formSchema } from '../../Form/form.schema'
 import { ValidationError } from 'yup'
 
@@ -21,8 +21,10 @@ export default () => {
 
   const { language } = useContext(LanguageContext)
 
-  const formDatas = useSelector((state: RootState) => state.form.formDatas)
-  const formErrors = useSelector((state: RootState) => state.form.formErrors)
+  const formDatas = useSelector((state: FormRootState) => state.form.formDatas)
+  const formErrors = useSelector(
+    (state: FormRootState) => state.form.formErrors
+  )
 
   const pageLoadTimeRef = useRef(Date.now())
 
@@ -80,6 +82,7 @@ export default () => {
     }
   }
 
+  // TODO: a effacer je pense, pas utile sans Input?
   const getStringFormDatas = (): Record<FormFieldsName, string> => {
     let stringFormDatas: Record<string, string> = {}
     for (const fieldName in formDatas) {
@@ -123,7 +126,6 @@ export default () => {
       } catch (err) {
         if (err instanceof ValidationError) {
           const fieldError = err.inner[0].path
-          console.table(err.inner[0])
 
           if (fieldError !== inputError)
             dispatch(changeFormErrors(fieldName, fieldError as InputError))
@@ -131,6 +133,7 @@ export default () => {
       }
     }
   }
+
   return (
     <>
       {language !== null && formText ? (
@@ -150,4 +153,4 @@ export default () => {
   )
 }
 
-// TODO: Loarder necessaire?
+// TODO: Loader necessaire?

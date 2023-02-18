@@ -11,6 +11,8 @@ import { NavContext } from '../components/Navigation/NavContextProvider'
 import useGetCurrentSection from '../hooks/utils/useGetCurrentSection'
 import Head from 'next/head'
 import Contact from '../components/Home/Contact'
+import { Provider } from 'react-redux'
+import formStore from '../stores/formStore.redux'
 
 function App() {
   const { language } = useContext(LanguageContext)
