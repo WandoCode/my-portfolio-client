@@ -110,3 +110,4 @@ function Contact({
 export default Contact
 
 // TODO: ajouter favicon
+// TODO: utiliser  redux pour les input du formulaire et la gestion des erruers/ status
