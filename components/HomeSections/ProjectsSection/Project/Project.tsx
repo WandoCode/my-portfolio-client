@@ -30,8 +30,8 @@ function Project({ datas, side, language }: Props) {
   }, [datas])
 
   return (
-    <article className="project">
-      <div className={`project__img-container project__img-container--${side}`}>
+    <article className={`project project--${side}`} data-testid="project">
+      <div className="project__img-container">
         <Image
           src={datas.urlPreview}
           height={500}
@@ -40,8 +40,8 @@ function Project({ datas, side, language }: Props) {
           className="project__img"
         />
       </div>
-      <div className={`project__content project__content--${side}`}>
-        <h3 className={`project__title project__title--${side} h3 fs-600`}>
+      <div className="project__content">
+        <h3 className="project__title h3 fs-600">
           {language ? datas.title : ''}
         </h3>
         <p className="project__description">
@@ -51,7 +51,9 @@ function Project({ datas, side, language }: Props) {
         <ul className="project__features-wrapper">{featuresDom}</ul>
 
         <div className="project__footer">
-          <ul className="project__skills-wrapper">{skillsDom}</ul>
+          <ul className="project__skills-wrapper" data-testid="tags">
+            {skillsDom}
+          </ul>
 
           <div className="project__links">
             <MediaLink
