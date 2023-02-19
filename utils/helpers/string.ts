@@ -3,9 +3,8 @@ export const isValidEmail = (str: string) => {
   const matches = str.matchAll(emailRegEx)
   return Array.from(matches).length === 1
 }
-
-export /* Source: https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb/5623914#5623914 */
-function rgbToHex(rgbStr: string) {
+/* Source: https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb/5623914#5623914 */
+export function rgbToHex(rgbStr: string) {
   const rgbSplited = rgbStr.split(',')
 
   const r = +rgbSplited[0].split('(')[1].trim()
@@ -13,4 +12,12 @@ function rgbToHex(rgbStr: string) {
   const b = +rgbSplited[2].split(')')[0]
 
   return '#' + ((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1)
+}
+
+export const isPositiveIntegerOrZero = (numberStr: string) => {
+  const number = parseInt(numberStr, 10)
+
+  if (isNaN(number)) return false
+  if (number < 0) return false
+  return true
 }
