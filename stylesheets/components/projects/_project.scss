@@ -17,18 +17,7 @@
 
     @include breakpoint(medium) {
       --img-max-size: 360px;
-
       translate: 0 -50%;
-
-      &--left {
-        right: 0;
-        left: calc(100% - var(--img-max-size));
-      }
-
-      &--right {
-        left: 0;
-        right: calc(100% - var(--img-max-size));
-      }
     }
 
     & img {
@@ -64,14 +53,6 @@
 
       margin-inline: 0;
       padding-inline: 2.5rem;
-
-      &--left {
-        margin-right: var(--shift);
-      }
-
-      &--right {
-        margin-left: var(--shift);
-      }
     }
 
     @include breakpoint(large) {
@@ -88,14 +69,6 @@
       top: 0;
 
       translate: 0 calc(-100% - 4.5rem);
-
-      &--left {
-        left: 0;
-      }
-
-      &--right {
-        right: 0;
-      }
     }
   }
 
@@ -129,6 +102,36 @@
     @include breakpoint(medium) {
       grid-template-columns: auto auto;
       gap: 1rem;
+    }
+  }
+
+  &--left {
+    .project__img-container {
+      right: 0;
+      left: calc(100% - var(--img-max-size));
+    }
+
+    .project__content {
+      margin-right: var(--shift);
+    }
+
+    .project__title {
+      left: 0;
+    }
+  }
+
+  &--right {
+    .project__img-container {
+      left: 0;
+      right: calc(100% - var(--img-max-size));
+    }
+
+    .project__content {
+      margin-left: var(--shift);
+    }
+
+    .project__title {
+      right: 0;
     }
   }
 }
