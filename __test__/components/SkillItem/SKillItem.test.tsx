@@ -27,10 +27,44 @@ describe('Given the SkillItem component is used', () => {
       name: mockedSkillData.title,
     })
 
-    const urlRegEx = new RegExp(`${mockedSkillData.urlIcon}`, 'gi')
-    console.log(img.src)
-    console.log(mockedSkillData.urlIcon)
     expect(img).toBeDefined()
     expect(mockedSkillData.urlIcon).toMatch(img.src)
+  })
+
+  test('It should have a "rating" (name = crossIcon.svg) image number equal to the rating in datas', () => {
+    let imgs: HTMLImageElement[] = Array.from(
+      screen.getAllByRole('img', {
+        name: 'rating',
+      })
+    )
+
+    imgs.forEach((image) => {
+      expect(image.src).toMatch(/crossIcon.svg/)
+    })
+    expect(imgs.length).toBe(parseInt(mockedSkillData.rating, 10))
+  })
+})
+
+describe('Given the SkillItem component is used', () => {
+  describe('When the rating in data is negative,', () => {
+    test('It should throw an error', () => {
+      const dataCopy = JSON.parse(JSON.stringify(mockedSkillData))
+      dataCopy.rating = '-1'
+
+      expect(() => render(<SkillItem datas={dataCopy} />)).toThrow(
+        'Skill rating should be a positive integer or zero.'
+      )
+    })
+  })
+
+  describe('When the rating in data is not a string number,', () => {
+    test('It should throw an error', () => {
+      const dataCopy = JSON.parse(JSON.stringify(mockedSkillData))
+      dataCopy.rating = 'a'
+
+      expect(() => render(<SkillItem datas={dataCopy} />)).toThrow(
+        'Skill rating should be a positive integer or zero.'
+      )
+    })
   })
 })

@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import { isInteger } from '../../../../utils/helpers/number'
 import { useEffect, useState } from 'react'
 import crossIcon from '../../../../public/assets/crossIcon.svg'
 import { SkillDatas } from '../../../../constant/types/datas'
+import { isPositiveIntegerOrZero } from '../../../../utils/helpers/string'
 
 interface Props {
   datas: SkillDatas
@@ -12,7 +12,7 @@ function SkillItem({ datas }: Props) {
   const [ratingNumber, setRatingNumber] = useState<number>()
 
   useEffect(() => {
-    if (isInteger(datas.rating)) {
+    if (isPositiveIntegerOrZero(datas.rating)) {
       setRatingNumber(parseInt(datas.rating, 10))
     } else {
       throw new Error('Skill rating should be a positive integer or zero.')
@@ -25,7 +25,7 @@ function SkillItem({ datas }: Props) {
     let rating = []
     for (let i = 0; i < ratingNumber; i++) {
       rating.push(
-        <Image src={crossIcon} width={15} height={15} alt="" key={i} />
+        <Image src={crossIcon} width={15} height={15} alt="rating" key={i} />
       )
     }
     return rating
