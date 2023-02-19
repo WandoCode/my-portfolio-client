@@ -31,16 +31,16 @@ function SkillItem({ datas }: Props) {
     return rating
   }
 
-  const myLoader = ({ src, width, quality }: ImageLoaderProps) => {
-    return `${src}?w=${width}&q=${quality || 75}`
-  }
+  // const myLoader = ({ src, width, quality }: ImageLoaderProps) => {
+  //   return `${src}?w=${width}&q=${quality || 75}`
+  // }
 
   return (
     <li className="skill">
       {ratingNumber && <div className="skill__rating">{ratingDOM()}</div>}
       <div className="skill__img-container">
         <Image
-          loader={myLoader}
+          // loader={myLoader}
           src={datas.urlIcon}
           height={50}
           width={50}
