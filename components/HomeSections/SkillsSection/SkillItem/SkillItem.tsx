@@ -1,4 +1,4 @@
-import Image, { ImageLoaderProps } from 'next/image'
+import Image from 'next/image'
 import { isInteger } from '../../../../utils/helpers/number'
 import { useEffect, useState } from 'react'
 import crossIcon from '../../../../public/assets/crossIcon.svg'
@@ -31,21 +31,11 @@ function SkillItem({ datas }: Props) {
     return rating
   }
 
-  // const myLoader = ({ src, width, quality }: ImageLoaderProps) => {
-  //   return `${src}?w=${width}&q=${quality || 75}`
-  // }
-
   return (
     <li className="skill">
       {ratingNumber && <div className="skill__rating">{ratingDOM()}</div>}
       <div className="skill__img-container">
-        <Image
-          // loader={myLoader}
-          src={datas.urlIcon}
-          height={50}
-          width={50}
-          alt={datas.title}
-        />
+        <Image src={datas.urlIcon} height={50} width={50} alt={datas.title} />
       </div>
       <h3 className="h3 skill__title">
         <span className="skill__title-text">{datas.title}</span>
