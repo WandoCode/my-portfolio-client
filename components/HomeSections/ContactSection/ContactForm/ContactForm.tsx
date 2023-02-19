@@ -56,7 +56,7 @@ function ContactForm({ formText, onHandleSubmit, status, language }: Props) {
       />
 
       <Button
-        type="button"
+        type="submit"
         level="secondary"
         onclick={onHandleSubmit}
         className={btnClassName()}

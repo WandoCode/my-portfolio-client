@@ -109,7 +109,11 @@ function NavLinks({ onCloseNav, navText, language, currentSection }: Props) {
           {navText ? navText.contact : ''}
         </a>
       </li>
-      <span ref={listSliderRef} className="nav-links__slider"></span>
+      <span
+        ref={listSliderRef}
+        className="nav-links__slider"
+        data-testid="slider"
+      ></span>
     </ul>
   )
 }

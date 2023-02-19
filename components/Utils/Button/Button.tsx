@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { MouseEvent, PropsWithChildren } from 'react'
 
 interface Props extends PropsWithChildren {
-  type: 'link' | 'button'
+  type: 'link' | 'button' | 'submit'
   level: 'primary' | 'secondary'
   onclick?: (e: MouseEvent<HTMLButtonElement>) => void
   href?: string
