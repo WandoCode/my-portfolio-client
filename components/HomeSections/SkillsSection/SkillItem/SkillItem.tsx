@@ -5,19 +5,19 @@ import { SkillDatas } from '../../../../constant/types/datas'
 import { isPositiveIntegerOrZero } from '../../../../utils/helpers/string'
 
 interface Props {
-  datas: SkillDatas
+  item: SkillDatas
 }
 
-function SkillItem({ datas }: Props) {
+function SkillItem({ item }: Props) {
   const [ratingNumber, setRatingNumber] = useState<number>()
 
   useEffect(() => {
-    if (isPositiveIntegerOrZero(datas.rating)) {
-      setRatingNumber(parseInt(datas.rating, 10))
+    if (isPositiveIntegerOrZero(item.rating)) {
+      setRatingNumber(parseInt(item.rating, 10))
     } else {
       throw new Error('Skill rating should be a positive integer or zero.')
     }
-  }, [datas])
+  }, [item])
 
   const ratingDOM = () => {
     if (!ratingNumber) return
@@ -35,10 +35,10 @@ function SkillItem({ datas }: Props) {
     <li className="skill">
       {ratingNumber && <div className="skill__rating">{ratingDOM()}</div>}
       <div className="skill__img-container">
-        <Image src={datas.urlIcon} height={50} width={50} alt={datas.title} />
+        <Image src={item.urlIcon} height={50} width={50} alt={item.title} />
       </div>
       <h3 className="h3 skill__title">
-        <span className="skill__title-text">{datas.title}</span>
+        <span className="skill__title-text">{item.title}</span>
       </h3>
     </li>
   )
