@@ -1,11 +1,10 @@
 import Image from 'next/image'
-import GithubIcon from '/public/assets/githubIcon.svg'
-import WebIcon from '/public/assets/webIcon.svg'
-import { useMemo } from 'react'
 import Tag from '../Tag'
 import { ProjectDatas } from '../../../../constant/types/projects'
 import MediaLink from '../../../Utils/Link/MediaLink'
 import { LanguageAvailable } from '../../../../constant/language/language'
+import RegularList from '../../../Utils/List/RegularList'
+import ListItem from '../../../Utils/List/ListItem'
 
 interface Props {
   datas: ProjectDatas
@@ -14,21 +13,6 @@ interface Props {
 }
 
 function Project({ datas, side, language }: Props) {
-  const featuresDom = useMemo(() => {
-    if (!language) return ''
-    return datas.features[language].map((feature, i) => (
-      <li className="project__feature" key={i}>
-        {feature}
-      </li>
-    ))
-  }, [datas, language])
-
-  const skillsDom = useMemo(() => {
-    return datas.tags.map((tag, i) => (
-      <Tag text={tag.text} color={tag.color} key={i} />
-    ))
-  }, [datas])
-
   return (
     <article className={`project project--${side}`} data-testid="project">
       <div className="project__img-container">
@@ -48,24 +32,24 @@ function Project({ datas, side, language }: Props) {
           {language ? datas.description[language] : ''}
         </p>
 
-        <ul className="project__features-wrapper">{featuresDom}</ul>
+        <ul className="project__features-wrapper">
+          {language && (
+            <RegularList
+              items={datas.features[language]}
+              itemComponent={ListItem}
+            />
+          )}
+        </ul>
 
         <div className="project__footer">
           <ul className="project__skills-wrapper" data-testid="tags">
-            {skillsDom}
+            <RegularList items={datas.tags} itemComponent={Tag} />
           </ul>
 
           <div className="project__links">
-            <MediaLink
-              image={GithubIcon}
-              link={datas.urlGithub}
-              altText="Github icon"
-              background="light"
-            />
-            <MediaLink
-              image={WebIcon}
-              link={datas.urlLive}
-              altText="Web icone"
+            <RegularList
+              items={datas.medias}
+              itemComponent={MediaLink}
               background="light"
             />
           </div>

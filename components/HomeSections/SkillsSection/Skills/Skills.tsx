@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import SkillItem from '../SkillItem/SkillItem'
 
 import { SkillDatas } from '../../../../constant/types/datas'
@@ -10,17 +9,16 @@ interface Props {
 
 function Skills({ skillsDatas }: Props) {
   return (
-    <>
+    <ul className="skills__list">
       {skillsDatas ? (
-        <RegularList
-          className="skills__list"
+        <RegularList<SkillDatas>
           items={skillsDatas}
           itemComponent={SkillItem}
         />
       ) : (
         ''
       )}
-    </>
+    </ul>
   )
 }
 

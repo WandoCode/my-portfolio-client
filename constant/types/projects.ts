@@ -1,14 +1,5 @@
-export interface ProjectsDatas {
-  projects: ProjectDatas[]
-}
+import projectsDatas from '../content/projects.json'
 
-export interface ProjectDatas {
-  title: string
-  description: Record<string, string>
-  features: Record<string, string[]>
-  tags: { text: string; color: string }[]
-  urlLive: string
-  urlGithub: string
-  urlPreview: string
-  altText: string
-}
+export type ProjectDatas = typeof projectsDatas.projects[0]
+
+export type ProjectsDatas = ProjectDatas[]

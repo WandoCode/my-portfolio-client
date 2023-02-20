@@ -1,16 +1,15 @@
 import Tag from './Tag'
 
 interface Props {
-  color: string
-  text: string
-  classname?: string
+  item: { color: string; text: string }
 }
 
-export default ({ color, text, classname }: Props) => {
-  const tagClassname = () => {
-    let base = 'tag fc-neutral-800'
-    if (classname) base += ` ${classname}`
-    return base
-  }
-  return <Tag tagClassName={tagClassname()} color={color} text={text} />
+export default ({ item }: Props) => {
+  return (
+    <Tag
+      tagClassName="tag fc-neutral-800"
+      color={item.color}
+      text={item.text}
+    />
+  )
 }
