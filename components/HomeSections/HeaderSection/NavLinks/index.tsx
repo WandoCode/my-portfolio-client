@@ -14,6 +14,7 @@ export default ({ onCloseNav, navText }: Props) => {
   const currentSection = useSelector(
     (state: RootState) => state.nav.currentSection
   )
+
   return (
     <NavLinks
       onCloseNav={onCloseNav}

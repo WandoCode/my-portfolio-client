@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useRef, useEffect, RefObject } from 'react'
+import { useRef, useEffect, RefObject, useState } from 'react'
 import useFetchMainDatas from '../hooks/fetch/useFetchMainDatas'
 import useGetCurrentSection from '../hooks/utils/useGetCurrentSection'
 import { useDispatch } from 'react-redux'
@@ -21,12 +21,18 @@ function App() {
 
   const mainDatas = useFetchMainDatas()
 
-  const refs: Record<string, RefObject<HTMLElement>> = {
-    hero: useRef<HTMLElement>(null),
-    projects: useRef<HTMLElement>(null),
-    skills: useRef<HTMLElement>(null),
-    about: useRef<HTMLElement>(null),
-    contact: useRef<HTMLElement>(null),
+  const [heroRef, setHeroRef] = useState<HTMLElement | null>(null)
+  const [projectsRef, setProjectsRef] = useState<HTMLElement | null>(null)
+  const [skillsRef, setSkillsRef] = useState<HTMLElement | null>(null)
+  const [aboutRef, setAboutRef] = useState<HTMLElement | null>(null)
+  const [contactRef, setContactRef] = useState<HTMLElement | null>(null)
+
+  const refs = {
+    hero: heroRef,
+    projects: projectsRef,
+    skills: skillsRef,
+    about: aboutRef,
+    contact: contactRef,
   }
 
   const currentSection = useGetCurrentSection({
@@ -49,11 +55,19 @@ function App() {
           <div className="app">
             <Header headerDatas={mainDatas.headings} />
             <main className="main">
-              <section ref={refs.hero} className="hero flow" id="hero">
+              <section
+                ref={(newRef) => setHeroRef(newRef)}
+                className="hero flow"
+                id="hero"
+              >
                 <Hero heroDatas={mainDatas.hero} />
               </section>
 
-              <section ref={refs.projects} className="projects" id="projects">
+              <section
+                ref={(newRef) => setProjectsRef(newRef)}
+                className="projects"
+                id="projects"
+              >
                 <div className="container projects__container flow">
                   <h2 className="h2 heading-section">
                     {language ? mainDatas.headings[language].projects : ''}
@@ -62,7 +76,7 @@ function App() {
                 </div>
               </section>
               <section
-                ref={refs.skills}
+                ref={(newRef) => setSkillsRef(newRef)}
                 className="skills container flow"
                 id="skills"
               >
@@ -71,7 +85,11 @@ function App() {
                 </h2>
                 <Skills />
               </section>
-              <section ref={refs.about} className="about flow" id="about">
+              <section
+                ref={(newRef) => setAboutRef(newRef)}
+                className="about flow"
+                id="about"
+              >
                 <div className="container">
                   <h2 className="h2 heading-section about__title fc-neutral-300">
                     {language ? mainDatas.headings[language].about : ''}
@@ -80,7 +98,7 @@ function App() {
                 </div>
               </section>
               <section
-                ref={refs.contact}
+                ref={(newRef) => setContactRef(newRef)}
                 className="contact flow container fc-neutral-700 fc-dark-neutral-400"
                 id="contact"
               >

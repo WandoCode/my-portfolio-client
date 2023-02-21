@@ -1,7 +1,7 @@
-import { RefObject, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 interface Props {
-  parentRefObject: Record<string, RefObject<HTMLElement>>
+  parentRefObject: Record<string, HTMLElement | null>
   threshold?: number
   margin?: string
 }
@@ -11,10 +11,16 @@ function useGetCurrentSection({
   threshold = 0,
   margin = '0px',
 }: Props) {
+  const [parentAreLoaded, setParentAreLoaded] = useState(false)
   const [currentSection, setCurrentSection] = useState<string>()
   const [observers, setObservers] = useState<
     Record<string, IntersectionObserver>
   >({})
+
+  useEffect(() => {
+    if (!parentAreLoaded && parentRefObject.contact !== null)
+      setParentAreLoaded(true)
+  }, [parentRefObject])
 
   useEffect(() => {
     let options = {
@@ -37,19 +43,22 @@ function useGetCurrentSection({
         return { ...old, sectionName: observer }
       })
 
-      if (ref.current) {
-        observer.observe(ref.current)
+      if (ref) {
+        observer.observe(ref)
       }
     }
 
     return () => {
       for (const sectionName in parentRefObject) {
         const ref = parentRefObject[sectionName]
-        if (ref.current && observers)
-          observers[sectionName].unobserve(ref.current)
+        if (ref && observers[sectionName]) {
+          console.log(observers)
+
+          observers[sectionName].unobserve(ref)
+        }
       }
     }
-  }, [])
+  }, [parentAreLoaded])
 
   return currentSection
 }
