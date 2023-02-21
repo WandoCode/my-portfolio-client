@@ -1,8 +1,8 @@
 import { KeyboardEvent, MouseEvent } from 'react'
 import Option from './Option'
-import { useDispatch, useSelector } from 'react-redux'
-import { RootState } from '../../../../Features/app.store'
+import { useDispatch } from 'react-redux'
 import { changeOpenMenu } from '../../../../Features/Language/language.actions'
+import useSelectMenuIsOpen from '../../../../hooks/selectors/useSelectMenuIsOpen'
 
 interface Props {
   value: string
@@ -13,9 +13,7 @@ interface Props {
 export default ({ value, text, onChoice }: Props) => {
   const dispatch = useDispatch()
 
-  const menuIsOpen = useSelector(
-    (state: RootState) => state.language.menuIsOpen
-  )
+  const menuIsOpen = useSelectMenuIsOpen()
 
   const handleChoice = (e: MouseEvent | KeyboardEvent) => {
     const choiceValue = e.currentTarget.getAttribute('data-value')

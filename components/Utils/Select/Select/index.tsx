@@ -1,8 +1,8 @@
 import Select from './Select'
 import { useEffect, useCallback, FocusEvent, useRef } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { RootState } from '../../../../Features/app.store'
+import { useDispatch } from 'react-redux'
 import { changeOpenMenu } from '../../../../Features/Language/language.actions'
+import useSelectMenuIsOpen from '../../../../hooks/selectors/useSelectMenuIsOpen'
 
 interface Props {
   choices: { value: string; text: string }[]
@@ -15,9 +15,7 @@ export default ({ choices, currValue, onChoice, id }: Props) => {
   const dispatch = useDispatch()
   const selectRef = useRef<HTMLDivElement>(null)
 
-  const menuIsOpen = useSelector(
-    (state: RootState) => state.language.menuIsOpen
-  )
+  const menuIsOpen = useSelectMenuIsOpen()
 
   useEffect(() => {
     if (menuIsOpen) {
