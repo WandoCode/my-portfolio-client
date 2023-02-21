@@ -91,4 +91,4 @@ const buildObject = (lang: LanguageAvailable | null) => {
   }
 }
 export { buildEmail, buildObject }
-//TODO: ameliorer le mail envoyé
+//TODO: ameliorer le mail envoyé ?

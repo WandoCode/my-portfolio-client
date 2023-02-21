@@ -77,5 +77,3 @@ function ContactForm({ formText, onHandleSubmit, status, language }: Props) {
 }
 
 export default ContactForm
-
-// TODO: ajouter favicon
