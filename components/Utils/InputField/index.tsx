@@ -10,6 +10,7 @@ import { RootState } from '../../../Features/app.store'
 import { formSchema } from '../../../Features/Form/form.schema'
 import { ValidationError } from 'yup'
 import useFetchFormDatas from '../../../hooks/fetch/useFetchFormDatas'
+import useSelectFormDatas from '../../../hooks/selectors/useSelectFormDatas'
 
 interface Props {
   name: FormFieldsName
@@ -22,7 +23,7 @@ export default ({ name, type, label }: Props) => {
   const errorMessages = useFetchFormDatas()?.errorText
 
   const formErrors = useSelector((state: RootState) => state.form.formErrors)
-  const formDatas = useSelector((state: RootState) => state.form.formDatas)
+  const formDatas = useSelectFormDatas()
 
   const handleInput = async (newValue: string, fieldName: FormFieldsName) => {
     dispatch(changeFormDatas(fieldName, newValue))

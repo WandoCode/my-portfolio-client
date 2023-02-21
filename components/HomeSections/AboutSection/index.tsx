@@ -1,14 +1,13 @@
 import About from './About'
 import { AboutDatas } from '../../../constant/types/datas'
-import { useSelector } from 'react-redux'
-import { RootState } from '../../../Features/app.store'
+import useSelectLanguage from '../../../hooks/selectors/useSelectLanguage'
 
 interface Props {
   aboutDatas: AboutDatas
 }
 
 export default ({ aboutDatas }: Props) => {
-  const language = useSelector((state: RootState) => state.language.language)
+  const language = useSelectLanguage()
 
   return <About aboutDatas={aboutDatas} language={language} />
 }

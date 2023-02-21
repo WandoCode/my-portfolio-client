@@ -1,7 +1,6 @@
-import { useSelector } from 'react-redux'
-import { RootState } from '../../../../Features/app.store'
 import { ProjectDatas } from '../../../../constant/types/projects'
 import Project from './Project'
+import useSelectLanguage from '../../../../hooks/selectors/useSelectLanguage'
 
 interface Props {
   datas: ProjectDatas
@@ -9,7 +8,7 @@ interface Props {
 }
 
 export default ({ datas, side }: Props) => {
-  const language = useSelector((state: RootState) => state.language.language)
+  const language = useSelectLanguage()
 
   return <Project datas={datas} side={side} language={language} />
 }

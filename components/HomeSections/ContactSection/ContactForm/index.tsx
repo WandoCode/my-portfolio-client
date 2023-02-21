@@ -15,6 +15,8 @@ import { formSchema } from '../../../../Features/Form/form.schema'
 import { ValidationError } from 'yup'
 import { changeStatus } from '../../../../Features/Form/form.actions'
 import { RootState } from '../../../../Features/app.store'
+import useSelectLanguage from '../../../../hooks/selectors/useSelectLanguage'
+import useSelectFormDatas from '../../../../hooks/selectors/useSelectFormDatas'
 
 const EXCLUDE_ROBOT_SPAM_TIME = 4000
 const INFO_MESSAGE_DISPLAY_TIME = 3000
@@ -24,8 +26,9 @@ export default () => {
   const formText = useFetchFormDatas()
   const pageLoadTimeRef = useRef(Date.now())
 
-  const language = useSelector((state: RootState) => state.language.language)
-  const formDatas = useSelector((state: RootState) => state.form.formDatas)
+  const language = useSelectLanguage()
+
+  const formDatas = useSelectFormDatas()
   const status = useSelector((state: RootState) => state.form.status)
 
   const handleSubmit = async (e: MouseEvent<HTMLButtonElement>) => {

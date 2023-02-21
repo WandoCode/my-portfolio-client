@@ -1,9 +1,8 @@
 import { ChangeEvent } from 'react'
 import { InputTypes } from '../../../constant/types/InputFields'
 import { FormFieldsName, InputError } from '../../../constant/types/contactForm'
-import { useSelector } from 'react-redux'
-import { RootState } from '../../../Features/app.store'
 import { FormDatas } from '../../../constant/types/datas'
+import useSelectLanguage from '../../../hooks/selectors/useSelectLanguage'
 
 interface Props {
   name: FormFieldsName
@@ -24,7 +23,7 @@ function InputField({
   onChangeInput,
   errorMessages,
 }: Props) {
-  const language = useSelector((state: RootState) => state.language.language)
+  const language = useSelectLanguage()
 
   const handleInput = async (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>

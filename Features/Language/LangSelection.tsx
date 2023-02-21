@@ -1,17 +1,17 @@
 import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { RootState } from '../app.store'
+import { useDispatch } from 'react-redux'
 import { changeLanguage, initLanguage } from './language.actions'
 import {
   allowedLanguage,
   LanguagesObject,
 } from '../../constant/language/language'
 import { Select } from '../../components'
+import useSelectLanguage from '../../hooks/selectors/useSelectLanguage'
 
 function LangSelection() {
   const dispatch = useDispatch()
 
-  const language = useSelector((state: RootState) => state.language.language)
+  const language = useSelectLanguage()
 
   useEffect(() => {
     dispatch(initLanguage())

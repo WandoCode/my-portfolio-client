@@ -2,9 +2,9 @@ import Head from 'next/head'
 import { useRef, useEffect, RefObject } from 'react'
 import useFetchMainDatas from '../hooks/fetch/useFetchMainDatas'
 import useGetCurrentSection from '../hooks/utils/useGetCurrentSection'
-import { useSelector, useDispatch } from 'react-redux'
-import { RootState } from '../Features/app.store'
+import { useDispatch } from 'react-redux'
 import { changeCurrentSection } from '../Features/Navigation/nav.actions'
+import useSelectLanguage from '../hooks/selectors/useSelectLanguage'
 import {
   About,
   ContactForm,
@@ -17,7 +17,7 @@ import {
 
 function App() {
   const dispatch = useDispatch()
-  const language = useSelector((state: RootState) => state.language.language)
+  const language = useSelectLanguage()
 
   const mainDatas = useFetchMainDatas()
 

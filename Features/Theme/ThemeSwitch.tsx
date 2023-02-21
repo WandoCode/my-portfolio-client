@@ -1,14 +1,14 @@
 import { ChangeEvent, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { changeTheme, initializeTheme } from './theme.actions'
-import { RootState } from '../app.store'
 import { Switch } from '../../components'
 import sun from '../../public/assets/sun.svg'
 import moon from '../../public/assets/moon.svg'
+import useSelectTheme from '../../hooks/selectors/useSelectTheme'
 
 function ThemeSwitch() {
   const dispatch = useDispatch()
-  const theme = useSelector((state: RootState) => state.theme.theme)
+  const theme = useSelectTheme()
 
   useEffect(() => {
     dispatch(initializeTheme())

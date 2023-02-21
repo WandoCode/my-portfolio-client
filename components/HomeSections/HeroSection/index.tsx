@@ -1,14 +1,13 @@
 import Hero from './Hero'
 import { HeroDatas } from '../../../constant/types/datas'
-import { RootState } from '../../../Features/app.store'
-import { useSelector } from 'react-redux'
+import useSelectLanguage from '../../../hooks/selectors/useSelectLanguage'
 
 interface Props {
   heroDatas: HeroDatas
 }
 
 export default ({ heroDatas }: Props) => {
-  const language = useSelector((state: RootState) => state.language.language)
+  const language = useSelectLanguage()
 
   return <Hero heroDatas={heroDatas} language={language} />
 }

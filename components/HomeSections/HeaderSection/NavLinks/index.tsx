@@ -2,6 +2,7 @@ import NavLinks from './NavLinks'
 import { HeadingsDatas } from '../../../../constant/types/datas'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../../../Features/app.store'
+import useSelectLanguage from '../../../../hooks/selectors/useSelectLanguage'
 
 interface Props {
   onCloseNav: () => void
@@ -9,7 +10,7 @@ interface Props {
 }
 
 export default ({ onCloseNav, navText }: Props) => {
-  const language = useSelector((state: RootState) => state.language.language)
+  const language = useSelectLanguage()
   const currentSection = useSelector(
     (state: RootState) => state.nav.currentSection
   )
