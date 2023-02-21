@@ -6,7 +6,7 @@ import useGetScrollingInfos from '../../../../hooks/utils/useGetScrollingInfos'
 import { useState } from 'react'
 
 interface Props {
-  headerDatas: HeadingsDatas | undefined
+  headerDatas: HeadingsDatas
 }
 
 export default ({ headerDatas }: Props) => {

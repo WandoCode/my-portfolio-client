@@ -9,7 +9,7 @@ import { LanguageAvailable } from '../../../../constant/language/language'
 import { ThemesValues } from '../../../../constant/theme/theme'
 
 interface Props {
-  headerDatas: HeadingsDatas | undefined
+  headerDatas: HeadingsDatas
   language: LanguageAvailable | null
   theme: ThemesValues | null
   scrollingInfos: {
@@ -80,7 +80,7 @@ function Header({
           <div id="nav-links-container" className={navContentClass()}>
             <NavLinks
               onCloseNav={handleCloseNav}
-              navText={language ? headerDatas?.[language] : undefined}
+              navText={language ? headerDatas[language] : undefined}
             />
             <div className="nav__dark-light-switch">
               <ThemeSwitch />

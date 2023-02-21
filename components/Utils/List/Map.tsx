@@ -4,11 +4,7 @@ interface Props<T> {
   [x: string]: any
 }
 
-function RegularList<T>({
-  items,
-  itemComponent: ItemComponent,
-  ...args
-}: Props<T>) {
+function Map<T>({ items, itemComponent: ItemComponent, ...args }: Props<T>) {
   return (
     <>
       {items.map((item, i) => (
@@ -18,4 +14,4 @@ function RegularList<T>({
   )
 }
 
-export default RegularList
+export default Map

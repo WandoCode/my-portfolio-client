@@ -1,9 +1,9 @@
 import MediaLink from '../../Utils/Link/MediaLink'
 import { FooterDatas } from '../../../constant/types/datas'
-import RegularList from '../../Utils/List/RegularList'
+import Map from '../../Utils/List/Map'
 
 interface Props {
-  footerDatas: FooterDatas | undefined
+  footerDatas: FooterDatas
 }
 
 function Footer({ footerDatas }: Props) {
@@ -11,9 +11,7 @@ function Footer({ footerDatas }: Props) {
     <footer className="footer">
       <div className="container footer__container">
         <div className="footer__links">
-          {footerDatas && (
-            <RegularList items={footerDatas.medias} itemComponent={MediaLink} />
-          )}
+          <Map items={footerDatas.medias} itemComponent={MediaLink} />
         </div>
         <div className="footer__text fc-neutral-400 fs-300">
           Designed & Built by Maxime Chirez.

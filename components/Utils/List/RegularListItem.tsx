@@ -3,8 +3,8 @@ interface Props {
   className?: string
 }
 
-function ListItem({ item, className }: Props) {
+function RegularListItem({ item, className }: Props) {
   return <li {...(className && { className: className })}>{item}</li>
 }
 
-export default ListItem
+export default RegularListItem

@@ -4,7 +4,7 @@ import { RootState } from '../../../Features/app.store'
 import { useSelector } from 'react-redux'
 
 interface Props {
-  heroDatas: HeroDatas | undefined
+  heroDatas: HeroDatas
 }
 
 export default ({ heroDatas }: Props) => {

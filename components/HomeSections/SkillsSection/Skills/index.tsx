@@ -4,5 +4,5 @@ import useFetchSkillsDatas from '../../../../hooks/fetch/useFetchSkillsDatas'
 export default () => {
   const skillsDatas = useFetchSkillsDatas()
 
-  return <Skills skillsDatas={skillsDatas} />
+  return <>{skillsDatas && <Skills skillsDatas={skillsDatas} />}</>
 }

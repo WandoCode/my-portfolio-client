@@ -3,7 +3,7 @@ import Project from '../Project'
 import { ProjectsDatas } from '../../../../constant/types/datas'
 
 interface Props {
-  projectsArray: ProjectsDatas | undefined
+  projectsArray: ProjectsDatas
 }
 
 function Projects({ projectsArray }: Props) {

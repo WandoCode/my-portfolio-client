@@ -4,5 +4,5 @@ import useFetchProjects from '../../../../hooks/fetch/useFetchProjectsDatas'
 export default () => {
   const projectsArray = useFetchProjects()
 
-  return <Projects projectsArray={projectsArray} />
+  return <>{projectsArray && <Projects projectsArray={projectsArray} />}</>
 }

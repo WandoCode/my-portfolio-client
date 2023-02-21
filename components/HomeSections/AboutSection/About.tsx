@@ -3,7 +3,7 @@ import { AboutDatas } from '../../../constant/types/datas'
 import { LanguageAvailable } from '../../../constant/language/language'
 
 interface Props {
-  aboutDatas: AboutDatas | undefined
+  aboutDatas: AboutDatas
   language: LanguageAvailable | null
 }
 
@@ -15,14 +15,12 @@ function About({ aboutDatas, language }: Props) {
         <p>{language ? aboutDatas?.text2[language] : ''}</p>
       </div>
       <div className="about__img-container">
-        {aboutDatas && (
-          <Image
-            src={aboutDatas.img.link}
-            height={380}
-            width={380}
-            alt={aboutDatas.img.alt}
-          />
-        )}
+        <Image
+          src={aboutDatas.img.link}
+          height={380}
+          width={380}
+          alt={aboutDatas.img.alt}
+        />
       </div>
     </div>
   )

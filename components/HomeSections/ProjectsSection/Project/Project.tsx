@@ -3,8 +3,8 @@ import Tag from '../Tag'
 import { ProjectDatas } from '../../../../constant/types/projects'
 import MediaLink from '../../../Utils/Link/MediaLink'
 import { LanguageAvailable } from '../../../../constant/language/language'
-import RegularList from '../../../Utils/List/RegularList'
-import ListItem from '../../../Utils/List/ListItem'
+import Map from '../../../Utils/List/Map'
+import ListItem from '../../../Utils/List/RegularListItem'
 
 interface Props {
   datas: ProjectDatas
@@ -34,20 +34,17 @@ function Project({ datas, side, language }: Props) {
 
         <ul className="project__features-wrapper">
           {language && (
-            <RegularList
-              items={datas.features[language]}
-              itemComponent={ListItem}
-            />
+            <Map items={datas.features[language]} itemComponent={ListItem} />
           )}
         </ul>
 
         <div className="project__footer">
           <ul className="project__skills-wrapper" data-testid="tags">
-            <RegularList items={datas.tags} itemComponent={Tag} />
+            <Map items={datas.tags} itemComponent={Tag} />
           </ul>
 
           <div className="project__links">
-            <RegularList
+            <Map
               items={datas.medias}
               itemComponent={MediaLink}
               background="light"

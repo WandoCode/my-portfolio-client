@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import { RootState } from '../../../Features/app.store'
 
 interface Props {
-  aboutDatas: AboutDatas | undefined
+  aboutDatas: AboutDatas
 }
 
 export default ({ aboutDatas }: Props) => {
