@@ -17,10 +17,20 @@
         { "text": "React Context", "color": "#57B8FF" },
         { "text": "Sass/BEM", "color": "#FF7F57" }
       ],
-      "urlLive": "https://github.com/WandoCode/audiophile-frontend",
-      "urlGithub": "https://audiophile-frontend-eta.vercel.app/",
-      "urlPreview": "/assets/audiophile-preview.png",
-      "altText": "Audiophile website picture."
+      "medias": [
+        {
+          "link": "https://github.com/WandoCode/audiophile-frontend",
+          "image": "github",
+          "alt": "github icone"
+        },
+        {
+          "link": "https://audiophile-frontend-eta.vercel.app/",
+          "image": "web",
+          "alt": "web icone"
+        }
+      ],
+      "altText": "Audiophile website picture.",
+      "urlPreview": "/assets/audiophile-preview.png"
     },
     {
       "title": "Todo List",
@@ -57,8 +67,18 @@
         { "text": "Firebase", "color": "#CC6131" },
         { "text": "React-router-dom", "color": "#FFB13D" }
       ],
-      "urlLive": "https://todolist-4ee38.web.app/",
-      "urlGithub": "https://github.com/WandoCode/todolist",
+      "medias": [
+        {
+          "link": "https://github.com/WandoCode/todolist",
+          "image": "github",
+          "alt": "github icone"
+        },
+        {
+          "link": "https://todolist-4ee38.web.app/",
+          "image": "web",
+          "alt": "web icone"
+        }
+      ],
       "urlPreview": "/assets/todo-preview.png",
       "altText": "Audiophile website picture."
     }

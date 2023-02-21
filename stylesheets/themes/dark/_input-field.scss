@@ -6,10 +6,13 @@ body#dark {
 
       &--error {
         border-color: var(--clr-dark-primary-700);
-        font-weight: lighter;
       }
     }
+    &__error {
+      font-weight: 300;
+    }
   }
+
   .input-field .input-field__input--error:focus {
     border-color: transparent;
     outline-color: var(--clr-dark-primary-400);
