@@ -14,8 +14,8 @@ function Hero({ heroDatas, language }: Props) {
       <div className="hero__container">
         <div className="hero__img-container">
           <Image
-            width={500}
-            height={500}
+            width={360}
+            height={360}
             src={heroDatas.img.link}
             alt={heroDatas.img.alt}
             className="hero__img"
