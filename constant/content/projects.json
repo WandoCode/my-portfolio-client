@@ -3,7 +3,7 @@
     {
       "title": "Audiophile",
       "description": {
-        "fr": "Site de vente en ligne de materiel audio. Ce projet écrit en Typescript est basé sur React et Strapi afin de permettre une mise à jour facile de son contenu. /n Je m'en suis également servi comme projet d'introduction à Storybook. /n Le design est un projet original de Frontend Mentor (voir ReadMe) auquel j'ai ajouté de l'interractivité.",
+        "fr": "<p>Site de vente en ligne de materiel audio. </br> Ce projet écrit en <strong>Typescript</strong> est basé sur <strong>React</strong> et <strong>Strapi</strong> afin de permettre une mise à jour facile de son contenu. </br> Je m'en suis également servi comme projet d'introduction à <strong>Storybook</strong>. </br>Le design est une création originale de Frontend Mentor (<a href='https://github.com/WandoCode/audiophile-frontend'>voir ReadMe</a>) auquel j'ai ajouté de l'interractivité.</p>",
         "en": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi.",
         "es": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi."
       },
