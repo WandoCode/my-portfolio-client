@@ -3,8 +3,9 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: rem(80);
+    justify-content: space-around;
+    column-gap: rem(60);
+    row-gap: rem(90);
 
     margin-inline: rem(24);
 
