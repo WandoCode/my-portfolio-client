@@ -1,19 +1,22 @@
 {
   "projects": [
     {
-      "title": "Audiophile",
+      "title": "Mon protfolio",
       "description": {
-        "fr": "<p>Site de vente en ligne de materiel audio. </br> Ce projet écrit en <strong>Typescript</strong> est basé sur <strong>React</strong> et <strong>Strapi</strong> afin de permettre une mise à jour facile de son contenu. </br> Je m'en suis également servi comme projet d'introduction à <strong>Storybook</strong>. </br>Le design est une création originale de Frontend Mentor (<a href='https://github.com/WandoCode/audiophile-frontend'>voir ReadMe</a>) auquel j'ai ajouté de l'interractivité.</p>",
-        "en": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi.",
+        "fr": "<p>Portfolio designé et développé entièrement personnellement. </br> Ce projet est écrit en <strong>Typescript</strong> et utilise <strong>NextJS</strong> afin de générer une page statique affichée avec fluidité pour l'utilisateur <strong>(SSG)</strong>. Son contenu étant particulièrement léger, j'ai pu simplement utiliser le format JSON afin de gérer ce dernier. De cette manière, le backend se résume à une route API servant à gérer le formulaire de contact. </br> Enfin, <strong>Redux</strong> a été choisi pour les principaux états de l'application.</p>",
+        "en": "<p>Audio gears webshop. </br> This project writen with <strong>Typescript</strong> is based on <strong>React</strong> and <strong>Strapi</strong> to permit an easy modification of its content. </br> I also used it as an introduction to <strong>Storybook</strong>. </br>The design is an original creation of Frontend Mentor (<a href='https://github.com/WandoCode/audiophile-frontend'>voir ReadMe</a>) to which I added interractivity.</p>",
         "es": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi."
       },
       "features": {
         "fr": [
-          "Backend avec Strapi (CMS)",
+          "Création d'une API NextJS",
+          "Envoi automatique d'email via NodeMailer",
+          "Tests unitaires avec Vitest",
+          "Validation de formulaire (+ 'honeypot')",
           "Responsive",
-          "'Toast' popup's personnalisés",
-          "Utilisation de l'API 'intersectionObserver'",
-          "Form validation (RegEx)"
+          "Multilingue Fr/En/Es",
+          "Thème claire/sombre",
+          "Sauvegarde des préférences via le localStorage"
         ],
         "en": [
           "Backend with Strapi (CMS)",
@@ -26,7 +29,63 @@
       },
       "tags": [
         { "text": "Typescript", "color": "#4ACCFF" },
+        { "text": "NextJS", "color": "#BF91FE" },
+        { "text": "NextJS API", "color": "#ECDEFF" },
         { "text": "React", "color": "#FACF0F" },
+        { "text": "Redux", "color": "#FFA94A" },
+        { "text": "Vitest", "color": "#9CFF8C" },
+        { "text": "Sass/BEM", "color": "#FF4A6F" },
+        { "text": "NodeMailer", "color": "#D7FAE9" }
+      ],
+      "medias": [
+        {
+          "link": "",
+          "image": "github",
+          "alt": "github icone"
+        },
+        {
+          "link": "",
+          "image": "web",
+          "alt": "web icone"
+        }
+      ],
+      "altText": "Audiophile website picture.",
+      "urlPreview": "/assets/portfolio-preview.png"
+    },
+    {
+      "title": "Audiophile",
+      "description": {
+        "fr": "<p>Site de vente en ligne de materiel audio. </br> Ce projet écrit en <strong>Typescript</strong> est basé sur <strong>React</strong> et <strong>Strapi</strong> afin de permettre une mise à jour facile de son contenu. </br> Je m'en suis également servi comme projet d'introduction à <strong>Storybook</strong>. </br>Le design est une création originale de Frontend Mentor (<a href='https://github.com/WandoCode/audiophile-frontend'>voir ReadMe</a>) à laquelle j'ai ajouté de l'interactivité.</p>",
+        "en": "<p>Audio gears webshop. </br> This project writen with <strong>Typescript</strong> is based on <strong>React</strong> and <strong>Strapi</strong> to permit an easy modification of its content. </br> I also used it as an introduction to <strong>Storybook</strong>. </br>The design is an original creation of Frontend Mentor (<a href='https://github.com/WandoCode/audiophile-frontend'>voir ReadMe</a>) to which I added interactivity.</p>",
+        "es": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi."
+      },
+      "features": {
+        "fr": [
+          "Backend avec Strapi (CMS)",
+          "Responsive",
+          "'Toast' popup's personnalisés",
+          "Animations utilisant l'API 'intersectionObserver'",
+          "Gestion et sauvegarde du panier d'achats"
+        ],
+        "en": [
+          "Backend with Strapi (CMS)",
+          "Responsive",
+          "Personalised 'Toast' popup's ",
+          "Use of the 'intersectionObserver' API",
+          "Shopping cart management"
+        ],
+        "es": [
+          "Backend con Strapi (CMS)",
+          "Responsivo",
+          "'Toast' popup's personalizados",
+          "Utilisaion del API 'intersectionObserver'",
+          "Gestión del carrito de compras"
+        ]
+      },
+      "tags": [
+        { "text": "Typescript", "color": "#4ACCFF" },
+        { "text": "React", "color": "#FACF0F" },
+        { "text": "Vitest", "color": "#9CFF8C" },
         { "text": "React Context", "color": "#FFA94A" },
         { "text": "react-query", "color": "#FF7F57" },
         { "text": "React-router-dom", "color": "#E8B02C" },

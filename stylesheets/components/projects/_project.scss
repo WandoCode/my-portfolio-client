@@ -40,6 +40,8 @@
 
       overflow: hidden;
       border-radius: 8px;
+
+      border: 1px solid rgb(223, 223, 223);
     }
 
     @include breakpoint(large) {
@@ -115,7 +117,11 @@
   &__links {
     place-self: end;
     display: flex;
-    gap: 0.75rem;
+    gap: 1rem;
+    & img {
+      height: 37px;
+      width: 37px;
+    }
   }
 
   &__description a {

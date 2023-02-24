@@ -25,12 +25,12 @@
   "hero": {
     "img": {
       "link": "/assets/hero__placeholder.png",
-      "alt": "Maxime Chirez picture"
+      "alt": "Picture of Maxime Chirez"
     },
     "subtitle": {
       "fr": "Développeur Frontend",
       "en": "Frontend Developer",
-      "es": "Frontend Developer"
+      "es": "Desarrollador Frontend"
     },
     "title": {
       "fr": "Maxime Chirez",
@@ -38,11 +38,10 @@
       "es": "Maxime Chirez"
     },
     "text": {
-      "fr": "Fusce tempor magna mi, non egestas velit ultricies nec. Aenean convallis, risus non condimentum gravida, odio mauris ullamcorper felis, ut venenatis purus ex eu mi. Quisque imperdiet lacinia urna, aplacerat sapien pretium eu.",
-      "en": "Fusce tempor magna mi, non egestas velit ultricies nec. Aenean convallis, risus non condimentum gravida, odio mauris ullamcorper felis, ut venenatis purus ex eu mi. Quisque imperdiet lacinia urna, aplacerat sapien pretium eu.",
-      "es": "Fusce tempor magna mi, non egestas velit ultricies nec. Aenean convallis, risus non condimentum gravida, odio mauris ullamcorper felis, ut venenatis purus ex eu mi. Quisque imperdiet lacinia urna, aplacerat sapien pretium eu."
+      "fr": "Je suis un développeur Frontend principalement spécialisé dans React. J'aime construire et collaborer à la création de projets digitaux centrés sur l'humain et porteurs de sens. Jetez un oeil à mes projets!",
+      "en": "I am a frontend developer mainly specialized in React. I like to build and collaborate to the creation of human-centered and meaningful digital projects. Take a look at my projects!",
+      "es": "Soy un desarrollador Frontend especializado principalmente en React. Me gusta construir y colaborar en la creación de proyectos digitales significativos y centrados en el ser humano. Echa un ojo a mis proyectos!"
     },
-    "CVLink": ".",
     "btn": {
       "fr": {
         "CV": "Afficher CV",
