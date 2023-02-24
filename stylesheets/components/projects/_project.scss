@@ -118,6 +118,10 @@
     gap: 0.75rem;
   }
 
+  &__description a {
+    text-decoration: underline;
+  }
+
   &--left {
     .project {
       &__title {
