@@ -38,18 +38,16 @@ function Project({ datas, side, language }: Props) {
           )}
         </ul>
 
-        <div className="project__footer">
-          <ul className="project__skills-wrapper" data-testid="tags">
-            <Map items={datas.tags} itemComponent={Tag} />
-          </ul>
+        <ul className="project__skills-wrapper" data-testid="tags">
+          <Map items={datas.tags} itemComponent={Tag} />
+        </ul>
 
-          <div className="project__links">
-            <Map
-              items={datas.medias}
-              itemComponent={MediaLink}
-              background="light"
-            />
-          </div>
+        <div className="project__links">
+          <Map
+            items={datas.medias}
+            itemComponent={MediaLink}
+            background="light"
+          />
         </div>
       </div>
     </article>

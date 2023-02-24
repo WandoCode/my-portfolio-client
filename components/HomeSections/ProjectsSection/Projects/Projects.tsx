@@ -12,7 +12,7 @@ function Projects({ projectsArray }: Props) {
       projectsArray?.map((projectDatas, i) => (
         <Project
           datas={projectDatas}
-          side={i % 2 === 0 ? 'left' : 'right'}
+          side={i % 2 === 0 ? 'right' : 'left'}
           key={i}
         />
       )),

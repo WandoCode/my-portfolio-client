@@ -11,26 +11,30 @@
 
   isolation: isolate;
   padding-block: 1px; // Activate the margin for .flow
+
   &__container {
     display: grid;
-    gap: rem(100);
-
-    @include breakpoint-down(medium) {
-      gap: 80vw;
-      width: 100%; // desactivate container utility class for mobile
-    }
+    gap: 85vw;
 
     @include breakpoint(medium) {
-      gap: rem(150);
+      gap: rem(250);
+    }
+
+    @include breakpoint(large) {
+      gap: rem(400);
     }
   }
 
   &__body {
     display: grid;
-    gap: 100vw;
+    gap: 115vw;
 
     @include breakpoint(medium) {
-      gap: rem(300);
+      gap: rem(400);
+    }
+
+    @include breakpoint(large) {
+      gap: rem(550);
     }
   }
 }
