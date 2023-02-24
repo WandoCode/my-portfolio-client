@@ -61,7 +61,8 @@ function Header({
     <header className="header">
       <div className={navContainerClass()}>
         <nav className={windowOnTop ? 'nav nav--on-top' : 'nav'}>
-          <div
+          <a
+            href="#hero"
             className={
               windowDir === 'up'
                 ? 'nav__logo-wrapper nav__logo-wrapper--large img-wrapper'
@@ -76,7 +77,7 @@ function Header({
               quality={100}
               priority={true}
             />
-          </div>
+          </a>
           <div id="nav-links-container" className={navContentClass()}>
             <NavLinks
               onCloseNav={handleCloseNav}

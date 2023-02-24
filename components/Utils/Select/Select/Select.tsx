@@ -62,5 +62,3 @@ function Select({
 }
 
 export default Select
-
-// TODO mettre plus d'espace pour appuyer sur la langue choisie sur mobile

@@ -18,6 +18,7 @@ function MediaLink({ item, background = 'light' }: Props) {
       href={item.link}
       className={`media-link media-link--${background}-bg`}
       target="_blank"
+      rel="noreferre"
     >
       <Image src={imgSrc()} width={32} height={32} alt={item.alt} />
     </a>

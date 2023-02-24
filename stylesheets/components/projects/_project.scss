@@ -17,6 +17,7 @@
   position: relative;
 
   display: grid;
+
   isolation: isolate;
 
   &__img-container {
@@ -27,15 +28,18 @@
 
     max-width: rem(500);
 
-    box-shadow: $glow;
     z-index: 1;
+
+    box-shadow: $glow;
 
     @include breakpoint(medium) {
       left: 0;
       right: 0;
+
+      max-width: min(80vw, rem(500));
+
       overflow: hidden;
       border-radius: 8px;
-      max-width: min(80vw, rem(500));
     }
 
     @include breakpoint(large) {
@@ -43,8 +47,8 @@
     }
 
     & img {
-      width: 100%;
       height: auto;
+      width: 100%;
 
       aspect-ratio: 1;
       object-fit: cover;
@@ -53,12 +57,16 @@
 
   &__content {
     position: relative;
+
     display: grid;
     gap: var(--card-flow);
+
     margin-inline: $margin-sm;
     padding-inline: max(1rem, 7vw);
     padding-block: calc(var(--img-inset) + var(--card-flow)) var(--card-flow);
+
     border-radius: 8px;
+
     background-color: var(--clr-neutral-100);
     box-shadow: $glow;
 
@@ -68,6 +76,7 @@
 
     @include breakpoint(large) {
       max-width: 1100px;
+
       padding-block: calc(var(--img-inset) + 1rem) var(--card-flow);
       padding-inline: 4rem;
     }
@@ -83,8 +92,10 @@
   &__features-wrapper {
     display: grid;
     gap: rem(25);
-    list-style: disc;
+
     padding-left: 1rem;
+
+    list-style: disc;
   }
 
   &__skills-wrapper {
@@ -108,11 +119,13 @@
           translate: 0 0;
         }
       }
+
       &__content {
         @include breakpoint(medium) {
           margin-left: clamp(0px, 5.5vw, 3rem);
         }
       }
+
       &__img-container {
         @include breakpoint(medium) {
           margin-right: auto;
@@ -129,11 +142,13 @@
           translate: 0 0;
         }
       }
+
       &__content {
         @include breakpoint(medium) {
           margin-right: clamp(0px, 5.5vw, 3rem);
         }
       }
+
       &__img-container {
         @include breakpoint(medium) {
           margin-left: auto;
