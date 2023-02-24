@@ -91,11 +91,18 @@
 
   &__features-wrapper {
     display: grid;
-    gap: rem(25);
+    gap: rem(12);
 
     padding-left: 1rem;
 
     list-style: disc;
+
+    @include breakpoint(large) {
+      grid-template-columns: 1fr 1fr;
+      & > * {
+        padding-right: 1rem;
+      }
+    }
   }
 
   &__skills-wrapper {
