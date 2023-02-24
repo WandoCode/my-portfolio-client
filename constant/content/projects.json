@@ -3,19 +3,36 @@
     {
       "title": "Audiophile",
       "description": {
-        "fr": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi.",
+        "fr": "Site de vente en ligne de materiel audio. Ce projet écrit en Typescript est basé sur React et Strapi afin de permettre une mise à jour facile de son contenu. /n Je m'en suis également servi comme projet d'introduction à Storybook. /n Le design est un projet original de Frontend Mentor (voir ReadMe) auquel j'ai ajouté de l'interractivité.",
         "en": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi.",
         "es": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi."
       },
       "features": {
-        "fr": ["Custom toast", "CMS Strapi", "Ect."],
-        "en": ["Custom toast", "CMS Strapi", "Ect."],
+        "fr": [
+          "Backend avec Strapi (CMS)",
+          "Responsive",
+          "'Toast' popup's personnalisés",
+          "Utilisation de l'API 'intersectionObserver'",
+          "Form validation (RegEx)"
+        ],
+        "en": [
+          "Backend with Strapi (CMS)",
+          "Responsive",
+          "Personalised 'Toast' popup's ",
+          "Use of the 'intersectionObserver' API",
+          "Form validation (RegEx)"
+        ],
         "es": ["Custom toast", "CMS Strapi", "Ect."]
       },
       "tags": [
+        { "text": "Typescript", "color": "#4ACCFF" },
         { "text": "React", "color": "#FACF0F" },
-        { "text": "React Context", "color": "#57B8FF" },
-        { "text": "Sass/BEM", "color": "#FF7F57" }
+        { "text": "React Context", "color": "#FFA94A" },
+        { "text": "react-query", "color": "#FF7F57" },
+        { "text": "React-router-dom", "color": "#E8B02C" },
+        { "text": "Sass/BEM", "color": "#FF4A6F" },
+        { "text": "Storybook", "color": "#63FF7E" },
+        { "text": "RegEx", "color": "#D7FAE9" }
       ],
       "medias": [
         {
