@@ -112,7 +112,9 @@
     }
 
     .project__content {
-      margin-right: var(--shift);
+      @include breakpoint(medium) {
+        margin-right: var(--shift);
+      }
     }
 
     .project__title {
@@ -127,7 +129,9 @@
     }
 
     .project__content {
-      margin-left: var(--shift);
+      @include breakpoint(medium) {
+        margin-left: var(--shift);
+      }
     }
 
     .project__title {

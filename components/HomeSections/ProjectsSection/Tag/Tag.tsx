@@ -13,3 +13,5 @@ function Tag({ color, text, tagClassName }: Props) {
 }
 
 export default Tag
+
+// TODO: le logo dans le header doit être un lien ver le haut de la page
