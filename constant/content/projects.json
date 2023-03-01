@@ -3,8 +3,8 @@
     {
       "title": "Mon protfolio",
       "description": {
-        "fr": "<p>Portfolio designé et développé entièrement personnellement. </br> Ce projet est écrit en <strong>Typescript</strong> et utilise <strong>NextJS</strong> afin de générer une page statique affichée avec fluidité pour l'utilisateur <strong>(SSG)</strong>. Son contenu, léger, est géré avec du JSON. Cela permet de limiter le backend à une route API servant à gérer le formulaire de contact. </br> Enfin, <strong>Redux</strong> a été choisi pour les principaux états de l'application.</p>",
-        "en": "<p>Audio gears webshop. </br> This project writen with <strong>Typescript</strong> is based on <strong>React</strong> and <strong>Strapi</strong> to permit an easy modification of its content. </br> I also used it as an introduction to <strong>Storybook</strong>. </br>The design is an original creation of Frontend Mentor (<a href='https://github.com/WandoCode/audiophile-frontend'>voir ReadMe</a>) to which I added interractivity.</p>",
+        "fr": "<p>Portfolio designé et développé entièrement personnellement. </br> Ce projet est écrit en <strong>Typescript</strong> et utilise <strong>NextJS</strong> afin de générer une page statique affichée avec fluidité pour l'utilisateur <strong>(SSG)</strong>. Son contenu, léger, est géré avec du JSON. Cela permet de limiter le backend à une route API servant à gérer le formulaire de contact. </br> Enfin, <strong>Redux</strong> a été choisi pour la gestion des principaux états de l'application.</p>",
+        "en": "<p>Portfolio designed and developed entirely by myself. </br> This project is written in <strong>Typescript</strong> and uses <strong>NextJS</strong> to generate a static page displayed with fluidity for the use <strong>(SSG)</strong>.  Its content, light, is managed with JSON. This allows to limit the backend to an API route used to handle the contact form. </br> Finally, <strong>Redux</strong> was chosen to control the main states of the application.</p>",
         "es": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi."
       },
       "features": {
@@ -17,18 +17,18 @@
           "Sauvegarde des préférences via le localStorage"
         ],
         "en": [
-          "Backend with Strapi (CMS)",
-          "Responsive",
-          "Personalised 'Toast' popup's ",
-          "Use of the 'intersectionObserver' API",
-          "Form validation (RegEx)"
+          "Creation of a NextJS API",
+          "Automatic email sending via NodeMailer",
+          "Unit test with Vitest",
+          "Multilingual Fr/Es/En",
+          "Light/Dark themes",
+          "Save preferences via localStorage"
         ],
         "es": ["Custom toast", "CMS Strapi", "Ect."]
       },
       "tags": [
         { "text": "Typescript", "color": "#4ACCFF" },
         { "text": "NextJS", "color": "#BF91FE" },
-        { "text": "NextJS API", "color": "#ECDEFF" },
         { "text": "React", "color": "#FACF0F" },
         { "text": "Redux", "color": "#FFA94A" },
         { "text": "Vitest", "color": "#9CFF8C" },
@@ -53,22 +53,22 @@
     {
       "title": "Audiophile",
       "description": {
-        "fr": "<p>Site de vente en ligne de materiel audio. </br> Ce projet écrit en <strong>Typescript</strong> est basé sur <strong>React</strong> et <strong>Strapi</strong> afin de permettre une mise à jour facile de son contenu. </br> Je m'en suis également servi comme projet d'introduction à <strong>Storybook</strong>. </br>Le design est une création originale de Frontend Mentor (<a href='https://github.com/WandoCode/audiophile-frontend'>voir ReadMe</a>) à laquelle j'ai ajouté de l'interactivité.</p>",
-        "en": "<p>Audio gears webshop. </br> This project writen with <strong>Typescript</strong> is based on <strong>React</strong> and <strong>Strapi</strong> to permit an easy modification of its content. </br> I also used it as an introduction to <strong>Storybook</strong>. </br>The design is an original creation of Frontend Mentor (<a href='https://github.com/WandoCode/audiophile-frontend'>voir ReadMe</a>) to which I added interactivity.</p>",
+        "fr": "<p>Site de vente en ligne de materiel audio. Il est complétement fonctionnel (avec paiement).</br> Ce projet écrit en <strong>Typescript</strong> est basé sur <strong>React</strong> et <strong>Strapi</strong> afin de permettre une mise à jour facile de son contenu. </br> Je m'en suis également servi comme projet d'introduction à <strong>Storybook</strong>. </br>Le système de paiement, utilisable (mode test), est basé sur <strong>Stripe</strong>.</p>",
+        "en": "<p>Fully functional audio gears webshop (with payment). </br> This project writen in <strong>Typescript</strong> is based on <strong>React</strong> and <strong>Strapi</strong> in order to allow an easy update of its content. </br> I also used it as an introduction project to <strong>Storybook</strong>. </br>The payment system, usable (test mode), is based on <strong>Stripe</strong>.</p>",
         "es": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi."
       },
       "features": {
         "fr": [
+          "Paiement avec Stripe.",
           "Backend avec Strapi (CMS)",
           "'Toast' popup's personnalisés",
-          "Animations utilisant l'API 'intersectionObserver'",
           "Gestion et sauvegarde du panier d'achats"
         ],
         "en": [
+          "Payment with Stripe",
           "Backend with Strapi (CMS)",
           "Personalised 'Toast' popup's ",
-          "Use of the 'intersectionObserver' API",
-          "Shopping cart management"
+          "Shopping cart management and saving"
         ],
         "es": [
           "Backend con Strapi (CMS)",
@@ -81,12 +81,11 @@
         { "text": "Typescript", "color": "#4ACCFF" },
         { "text": "React", "color": "#FACF0F" },
         { "text": "Vitest", "color": "#9CFF8C" },
-        { "text": "React Context", "color": "#FFA94A" },
         { "text": "react-query", "color": "#FF7F57" },
-        { "text": "React-router-dom", "color": "#E8B02C" },
         { "text": "Sass/BEM", "color": "#FF4A6F" },
         { "text": "Storybook", "color": "#63FF7E" },
-        { "text": "RegEx", "color": "#D7FAE9" }
+        { "text": "Stripe", "color": "#63FF7E" },
+        { "text": "Strapi", "color": "#63FF7E" }
       ],
       "medias": [
         {
