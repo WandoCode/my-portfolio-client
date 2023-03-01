@@ -1,60 +1,10 @@
 {
   "projects": [
     {
-      "title": "Mon protfolio",
-      "description": {
-        "fr": "<p>Portfolio designé et développé entièrement personnellement. </br> Ce projet est écrit en <strong>Typescript</strong> et utilise <strong>NextJS</strong> afin de générer une page statique affichée avec fluidité pour l'utilisateur <strong>(SSG)</strong>. Son contenu, léger, est géré avec du JSON. Cela permet de limiter le backend à une route API servant à gérer le formulaire de contact. </br> Enfin, <strong>Redux</strong> a été choisi pour la gestion des principaux états de l'application.</p>",
-        "en": "<p>Portfolio designed and developed entirely by myself. </br> This project is written in <strong>Typescript</strong> and uses <strong>NextJS</strong> to generate a static page displayed with fluidity for the use <strong>(SSG)</strong>.  Its content, light, is managed with JSON. This allows to limit the backend to an API route used to handle the contact form. </br> Finally, <strong>Redux</strong> was chosen to control the main states of the application.</p>",
-        "es": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi."
-      },
-      "features": {
-        "fr": [
-          "Création d'une API NextJS",
-          "Envoi automatique d'email via NodeMailer",
-          "Tests unitaires avec Vitest",
-          "Multilingue Fr/En/Es",
-          "Thème claire/sombre",
-          "Sauvegarde des préférences via le localStorage"
-        ],
-        "en": [
-          "Creation of a NextJS API",
-          "Automatic email sending via NodeMailer",
-          "Unit test with Vitest",
-          "Multilingual Fr/Es/En",
-          "Light/Dark themes",
-          "Save preferences via localStorage"
-        ],
-        "es": ["Custom toast", "CMS Strapi", "Ect."]
-      },
-      "tags": [
-        { "text": "Typescript", "color": "#4ACCFF" },
-        { "text": "NextJS", "color": "#BF91FE" },
-        { "text": "React", "color": "#FACF0F" },
-        { "text": "Redux", "color": "#FFA94A" },
-        { "text": "Vitest", "color": "#9CFF8C" },
-        { "text": "Sass/BEM", "color": "#FF4A6F" },
-        { "text": "NodeMailer", "color": "#D7FAE9" }
-      ],
-      "medias": [
-        {
-          "link": "https://github.com/WandoCode/my-portfolio-client",
-          "image": "github",
-          "alt": "github icone"
-        },
-        {
-          "link": "https://my-portfolio-client-nine.vercel.app/",
-          "image": "web",
-          "alt": "web icone"
-        }
-      ],
-      "altText": "Audiophile website picture.",
-      "urlPreview": "/assets/portfolio-preview.png"
-    },
-    {
       "title": "Audiophile",
       "description": {
-        "fr": "<p>Site de vente en ligne de materiel audio. Il est complétement fonctionnel (avec paiement).</br> Ce projet écrit en <strong>Typescript</strong> est basé sur <strong>React</strong> et <strong>Strapi</strong> afin de permettre une mise à jour facile de son contenu. </br> Je m'en suis également servi comme projet d'introduction à <strong>Storybook</strong>. </br>Le système de paiement, utilisable (mode test), est basé sur <strong>Stripe</strong>.</p>",
-        "en": "<p>Fully functional audio gears webshop (with payment). </br> This project writen in <strong>Typescript</strong> is based on <strong>React</strong> and <strong>Strapi</strong> in order to allow an easy update of its content. </br> I also used it as an introduction project to <strong>Storybook</strong>. </br>The payment system, usable (test mode), is based on <strong>Stripe</strong>.</p>",
+        "fr": "<p>Site de vente en ligne de materiel audio. Il est complétement fonctionnel (y compris paiement).<p></p> Ce projet écrit en <strong>Typescript</strong> est basé sur <strong>React</strong> et <strong>Strapi</strong> afin de permettre une mise à jour facile de son contenu. </br> Je m'en suis également servi comme projet d'introduction à <strong>Storybook</strong>. </br>Le système de paiement, utilisable (mode test), est basé sur <strong>Stripe</strong>.</p>",
+        "en": "<p>Fully functional audio gears webshop (including payment). </p><p> This project writen in <strong>Typescript</strong> is based on <strong>React</strong> and <strong>Strapi</strong> in order to allow an easy update of its content. </br> I also used it as an introduction project to <strong>Storybook</strong>. </br>The payment system, usable (test mode), is based on <strong>Stripe</strong>.</p>",
         "es": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi."
       },
       "features": {
@@ -103,24 +53,78 @@
       "urlPreview": "/assets/audiophile-preview.png"
     },
     {
+      "title": "Mon protfolio",
+      "description": {
+        "fr": "<p>Portfolio designé et développé entièrement personnellement. </p><p> Ce projet est écrit en <strong>Typescript</strong> et utilise <strong>NextJS</strong> afin de générer une page statique affichée avec fluidité pour l'utilisateur <strong>(SSG)</strong>. Son contenu, léger, est géré avec du JSON. Cela permet de limiter le backend à une route API servant à gérer le formulaire de contact. </br> Enfin, <strong>Redux</strong> a été choisi pour la gestion des principaux états de l'application.</p>",
+        "en": "<p>Portfolio designed and developed entirely by myself. </p><p> This project is written in <strong>Typescript</strong> and uses <strong>NextJS</strong> to generate a static page displayed with fluidity for the use <strong>(SSG)</strong>.  Its content, light, is managed with JSON. This allows to limit the backend to an API route used to handle the contact form. </br> Finally, <strong>Redux</strong> was chosen to control the main states of the application.</p>",
+        "es": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi."
+      },
+      "features": {
+        "fr": [
+          "Création d'une API NextJS",
+          "Envoi automatique d'email via NodeMailer",
+          "Tests unitaires avec Vitest",
+          "Multilingue Fr/En/Es",
+          "Thème claire/sombre",
+          "Sauvegarde des préférences via le localStorage"
+        ],
+        "en": [
+          "Creation of a NextJS API",
+          "Automatic email sending via NodeMailer",
+          "Unit test with Vitest",
+          "Multilingual Fr/Es/En",
+          "Light/Dark themes",
+          "Save preferences via localStorage"
+        ],
+        "es": ["Custom toast", "CMS Strapi", "Ect."]
+      },
+      "tags": [
+        { "text": "Typescript", "color": "#4ACCFF" },
+        { "text": "NextJS", "color": "#BF91FE" },
+        { "text": "React", "color": "#FACF0F" },
+        { "text": "Redux", "color": "#FFA94A" },
+        { "text": "Vitest", "color": "#9CFF8C" },
+        { "text": "Sass/BEM", "color": "#FF4A6F" },
+        { "text": "NodeMailer", "color": "#D7FAE9" }
+      ],
+      "medias": [
+        {
+          "link": "https://github.com/WandoCode/my-portfolio-client",
+          "image": "github",
+          "alt": "github icone"
+        },
+        {
+          "link": "https://my-portfolio-client-nine.vercel.app/",
+          "image": "web",
+          "alt": "web icone"
+        }
+      ],
+      "altText": "Audiophile website picture.",
+      "urlPreview": "/assets/portfolio-preview.png"
+    },
+
+    {
       "title": "Todo List",
       "description": {
-        "fr": "FRLorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum volut quibusdam iste, esseptas non condimentum gravida, odio mauris a excepturi. FRLorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum volut quibusdam iste, esseptas non condimentum gravida, odio mauris a excepturi.",
-        "en": "ENLorem ipsum dolor sit, amet non condimentum gravida, odio mauris consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi. FRLorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum volut quibusdam iste, esseptas non condimentum gravida, odio mauris a excepturi.",
+        "fr": "<p>Application 'Todo' classique avec laquelle les tâches de chaque utilisateurs sont disponibles partout de manière sécurisées!</p><p> Il s'agit d'un projet de formation pur servant de prétexte à l'utilisation de <strong>Firebase</strong>. Il a été utilisé comme <strong>base de données</strong> et pour la gestion des <strong>authentifications</strong>.</p> ",
+        "en": "<p>Classic 'Todo' application with which the tasks of each user are available everywhere securely!</p><p> This is a pure training project as a pretext to use <strong>Firebase</strong>. It was used as a <strong>database</strong> and for <strong>authentification</strong> management.</p> ",
         "es": "ESLorem ipsum dolor sit, amet non condimentum gravida, odio mauris consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi. FRLorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum volut quibusdam iste, esseptas non condimentum gravida, odio mauris a excepturi."
       },
       "features": {
         "fr": [
-          "Notes drag&drop",
+          "Drag & Drop des notes pour une gestion facilitée",
           "Synchronisé dans le cloud (Firebase)",
           "Routes protégées",
-          "etc."
+          "Authentification (Firebase)",
+          "Multilingue Fr/En/Es",
+          "Thèmes claire/sombre"
         ],
         "en": [
-          "drag&drop notes",
-          "Synchronised on the cloud (Firebase)",
+          "Drag & drop to ease notes management",
+          "Synchronised in the cloud (Firebase)",
           "Protected routes",
-          "etc."
+          "Multilingual Fr/Es/En",
+          "Dark/light themes"
         ],
         "es": [
           "Notas drag&drop",
