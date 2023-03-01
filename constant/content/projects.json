@@ -3,7 +3,7 @@
     {
       "title": "Mon protfolio",
       "description": {
-        "fr": "<p>Portfolio designé et développé entièrement personnellement. </br> Ce projet est écrit en <strong>Typescript</strong> et utilise <strong>NextJS</strong> afin de générer une page statique affichée avec fluidité pour l'utilisateur <strong>(SSG)</strong>. Son contenu étant particulièrement léger, j'ai pu simplement utiliser le format JSON afin de gérer ce dernier. De cette manière, le backend se résume à une route API servant à gérer le formulaire de contact. </br> Enfin, <strong>Redux</strong> a été choisi pour les principaux états de l'application.</p>",
+        "fr": "<p>Portfolio designé et développé entièrement personnellement. </br> Ce projet est écrit en <strong>Typescript</strong> et utilise <strong>NextJS</strong> afin de générer une page statique affichée avec fluidité pour l'utilisateur <strong>(SSG)</strong>. Son contenu, léger, est géré avec du JSON. Cela permet de limiter le backend à une route API servant à gérer le formulaire de contact. </br> Enfin, <strong>Redux</strong> a été choisi pour les principaux états de l'application.</p>",
         "en": "<p>Audio gears webshop. </br> This project writen with <strong>Typescript</strong> is based on <strong>React</strong> and <strong>Strapi</strong> to permit an easy modification of its content. </br> I also used it as an introduction to <strong>Storybook</strong>. </br>The design is an original creation of Frontend Mentor (<a href='https://github.com/WandoCode/audiophile-frontend'>voir ReadMe</a>) to which I added interractivity.</p>",
         "es": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi."
       },
@@ -12,8 +12,6 @@
           "Création d'une API NextJS",
           "Envoi automatique d'email via NodeMailer",
           "Tests unitaires avec Vitest",
-          "Validation de formulaire (+ 'honeypot')",
-          "Responsive",
           "Multilingue Fr/En/Es",
           "Thème claire/sombre",
           "Sauvegarde des préférences via le localStorage"
@@ -39,12 +37,12 @@
       ],
       "medias": [
         {
-          "link": "",
+          "link": "https://github.com/WandoCode/my-portfolio-client",
           "image": "github",
           "alt": "github icone"
         },
         {
-          "link": "",
+          "link": "https://my-portfolio-client-nine.vercel.app/",
           "image": "web",
           "alt": "web icone"
         }
@@ -62,21 +60,18 @@
       "features": {
         "fr": [
           "Backend avec Strapi (CMS)",
-          "Responsive",
           "'Toast' popup's personnalisés",
           "Animations utilisant l'API 'intersectionObserver'",
           "Gestion et sauvegarde du panier d'achats"
         ],
         "en": [
           "Backend with Strapi (CMS)",
-          "Responsive",
           "Personalised 'Toast' popup's ",
           "Use of the 'intersectionObserver' API",
           "Shopping cart management"
         ],
         "es": [
           "Backend con Strapi (CMS)",
-          "Responsivo",
           "'Toast' popup's personalizados",
           "Utilisaion del API 'intersectionObserver'",
           "Gestión del carrito de compras"

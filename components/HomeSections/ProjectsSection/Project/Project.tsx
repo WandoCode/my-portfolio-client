@@ -15,15 +15,19 @@ interface Props {
 function Project({ datas, side, language }: Props) {
   return (
     <article className={`project project--${side}`} data-testid="project">
-      <div className="project__img-container">
+      <a
+        href={datas.medias[1].link}
+        target="_blank"
+        className="project__img-container"
+      >
         <Image
           src={datas.urlPreview}
-          height={500}
-          width={500}
+          height={400}
+          width={700}
           alt={datas.altText}
           className="project__img"
         />
-      </div>
+      </a>
       <div className="project__content">
         <h3 className="project__title h3 fs-600">
           {language ? datas.title : ''}

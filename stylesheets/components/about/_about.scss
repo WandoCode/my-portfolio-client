@@ -51,7 +51,8 @@
 
     & img {
       height: auto;
-      aspect-ratio: 1;
+      width: 100%;
+      max-width: 380px;
     }
   }
 }

@@ -5,12 +5,12 @@
   --card-flow: 2.375rem;
 
   @include breakpoint(medium) {
-    --img-inset: 15rem;
+    --img-inset: 17rem;
     --card-flow: 2.5rem;
   }
 
   @include breakpoint(large) {
-    --img-inset: 6rem;
+    --img-inset: 3rem;
     --card-flow: 2.5rem;
   }
 
@@ -36,7 +36,8 @@
       left: 0;
       right: 0;
 
-      max-width: min(80vw, rem(500));
+      // max-width: min(80vw, rem(500));
+      max-width: 80vw;
 
       overflow: hidden;
       border-radius: 8px;
@@ -45,7 +46,7 @@
     }
 
     @include breakpoint(large) {
-      max-width: min(50vw, rem(500));
+      max-width: min(50vw, rem(700));
     }
 
     & img {
@@ -54,6 +55,15 @@
 
       aspect-ratio: 1;
       object-fit: cover;
+      object-position: top;
+
+      @include breakpoint(medium) {
+        aspect-ratio: 1.4;
+      }
+
+      @include breakpoint(large) {
+        aspect-ratio: 1.8;
+      }
     }
   }
 
