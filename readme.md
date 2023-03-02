@@ -43,6 +43,7 @@ This project use:
 
 - Fork the project
 - Run `npm install`
+- Add .env file with environement variables
 
 # Dependencies
 
