@@ -80,4 +80,4 @@ Host the last built version of the app with Vite.
 
 This website has been build for demonstration purpose only.
 
-All the content is published under the MIT licence (see ['/licence.txt'](https://github.com/WandoCode/my-portfolio-client/main/licence.txt))
+All the content is published under the MIT licence (see ['/licence.txt'](https://github.com/WandoCode/my-portfolio-client/blob/main/licence.txt))
