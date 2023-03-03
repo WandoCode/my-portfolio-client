@@ -56,8 +56,8 @@ export default () => {
       }
 
       setTimeout(() => {
-        dispatch(resetForm())
         dispatch(changeStatus('idle'))
+        if (rep.isSuccessfull) dispatch(resetForm())
       }, INFO_MESSAGE_DISPLAY_TIME)
     }
   }
