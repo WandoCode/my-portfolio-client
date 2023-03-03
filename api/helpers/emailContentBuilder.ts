@@ -23,7 +23,16 @@ const buildEmail = (
                  <br> 
                  </li>
               </ul>
-              <p>Maxime Chirez, développeur frontend </p>`
+              <p>Maxime Chirez,
+                <span style="color: hsl(0, 0%, 44%);">
+                  <br> 
+                  Développeur frontend 
+                  <br> 
+                  Website: <a href="https://my-portfolio-client-wandocode.vercel.app/" target="_blank" style="color: inherit;">Portfolio</a>
+                  <br>
+                  Tel: +32 496 34 87 49
+                </span>
+              </p>`
     case 'es':
       return `
               <p>Hola ${messageDatas.name},</p>
@@ -39,7 +48,16 @@ const buildEmail = (
                  <br> 
                  </li>
               </ul>
-              <p>Maxime Chirez, frontend programdor (????) </p>`
+              <p>Maxime Chirez,
+                <span style="color: hsl(0, 0%, 44%);">
+                  <br> 
+                  Frontend programdor (????) 
+                  <br> 
+                  Website: <a href="https://my-portfolio-client-wandocode.vercel.app/" target="_blank" style="color: inherit;">Portfolio</a>
+                  <br>
+                  Tel: +32 496 34 87 49
+                </span>
+              </p>`
     case 'en':
       return `
               <p>Hello ${messageDatas.name},</p>
@@ -55,7 +73,16 @@ const buildEmail = (
                  <br> 
                  </li>
               </ul>
-              <p>Maxime Chirez, frontend developer</p>`
+              <p>Maxime Chirez,
+                <span style="color: hsl(0, 0%, 44%);">
+                  <br> 
+                  Frontend developer
+                  <br> 
+                  Website: <a href="https://my-portfolio-client-wandocode.vercel.app/" target="_blank" style="color: inherit;">Portfolio</a>
+                  <br>
+                  Tel: +32 496 34 87 49
+                </span>
+              </p>`
     // TODO: Vérifier la version EN, et surtout la version ES!!!!!
     default:
       return `
@@ -72,7 +99,16 @@ const buildEmail = (
                 <br> 
                 </li>
               </ul>
-              <p>Maxime Chirez, frontend developer</p>`
+              <p>Maxime Chirez,
+                <span style="color: hsl(0, 0%, 44%);">
+                  <br> 
+                  Frontend developer
+                  <br> 
+                  Website: <a href="https://my-portfolio-client-wandocode.vercel.app/" target="_blank" style="color: inherit;">Portfolio</a>
+                  <br>
+                  Tel: +32 496 34 87 49
+                </span>
+              </p>`
   }
 }
 

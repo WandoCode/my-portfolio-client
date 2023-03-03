@@ -14,7 +14,7 @@ export const sendMailController = (
   const messageHTML = buildEmail(lang, messageDatas)
 
   const message = {
-    from: process.env.mailUser,
+    from: { name: 'Maxime Chirez', address: process.env.mailUser },
     to: [process.env.mailUser, messageDatas.email],
     subject: buildObject(lang),
     text: messageDatas.message,
