@@ -24,11 +24,11 @@ const buildEmail = (
                  </li>
               </ul>
               <p>Maxime Chirez,
-                <span style="color: hsl(0, 0%, 44%);">
+                <span style="color: hsl(0, 0%, 36%);">
                   <br> 
                   Développeur frontend 
                   <br> 
-                  Website: <a href="https://my-portfolio-client-wandocode.vercel.app/" target="_blank" style="color: inherit;">Portfolio</a>
+                  Website: <a href="https://maxime-chirez.me/" target="_blank" style="color: inherit;">Portfolio</a>
                   <br>
                   Tel: +32 496 34 87 49
                 </span>
@@ -49,11 +49,11 @@ const buildEmail = (
                  </li>
               </ul>
               <p>Maxime Chirez,
-                <span style="color: hsl(0, 0%, 44%);">
+                <span style="color: hsl(0, 0%, 36%);">
                   <br> 
                   Frontend programdor (????) 
                   <br> 
-                  Website: <a href="https://my-portfolio-client-wandocode.vercel.app/" target="_blank" style="color: inherit;">Portfolio</a>
+                  Website: <a href="https://maxime-chirez.me/" target="_blank" style="color: inherit;">Portfolio</a>
                   <br>
                   Tel: +32 496 34 87 49
                 </span>
@@ -74,11 +74,11 @@ const buildEmail = (
                  </li>
               </ul>
               <p>Maxime Chirez,
-                <span style="color: hsl(0, 0%, 44%);">
+                <span style="color: hsl(0, 0%, 36%);">
                   <br> 
                   Frontend developer
                   <br> 
-                  Website: <a href="https://my-portfolio-client-wandocode.vercel.app/" target="_blank" style="color: inherit;">Portfolio</a>
+                  Website: <a href="https://maxime-chirez.me/" target="_blank" style="color: inherit;">Portfolio</a>
                   <br>
                   Tel: +32 496 34 87 49
                 </span>
@@ -100,11 +100,11 @@ const buildEmail = (
                 </li>
               </ul>
               <p>Maxime Chirez,
-                <span style="color: hsl(0, 0%, 44%);">
+                <span style="color: hsl(0, 0%, 36%);">
                   <br> 
                   Frontend developer
                   <br> 
-                  Website: <a href="https://my-portfolio-client-wandocode.vercel.app/" target="_blank" style="color: inherit;">Portfolio</a>
+                  Website: <a href="https://maxime-chirez.me/" target="_blank" style="color: inherit;">Portfolio</a>
                   <br>
                   Tel: +32 496 34 87 49
                 </span>
