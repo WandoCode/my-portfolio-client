@@ -96,9 +96,9 @@ function Header({
             className="nav__burger show-on-mobile"
             onClick={toogleOpenMenu}
           >
-            <div className="visually-hidden">
+            <span className="visually-hidden">
               {menuIsOpen ? 'Close menu' : 'Open Menu'}
-            </div>
+            </span>
             <svg
               className={burgerClass()}
               xmlns="http://www.w3.org/2000/svg"

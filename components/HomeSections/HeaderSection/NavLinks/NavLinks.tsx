@@ -10,7 +10,7 @@ interface Props {
 }
 
 function NavLinks({ onCloseNav, navText, language, currentSection }: Props) {
-  const listSliderRef = useRef<HTMLUListElement>(null)
+  const listSliderRef = useRef<HTMLLIElement>(null)
 
   const refs: Record<string, RefObject<HTMLAnchorElement>> = {
     hero: useRef<HTMLAnchorElement>(null),
@@ -109,11 +109,11 @@ function NavLinks({ onCloseNav, navText, language, currentSection }: Props) {
           {navText ? navText.contact : ''}
         </a>
       </li>
-      <span
+      <li
         ref={listSliderRef}
         className="nav-links__slider"
         data-testid="slider"
-      ></span>
+      ></li>
     </ul>
   )
 }

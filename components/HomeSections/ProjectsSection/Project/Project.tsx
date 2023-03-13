@@ -32,12 +32,12 @@ function Project({ datas, side, language }: Props) {
         <h3 className="project__title h3 fs-600">
           {language ? datas.title : ''}
         </h3>
-        <p
+        <div
           className="project__description"
           dangerouslySetInnerHTML={{
             __html: language ? datas.description[language] : '',
           }}
-        ></p>
+        />
 
         <ul className="project__features-wrapper">
           {language && (

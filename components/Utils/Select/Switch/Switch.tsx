@@ -23,7 +23,7 @@ function Switch({ isChecked, imageRefOn, imageRefOff, onChangeValue }: Props) {
         tabIndex={-1}
       />
       <label htmlFor="theme" className="switch__slider-container">
-        <div className="switch__slider"></div>
+        <span className="switch__slider"></span>
       </label>
     </form>
   )

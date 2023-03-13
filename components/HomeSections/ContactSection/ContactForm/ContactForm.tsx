@@ -67,10 +67,10 @@ function ContactForm({ formText, onHandleSubmit, status, language }: Props) {
         {status === 'error' && formText.text[language].error}
         {status === 'success' && formText.text[language].success}
 
-        <div className="contact-form__status-infos">
+        <span className="contact-form__status-infos">
           {status === 'error' && formText.text[language].errorLarge}
           {status === 'success' && formText.text[language].successLarge}
-        </div>
+        </span>
       </Button>
     </form>
   )
