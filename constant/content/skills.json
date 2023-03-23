@@ -5,7 +5,7 @@
       "title": "Javascript",
       "rating": "4"
     },
- {
+    {
       "urlIcon": "https://api.iconify.design/vscode-icons:file-type-reactjs.svg",
       "title": "React",
       "rating": "3"
@@ -15,7 +15,7 @@
       "title": "NextJS",
       "rating": "2"
     },
-      {
+    {
       "urlIcon": "https://api.iconify.design/vscode-icons:file-type-typescript-official.svg",
       "title": "Typescript",
       "rating": "2"
@@ -25,7 +25,7 @@
       "title": "Sass/SCSS",
       "rating": "3"
     },
- 
+
     {
       "urlIcon": "https://api.iconify.design/logos:strapi-icon.svg",
       "title": "CMS Strapi",
@@ -39,6 +39,11 @@
     {
       "urlIcon": "https://api.iconify.design/vscode-icons:file-type-node.svg",
       "title": "NodeJS",
+      "rating": "1"
+    },
+    {
+      "urlIcon": "https://api.iconify.design/vscode-icons:file-type-firebase.svg",
+      "title": "Firebase",
       "rating": "1"
     }
   ]

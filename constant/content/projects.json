@@ -53,7 +53,7 @@
       "urlPreview": "/assets/audiophile-preview.png"
     },
     {
-      "title": "Mon protfolio",
+      "title": "Protfolio",
       "description": {
         "fr": "<p>Portfolio designé et développé entièrement personnellement. </p> <p> Ce projet, écrit en <strong>Typescript</strong>, utilise <strong>Redux</strong> et <strong>NextJS</strong> afin de générer une page statique affichée avec fluidité pour l'utilisateur <strong>(SSG)</strong>. Son contenu, léger, est géré avec du JSON. Cela permet de limiter le backend à une route API (avec NextJS) servant à gérer le formulaire de contact.</p>",
         "en": "<p>Portfolio designed and developed entirely by myself. </p><p> This project, written in <strong>Typescript</strong>, uses <strong>Redux</strong> and <strong>NextJS</strong> to generate a static page displayed with fluidity for the use <strong>(SSG)</strong>.  Its content, light, is managed with JSON. This allows to limit the backend to an API (with NextJS) route used to handle the contact form.</p>",

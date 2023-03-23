@@ -22,13 +22,14 @@
 
     overflow: hidden;
     border-radius: 1000px;
-    border: 15px var(--clr-dark-neutral-100) solid;
+    border: 5px var(--clr-dark-neutral-100) solid;
     box-shadow: $glow;
 
     & img {
       width: 500px;
       height: 100%;
       object-fit: cover;
+      object-position: 40%;
     }
   }
 
