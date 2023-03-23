@@ -28,9 +28,9 @@
       "alt": "Picture of Maxime Chirez"
     },
     "subtitle": {
-      "fr": "Développeur Frontend",
-      "en": "Frontend Developer",
-      "es": "Desarrollador Frontend"
+      "fr": "Développeur Frontend JS/React",
+      "en": "Frontend Developer JS/React",
+      "es": "Desarrollador Frontend JS/React"
     },
     "title": {
       "fr": "Maxime Chirez",
@@ -40,7 +40,7 @@
     "text": {
       "fr": "Enchanté! Je suis un développeur Frontend principalement spécialisé dans React. J'aime construire et collaborer à la création de projets digitaux porteurs de sens centrés sur l'humain. Jetez un oeil à mes projets!",
       "en": "Hi! I am a frontend developer mainly specialized in React. I love to build and collaborate on meaningful human-centered digital projects. Take a look at my work!",
-      "es": "Soy un desarrollador Frontend especializado principalmente en React. Me gusta construir y colaborar en la creación de proyectos digitales significativos y centrados en el ser humano. Echa un ojo a mis proyectos!"
+      "es": "Hola! Soy un desarrollador Frontend especializado principalmente en React. Me gusta construir y colaborar en la creación de proyectos digitales significativos y centrados en el ser humano. Echa un ojo a mis proyectos!"
     },
     "btn": {
       "fr": {
@@ -62,12 +62,12 @@
     "text1": {
       "fr": "Enchanté! Je suis un jeune homme curieux de tout, réfléchi et engagé - bien qu'un peu timide - mais attentif aux autres. Ma formation en Sciences physiques à l'ULB a également contribuée à me forger un esprit cartésien. N'ayant pas pu achever cette formation, j'ai continué mon parcours académique par un diplôme en 3 ans pour finalement exercer en tant que Technologue en Imagerie Médicale dans les hôpitaux bruxellois.",
       "en": "Hi! I am a young man curious about everything, thoughtful and committed - although a little shy - but attentive to others. My training in Physical Sciences at the ULB also contributed to forge me a Cartesian mind. Not having been able to finish this training, I continued my academic career with a 3-year diploma to finally work as a Medical Imaging Technologist in Brussels hospitals. ",
-      "es": "Lorem ipsum dolor sit amet consectetur. Tincidunt non euismod tristique ut vitae fermentum enim. Massa nibh nec volutpat etiam consequat sit enim et tincidunt. Et mauris eu cras amet ullamcorper gravida ultrices amet. Purus vehicula lorem justo aliquam tellus praesent magna. Pulvinar viverra imperdiet nulla sit cras ultricies."
+      "es": "¡Hola! Soy un hombre curioso de todo, reflexivo y comprometido - aunque un poco tímido - pero atento a los demás. Mi formación en Ciencias físicas a la ULB contribuyó igualmente a forjarme una mente cartesiana. Desgraciadamente, no terminé esta formación, pero sigue mi carrera con un diploma de 3 años para, al final, trabajar como técnico en radiología en los hospitales bruselenses."
     },
     "text2": {
-      "fr": "Depuis très longtemps, je suis passionné par la technologie.  Après une découverte de la programmation durant mon adolescence et durant mes études supérieures, j'ai fini par m'y plonger de plus en plus sérieusement pour finalement arriver à la conclusion que je voulais en faire mon métier. Je me suis alors naturellement intéressé au développement web frontend, et après près de 2 ans à me former seul, j'ai décidé de suivre une formation d'Openclassroom afin de compléter mon parcours autodidacte.",
-      "en": "For a very long time, I have been passionate about technology.  After discovering programming during my teenage years and during my higher education, I ended up taking it more and more seriously and finally came to the conclusion that I wanted to make it my profession. I was then naturally interested in frontend web development, and after nearly 2 years training myself, I decided to follow a formation of Openclassroom to complete my self-taught course.",
-      "es": "Ut nunc nulla quis aliquam blandit cras urna nibh vitae. Urna eu mus ac dignissim nunc ornare elit nisl nibh. Leo ac posuere viverra fermentum iaculis congue vitae. Nisl vitae at donec pellentesque urna ridiculus diam sit nisl. Fermentum vitae netus purus congue neque facilisi sit. Facilisis donec vel in curabitur posuere et."
+      "fr": "Depuis très longtemps, je suis passionné par la technologie.  Après une découverte de la programmation durant mon adolescence et mes études supérieures, j'ai fini par m'y plonger de plus en plus sérieusement pour finalement arriver à la conclusion que je voulais en faire mon métier. Je me suis alors naturellement intéressé au développement web frontend, et après près de 2 ans à me former seul, j'ai décidé de suivre une formation d'Openclassroom afin de compléter mon parcours autodidacte.",
+      "en": "For a very long time, I have been passionate about technology.  After discovering programming during my teenage years and my higher education, I ended up taking it more and more seriously and finally came to the conclusion that I wanted to make it my profession. I was then naturally interested in frontend web development, and after nearly 2 years training myself, I decided to follow a formation of Openclassroom to complete my self-taught course.",
+      "es": "Desde hace mucho tiempo, soy fanático de tecnología. Después de una descubierta de la programación durante mi adolescencia y mi carrera en la ULB, <j'ai fini par m'y plonger de plus en plus sérieusement> para, al final, llegar a la conclusión que quería dedicarme en eso. Me interesé naturalmente en el desarrollo web frontend, y después más de 2 años ???a aprender yo mismo???, decidí seguir una formación de Openclassroom para completar mi camino autodidacto."
     }
   },
   "contact": {

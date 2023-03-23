@@ -5,7 +5,7 @@
       "description": {
         "fr": "<p>Site de vente en ligne de materiel audio. Il est complétement fonctionnel (y compris paiement).</p><p> Ce projet écrit en <strong>Typescript</strong> est basé sur <strong>React</strong> et <strong>Strapi</strong> afin de permettre une mise à jour facile de son contenu. </br> Je m'en suis également servi comme projet d'introduction à <strong>Storybook</strong>. </br>Le système de paiement, utilisable (mode test), est basé sur <strong>Stripe</strong>.</p>",
         "en": "<p>Fully functional audio gears webshop (including payment). </p><p> This project writen in <strong>Typescript</strong> is based on <strong>React</strong> and <strong>Strapi</strong> in order to allow an easy update of its content. </br> I also used it as an introduction project to <strong>Storybook</strong>. </br>The payment system, usable (test mode), is based on <strong>Stripe</strong>.</p>",
-        "es": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi."
+        "es": "<p>Sitio web de venta en linea de herramienta audio. Es totalmente funcional (incluido el pagamento).</p><p> Ese proyecto escrito en <strong>Typescript</strong> es basado en <strong>React</strong> y <strong>Strapi</strong> para permitir cambios fáciles de su contenido. </br> Utilicé también ese proyecto como introducción a <strong>Storybook</strong>. </br>El pagamento, utilizable (modo test), es basado en <strong>Stripe</strong>.</p>"
       },
       "features": {
         "fr": [
@@ -23,7 +23,7 @@
         "es": [
           "Backend con Strapi (CMS)",
           "'Toast' popup's personalizados",
-          "Utilisaion del API 'intersectionObserver'",
+          "Usage del API 'intersectionObserver'",
           "Gestión del carrito de compras"
         ]
       },
@@ -57,7 +57,7 @@
       "description": {
         "fr": "<p>Portfolio designé et développé entièrement personnellement. </p> <p> Ce projet, écrit en <strong>Typescript</strong>, utilise <strong>Redux</strong> et <strong>NextJS</strong> afin de générer une page statique affichée avec fluidité pour l'utilisateur <strong>(SSG)</strong>. Son contenu, léger, est géré avec du JSON. Cela permet de limiter le backend à une route API (avec NextJS) servant à gérer le formulaire de contact.</p>",
         "en": "<p>Portfolio designed and developed entirely by myself. </p><p> This project, written in <strong>Typescript</strong>, uses <strong>Redux</strong> and <strong>NextJS</strong> to generate a static page displayed with fluidity for the use <strong>(SSG)</strong>.  Its content, light, is managed with JSON. This allows to limit the backend to an API (with NextJS) route used to handle the contact form.</p>",
-        "es": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi."
+        "es": "<p>Portfolio diseñado y desarrollado totalmente personalmente. </p> <p> Ese proyecto, escrito en <strong>Typescript</strong>, utiliza <strong>Redux</strong> y <strong>NextJS</strong> para generar una pagina estática <affichée> con fluidez para el usuario <strong>(SSG)</strong>. Su contenido, ligero, es generado con JSON. Esto permite de limitar el backend a una ruta API (con NextJS) permitiendo la gestión del formulario de contacto.</p>"
       },
       "features": {
         "fr": [
@@ -72,7 +72,12 @@
           "Multilingual Fr/Es/En",
           "Light/Dark themes"
         ],
-        "es": ["Custom toast", "CMS Strapi", "Ect."]
+        "es": [
+          "Creación de una API NextJS",
+          "Envia automotico de correos con NodeMailer",
+          "Multilingual Fr/Es/En",
+          "Theme Claro/Obscuro"
+        ]
       },
       "tags": [
         { "text": "Typescript", "color": "#4ACCFF" },
@@ -104,7 +109,7 @@
       "description": {
         "fr": "<p>Application 'Todo' classique avec laquelle les tâches de chaque utilisateurs sont disponibles partout de manière sécurisées!</p><p> Il s'agit d'un projet de formation pur servant de prétexte à l'utilisation de <strong>Firebase</strong>. Il a été utilisé comme <strong>base de données</strong> et pour la gestion des <strong>authentifications</strong>.</p> ",
         "en": "<p>Classic 'Todo' application with which the tasks of each user are available everywhere securely!</p><p> This is a pure training project as a pretext to use <strong>Firebase</strong>. It was used as a <strong>database</strong> and for <strong>authentification</strong> management.</p> ",
-        "es": "ESLorem ipsum dolor sit, amet non condimentum gravida, odio mauris consectetur adipisicing elit. Dolores corrupti laborum voluptas at quibusdam iste, esse excepturi. FRLorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores corrupti laborum volut quibusdam iste, esseptas non condimentum gravida, odio mauris a excepturi."
+        "es": "<p>App 'Todo' clásica con la que las tareas de cada usuario son disponible por todos lados de manera protegida!</p><p> Se trata de un proyecto de pura formacion sirviendo de pretexto al usaje de <strong>Firebase</strong>. Fui utilizado como <strong>base de datos</strong> y para la gestión de la <strong>autenticación</strong>.</p> "
       },
       "features": {
         "fr": [
@@ -122,7 +127,8 @@
         "es": [
           "Notas drag&drop",
           "Syncronisacion en la nube (Firebase)",
-          "Rutas protegidas"
+          "Rutas protegidas",
+          "Personalizable: multilingual Fr/En/Es y theme clairo/obscuro"
         ]
       },
       "tags": [
