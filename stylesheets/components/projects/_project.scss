@@ -55,7 +55,7 @@
 
       aspect-ratio: 1;
       object-fit: cover;
-      object-position: top;
+      object-position: 0 0;
 
       @include breakpoint(medium) {
         aspect-ratio: 1.4;

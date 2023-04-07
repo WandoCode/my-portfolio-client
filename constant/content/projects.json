@@ -53,6 +53,59 @@
       "urlPreview": "/assets/audiophile-preview.png"
     },
     {
+      "title": "Kanban boards",
+      "description": {
+        "fr": "<p>Application (<strong>Saas</strong>) Kanban construite avec <strong>Typescript</strong>, <strong>React</strong> et <strong>Redux</strong>.</p><p>Le design et l'idée de l'application sont tirés du site FrontendMentor. J'ai ajouté au concept la permanence des données et l'identification des utilisateurs. <strong>Firebase</strong> est utilisé pour gérer <strong>l'authentification</strong> et sert de <strong>database</strong> avec Firestore.</p><p>Un compte utilisateur de demonstration est disponible: les données n'y sont pas synchronisées avec le cloud, mais l'application est completèment fonctionnelle en-dehors de cela.</p>",
+        "en": "<p>Application (<strong>Saas</strong>) Kanban built with <strong>Typescript</strong>, <strong>React</strong> and <strong>Redux</strong>.</p><p>The design and idea  of the application come from FrontendMentor. I added to the concept datas permenancy and users identification. <strong>Firebase</strong> is used to manage <strong>authentication</strong> and as <strong>database</strong> with Firestore.</p><p>A demonstration user account is available: datas are not synchronized with the cloud, but the app is fully functional apart from that.</p>",
+        "es": "<p>Application (<strong>Saas</strong>) Kanban construida con <strong>Typescript</strong>, <strong>React</strong> y <strong>Redux</strong>.</p><p>El diseño y la idea de la application proceden del sitio web FrontendMentor. Añade al concepto la permanencia de los datos y la identification de los usuarios. <strong>Firebase</strong> esta usado para gestionar <strong>la autentificación</strong> y sierve de <strong>database</strong> con Firestore.</p><p>Una cuenta de usuario de demonstracion es disponible: los datos no son sincronisados con la nuve, pero la application es completamente funcional fuera de eso.</p>"
+      },
+      "features": {
+        "fr": [
+          "Accés sécurisé aux données",
+          "Authentification avec Firebase",
+          "Synchronisation des données sur le cloud",
+          "Thème claire/sombre",
+          "Sauvegarde des préférences de l'utilisateur et des sessions ouvertes"
+        ],
+        "en": [
+          "Securized datas access",
+          "Authentication with Firebase",
+          "Datas synchronized in the cloud",
+          "Light/Dark themes",
+          "User preferences and opened sessions are saved"
+        ],
+        "es": [
+          "Acceso securizado de los datos",
+          "Autentificación con Firebase",
+          "Sincronización de los datos en la nuve",
+          "Theme Claro/Obscuro",
+          "Guardar preferencias de usuario y sesiones abiertas"
+        ]
+      },
+      "tags": [
+        { "text": "Typescript", "color": "#4ACCFF" },
+        { "text": "React", "color": "#FACF0F" },
+        { "text": "Redux", "color": "#FFA94A" },
+        { "text": "Sass/BEM", "color": "#FF4A6F" },
+        { "text": "React-router-dom", "color": "#FFB13D" },
+        { "text": "Firebase", "color": "#CC6131" }
+      ],
+      "medias": [
+        {
+          "link": "https://github.com/WandoCode/kanban-client",
+          "image": "github",
+          "alt": "github icone"
+        },
+        {
+          "link": "https://kanban-1492d.web.app/",
+          "image": "web",
+          "alt": "web icone"
+        }
+      ],
+      "altText": "Kanban app picture.",
+      "urlPreview": "/assets/kanban-preview.png"
+    },
+    {
       "title": "Protfolio",
       "description": {
         "fr": "<p>Portfolio designé et développé entièrement personnellement. </p> <p> Ce projet, écrit en <strong>Typescript</strong>, utilise <strong>Redux</strong> et <strong>NextJS</strong> afin de générer une page statique affichée avec fluidité pour l'utilisateur <strong>(SSG)</strong>. Son contenu, léger, est géré avec du JSON. Cela permet de limiter le backend à une route API (avec NextJS) servant à gérer le formulaire de contact.</p>",
