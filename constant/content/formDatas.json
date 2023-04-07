@@ -21,7 +21,7 @@
     "en": {
       "name": "Full name*",
       "email": "Email*",
-      "subject": "Suject",
+      "subject": "Object",
       "message": "Message*",
       "send": "Send",
       "sending": "Sending ...",

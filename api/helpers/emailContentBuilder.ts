@@ -40,7 +40,7 @@ const buildEmail = (
               <p style="padding-top: 1em; font-size: 1.15em; font-weight:500;">Detalles del mensaje</p>
               <ul style="padding: 0;list-style: none;">
                 <li><em>De</em>: ${messageDatas.name}</li>
-                <li><em>Objeto</em>: ${messageDatas.object}</li>
+                <li><em>Asunto</em>: ${messageDatas.object}</li>
                 <li><em>Correo</em>: ${messageDatas.email}</li>
                 <li><em>Mensaje</em>: 
                 <br>
@@ -51,7 +51,7 @@ const buildEmail = (
               <p>Maxime Chirez,
                 <span style="color: hsl(0, 0%, 36%);">
                   <br> 
-                  Frontend programdor (????) 
+                  Desarollador Frontend
                   <br> 
                   Website: <a href="https://maxime-chirez.me/" target="_blank" style="color: inherit;">Portfolio</a>
                   <br>
@@ -83,7 +83,6 @@ const buildEmail = (
                   Tel: +32 496 34 87 49
                 </span>
               </p>`
-    // TODO: Vérifier la version EN, et surtout la version ES!!!!!
     default:
       return `
               <p>Hello ${messageDatas.name},</p>
@@ -127,4 +126,3 @@ const buildObject = (lang: LanguageAvailable | null) => {
   }
 }
 export { buildEmail, buildObject }
-//TODO: ameliorer le mail envoyé ?
