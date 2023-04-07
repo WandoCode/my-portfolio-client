@@ -18,7 +18,7 @@
       "home": "Home",
       "projects": "Proyectos",
       "skills": "Competencias",
-      "about": "Sobre mi",
+      "about": "Sobre mí",
       "contact": "Contacto"
     }
   },
@@ -62,12 +62,12 @@
     "text1": {
       "fr": "Enchanté! Je suis un jeune homme curieux de tout, réfléchi et engagé - bien qu'un peu timide - mais attentif aux autres. Ma formation en Sciences physiques à l'ULB a également contribuée à me forger un esprit cartésien. N'ayant pas pu achever cette formation, j'ai continué mon parcours académique par un diplôme en 3 ans pour finalement exercer en tant que Technologue en Imagerie Médicale dans les hôpitaux bruxellois.",
       "en": "Hi! I am a young man curious about everything, thoughtful and committed - although a little shy - but attentive to others. My training in Physical Sciences at the ULB also contributed to forge me a Cartesian mind. Not having been able to finish this training, I continued my academic career with a 3-year diploma to finally work as a Medical Imaging Technologist in Brussels hospitals. ",
-      "es": "¡Hola! Soy un hombre curioso de todo, reflexivo y comprometido - aunque un poco tímido - pero atento a los demás. Mi formación en Ciencias físicas a la ULB contribuyó igualmente a forjarme una mente cartesiana. Desgraciadamente, no terminé esta formación, pero sigue mi carrera con un diploma de 3 años para, al final, trabajar como técnico en radiología en los hospitales bruselenses."
+      "es": "¡Hola! Soy un hombre curioso de todo, reflexivo y comprometido - aunque un poco tímido - pero atento a los demás. Mi formación en Ciencias físicas en la ULB contribuyó igualmente a forjarme una mente cartesiana. Desgraciadamente, no terminé esta formación, pero segui mi carrera con un diploma de 3 años para, al final, trabajar como técnico en radiología en los hospitales bruselenses."
     },
     "text2": {
       "fr": "Depuis très longtemps, je suis passionné par la technologie.  Après une découverte de la programmation durant mon adolescence et mes études supérieures, j'ai fini par m'y plonger de plus en plus sérieusement pour finalement arriver à la conclusion que je voulais en faire mon métier. Je me suis alors naturellement intéressé au développement web frontend, et après près de 2 ans à me former seul, j'ai décidé de suivre une formation d'Openclassroom afin de compléter mon parcours autodidacte.",
       "en": "For a very long time, I have been passionate about technology.  After discovering programming during my teenage years and my higher education, I ended up taking it more and more seriously and finally came to the conclusion that I wanted to make it my profession. I was then naturally interested in frontend web development, and after nearly 2 years training myself, I decided to follow a formation of Openclassroom to complete my self-taught course.",
-      "es": "Desde hace mucho tiempo, soy fanático de tecnología. Después de una descubierta de la programación durante mi adolescencia y mi carrera en la ULB, <j'ai fini par m'y plonger de plus en plus sérieusement> para, al final, llegar a la conclusión que quería dedicarme en eso. Me interesé naturalmente en el desarrollo web frontend, y después más de 2 años ???a aprender yo mismo???, decidí seguir una formación de Openclassroom para completar mi camino autodidacto."
+      "es": "Desde hace mucho tiempo, soy fanático de la tecnología. Después del descubierto de la programación durante mi adolescencia y mi carrera en la ULB, decidí centrarme en este campo para, al final, llegar a la conclusión de que quería dedicarme a esto. Me interesé de manera natural en el desarrollo web frontend, y después de más de 2 años aprendiendo por mi mismo, decidí crusar una formación de Openclassroom para completar mi camino autodidacta."
     }
   },
   "contact": {

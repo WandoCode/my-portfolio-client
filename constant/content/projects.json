@@ -5,7 +5,7 @@
       "description": {
         "fr": "<p>Site de vente en ligne de materiel audio. Il est complétement fonctionnel (y compris paiement).</p><p> Ce projet écrit en <strong>Typescript</strong> est basé sur <strong>React</strong> et <strong>Strapi</strong> afin de permettre une mise à jour facile de son contenu. </br> Je m'en suis également servi comme projet d'introduction à <strong>Storybook</strong>. </br>Le système de paiement, utilisable (mode test), est basé sur <strong>Stripe</strong>.</p>",
         "en": "<p>Fully functional audio gears webshop (including payment). </p><p> This project writen in <strong>Typescript</strong> is based on <strong>React</strong> and <strong>Strapi</strong> in order to allow an easy update of its content. </br> I also used it as an introduction project to <strong>Storybook</strong>. </br>The payment system, usable (test mode), is based on <strong>Stripe</strong>.</p>",
-        "es": "<p>Sitio web de venta en linea de herramienta audio. Es totalmente funcional (incluido el pagamento).</p><p> Ese proyecto escrito en <strong>Typescript</strong> es basado en <strong>React</strong> y <strong>Strapi</strong> para permitir cambios fáciles de su contenido. </br> Utilicé también ese proyecto como introducción a <strong>Storybook</strong>. </br>El pagamento, utilizable (modo test), es basado en <strong>Stripe</strong>.</p>"
+        "es": "<p>Sitio web de venta en línea de herramienta audio. Es totalmente funcional (incluido el pago).</p><p> Este proyecto escrito en <strong>Typescript</strong> esta basado en <strong>React</strong> y <strong>Strapi</strong> para permitir cambios fáciles de su contenido. </br> Utilicé también ese proyecto como introducción a <strong>Storybook</strong>. </br>El pago, utilizable (modo test), esta basado en <strong>Stripe</strong>.</p>"
       },
       "features": {
         "fr": [
@@ -23,7 +23,7 @@
         "es": [
           "Backend con Strapi (CMS)",
           "'Toast' popup's personalizados",
-          "Usage del API 'intersectionObserver'",
+          "Uso del API 'intersectionObserver'",
           "Gestión del carrito de compras"
         ]
       },
@@ -55,9 +55,9 @@
     {
       "title": "Kanban boards",
       "description": {
-        "fr": "<p>Application (<strong>Saas</strong>) Kanban construite avec <strong>Typescript</strong>, <strong>React</strong> et <strong>Redux</strong>.</p><p>Le design et l'idée de l'application sont tirés du site FrontendMentor. J'ai ajouté au concept la permanence des données et l'identification des utilisateurs. <strong>Firebase</strong> est utilisé pour gérer <strong>l'authentification</strong> et sert de <strong>database</strong> avec Firestore.</p><p>Un compte utilisateur de demonstration est disponible: les données n'y sont pas synchronisées avec le cloud, mais l'application est completèment fonctionnelle en-dehors de cela.</p>",
-        "en": "<p>Application (<strong>Saas</strong>) Kanban built with <strong>Typescript</strong>, <strong>React</strong> and <strong>Redux</strong>.</p><p>The design and idea  of the application come from FrontendMentor. I added to the concept datas permenancy and users identification. <strong>Firebase</strong> is used to manage <strong>authentication</strong> and as <strong>database</strong> with Firestore.</p><p>A demonstration user account is available: datas are not synchronized with the cloud, but the app is fully functional apart from that.</p>",
-        "es": "<p>Application (<strong>Saas</strong>) Kanban construida con <strong>Typescript</strong>, <strong>React</strong> y <strong>Redux</strong>.</p><p>El diseño y la idea de la application proceden del sitio web FrontendMentor. Añade al concepto la permanencia de los datos y la identification de los usuarios. <strong>Firebase</strong> esta usado para gestionar <strong>la autentificación</strong> y sierve de <strong>database</strong> con Firestore.</p><p>Una cuenta de usuario de demonstracion es disponible: los datos no son sincronisados con la nuve, pero la application es completamente funcional fuera de eso.</p>"
+        "fr": "<p>Application (<strong>Saas</strong>) Kanban construite avec <strong>Typescript</strong>, <strong>React</strong> et <strong>Redux</strong>.</p><p>Le design et l'idée de l'application sont tirés du site FrontendMentor. J'ai ajouté au concept la permanence des données et l'identification des utilisateurs. <strong>Firebase</strong> est utilisé pour gérer <strong>l'authentification</strong> et sert de <strong>database</strong> avec Firestore.</p><p>Un compte utilisateur de demonstration est disponible: les données n'y sont pas synchronisées avec le cloud, mais l'application est completèment fonctionnelle en-dehors de cela. L'accés complet est possible en créant un compte utilisateur.</p>",
+        "en": "<p>Application (<strong>Saas</strong>) Kanban built with <strong>Typescript</strong>, <strong>React</strong> and <strong>Redux</strong>.</p><p>The design and idea  of the application come from FrontendMentor. I added to the concept datas permenancy and users identification. <strong>Firebase</strong> is used to manage <strong>authentication</strong> and as <strong>database</strong> with Firestore.</p><p>A demonstration user account is available: datas are not synchronized with the cloud, but the app is fully functional apart from that. For the full access, you can create a new account.</p>",
+        "es": "<p>Aplicación (<strong>Saas</strong>) Kanban construida con <strong>Typescript</strong>, <strong>React</strong> y <strong>Redux</strong>.</p><p>El diseño y la idea de la aplicación proceden del sitio web FrontendMentor. Añade al concepto la permanencia de los datos y la identificación de los usuarios. <strong>Firebase</strong> se a utilizado para gestionar <strong>la autentificación</strong> y sirve de <strong>database</strong> con Firestore.</p><p>Una cuenta de usuario de demostración esta disponible: los datos no ss sincronizan con la nube, pero la aplicación es completamente funcional fuera de eso. Para el acceso completo, puede crear una nueva cuenta de usuario.</p>"
       },
       "features": {
         "fr": [
@@ -75,11 +75,11 @@
           "User preferences and opened sessions are saved"
         ],
         "es": [
-          "Acceso securizado de los datos",
+          "Acceso seguro de los datos",
           "Autentificación con Firebase",
-          "Sincronización de los datos en la nuve",
-          "Theme Claro/Obscuro",
-          "Guardar preferencias de usuario y sesiones abiertas"
+          "Sincronización de los datos en la nube",
+          "Tema Claro/Oscuro",
+          "Guardado de preferencias de usuario y sesiones abiertas"
         ]
       },
       "tags": [
@@ -106,11 +106,11 @@
       "urlPreview": "/assets/kanban-preview.png"
     },
     {
-      "title": "Protfolio",
+      "title": "Portfolio",
       "description": {
         "fr": "<p>Portfolio designé et développé entièrement personnellement. </p> <p> Ce projet, écrit en <strong>Typescript</strong>, utilise <strong>Redux</strong> et <strong>NextJS</strong> afin de générer une page statique affichée avec fluidité pour l'utilisateur <strong>(SSG)</strong>. Son contenu, léger, est géré avec du JSON. Cela permet de limiter le backend à une route API (avec NextJS) servant à gérer le formulaire de contact.</p>",
         "en": "<p>Portfolio designed and developed entirely by myself. </p><p> This project, written in <strong>Typescript</strong>, uses <strong>Redux</strong> and <strong>NextJS</strong> to generate a static page displayed with fluidity for the use <strong>(SSG)</strong>.  Its content, light, is managed with JSON. This allows to limit the backend to an API (with NextJS) route used to handle the contact form.</p>",
-        "es": "<p>Portfolio diseñado y desarrollado totalmente personalmente. </p> <p> Ese proyecto, escrito en <strong>Typescript</strong>, utiliza <strong>Redux</strong> y <strong>NextJS</strong> para generar una pagina estática <affichée> con fluidez para el usuario <strong>(SSG)</strong>. Su contenido, ligero, es generado con JSON. Esto permite de limitar el backend a una ruta API (con NextJS) permitiendo la gestión del formulario de contacto.</p>"
+        "es": "<p>Portfolio diseñado y desarrollado totalmente de forma personal. </p> <p> Este proyecto, escrito en <strong>Typescript</strong>, utiliza <strong>Redux</strong> y <strong>NextJS</strong> para generar una pagina estática <affichée> con fluidez para el usuario <strong>(SSG)</strong>. Su contenido, ligero, se genera con JSON. Esto permite limitar el backend a una ruta API (con NextJS) permitiendo la gestión del formulario de contacto.</p>"
       },
       "features": {
         "fr": [
@@ -127,9 +127,9 @@
         ],
         "es": [
           "Creación de una API NextJS",
-          "Envia automotico de correos con NodeMailer",
+          "Envio automotico de correos con NodeMailer",
           "Multilingual Fr/Es/En",
-          "Theme Claro/Obscuro"
+          "Tema Claro/Oscuro"
         ]
       },
       "tags": [
@@ -162,7 +162,7 @@
       "description": {
         "fr": "<p>Application 'Todo' classique avec laquelle les tâches de chaque utilisateurs sont disponibles partout de manière sécurisées!</p><p> Il s'agit d'un projet de formation pur servant de prétexte à l'utilisation de <strong>Firebase</strong>. Il a été utilisé comme <strong>base de données</strong> et pour la gestion des <strong>authentifications</strong>.</p> ",
         "en": "<p>Classic 'Todo' application with which the tasks of each user are available everywhere securely!</p><p> This is a pure training project as a pretext to use <strong>Firebase</strong>. It was used as a <strong>database</strong> and for <strong>authentification</strong> management.</p> ",
-        "es": "<p>App 'Todo' clásica con la que las tareas de cada usuario son disponible por todos lados de manera protegida!</p><p> Se trata de un proyecto de pura formacion sirviendo de pretexto al usaje de <strong>Firebase</strong>. Fui utilizado como <strong>base de datos</strong> y para la gestión de la <strong>autenticación</strong>.</p> "
+        "es": "<p>App 'Todo' clásica con la que las tareas de cada usuario son disponible en cualquier rincon del mundo de manera protegida!</p><p> Se trata de un proyecto de formacion que ha servido de pretexto a la utilización de <strong>Firebase</strong>. Se ha utilizado como <strong>base de datos</strong> y para la gestión de la <strong>autenticación</strong>.</p> "
       },
       "features": {
         "fr": [
@@ -179,9 +179,9 @@
         ],
         "es": [
           "Notas drag&drop",
-          "Syncronisacion en la nube (Firebase)",
+          "Syncronización en la nube (Firebase)",
           "Rutas protegidas",
-          "Personalizable: multilingual Fr/En/Es y theme clairo/obscuro"
+          "Personalizable: multilingual Fr/En/Es y theme clairo/oscuro"
         ]
       },
       "tags": [

@@ -33,7 +33,7 @@
     "es": {
       "name": "Nombre completo*",
       "email": "Correo*",
-      "subject": "Subjeto",
+      "subject": "Asunto",
       "message": "Mensaje*",
       "send": "Enviar",
       "sending": "Enviando",
@@ -54,7 +54,7 @@
     },
     "es": {
       "required": "Requerido.",
-      "invalid": "Formato inválido."
+      "invalid": "Dato inválido."
     }
   }
 }
