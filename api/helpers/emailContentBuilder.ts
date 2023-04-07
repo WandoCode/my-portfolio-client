@@ -36,7 +36,7 @@ const buildEmail = (
     case 'es':
       return `
               <p>Hola ${messageDatas.name},</p>
-              <p>Le confirmo la reception de su mensaje, le contestaré cuanto antes.</p>
+              <p>Le confirmo la recepción de su mensaje, le contestaré cuanto antes.</p>
               <p style="padding-top: 1em; font-size: 1.15em; font-weight:500;">Detalles del mensaje</p>
               <ul style="padding: 0;list-style: none;">
                 <li><em>De</em>: ${messageDatas.name}</li>
@@ -51,7 +51,7 @@ const buildEmail = (
               <p>Maxime Chirez,
                 <span style="color: hsl(0, 0%, 36%);">
                   <br> 
-                  Desarollador Frontend
+                  Desarrollador Frontend
                   <br> 
                   Website: <a href="https://maxime-chirez.me/" target="_blank" style="color: inherit;">Portfolio</a>
                   <br>
@@ -119,7 +119,7 @@ const buildObject = (lang: LanguageAvailable | null) => {
     case 'en':
       return 'Reception confirmation'
     case 'es':
-      return 'Confirmacion de recepcion'
+      return 'Confirmación de recepción'
 
     default:
       return 'Reception confirmation'
