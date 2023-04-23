@@ -21,11 +21,15 @@
       "rating": "2"
     },
     {
+      "urlIcon": "https://api.iconify.design/logos:redux.svg",
+      "title": "Redux/RTK",
+      "rating": "3"
+    },
+    {
       "urlIcon": "https://api.iconify.design/vscode-icons:file-type-sass.svg",
       "title": "Sass/SCSS",
       "rating": "3"
     },
-
     {
       "urlIcon": "https://api.iconify.design/logos:strapi-icon.svg",
       "title": "CMS Strapi",
