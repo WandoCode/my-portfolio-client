@@ -14,7 +14,7 @@ This repository contains the code for the frontend of my personal portfolio.
 
 ### Automatic emails
 
-The contact form automatically is processed to send confirmation emails and avoid spam.
+The contact form is processed automatically to send confirmation emails and avoid spam from robots.
 I used NextJS API to create an endpoint that send the emails with NodeMailer.
 
 ### User preferences

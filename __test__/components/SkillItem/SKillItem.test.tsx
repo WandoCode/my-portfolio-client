@@ -7,7 +7,7 @@ const mockedSkillData = mockedSkillsDatas.skills[0]
 
 describe('Given the SkillItem component is used', () => {
   beforeEach(() => {
-    render(<SkillItem datas={mockedSkillData} />)
+    render(<SkillItem item={mockedSkillData} />)
   })
 
   test('It should be a li tag', () => {
@@ -51,7 +51,7 @@ describe('Given the SkillItem component is used', () => {
       const dataCopy = JSON.parse(JSON.stringify(mockedSkillData))
       dataCopy.rating = '-1'
 
-      expect(() => render(<SkillItem datas={dataCopy} />)).toThrow(
+      expect(() => render(<SkillItem item={dataCopy} />)).toThrow(
         'Skill rating should be a positive integer or zero.'
       )
     })
@@ -62,7 +62,7 @@ describe('Given the SkillItem component is used', () => {
       const dataCopy = JSON.parse(JSON.stringify(mockedSkillData))
       dataCopy.rating = 'a'
 
-      expect(() => render(<SkillItem datas={dataCopy} />)).toThrow(
+      expect(() => render(<SkillItem item={dataCopy} />)).toThrow(
         'Skill rating should be a positive integer or zero.'
       )
     })

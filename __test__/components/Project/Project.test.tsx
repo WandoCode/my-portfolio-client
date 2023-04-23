@@ -33,10 +33,10 @@ describe('Given I use the Project component with the french language,', () => {
     expect(tags.length).toBe(mockedProjectDatas.tags.length)
   })
 
-  test('It should display 2 links', () => {
+  test('It should display 3 links', () => {
     const links = screen.getAllByRole('link')
 
-    expect(links.length).toBe(2)
+    expect(links.length).toBe(3)
   })
 })
 
