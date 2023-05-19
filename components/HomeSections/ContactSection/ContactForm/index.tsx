@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import {
   changeFormErrors,
   resetForm,
+  saveSubmitTimeRef,
 } from '../../../../Features/Form/form.actions'
 import { formSchema } from '../../../../Features/Form/form.schema'
 import { ValidationError } from 'yup'
@@ -20,6 +21,7 @@ import useSelectFormDatas from '../../../../hooks/selectors/useSelectFormDatas'
 
 const EXCLUDE_ROBOT_SPAM_TIME = 4000
 const INFO_MESSAGE_DISPLAY_TIME = 3000
+const SPAM_EMAIL_TIME_EXCLUDE = 4000
 
 export default () => {
   const dispatch = useDispatch()
@@ -29,10 +31,18 @@ export default () => {
   const language = useSelectLanguage()
 
   const formDatas = useSelectFormDatas()
-  const status = useSelector((state: RootState) => state.form.status)
+  const { status, submitTimeReference } = useSelector(
+    (state: RootState) => state.form
+  )
 
   const handleSubmit = async (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
+    const currentTime = Date.now()
+
+    // Allow at most one email sending every X ms to avoid spam
+    if (submitTimeReference + SPAM_EMAIL_TIME_EXCLUDE >= currentTime) return
+
+    dispatch(saveSubmitTimeRef(currentTime))
 
     const formIsSubmitByRobot = submitByRobot()
 

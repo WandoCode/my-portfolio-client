@@ -9,12 +9,14 @@ import {
   changeFormErrors,
   resetForm,
   changeStatus,
+  saveSubmitTimeRef,
 } from './form.actions'
 
 interface Form {
   formDatas: Record<FormFieldsName, string>
   formErrors: Record<FormFieldsName, InputError | undefined>
   status: Status
+  submitTimeReference: number
 }
 
 export const emptyFormObject = {
@@ -37,6 +39,7 @@ const initialForm: Form = {
   formDatas: { ...emptyFormObject },
   formErrors: { ...emptyErrorObject },
   status: 'idle',
+  submitTimeReference: 0, // Time reference to avoid spam
 }
 
 const formReducer = createReducer(initialForm, (builder) => {
@@ -55,6 +58,9 @@ const formReducer = createReducer(initialForm, (builder) => {
     })
     .addCase(changeStatus, (state, action) => {
       state.status = action.payload.newStatus
+    })
+    .addCase(saveSubmitTimeRef, (state, action) => {
+      state.submitTimeReference = action.payload.newTimeRef
     })
 })
 

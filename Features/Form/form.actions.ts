@@ -25,3 +25,8 @@ export const changeStatus = createAction(
   'form/changeStatus',
   (newStatus: Status) => ({ payload: { newStatus } })
 )
+
+export const saveSubmitTimeRef = createAction(
+  'form/saveSubmitTimeRef',
+  (newTimeRef: number) => ({ payload: { newTimeRef } })
+)

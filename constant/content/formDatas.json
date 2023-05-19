@@ -28,7 +28,7 @@
       "success": "Sent",
       "successLarge": "Message sent successfully!",
       "error": "Try again",
-      "errorLarge": "Erreur, please try again!"
+      "errorLarge": "Error, please try again!"
     },
     "es": {
       "name": "Nombre completo*",
