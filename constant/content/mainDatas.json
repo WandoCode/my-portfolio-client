@@ -74,7 +74,7 @@
     "emailIcon": "https://api.iconify.design/ic:sharp-alternate-email.svg",
     "placeIcon": "https://api.iconify.design/mdi:map-marker.svg",
     "place": { "fr": "Bruxelles", "en": "Brussels", "es": "Bruselas" },
-    "email": "maxime.chirez@gmail.com"
+    "email": "not-for-reddit@anonymous.com"
   },
   "footer": {
     "medias": [
@@ -90,7 +90,7 @@
       },
       {
         "image": "https://api.iconify.design/carbon:email.svg",
-        "link": "mailto:maxime.chirez@gmail.com",
+        "link": "mailto:not-for-reddit@anonymous.com",
         "alt": "Email Icon"
       }
     ]

@@ -11,13 +11,13 @@
       "rating": "3"
     },
     {
-      "urlIcon": "https://api.iconify.design/logos:nextjs-icon.svg",
-      "title": "NextJS",
-      "rating": "2"
-    },
-    {
       "urlIcon": "https://api.iconify.design/vscode-icons:file-type-typescript-official.svg",
       "title": "Typescript",
+      "rating": "3"
+    },
+    {
+      "urlIcon": "https://api.iconify.design/logos:nextjs-icon.svg",
+      "title": "NextJS",
       "rating": "2"
     },
     {
