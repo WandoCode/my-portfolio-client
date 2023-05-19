@@ -106,6 +106,54 @@
       "urlPreview": "/assets/kanban-preview.png"
     },
     {
+      "title": "Pomodoro",
+      "description": {
+        "fr": "<p>Application simple où je me suis appliqué pour écrire du <strong>code facilement maintenable et réutilisable</strong>.</p><p>L'application étant petite mais nécessitant de nombreux états globaux, j'ai utilisé la <strong>React Context API</strong> pour les gérer</p>",
+        "en": "<p>Simple application where I've focused on writing <strong>easy-to-maintain and reusable code</strong>.</p><p>The app is very smal but still needs a lot of global states, that's why I've chose to use the <strong>React Context API</strong> to manage them.</p>",
+        "es": "<p>Aplicación sencilla en la que he intentado escribir <strong>código fácilmente mantenible y reutilizable</strong>.</p><p>La aplicación esta pequena pero necesita muchos estados globales, es porque eligé utilizar la<strong>React Context API</strong> para gestionarlos</p>"
+      },
+      "features": {
+        "fr": [
+          "Plusieurs thèmes disponibles (couleurs - typos)",
+          "Temps des timeurs personnalisables",
+          "Responsive",
+          "Application légère (dépendances minimales)"
+        ],
+        "en": [
+          "Different themes available (colors - typos)",
+          "Timers time customizable",
+          "Responsive",
+          "Lightweighted application (minimal dependencies)"
+        ],
+        "es": [
+          "Varios temas disponibles (colores - typos)",
+          "Tiempo de los cronómetros personalizables",
+          "Responsive",
+          "Aplicación ligera (Dependencias mínimas) "
+        ]
+      },
+      "tags": [
+        { "text": "Typescript", "color": "#4ACCFF" },
+        { "text": "React", "color": "#FACF0F" },
+        { "text": "NextJS", "color": "#BF91FE" },
+        { "text": "Sass/BEM", "color": "#FF4A6F" }
+      ],
+      "medias": [
+        {
+          "link": "https://github.com/WandoCode/pomodoro",
+          "image": "github",
+          "alt": "github icone"
+        },
+        {
+          "link": "https://wandocode.github.io/pomodoro/",
+          "image": "web",
+          "alt": "web icone"
+        }
+      ],
+      "altText": "Kanban app picture.",
+      "urlPreview": "/assets/pomodoro.png"
+    },
+    {
       "title": "Portfolio",
       "description": {
         "fr": "<p>Portfolio designé et développé entièrement personnellement. </p> <p> Ce projet, écrit en <strong>Typescript</strong>, utilise <strong>Redux</strong> et <strong>NextJS</strong> afin de générer une page statique affichée avec fluidité pour l'utilisateur <strong>(SSG)</strong>. Son contenu, léger, est géré avec du JSON. Cela permet de limiter le backend à une route API (avec NextJS) servant à gérer le formulaire de contact.</p>",
@@ -187,7 +235,6 @@
       "tags": [
         { "text": "React", "color": "#FACF0F" },
         { "text": "Sass/BEM", "color": "#FF4A6F" },
-
         { "text": "Redux", "color": "#43CFE8" },
         { "text": "Firebase", "color": "#CC6131" },
         { "text": "React-router-dom", "color": "#FFB13D" }
