@@ -54,13 +54,15 @@ function Document() {
 
                           currentTheme = localStorage.getItem('theme')
 
-                          if (!currentTheme)
+                          if (!currentTheme){
                             currentTheme =  'light'
-                            // currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
-                            //   ? 'dark'
-                            //   : 'light'
-
-                          document.body.id = currentTheme
+                            currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+                              ? 'dark'
+                              : 'light'
+                            }
+                            
+                            document.body.id = currentTheme
+                            console.log(document.body.id)
                         })()
 
                     `,

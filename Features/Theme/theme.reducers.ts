@@ -18,7 +18,9 @@ const themeReducer = createReducer(initTheme, (builder) => {
       const savedTheme = themeStore.loadTheme()
 
       if (savedTheme) newTheme = savedTheme
-      else newTheme = 'light'
+      else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        newTheme = 'dark'
+      } else newTheme = 'light'
       state.theme = newTheme
     })
 })
