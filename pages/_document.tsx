@@ -53,7 +53,6 @@ function Document() {
                             }
                             
                             document.body.id = currentTheme
-                            console.log(document.body.id)
                         })()
 
                     `,
