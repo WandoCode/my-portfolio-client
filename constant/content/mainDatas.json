@@ -24,7 +24,7 @@
   },
   "hero": {
     "img": {
-      "link": "/assets/hero__placeholder.png",
+      "link": "/assets/hero__placeholder.jpg",
       "alt": "Picture of Maxime Chirez"
     },
     "subtitle": {
@@ -53,7 +53,7 @@
     }
   },
   "about": {
-    "img": { "link": "/assets/aboutImg.png", "alt": "Maxime Chirez picture" },
+    "img": { "link": "/assets/aboutImg.jpg", "alt": "Maxime Chirez picture" },
     "text1": {
       "fr": "Enchanté! Je suis un jeune homme curieux de tout, réfléchi et engagé - bien qu'un peu timide - mais attentif aux autres. Ma formation en Sciences physiques à l'ULB a également contribuée à me forger un esprit cartésien. N'ayant pas pu achever cette formation, j'ai continué mon parcours académique par un diplôme en 3 ans pour finalement exercer en tant que Technologue en Imagerie Médicale dans les hôpitaux bruxellois.",
       "en": "Hi! I am a young man curious about everything, thoughtful and committed - although a little shy - but attentive to others. My training in Physical Sciences at the ULB also contributed to forge me a Cartesian mind. Not having been able to finish this training, I continued my academic career with a 3-year diploma to finally work as a Medical Imaging Technologist in Brussels hospitals. ",

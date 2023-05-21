@@ -30,7 +30,7 @@
         }
       ],
       "altText": "Audiophile website picture.",
-      "urlPreview": "/assets/audiophile-preview.png"
+      "urlPreview": "/assets/audiophile-preview.jpg"
     },
     {
       "title": "Todo List",
@@ -79,7 +79,7 @@
           "alt": "web icone"
         }
       ],
-      "urlPreview": "/assets/todo-preview.png",
+      "urlPreview": "/assets/todo-preview.jpg",
       "altText": "Audiophile website picture."
     }
   ]

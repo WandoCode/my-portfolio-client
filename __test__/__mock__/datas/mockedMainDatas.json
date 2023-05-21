@@ -24,7 +24,7 @@
   },
   "hero": {
     "img": {
-      "link": "/assets/hero__placeholder.png",
+      "link": "/assets/hero__placeholder.jpg",
       "alt": "Maxime Chirez picture"
     },
     "subtitle": {
@@ -59,7 +59,7 @@
     }
   },
   "about": {
-    "img": { "link": "/assets/aboutImg.png", "alt": "Maxime Chirez picture" },
+    "img": { "link": "/assets/aboutImg.jpg", "alt": "Maxime Chirez picture" },
     "text1": {
       "fr": "fr Lorem ipsum dolor sit amet consectetur. Tincidunt non euismod tristique ut vitae fermentum enim. Massa nibh nec volutpat etiam consequat sit enim et tincidunt. Et mauris eu cras amet ullamcorper gravida ultrices amet. Purus vehicula lorem justo aliquam tellus praesent magna. Pulvinar viverra imperdiet nulla sit cras ultricies.",
       "en": "en Lorem ipsum dolor sit amet consectetur. Tincidunt non euismod tristique ut vitae fermentum enim. Massa nibh nec volutpat etiam consequat sit enim et tincidunt. Et mauris eu cras amet ullamcorper gravida ultrices amet. Purus vehicula lorem justo aliquam tellus praesent magna. Pulvinar viverra imperdiet nulla sit cras ultricies.",

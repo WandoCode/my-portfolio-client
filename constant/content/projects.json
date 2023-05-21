@@ -50,7 +50,7 @@
         }
       ],
       "altText": "'Audiophile' website picture.",
-      "urlPreview": "/assets/audiophile-preview.png"
+      "urlPreview": "/assets/audiophile-preview.jpg"
     },
     {
       "title": "Kanban boards",
@@ -103,7 +103,7 @@
         }
       ],
       "altText": "'Kanban boards' app picture.",
-      "urlPreview": "/assets/kanban-preview.png"
+      "urlPreview": "/assets/kanban-preview.jpg"
     },
     {
       "title": "Pomodoro",
@@ -151,7 +151,7 @@
         }
       ],
       "altText": "'Pomodoro' app picture.",
-      "urlPreview": "/assets/pomodoro.png"
+      "urlPreview": "/assets/pomodoro.jpg"
     },
     {
       "title": "Portfolio",
@@ -202,7 +202,7 @@
         }
       ],
       "altText": "'Portfolio' website picture.",
-      "urlPreview": "/assets/portfolio-preview.png"
+      "urlPreview": "/assets/portfolio-preview.jpg"
     },
 
     {
@@ -251,7 +251,7 @@
           "alt": "Live website of the 'Todo List' project"
         }
       ],
-      "urlPreview": "/assets/todo-preview.png",
+      "urlPreview": "/assets/todo-preview.jpg",
       "altText": "'Todo List' website picture."
     }
   ]
