@@ -60,7 +60,10 @@ function Header({
   return (
     <header className="header">
       <div className={navContainerClass()}>
-        <nav className={windowOnTop ? 'nav nav--on-top' : 'nav'}>
+        <nav
+          className={windowOnTop ? 'nav nav--on-top' : 'nav'}
+          aria-label="main navigation"
+        >
           <a
             href="#hero"
             className={

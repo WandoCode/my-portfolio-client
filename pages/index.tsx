@@ -56,58 +56,69 @@ function App() {
           <div className="app">
             <Header headerDatas={mainDatas.headings} />
             <main className="main">
-              <section
+              <article
                 ref={(newRef) => setHeroRef(newRef)}
                 className="hero flow"
                 id="hero"
+                aria-labelledby="hero-region"
               >
                 <Hero heroDatas={mainDatas.hero} />
-              </section>
+              </article>
 
-              <section
+              <article
                 ref={(newRef) => setProjectsRef(newRef)}
                 className="projects"
                 id="projects"
+                aria-labelledby="projects-region"
               >
                 <div className="container projects__container flow">
-                  <h2 className="h2 heading-section">
+                  <h2 className="h2 heading-section" id="projects-region">
                     {language ? mainDatas.headings[language].projects : ''}
                   </h2>
                   <Projects />
                 </div>
-              </section>
-              <section
+              </article>
+              <article
                 ref={(newRef) => setSkillsRef(newRef)}
                 className="skills container flow"
                 id="skills"
+                aria-labelledby="skills-region"
               >
-                <h2 className="h2 heading-section skills__title">
+                <h2
+                  className="h2 heading-section skills__title"
+                  id="skills-region"
+                >
                   {language ? mainDatas.headings[language].skills : ''}
                 </h2>
                 <Skills />
-              </section>
-              <section
+              </article>
+              <article
                 ref={(newRef) => setAboutRef(newRef)}
                 className="about flow"
                 id="about"
+                aria-labelledby="about-region"
               >
                 <div className="container">
-                  <h2 className="h2 heading-section about__title fc-neutral-300">
+                  <h2
+                    className="h2 heading-section about__title fc-neutral-300"
+                    id="about-region"
+                  >
                     {language ? mainDatas.headings[language].about : ''}
                   </h2>
                   <About aboutDatas={mainDatas.about} />
                 </div>
-              </section>
-              <section
+              </article>
+              <article
                 ref={(newRef) => setContactRef(newRef)}
                 className="contact flow container fc-neutral-700 fc-dark-neutral-400"
                 id="contact"
+                aria-labelledby="contact-region"
               >
-                <h2 className="h2 heading-section">
+                <h2 className="h2 heading-section" id="contact-region">
                   {language ? mainDatas.headings[language].contact : ''}
                 </h2>
                 <ContactForm />
-              </section>
+              </article>
             </main>
             <Footer footerDatas={mainDatas.footer} />
           </div>

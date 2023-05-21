@@ -5,6 +5,7 @@ import MediaLink from '../../../Utils/Link/MediaLink'
 import { LanguageAvailable } from '../../../../constant/language/language'
 import Map from '../../../Utils/List/Map'
 import ListItem from '../../../Utils/List/RegularListItem'
+import { removeWhiteSpace } from '../../../../utils/helpers/string'
 
 interface Props {
   datas: ProjectDatas
@@ -14,11 +15,16 @@ interface Props {
 
 function Project({ datas, side, language }: Props) {
   return (
-    <article className={`project project--${side}`} data-testid="project">
+    <section
+      className={`project project--${side}`}
+      data-testid="project"
+      aria-labelledby={removeWhiteSpace(datas.title)}
+    >
       <a
         href={datas.medias[1].link}
         target="_blank"
         className="project__img-container"
+        aria-label={datas.medias[1].alt}
       >
         <Image
           src={datas.urlPreview}
@@ -29,7 +35,10 @@ function Project({ datas, side, language }: Props) {
         />
       </a>
       <div className="project__content">
-        <h3 className="project__title h3 fs-600">
+        <h3
+          className="project__title h3 fs-600"
+          id={removeWhiteSpace(datas.title)}
+        >
           {language ? datas.title : ''}
         </h3>
         <div
@@ -57,7 +66,7 @@ function Project({ datas, side, language }: Props) {
           />
         </div>
       </div>
-    </article>
+    </section>
   )
 }
 

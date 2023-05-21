@@ -10,9 +10,9 @@ function Footer({ footerDatas }: Props) {
   return (
     <footer className="footer">
       <div className="container footer__container">
-        <div className="footer__links">
+        <nav className="footer__links" aria-label="External links">
           <Map items={footerDatas.medias} itemComponent={MediaLink} />
-        </div>
+        </nav>
         <div className="footer__text fc-neutral-400 fs-300">
           Designed & Built by Maxime Chirez.
         </div>

@@ -25,12 +25,14 @@ function Hero({ heroDatas, language }: Props) {
           />
         </div>
         <div className="hero__content">
-          <p className="hero__subtitle subtitle fc-neutral-350 fc-dark-neutral-500 fs-350">
-            {language ? heroDatas.subtitle[language] : ''}
-          </p>
-          <h1 className="h1 fs-800">
-            {language ? heroDatas.title[language] : ''}
-          </h1>
+          <header>
+            <p className="hero__subtitle subtitle fc-neutral-350 fc-dark-neutral-500 fs-350">
+              {language ? heroDatas.subtitle[language] : ''}
+            </p>
+            <h1 className="h1 fs-800" id="hero-region">
+              {language ? heroDatas.title[language] : ''}
+            </h1>
+          </header>
           <p className="hero__description">
             {language ? heroDatas.text[language] : ''}
           </p>

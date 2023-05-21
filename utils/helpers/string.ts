@@ -21,3 +21,8 @@ export const isPositiveIntegerOrZero = (numberStr: string) => {
   if (number < 0) return false
   return true
 }
+
+export const removeWhiteSpace = (text: string) => {
+  const textArray = text.split(' ')
+  return textArray.join()
+}
