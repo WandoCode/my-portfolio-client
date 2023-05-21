@@ -7,7 +7,7 @@ function Document() {
         <meta
           name="description"
           content="Portfolio of Maxime Chirez, Frontend Developer. Discover his projects and contact him!"
-        ></meta>
+        />
         <meta name="color-scheme" content="light dark" />
 
         <link
