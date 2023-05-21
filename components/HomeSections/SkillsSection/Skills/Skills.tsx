@@ -1,5 +1,4 @@
 import SkillItem from '../SkillItem/SkillItem'
-
 import { SkillDatas } from '../../../../constant/types/datas'
 import Map from '../../../Utils/List/Map'
 
