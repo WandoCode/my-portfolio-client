@@ -30,7 +30,7 @@ function Hero({ heroDatas, language }: Props) {
               {language ? heroDatas.subtitle[language] : ''}
             </p>
             <h1 className="h1 fs-800" id="hero-region">
-              {language ? heroDatas.title[language] : ''}
+              Maxime Chirez
             </h1>
           </header>
           <p className="hero__description">

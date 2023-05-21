@@ -13,14 +13,31 @@ import {
   Projects,
   Skills,
 } from '../components'
-import useFetchMainDatas from '../hooks/fetch/useFetchMainDatas'
+import contentStore from '../stores/content'
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { MainDatas, SkillDatas } from '../constant/types/datas'
+import { ProjectsDatas } from '../constant/types/projects'
 
-// TODO: créer une page par langue dans le but de pouvoir générer le HTML un maximum au "build time"
-function App() {
+export const getStaticProps: GetStaticProps<{
+  mainDatas: MainDatas
+  projectsArray: ProjectsDatas
+  skillsDatas: SkillDatas[]
+}> = async () => {
+  const mainDatas = await contentStore.getmainDatas()
+  const projectsArray = await contentStore.getProjectsDatas()
+  const skillsDatas = contentStore.getSkillsDatas()
+  return {
+    props: { mainDatas, projectsArray, skillsDatas },
+  }
+}
+
+function App({
+  mainDatas,
+  projectsArray,
+  skillsDatas,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const dispatch = useDispatch()
   const language = useSelectLanguage()
-
-  const mainDatas = useFetchMainDatas()
 
   const [heroRef, setHeroRef] = useState<HTMLElement | null>(null)
   const [projectsRef, setProjectsRef] = useState<HTMLElement | null>(null)
@@ -75,7 +92,7 @@ function App() {
                   <h2 className="h2 heading-section" id="projects-region">
                     {language ? mainDatas.headings[language].projects : ''}
                   </h2>
-                  <Projects />
+                  <Projects projectsArray={projectsArray} />
                 </div>
               </article>
               <article
@@ -90,7 +107,7 @@ function App() {
                 >
                   {language ? mainDatas.headings[language].skills : ''}
                 </h2>
-                <Skills />
+                <Skills skillsDatas={skillsDatas} />
               </article>
               <article
                 ref={(newRef) => setAboutRef(newRef)}

@@ -1,8 +1,10 @@
 import Projects from './Projects'
-import useFetchProjects from '../../../../hooks/fetch/useFetchProjectsDatas'
+import { ProjectsDatas } from '../../../../constant/types/projects'
 
-export default () => {
-  const projectsArray = useFetchProjects()
+interface Props {
+  projectsArray: ProjectsDatas
+}
 
+export default ({ projectsArray }: Props) => {
   return <>{projectsArray && <Projects projectsArray={projectsArray} />}</>
 }
