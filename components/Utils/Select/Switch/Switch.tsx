@@ -11,8 +11,20 @@ interface Props {
 function Switch({ isChecked, imageRefOn, imageRefOff, onChangeValue }: Props) {
   return (
     <form className="switch" aria-hidden={true}>
-      <Image src={imageRefOn} alt="Sun" width={20} height={12} />
-      <Image src={imageRefOff} alt="Moon" width={20} height={12} />
+      <Image
+        src={imageRefOn}
+        alt="Sun"
+        width={20}
+        height={12}
+        priority={true}
+      />
+      <Image
+        src={imageRefOff}
+        alt="Moon"
+        width={20}
+        height={12}
+        priority={true}
+      />
       <input
         className="visually-hidden switch__input"
         type="checkbox"

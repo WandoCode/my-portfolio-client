@@ -56,7 +56,13 @@ function Select({
         aria-label={description}
       >
         {choices.find((choice) => choice.value === currValue)?.text}
-        <Image src={chevron} alt="chevron" width={20} height={12} />
+        <Image
+          src={chevron}
+          alt="chevron"
+          width={20}
+          height={12}
+          priority={true}
+        />
       </button>
 
       <ul id={id} className={optionsClass()} onBlur={handleBlur}>
