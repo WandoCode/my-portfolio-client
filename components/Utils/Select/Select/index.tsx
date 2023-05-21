@@ -3,15 +3,23 @@ import { useEffect, useCallback, FocusEvent, useRef } from 'react'
 import { useDispatch } from 'react-redux'
 import { changeOpenMenu } from '../../../../Features/Language/language.actions'
 import useSelectMenuIsOpen from '../../../../hooks/selectors/useSelectMenuIsOpen'
+import { LanguagesObject } from '../../../../constant/language/language'
 
 interface Props {
-  choices: { value: string; text: string }[]
+  choices: LanguagesObject[]
   currValue: string
   onChoice: (value: string) => void
   id: string
+  description?: string
 }
 
-export default ({ choices, currValue, onChoice, id }: Props) => {
+export default ({
+  choices,
+  currValue,
+  onChoice,
+  id,
+  description = '',
+}: Props) => {
   const dispatch = useDispatch()
   const selectRef = useRef<HTMLDivElement>(null)
 
@@ -57,6 +65,7 @@ export default ({ choices, currValue, onChoice, id }: Props) => {
       menuIsOpen={menuIsOpen}
       clickHandler={onChangeOpenMenu}
       handleBlur={handleBlur}
+      description={description}
     />
   )
 }

@@ -7,10 +7,11 @@ import useSelectMenuIsOpen from '../../../../hooks/selectors/useSelectMenuIsOpen
 interface Props {
   value: string
   text: string
+  description: string
   onChoice: (s: string) => void
 }
 
-export default ({ value, text, onChoice }: Props) => {
+export default ({ value, text, onChoice, description }: Props) => {
   const dispatch = useDispatch()
 
   const menuIsOpen = useSelectMenuIsOpen()
@@ -34,6 +35,7 @@ export default ({ value, text, onChoice }: Props) => {
     <Option
       value={value}
       text={text}
+      description={description}
       menuIsOpen={menuIsOpen}
       handleChoice={handleChoice}
       handleKeyboard={handleKeyboard}

@@ -41,7 +41,7 @@ function Hero({ heroDatas, language }: Props) {
               href="/CV.pdf"
               target="_blank"
               className="hero__btn fs-400 fc-neutral-800"
-              aria-label="Open my CV in PDF format in an other browser tab"
+              aria-label="Open my CV in PDF"
             >
               {language ? heroDatas.btn[language].CV : ''}
             </Button>

@@ -81,17 +81,17 @@
       {
         "image": "https://api.iconify.design/bxl:github.svg",
         "link": "https://github.com/WandoCode",
-        "alt": "Github Icon"
+        "alt": "Github"
       },
       {
         "image": "https://api.iconify.design/ph:linkedin-logo-light.svg",
         "link": "https://www.linkedin.com/in/maxime-chirez-6a319925a/",
-        "alt": "LinkedIn Icon"
+        "alt": "LinkedIn"
       },
       {
         "image": "https://api.iconify.design/carbon:email.svg",
         "link": "mailto:not-for-reddit@anonymous.com",
-        "alt": "Email Icon"
+        "alt": "Email"
       }
     ]
   }

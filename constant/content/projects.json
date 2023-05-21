@@ -41,15 +41,15 @@
         {
           "link": "https://github.com/WandoCode/audiophile-frontend",
           "image": "github",
-          "alt": "github icone"
+          "alt": "Github repository of the 'Audiophile' project"
         },
         {
           "link": "https://audiophile-frontend-eta.vercel.app/",
           "image": "web",
-          "alt": "web icone"
+          "alt": "Live website of the 'Audiophile' project"
         }
       ],
-      "altText": "Audiophile website picture.",
+      "altText": "'Audiophile' website picture.",
       "urlPreview": "/assets/audiophile-preview.png"
     },
     {
@@ -94,15 +94,15 @@
         {
           "link": "https://github.com/WandoCode/kanban-client",
           "image": "github",
-          "alt": "github icone"
+          "alt": "Github repository of the 'Kanban boards' project"
         },
         {
           "link": "https://kanban-1492d.web.app/",
           "image": "web",
-          "alt": "web icone"
+          "alt": "Live website of the 'Kanban boards' project"
         }
       ],
-      "altText": "Kanban app picture.",
+      "altText": "'Kanban boards' app picture.",
       "urlPreview": "/assets/kanban-preview.png"
     },
     {
@@ -142,15 +142,15 @@
         {
           "link": "https://github.com/WandoCode/pomodoro",
           "image": "github",
-          "alt": "github icone"
+          "alt": "Github repository of the 'Pomodoro' project"
         },
         {
           "link": "https://wandocode.github.io/pomodoro/",
           "image": "web",
-          "alt": "web icone"
+          "alt": "Live website of the 'Pomodoro' project"
         }
       ],
-      "altText": "Kanban app picture.",
+      "altText": "'Pomodoro' app picture.",
       "urlPreview": "/assets/pomodoro.png"
     },
     {
@@ -193,15 +193,15 @@
         {
           "link": "https://github.com/WandoCode/my-portfolio-client",
           "image": "github",
-          "alt": "github icone"
+          "alt": "Github repository of the 'Portfolio' project"
         },
         {
           "link": "https://maxime-chirez.me/",
           "image": "web",
-          "alt": "web icone"
+          "alt": "Live website of the 'Portfolio' project"
         }
       ],
-      "altText": "Audiophile website picture.",
+      "altText": "'Portfolio' website picture.",
       "urlPreview": "/assets/portfolio-preview.png"
     },
 
@@ -243,16 +243,16 @@
         {
           "link": "https://github.com/WandoCode/todolist",
           "image": "github",
-          "alt": "github icone"
+          "alt": "Github repository of the 'Todo List' project"
         },
         {
           "link": "https://todolist-4ee38.web.app/",
           "image": "web",
-          "alt": "web icone"
+          "alt": "Live website of the 'Todo List' project"
         }
       ],
       "urlPreview": "/assets/todo-preview.png",
-      "altText": "Audiophile website picture."
+      "altText": "'Todo List' website picture."
     }
   ]
 }

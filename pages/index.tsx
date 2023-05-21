@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
-import useFetchMainDatas from '../hooks/fetch/useFetchMainDatas'
 import useGetCurrentSection from '../hooks/utils/useGetCurrentSection'
 import { useDispatch } from 'react-redux'
 import { changeCurrentSection } from '../Features/Navigation/nav.actions'
@@ -14,7 +13,9 @@ import {
   Projects,
   Skills,
 } from '../components'
+import useFetchMainDatas from '../hooks/fetch/useFetchMainDatas'
 
+// TODO: créer une page par langue dans le but de pouvoir générer le HTML un maximum au "build time"
 function App() {
   const dispatch = useDispatch()
   const language = useSelectLanguage()

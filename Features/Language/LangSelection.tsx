@@ -27,6 +27,7 @@ function LangSelection() {
       currValue={language ?? ''}
       onChoice={onChoice}
       id="language"
+      description={'Choose your language'}
     />
   )
 }

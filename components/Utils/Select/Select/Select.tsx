@@ -2,14 +2,16 @@ import Image from 'next/image'
 import { useMemo, FocusEvent, RefObject } from 'react'
 import chevron from '../../../../public/assets/chevron.svg'
 import Option from '../Option'
+import { LanguagesObject } from '../../../../constant/language/language'
 
 interface Props {
-  choices: { value: string; text: string }[]
+  choices: LanguagesObject[]
   currValue: string
   onChoice: (value: string) => void
   id: string
   selectRef: RefObject<HTMLDivElement>
   menuIsOpen: boolean
+  description?: string
   clickHandler: (val: boolean) => void
   handleBlur: (e: FocusEvent<HTMLUListElement>) => void
 }
@@ -19,6 +21,7 @@ function Select({
   currValue,
   onChoice,
   id,
+  description,
   selectRef,
   menuIsOpen,
   clickHandler,
@@ -36,6 +39,7 @@ function Select({
         key={i}
         value={choice.value}
         text={choice.text}
+        description={choice.description}
         onChoice={onChoice}
       />
     ))
@@ -49,6 +53,7 @@ function Select({
         onClick={() => clickHandler(!menuIsOpen)}
         aria-controls={id}
         aria-expanded={menuIsOpen}
+        aria-label={description}
       >
         {choices.find((choice) => choice.value === currValue)?.text}
         <Image src={chevron} alt="chevron" width={20} height={12} />
