@@ -40,20 +40,20 @@ function Hero({ heroDatas, language }: Props) {
             <Button
               type="link"
               level="primary"
-              href="/CV.pdf"
-              target="_blank"
+              href="#contact"
               className="hero__btn fs-400 fc-neutral-800"
-              aria-label="Open my CV in PDF"
             >
-              {language ? heroDatas.btn[language].CV : ''}
+              {language ? heroDatas.btn[language].contact : ''}
             </Button>
             <Button
               type="link"
               level="secondary"
-              href="#contact"
+              href="/CV.pdf"
+              target="_blank"
               className="hero__btn fs-400 fc-neutral-800 fc-dark-neutral-250"
+              aria-label="Open my CV in PDF"
             >
-              {language ? heroDatas.btn[language].contact : ''}
+              {language ? heroDatas.btn[language].CV : ''}
             </Button>
           </div>
         </div>
