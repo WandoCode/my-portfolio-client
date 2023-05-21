@@ -76,7 +76,8 @@ function Header({
               className="nav__logo"
               src={theme === 'dark' ? Logo_black : Logo}
               alt="Logo"
-              fill={true}
+              height={50}
+              width={50}
               quality={100}
               priority={true}
             />

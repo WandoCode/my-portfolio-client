@@ -45,6 +45,7 @@
 
     margin-inline: auto;
     margin-top: var(--flow);
+
     @include breakpoint(large) {
       margin-inline: 0;
     }
