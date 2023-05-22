@@ -65,7 +65,12 @@ function Select({
         />
       </button>
 
-      <ul id={id} className={optionsClass()} onBlur={handleBlur}>
+      <ul
+        id={id}
+        className={optionsClass()}
+        onBlur={handleBlur}
+        aria-hidden={!menuIsOpen}
+      >
         {choicesList}
       </ul>
     </div>

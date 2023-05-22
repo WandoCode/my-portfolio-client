@@ -28,7 +28,7 @@ function NavLinks({ onCloseNav, navText, language, currentSection }: Props) {
   }, [currentSection, language])
 
   return (
-    <ul className="nav-links">
+    <ul className="nav-links" aria-label="Internal links">
       <li
         className={
           currentSection === 'hero' || !currentSection

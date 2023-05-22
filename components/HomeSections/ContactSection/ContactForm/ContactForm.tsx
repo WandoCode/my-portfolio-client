@@ -26,7 +26,7 @@ function ContactForm({ formText, onHandleSubmit, status, language }: Props) {
   }
 
   return (
-    <form className="contact-form">
+    <form className="contact-form" aria-label="Contact form">
       <div className="contact-form__infos">
         <Info imageRef={formText.infos.placeIcon}>
           {formText.infos.place[language]}
