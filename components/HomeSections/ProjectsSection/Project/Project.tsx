@@ -41,6 +41,7 @@ function Project({ datas, side, language }: Props) {
         >
           {language ? datas.title : ''}
         </h3>
+        <h4 className="visually-hidden">Description</h4>
         <div
           className="project__description"
           dangerouslySetInnerHTML={{
@@ -48,6 +49,7 @@ function Project({ datas, side, language }: Props) {
           }}
         />
 
+        <h4 className="visually-hidden">Features</h4>
         <ul className="project__features-wrapper">
           {language && (
             <Map items={datas.features[language]} itemComponent={ListItem} />
@@ -58,13 +60,16 @@ function Project({ datas, side, language }: Props) {
           <Map items={datas.tags} itemComponent={Tag} />
         </ul>
 
-        <div className="project__links">
+        <nav
+          className="project__links"
+          aria-label={`${datas.title} external links`}
+        >
           <Map
             items={datas.medias}
             itemComponent={MediaLink}
             background="light"
           />
-        </div>
+        </nav>
       </div>
     </section>
   )
