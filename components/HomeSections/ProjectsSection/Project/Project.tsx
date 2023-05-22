@@ -14,11 +14,12 @@ interface Props {
 }
 
 function Project({ datas, side, language }: Props) {
+  const titleAsId = removeWhiteSpace(datas.title)
   return (
     <section
       className={`project project--${side}`}
       data-testid="project"
-      aria-labelledby={removeWhiteSpace(datas.title)}
+      aria-labelledby={titleAsId}
     >
       <a
         href={datas.medias[1].link}
@@ -35,30 +36,39 @@ function Project({ datas, side, language }: Props) {
         />
       </a>
       <div className="project__content">
-        <h3
-          className="project__title h3 fs-600"
-          id={removeWhiteSpace(datas.title)}
-        >
+        <h3 className="project__title h3 fs-600" id={titleAsId}>
           {language ? datas.title : ''}
         </h3>
-        <h4 className="visually-hidden">Description</h4>
-        <div
+        <section
           className="project__description"
           dangerouslySetInnerHTML={{
             __html: language ? datas.description[language] : '',
           }}
+          aria-labelledby={titleAsId + '-description'}
         />
+        <h4 className="visually-hidden" id={titleAsId + '-description'}>
+          Description
+        </h4>
 
-        <h4 className="visually-hidden">Features</h4>
-        <ul className="project__features-wrapper">
-          {language && (
-            <Map items={datas.features[language]} itemComponent={ListItem} />
-          )}
-        </ul>
+        <section aria-labelledby={titleAsId + '-features'}>
+          <h4 className="visually-hidden" id={titleAsId + '-features'}>
+            Features
+          </h4>
+          <ul className="project__features-wrapper">
+            {language && (
+              <Map items={datas.features[language]} itemComponent={ListItem} />
+            )}
+          </ul>
+        </section>
 
-        <ul className="project__skills-wrapper" data-testid="tags">
-          <Map items={datas.tags} itemComponent={Tag} />
-        </ul>
+        <section aria-labelledby={titleAsId + '-skills'}>
+          <h4 className="visually-hidden" id={titleAsId + '-skills'}>
+            Skills
+          </h4>
+          <ul className="project__skills-wrapper" data-testid="tags">
+            <Map items={datas.tags} itemComponent={Tag} />
+          </ul>
+        </section>
 
         <nav
           className="project__links"
